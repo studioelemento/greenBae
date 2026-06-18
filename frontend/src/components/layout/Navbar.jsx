@@ -1,14 +1,26 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Search, User, ShoppingBag, Menu } from 'lucide-react';
+import { Search, User, ShoppingBag, Menu, X } from 'lucide-react';
 
 const Navbar = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const navLinks = [
+    { label: 'Home', path: '/' },
+    { label: 'Our Story', path: '/our-story' },
+    { label: 'Products', path: '/products' },
+    { label: 'Wellness Journal', path: '/wellness-journal' },
+    { label: 'Healthy Living Movement', path: '/healthy-living' },
+    { label: 'Contact Us', path: '/contact-us' }
+  ];
+
   return (
-    <header className="bg-white sticky top-0 z-50">
+    <header className="bg-white sticky top-0 z-50 border-b border-gray-100/80">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
-            <Link to="/" className="flex flex-col items-center">
+            <Link to="/" className="flex flex-col items-center" onClick={() => setIsMobileMenuOpen(false)}>
               <span className="font-serif text-3xl font-bold text-primary-800 tracking-tight">Greenbae</span>
               <span className="text-[0.6rem] uppercase tracking-[0.2em] text-primary-600 font-semibold mt-0.5">Natural & Friend</span>
             </Link>
@@ -16,7 +28,7 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
-            <Link to="/" className="text-primary-600 font-medium text-sm border-b-2 border-primary-500 pb-1">Home</Link>
+            <Link to="/" className="text-primary-600 font-semibold text-sm border-b-2 border-primary-500 pb-1">Home</Link>
             <Link to="/our-story" className="text-gray-600 hover:text-primary-700 font-medium text-sm transition-colors">Our Story</Link>
             <Link to="/products" className="text-gray-600 hover:text-primary-700 font-medium text-sm transition-colors flex items-center gap-1">
               Products
@@ -41,11 +53,42 @@ const Navbar = () => {
                 0
               </span>
             </button>
-            <button className="md:hidden hover:text-primary-700 transition-colors ml-2">
-              <Menu className="w-6 h-6" />
+            {/* Hamburger Button */}
+            <button 
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="md:hidden hover:text-primary-700 transition-colors ml-2 focus:outline-none"
+            >
+              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
         </div>
+      </div>
+
+      {/* Mobile Dropdown Navigation Menu */}
+      <div className={`md:hidden bg-white border-t border-gray-100 transition-all duration-300 ease-in-out origin-top ${
+        isMobileMenuOpen ? 'max-h-[400px] opacity-100 visible' : 'max-h-0 opacity-0 invisible overflow-hidden'
+      }`}>
+        <nav className="flex flex-col py-4 px-6 space-y-4 shadow-[0_10px_20px_rgba(0,0,0,0.05)]">
+          {navLinks.map((link, idx) => (
+            <Link
+              key={idx}
+              to={link.path}
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="text-gray-700 hover:text-primary-700 font-medium text-sm py-2 border-b border-gray-50 last:border-0 transition-colors"
+            >
+              {link.label}
+            </Link>
+          ))}
+          {/* Mobile Profile Action */}
+          <Link
+            to="/profile"
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="sm:hidden text-gray-700 hover:text-primary-700 font-medium text-sm py-2 flex items-center gap-2 transition-colors border-t border-gray-50 pt-3"
+          >
+            <User className="w-4 h-4" />
+            My Account
+          </Link>
+        </nav>
       </div>
     </header>
   );
