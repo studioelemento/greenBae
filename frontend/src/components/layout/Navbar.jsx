@@ -41,22 +41,11 @@ const Navbar = () => {
 
           {/* Icons */}
           <div className="flex items-center space-x-5 text-gray-700">
-            <button className="hover:text-primary-700 transition-colors">
-              <Search className="w-5 h-5" />
-            </button>
-            <button className="hover:text-primary-700 transition-colors hidden sm:block">
-              <User className="w-5 h-5" />
-            </button>
-            <button className="hover:text-primary-700 transition-colors relative">
-              <ShoppingBag className="w-5 h-5" />
-              <span className="absolute -top-1.5 -right-1.5 bg-primary-600 text-white text-[0.65rem] font-bold h-4 w-4 rounded-full flex items-center justify-center">
-                0
-              </span>
-            </button>
             {/* Hamburger Button */}
             <button 
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden hover:text-primary-700 transition-colors ml-2 focus:outline-none"
+              className="md:hidden hover:text-primary-700 transition-colors ml-2 focus:outline-none relative z-50"
+              aria-label="Toggle mobile menu"
             >
               {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -65,8 +54,8 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Dropdown Navigation Menu */}
-      <div className={`md:hidden bg-white border-t border-gray-100 transition-all duration-300 ease-in-out origin-top ${
-        isMobileMenuOpen ? 'max-h-[400px] opacity-100 visible' : 'max-h-0 opacity-0 invisible overflow-hidden'
+      <div className={`md:hidden absolute w-full left-0 top-[100%] bg-white border-t border-gray-100 transition-all duration-300 ease-in-out origin-top shadow-lg overflow-hidden ${
+        isMobileMenuOpen ? 'max-h-[500px] opacity-100 visible' : 'max-h-0 opacity-0 invisible'
       }`}>
         <nav className="flex flex-col py-4 px-6 space-y-4 shadow-[0_10px_20px_rgba(0,0,0,0.05)]">
           {navLinks.map((link, idx) => (
