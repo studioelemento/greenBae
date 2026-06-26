@@ -5,7 +5,7 @@ import OurStory from './pages/ourstory/OurStory';
 import Products from './pages/Products';
 import WellnessJournal from './pages/WellnessJournal';
 import HealthyLiving from './pages/HealthyLiving';
-import ContactUs from './pages/ContactUs';
+import ContactUs from './pages/contactus/ContactUs';
 
 function App() {
   return (
