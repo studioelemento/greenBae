@@ -1,16 +1,44 @@
 import React, { useState } from "react";
 import {
-  Leaf,
   Users,
   Soup,
   Truck,
-  BadgeCheck,
+  Award,
+  Leaf,
   PackageCheck,
-  MessageCircle,
   Plus,
-  Minus
+  Minus,
+  MessageSquare,
 } from "lucide-react";
 import faqimage from "../../../assets/img-contactus/faq.png";
+
+// Double Leaf icon for the header
+const DoubleLeaf = () => (
+  <div className="flex gap-1 items-center justify-center text-[#0B3B24]">
+    <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 -rotate-45 shrink-0">
+      <path d="M17 8C8 10 4 18 4 18S12 17 19 9C20 8 20 6 20 6S18 7 17 8Z" />
+      <path d="M19 9L4 18" stroke="#0B3B24" strokeWidth="1.5" />
+    </svg>
+    <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 -rotate-12 opacity-80 shrink-0">
+      <path d="M17 8C8 10 4 18 4 18S12 17 19 9C20 8 20 6 20 6S18 7 17 8Z" />
+      <path d="M19 9L4 18" stroke="#0B3B24" strokeWidth="1.5" />
+    </svg>
+  </div>
+);
+
+// Custom Leaf Divider (same as ContactHero for consistency)
+const LeafDivider = ({ align = "center" }) => (
+  <div className={`flex items-center w-full my-6 ${align === "left" ? "justify-start" : "justify-center"}`}>
+    {align === "center" && <div className="flex-1 h-[1px] bg-[#E5DFD5]"></div>}
+    <div className="flex items-center justify-center pr-4 shrink-0">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-6 h-6">
+        <path d="M11.5 13.5C11.5 13.5 8.5 16.5 5 15.5C1.5 14.5 2 10.5 2 10.5C2 10.5 5 10 7 11.5C9 13 11.5 13.5 11.5 13.5Z" fill="#0B3B24" />
+        <path d="M12.5 10.5C12.5 10.5 15.5 7.5 19 8.5C22.5 9.5 22 13.5 22 13.5C22 13.5 19 14 17 12.5C15 11 12.5 10.5 12.5 10.5Z" fill="#D2A054" />
+      </svg>
+    </div>
+    <div className="flex-1 h-[1px] bg-[#E5DFD5]"></div>
+  </div>
+);
 
 const faqs = [
   {
@@ -32,10 +60,10 @@ const faqs = [
       "Simply add 2 tablespoons to a glass of milk, smoothie, porridge, or your favourite recipe.",
   },
   {
-    icon: BadgeCheck,
+    icon: Award,
     question: "How can I become a distributor?",
     answer:
-      "We'd love to have you with us! You can connect through our contact form or WhatsApp.",
+      "We'd love to have you with us! You can connect through our contact form or email.",
   },
   {
     icon: Leaf,
@@ -52,181 +80,120 @@ const faqs = [
 ];
 
 const QuickAnswers = () => {
-    const [openIndex, setOpenIndex] = useState(null);
+  const [openIndex, setOpenIndex] = useState(null);
 
-const toggleFAQ = (index) => {
-  setOpenIndex(openIndex === index ? null : index);
-};
+  const toggleFAQ = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
   return (
-    <section className="bg-white py-16 lg:py-24">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-24">
-
-        <div className="bg-[#f8f5ee] rounded-[32px] overflow-hidden relative">
-
-          {/* Top Area */}
-
-          <div className="grid lg:grid-cols-2">
-
-            {/* Left */}
-
-            <div className="p-8 md:p-12 lg:p-16 flex flex-col justify-center text-center">
-
-              <div className="inline-flex mx-auto items-center gap-2 text-[#4d8745] font-bold uppercase text-xs tracking-widest mb-4">
-                <Leaf size={16} />
-                Quick Answers
+    <section className="bg-[#FCFBF7] py-16 lg:py-24 border-t border-[#E5DFD5]">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-7xl">
+        
+        {/* FAQ Outer Container */}
+        <div className="bg-[#F7F4EF] rounded-3xl border border-[#E5DFD5] overflow-hidden relative shadow-sm">
+          
+          {/* Top Banner Area */}
+          <div className="grid grid-cols-1 lg:grid-cols-2">
+            
+            {/* Left text content */}
+            <div className="p-8 md:p-12 lg:p-16 flex flex-col justify-center text-center lg:text-left items-center lg:items-start">
+              <div className="inline-flex items-center gap-2 text-[#0B3B24] font-bold tracking-widest text-xs uppercase mb-2">
+                <DoubleLeaf />
+                <span>Quick Answers</span>
               </div>
 
-              <h2 className="font-serif text-[#1c3e1e] text-[42px] md:text-[60px] leading-none font-bold">
-                Frequently Asked
-                <br />
-                Questions
+              <h2 className="font-serif text-[#0B3B24] text-3xl sm:text-4xl lg:text-[48px] leading-tight font-bold mt-2">
+                Frequently Asked<br className="hidden sm:inline" /> Questions
               </h2>
 
-              <div className="w-24 h-[2px] bg-[#d8c49a] mx-auto my-6"></div>
+              <LeafDivider align="left" className="w-full max-w-xs" />
 
-              <p className="text-gray-700 max-w-md mx-auto leading-relaxed">
-                Find quick answers to common questions about our products,
-                ingredients, orders and more.
+              <p className="text-[#5C5852] text-sm sm:text-base leading-relaxed max-w-md">
+                Find quick answers to common questions about our products, ingredients, orders and more.
               </p>
             </div>
 
-            {/* Right */}
-
-            <div className="hidden lg:block">
+            {/* Right Image (Hidden on Mobile) */}
+            <div className="hidden lg:block relative min-h-[350px]">
               <img
                 src={faqimage}
-                alt="Family"
-                className="w-full h-full object-cover"
+                alt="Family choosing wellness"
+                className="absolute inset-0 w-full h-full object-cover"
               />
             </div>
 
           </div>
 
-          {/* FAQ Grid */}
-
-          <div className="p-5 md:p-8 lg:p-10">
-
-            <div className="grid lg:grid-cols-2 gap-4">
-
+          {/* FAQ Accordion Grid */}
+          <div className="p-6 md:p-10 border-t border-[#E5DFD5] bg-[#FAF8F5]">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
               {faqs.map((faq, index) => {
                 const Icon = faq.icon;
+                const isOpen = openIndex === index;
 
                 return (
                   <div
                     key={index}
                     onClick={() => toggleFAQ(index)}
-                    className="
-                      bg-[#faf8f3]
-                      border
-                      border-[#e7e1d5]
-                      rounded-2xl
-                      p-5
-                      flex
-                      items-start
-                      gap-4
-                      cursor-pointer
-                        transition-colors
-                        duration-300
-                        hover:bg-[#f0e9d8]                   "
+                    className={`bg-white border rounded-2xl p-5 flex items-start gap-4 cursor-pointer transition-all duration-300 ${
+                      isOpen ? "border-[#0B3B24] shadow-sm" : "border-[#E5DFD5] hover:border-[#D9D2C6]"
+                    }`}
                   >
-                    <div
-                      className="
-                        w-16
-                        h-16
-                        rounded-full
-                        bg-[#eef0e3]
-                        flex
-                        items-center
-                        justify-center
-                        shrink-0
-                      "
-                    >
-                      <Icon className="text-[#345920]" size={28} />
+                    {/* Circular Icon Badge */}
+                    <div className="w-12 h-12 rounded-full bg-[#F7F4EF] flex items-center justify-center text-[#0B3B24] shrink-0">
+                      <Icon size={22} className="stroke-[1.75]" />
                     </div>
 
-                    <div className="flex-1">
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-start justify-between gap-3">
+                        <h3 className="font-serif text-[#0B3B24] text-base sm:text-lg font-bold leading-snug">
+                          {faq.question}
+                        </h3>
+                        <div className="shrink-0 text-[#0B3B24] mt-0.5">
+                          {isOpen ? (
+                            <Minus size={18} className="stroke-[2.5]" />
+                          ) : (
+                            <Plus size={18} className="stroke-[2.5]" />
+                          )}
+                        </div>
+                      </div>
 
-                    <div
-                        onClick={() => toggleFAQ(index)}
-                        className="flex items-start justify-between cursor-pointer"
-            >
-                    <h3 className="font-serif text-[#1c3e1e] text-2xl font-semibold">
-                        {faq.question}
-    </h3>
-
-    {openIndex === index ? (
-      <Minus
-        size={22}
-        className="text-[#345920] shrink-0"
-      />
-    ) : (
-      <Plus
-        size={22}
-        className="text-[#345920] shrink-0"
-      />
-    )}
-  </div>
-
-  {openIndex === index && (
-    <p className="text-gray-700 leading-relaxed mt-4">
-      {faq.answer}
-    </p>
-  )}
-
-</div>
+                      {isOpen && (
+                        <p className="text-[#5C5852] text-sm leading-relaxed mt-3 pt-3 border-t border-[#F7F4EF] animate-fade-in">
+                          {faq.answer}
+                        </p>
+                      )}
+                    </div>
                   </div>
                 );
               })}
             </div>
 
-            {/* Bottom CTA */}
-
-            <div className="mt-12 border-t border-[#ddd7c8] pt-8">
-
-              <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
-
-                <div className="flex items-center gap-5">
-
-                  <div className="w-20 h-20 rounded-full bg-[#eef0e3] flex items-center justify-center">
-                    <Leaf
-                      size={36}
-                      className="text-[#345920]"
-                    />
+            {/* Bottom CTA Banner */}
+            <div className="mt-12 border-t border-[#E5DFD5] pt-8">
+              <div className="flex flex-col lg:flex-row items-center justify-between gap-6 bg-white border border-[#E5DFD5] rounded-2xl p-6 sm:p-8">
+                
+                <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-5">
+                  <div className="w-14 h-14 rounded-full bg-[#F7F4EF] flex items-center justify-center text-[#0B3B24] shrink-0">
+                    <Leaf size={24} className="fill-[#0B3B24] stroke-[1.5]" />
                   </div>
-
                   <div>
-                    <h3 className="font-serif text-[#1c3e1e] text-3xl font-semibold">
+                    <h3 className="font-serif text-[#0B3B24] text-xl sm:text-2xl font-bold">
                       Can't find what you're looking for?
                     </h3>
-
-                    <p className="text-gray-700 mt-2">
+                    <p className="text-[#5C5852] text-sm mt-1">
                       We're here to help you on your healthy living journey.
                     </p>
                   </div>
-
                 </div>
 
-                <button
-                  className="
-                    bg-[#345920]
-                    hover:bg-[#2b4c18]
-                    text-white
-                    px-8
-                    py-4
-                    rounded-lg
-                    font-semibold
-                    flex
-                    items-center
-                    gap-2
-                    transition-colors
-                  "
-                >
-                  <MessageCircle size={18} />
-                  Contact Us
+                <button className="w-full lg:w-auto bg-[#0B3B24] hover:bg-[#082C1B] text-white px-8 py-4 rounded-xl font-semibold flex items-center justify-center gap-2 transition-colors duration-200 cursor-pointer shrink-0">
+                  <MessageSquare size={18} />
+                  <span>Contact Us</span>
                 </button>
 
               </div>
-
             </div>
 
           </div>
