@@ -119,7 +119,7 @@ const ContactHero = () => {
                     Get In Touch
                   </span>
                 </div>
-                <h2 className="font-serif text-[28px] px-4 lg:px-[4px] sm:text-4xl md:text-5xl text-[#0F4D1D] font-bold leading-tight mt-2">
+                <h2 className="font-serif text-[28px] px-6 lg:px-[4px] sm:text-4xl md:text-5xl text-[#0F4D1D] font-bold leading-tight mt-2">
                   We'd Love To Hear From You
                 </h2>
                 <LeafDivider />

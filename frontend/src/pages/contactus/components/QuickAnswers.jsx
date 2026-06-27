@@ -8,38 +8,46 @@ import {
   PackageCheck,
   Plus,
   Minus,
-  MessageSquare,
 } from "lucide-react";
 import faqimage from "../../../assets/img-contactus/faq.png";
 
-// Double Leaf icon for the header
-const DoubleLeaf = () => (
-  <div className="flex gap-1 items-center justify-center text-[#0B3B24]">
-    <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 -rotate-45 shrink-0">
-      <path d="M17 8C8 10 4 18 4 18S12 17 19 9C20 8 20 6 20 6S18 7 17 8Z" />
-      <path d="M19 9L4 18" stroke="#0B3B24" strokeWidth="1.5" />
-    </svg>
-    <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 -rotate-12 opacity-80 shrink-0">
-      <path d="M17 8C8 10 4 18 4 18S12 17 19 9C20 8 20 6 20 6S18 7 17 8Z" />
-      <path d="M19 9L4 18" stroke="#0B3B24" strokeWidth="1.5" />
-    </svg>
-  </div>
+// Sprout Icon for bottom card
+const SproutIcon = () => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className="w-6 h-6 text-[#0B3B24]"
+  >
+    <path d="M12 20v-8" />
+    <path d="M12 12c-2-2.67-4-4-6-4a4 4 0 0 0-4 4c0 3 3 5 10 8c7-3 10-5 10-8a4 4 0 0 0-4-4c-2 0-4 1.33-6 4z" />
+  </svg>
 );
 
-// Custom Leaf Divider (same as ContactHero for consistency)
-const LeafDivider = ({ align = "center" }) => (
-  <div className={`flex items-center w-full my-6 ${align === "left" ? "justify-start" : "justify-center"}`}>
-    {align === "center" && <div className="flex-1 h-[1px] bg-[#E5DFD5]"></div>}
-    <div className="flex items-center justify-center pr-4 shrink-0">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-6 h-6">
-        <path d="M11.5 13.5C11.5 13.5 8.5 16.5 5 15.5C1.5 14.5 2 10.5 2 10.5C2 10.5 5 10 7 11.5C9 13 11.5 13.5 11.5 13.5Z" fill="#0B3B24" />
-        <path d="M12.5 10.5C12.5 10.5 15.5 7.5 19 8.5C22.5 9.5 22 13.5 22 13.5C22 13.5 19 14 17 12.5C15 11 12.5 10.5 12.5 10.5Z" fill="#D2A054" />
-      </svg>
-    </div>
-    <div className="flex-1 h-[1px] bg-[#E5DFD5]"></div>
-  </div>
+// Message Icon with 3 dots
+const MessageIcon = () => (
+  <svg
+    width="18"
+    height="18"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className="w-5 h-5 shrink-0"
+  >
+    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+    <circle cx="9" cy="10" r="1.2" fill="currentColor" />
+    <circle cx="12" cy="10" r="1.2" fill="currentColor" />
+    <circle cx="15" cy="10" r="1.2" fill="currentColor" />
+  </svg>
 );
 
+// FAQs in specified order for Column-Major Grid on Desktop and Natural Single-Column on Mobile
 const faqs = [
   {
     icon: Users,
@@ -48,105 +56,126 @@ const faqs = [
       "Yes! Veggie Vitals is made with natural greens, fruits and essential nutrients that are gentle and safe for kids above 3 years.",
   },
   {
+    icon: Soup,
+    question: "How do I consume Nutri Mix?",
+    answer:
+      "Simply add 2 tablespoons to a glass of milk, smoothie, porridge, or your favourite recipe. Enjoy it daily for best results.",
+  },
+  {
+    icon: Leaf,
+    question: "Are Greenbae products 100% natural?",
+    answer:
+      "Absolutely. All our products are crafted with clean, plant-based ingredients and no artificial additives, flavours or preservatives.",
+  },
+  {
     icon: Truck,
     question: "Do you ship across India?",
     answer:
       "Yes, we deliver across India! Orders are usually delivered within 3–7 business days depending on your location.",
   },
   {
-    icon: Soup,
-    question: "How do I consume Nutri Mix?",
-    answer:
-      "Simply add 2 tablespoons to a glass of milk, smoothie, porridge, or your favourite recipe.",
-  },
-  {
     icon: Award,
     question: "How can I become a distributor?",
     answer:
-      "We'd love to have you with us! You can connect through our contact form or email.",
-  },
-  {
-    icon: Leaf,
-    question: "Are Greenbae products 100% natural?",
-    answer:
-      "Absolutely. All our products are crafted with clean, plant-based ingredients and no artificial additives.",
+      "We'd love to have you with us! You can connect with our team through the contact form or reach us directly via WhatsApp.",
   },
   {
     icon: PackageCheck,
     question: "What is your return policy?",
     answer:
-      "We offer easy returns within 7 days of delivery if the product is unopened and in original condition.",
+      "We offer easy returns within 7 days of delivery if the product is unopened and in original condition. T&C apply.",
   },
 ];
 
 const QuickAnswers = () => {
-  const [openIndex, setOpenIndex] = useState(null);
+  // Allow multiple accordions to be open at once (perfect for desktop view & custom state management)
+  const [openIndexes, setOpenIndexes] = useState([]);
 
   const toggleFAQ = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
+    if (openIndexes.includes(index)) {
+      setOpenIndexes(openIndexes.filter((i) => i !== index));
+    } else {
+      setOpenIndexes([...openIndexes, index]);
+    }
   };
 
   return (
-    <section className="bg-[#FCFBF7] py-16 lg:py-24 border-t border-[#E5DFD5]">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-7xl">
-        
-        {/* FAQ Outer Container */}
-        <div className="bg-[#F7F4EF] rounded-3xl border border-[#E5DFD5] overflow-hidden relative shadow-sm">
-          
-          {/* Top Banner Area */}
-          <div className="grid grid-cols-1 lg:grid-cols-2">
-            
-            {/* Left text content */}
-            <div className="p-8 md:p-12 lg:p-16 flex flex-col justify-center text-center lg:text-left items-center lg:items-start">
-              <div className="inline-flex items-center gap-2 text-[#0B3B24] font-bold tracking-widest text-xs uppercase mb-2">
-                <DoubleLeaf />
+    <section className="bg-[#FCFBF7] py-0 md:py-16 lg:py-34 border-0 lg:border lg:border-[#E5DFD5] relative overflow-hidden">
+      <div className="container mx-auto px-0 sm:px-6 lg:px-8 xl:px-12 max-w-[1440px]">
+        {/* Main Card Container */}
+        <div className="bg-[#FAF6F0] rounded-[12px] lg:rounded-[12px] border border-[#E5DFD5] overflow-hidden relative shadow-sm z-10">
+          {/* Top Section: Header & Image Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 items-stretch">
+            {/* Left Column: Centered Text Content */}
+            <div className="p-8 md:p-12 lg:p-16 flex flex-col justify-center items-center text-center">
+              {/* Leaf + Header label */}
+              <div className="flex flex-col items-center gap-1.5 text-[#0B3B24] font-sans font-bold tracking-widest text-s uppercase mb-2">
+                <Leaf className="w-6 h-5" />
                 <span>Quick Answers</span>
               </div>
 
-              <h2 className="font-serif text-[#0B3B24] text-3xl sm:text-4xl lg:text-[48px] leading-tight font-bold mt-2">
-                Frequently Asked<br className="hidden sm:inline" /> Questions
+              {/* Serif Title */}
+              <h2 className="font-serif text-[#0B3B24] text-3xl sm:text-4xl lg:text-[42px] leading-tight font-bold mt-[0.05rem] mb-0 sm:mb-6 lg:mb-[0.05rem]">
+                Frequently Asked
+                <br /> Questions
               </h2>
 
-              <LeafDivider align="left" className="w-full max-w-xs" />
+              {/* Leaf Divider/leaf between title & description */}
+              <div className="relative flex items-center justify-center my-4 z-10">
+                <div className="flex items-center justify-center w-full gap-1">
+                  <div className="w-full border-t border-[#E5DFD5] flex "></div>
 
-              <p className="text-[#5C5852] text-sm sm:text-base leading-relaxed max-w-md">
-                Find quick answers to common questions about our products, ingredients, orders and more.
+                  <Leaf className="h-5 w-35 text-[#0B3B24]" />
+
+                  <div className="w-full border-t border-[#E5DFD5]"></div>
+                </div>
+              </div>
+
+              {/* Description Paragraph */}
+              <p className="text-[#5C5852] font-sans text-[14px] sm:text-base leading-relaxed max-w-md lg:px-8">
+                Find quick answers to common questions
+                <br className="block sm:hidden" /> about our products,
+                ingredients, orders and more.
               </p>
             </div>
 
-            {/* Right Image (Hidden on Mobile) */}
-            <div className="hidden lg:block relative min-h-[350px]">
+            {/* Right Column: Family Image (Hidden on Mobile) */}
+            <div className="hidden lg:block relative overflow-hidden">
               <img
                 src={faqimage}
                 alt="Family choosing wellness"
                 className="absolute inset-0 w-full h-full object-cover"
               />
+              {/* Left fade */}
+              <div className="absolute left-0 top-0 h-full w-18 bg-gradient-to-r from-[#FCF8F2] via-[#FCF8F2]/60 to-transparent"></div>
             </div>
-
           </div>
 
-          {/* FAQ Accordion Grid */}
-          <div className="p-6 md:p-10 border-t border-[#E5DFD5] bg-[#FAF8F5]">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+          {/* FAQs Accordion Grid */}
+          <div className="px-6 md:px-12 lg:px-16 pb-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 lg:grid-flow-col lg:grid-rows-3 gap-5">
               {faqs.map((faq, index) => {
                 const Icon = faq.icon;
-                const isOpen = openIndex === index;
+                const isOpen = openIndexes.includes(index);
 
                 return (
                   <div
                     key={index}
                     onClick={() => toggleFAQ(index)}
-                    className={`bg-white border rounded-2xl p-5 flex items-start gap-4 cursor-pointer transition-all duration-300 ${
-                      isOpen ? "border-[#0B3B24] shadow-sm" : "border-[#E5DFD5] hover:border-[#D9D2C6]"
+                    className={`bg-[#fdfaf5] border rounded-xl p-5 flex items-start gap-4 cursor-pointer transition-all duration-300 z-10 relative ${
+                      isOpen
+                        ? "border-[#0B3B24] shadow-sm"
+                        : "border-[#E5DFD5] hover:border-[#D9D2C6]"
                     }`}
                   >
                     {/* Circular Icon Badge */}
-                    <div className="w-12 h-12 rounded-full bg-[#F7F4EF] flex items-center justify-center text-[#0B3B24] shrink-0">
-                      <Icon size={22} className="stroke-[1.75]" />
+                    <div className="w-12 h-12 rounded-full bg-[#f1eedf] border border-[#E5DFD5] flex items-center justify-center text-[#0B3B24] shrink-0">
+                      <Icon size={20} className="stroke-[1.75]" />
                     </div>
 
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-start justify-between gap-3">
+                    {/* Question & Answer Content */}
+                    <div className="flex-1 min-w-0 ">
+                      <div className="flex items-center justify-between gap-3 ">
                         <h3 className="font-serif text-[#0B3B24] text-base sm:text-lg font-bold leading-snug">
                           {faq.question}
                         </h3>
@@ -159,47 +188,103 @@ const QuickAnswers = () => {
                         </div>
                       </div>
 
-                      {isOpen && (
-                        <p className="text-[#5C5852] text-sm leading-relaxed mt-3 pt-3 border-t border-[#F7F4EF] animate-fade-in">
+                      {/* Expandable Answer */}
+                      <div
+                        className="transition-all duration-300 ease-in-out overflow-hidden"
+                        style={{
+                          maxHeight: isOpen ? "200px" : "0px",
+                          opacity: isOpen ? "1" : "0",
+                        }}
+                      >
+                        <p className="text-[#5C5852] font-sans text-sm leading-relaxed mt-2.5">
                           {faq.answer}
                         </p>
-                      )}
+                      </div>
                     </div>
                   </div>
                 );
               })}
             </div>
 
-            {/* Bottom CTA Banner */}
-            <div className="mt-12 border-t border-[#E5DFD5] pt-8">
-              <div className="flex flex-col lg:flex-row items-center justify-between gap-6 bg-white border border-[#E5DFD5] rounded-2xl p-6 sm:p-8">
-                
-                <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-5">
-                  <div className="w-14 h-14 rounded-full bg-[#F7F4EF] flex items-center justify-center text-[#0B3B24] shrink-0">
-                    <Leaf size={24} className="fill-[#0B3B24] stroke-[1.5]" />
+            {/* Separator Divider Line with Leaf Badge */}
+            <div className="hidden lg:block relative flex items-center justify-center my-8 z-10 mb-5">
+              <div className="flex items-center justify-center w-full gap-4">
+                <div className="w-[25%] border-t border-[#E5DFD5] flex "></div>
+
+                <Leaf className="h-5 w-5 text-[#0B3B24]" />
+
+                <div className="w-[25%] border-t border-[#E5DFD5]"></div>
+              </div>
+            </div>
+
+            {/* Mobile version Bottom CTA Banner (Responsive Layout) */}
+            <div className="block sm:hidden mt-4 bg-[#E2EADF] rounded-2xl p-[0.05rem] flex items-start gap-4">
+              <div className="z-10 relative">
+                <div className="flex flex-col md:flex-row items-center justify-center gap-5 lg:px-8 py-6 p-5 sm:p-6 md:p-0">
+                  {/* Sprout Icon & Text Info */}
+                  <div className="flex flex-row items-start text-left gap-4 w-full md:w-auto pb-[0.05rem] ">
+                    <div className="w-12 h-12 rounded-full bg-[#FAF6F0] border border-[#E5DFD5] flex items-center justify-center text-[#0B3B24] shrink-0">
+                      <SproutIcon />
+                    </div>
+                    <div>
+                      <h3 className="font-serif text-[#0B3B24] text-lg sm:text-xl font-bold leading-snug">
+                        Can't find what you're looking for?
+                      </h3>
+                      <p className="text-[#5C5852] font-sans text-sm mt-0.5">
+                        We're here to help you on your healthy living journey.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Contact Us Button */}
+                  <button className="w-full md:w-auto bg-[#0B3B24] hover:bg-[#072410] text-white px-7 py-3.5 rounded-xl flex items-center justify-center gap-2.5 transition-colors duration-200 cursor-pointer shrink-0">
+                    <MessageIcon />
+                    <span className="font-sans text-sm">Contact Us</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* Desktop version Bottom CTA Banner (Responsive Layout) */}
+
+            <div className="lg:block hidden z-10 relative">
+              <div className="flex flex-col md:flex-row items-center justify-center gap-5 lg:px-8 py-6 p-5 sm:p-6 md:p-0">
+                {/* Sprout Icon & Text Info */}
+                <div className="flex flex-row items-start text-left gap-4 w-full md:w-auto pb-4 ">
+                  <div className="w-12 h-12 rounded-full bg-[#FAF8F5] border border-[#E5DFD5] flex items-center justify-center text-[#0B3B24] shrink-0">
+                    <SproutIcon />
                   </div>
                   <div>
-                    <h3 className="font-serif text-[#0B3B24] text-xl sm:text-2xl font-bold">
+                    <h3 className="font-serif text-[#0B3B24] text-lg sm:text-xl font-bold leading-snug">
                       Can't find what you're looking for?
                     </h3>
-                    <p className="text-[#5C5852] text-sm mt-1">
+                    <p className="text-[#5C5852] font-sans text-sm mt-0.5">
                       We're here to help you on your healthy living journey.
                     </p>
                   </div>
                 </div>
 
-                <button className="w-full lg:w-auto bg-[#0B3B24] hover:bg-[#082C1B] text-white px-8 py-4 rounded-xl font-semibold flex items-center justify-center gap-2 transition-colors duration-200 cursor-pointer shrink-0">
-                  <MessageSquare size={18} />
-                  <span>Contact Us</span>
+                {/* Contact Us Button */}
+                <button className="w-full md:w-auto bg-[#0B3B24] hover:bg-[#072410] text-white px-7 py-3.5 rounded-xl flex items-center justify-center gap-2.5 transition-colors duration-200 cursor-pointer shrink-0">
+                  <MessageIcon />
+                  <span className="font-sans text-sm">Contact Us</span>
                 </button>
-
               </div>
             </div>
-
           </div>
 
+          {/* Decorative Corner Leaves (Absolute Positioned, Z-0) */}
+          <img
+            src="https://static.vecteezy.com/system/resources/previews/032/621/185/non_2x/fresh-tropical-leaf-corner-border-png.png"
+            alt="decorative leaves bottom left"
+            className="absolute -bottom-6 -left-6 w-32 sm:w-44 md:w-56 pointer-events-none select-none z-0 opacity-20"
+          />
+          <img
+            src="https://static.vecteezy.com/system/resources/previews/032/621/185/non_2x/fresh-tropical-leaf-corner-border-png.png"
+            alt="decorative leaves bottom right"
+            className=" absolute -bottom-6 -right-6 w-32 sm:w-44 md:w-56 pointer-events-none select-none z-0 opacity-20 scale-x-[-1]"
+          />
         </div>
-
       </div>
     </section>
   );
