@@ -103,9 +103,9 @@ const ContactHero = () => {
   };
 
   return (
-    <section className="bg-white py-2 md:py-16 lg:py-20 px-2 sm:px-4 lg:px-8 xl:px-12 max-w-[1440px] mx-auto">
+    <section className="bg-white py-2 pb-0 md:py-16 lg:py-20 px-2 sm:px-4 lg:px-8 xl:px-12 max-w-[1440px] mx-auto">
       {/* Outer Card Container */}
-      <div className="bg-[#FCF8F2] rounded-[12px] p-5 sm:p-8 md:p-12 lg:p-20 relative overflow-hidden ">
+      <div className="bg-[#FCF8F2] rounded-[12px] p-5 pb-8 sm:p-8 md:p-12 lg:p-20 relative overflow-hidden ">
         {/* Main Grid Content */}
         <div className="grid lg:grid-cols-[1.35fr_0.95fr] gap-10 lg:gap-14 z-10 relative">
           {/* LEFT SIDE: GET IN TOUCH FORM */}
