@@ -4,7 +4,7 @@ import movementImage from "../../../assets/img-contactus/movement.png";
 
 const MovementCTA = () => {
   return (
-    <section className="bg-white lg:py-24">
+    <section className="bg-white lg:py-10">
       <div className="container mx-auto sm:px-6 lg:px-12 xl:px-24">
         <div className="relative overflow-hidden rounded-[12px] pb-1 bg-[#f8f5ee] lg:pb-10">
           <div className="grid lg:grid-cols-2">

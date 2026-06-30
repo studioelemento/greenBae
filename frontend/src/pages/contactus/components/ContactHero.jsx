@@ -103,23 +103,23 @@ const ContactHero = () => {
   };
 
   return (
-    <section className="bg-white py-2 pb-0 md:py-16 lg:py-20 px-2 sm:px-4 lg:px-8 xl:px-12 max-w-[1440px] mx-auto">
+    <section className="bg-white py-2 pb-0 md:py-10 lg:py-10 px-2 sm:px-4 lg:px-8 xl:px-12 max-w-[1440px] mx-auto">
       {/* Outer Card Container */}
-      <div className="bg-[#FCF8F2] rounded-[12px] p-5 pb-8 sm:p-8 md:p-12 lg:p-20 relative overflow-hidden ">
+      <div className="bg-[#FCF8F2] rounded-[12px] p-5 pb-8 sm:p-6 md:p-8 lg:p-15 relative overflow-hidden ">
         {/* Main Grid Content */}
-        <div className="grid lg:grid-cols-[1.35fr_0.95fr] gap-10 lg:gap-14 z-10 relative">
+        <div className="grid lg:grid-cols-[1.35fr_0.95fr] gap-6 lg:gap-8 z-10 relative">
           {/* LEFT SIDE: GET IN TOUCH FORM */}
           <div className="flex flex-col justify-between">
             <div>
               {/* Heading Group */}
-              <div className="text-center mb-6">
+              <div className="text-center mb-4">
                 <div className="flex items-center justify-center gap-3 mb-1">
                   <Leaf className="w-6 h-6 text-[#0F4D1D]" />
                   <span className="text-[#0F4D1D] font-sans font-bold  text-s uppercase">
                     Get In Touch
                   </span>
                 </div>
-                <h2 className="font-serif text-[28px] px-6 lg:px-[4px] sm:text-4xl md:text-5xl text-[#0F4D1D] font-bold leading-tight mt-2">
+                <h2 className="font-serif text-[28px] px-6 lg:px-[14px] sm:text-4xl md:text-5xl text-[#0F4D1D] font-bold leading-tight mt-2">
                   We'd Love To Hear From You
                 </h2>
                 <LeafDivider />
@@ -142,7 +142,7 @@ const ContactHero = () => {
                       onChange={handleChange}
                       placeholder="Full Name"
                       required
-                      className="w-full h-14 md:h-16 rounded-xl border border-[#E5DFD3] bg-white pl-14 pr-5 text-gray-800 placeholder-[#8C8675] focus:outline-none focus:border-[#3C6E37] focus:ring-1 focus:ring-[#3C6E37] transition duration-200"
+                      className="w-full h-12 md:h-14 rounded-xl border border-[#E5DFD3] bg-white pl-14 pr-5 text-gray-800 placeholder-[#8C8675] focus:outline-none focus:border-[#3C6E37] focus:ring-1 focus:ring-[#3C6E37] transition duration-200"
                     />
                   </div>
 
@@ -156,7 +156,7 @@ const ContactHero = () => {
                       onChange={handleChange}
                       placeholder="Email Address"
                       required
-                      className="w-full h-14 md:h-16 rounded-xl border border-[#E5DFD3] bg-white pl-14 pr-5 text-gray-800 placeholder-[#8C8675] focus:outline-none focus:border-[#3C6E37] focus:ring-1 focus:ring-[#3C6E37] transition duration-200"
+                      className="w-full h-12 md:h-14 rounded-xl border border-[#E5DFD3] bg-white pl-14 pr-5 text-gray-800 placeholder-[#8C8675] focus:outline-none focus:border-[#3C6E37] focus:ring-1 focus:ring-[#3C6E37] transition duration-200"
                     />
                   </div>
                 </div>
@@ -170,7 +170,7 @@ const ContactHero = () => {
                     value={formData.phone}
                     onChange={handleChange}
                     placeholder="Phone Number"
-                    className="w-full h-14 md:h-16 rounded-xl border border-[#E5DFD3] bg-white pl-14 pr-5 text-gray-800 placeholder-[#8C8675] focus:outline-none focus:border-[#3C6E37] focus:ring-1 focus:ring-[#3C6E37] transition duration-200"
+                    className="w-full h-12 md:h-14 rounded-xl border border-[#E5DFD3] bg-white pl-14 pr-5 text-gray-800 placeholder-[#8C8675] focus:outline-none focus:border-[#3C6E37] focus:ring-1 focus:ring-[#3C6E37] transition duration-200"
                   />
                 </div>
 
@@ -182,7 +182,7 @@ const ContactHero = () => {
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="w-full h-14 md:h-16 rounded-xl border border-[#E5DFD3] bg-white pl-14 pr-12 text-gray-800 placeholder-[#8C8675] focus:outline-none focus:border-[#3C6E37] focus:ring-1 focus:ring-[#3C6E37] appearance-none transition duration-200"
+                    className="w-full h-12 md:h-14 rounded-xl border border-[#E5DFD3] bg-white pl-14 pr-12 text-gray-800 placeholder-[#8C8675] focus:outline-none focus:border-[#3C6E37] focus:ring-1 focus:ring-[#3C6E37] appearance-none transition duration-200"
                   >
                     <option value="" disabled>
                       Subject
@@ -204,7 +204,7 @@ const ContactHero = () => {
                     onChange={handleChange}
                     placeholder="Your Message"
                     required
-                    rows={6}
+                    rows={4}
                     className="w-full rounded-xl border border-[#E5DFD3] bg-white pt-4 pb-8 pl-14 pr-5 text-gray-800 placeholder-[#8C8675] focus:outline-none focus:border-[#3C6E37] focus:ring-1 focus:ring-[#3C6E37] resize-none transition duration-200"
                   />
                   <div className="absolute right-4 bottom-3 text-xs text-[#8C8675] font-sans">
@@ -215,7 +215,7 @@ const ContactHero = () => {
                 {/* Send Button */}
                 <button
                   type="submit"
-                  className="w-full h-14 md:h-16 bg-[#0E3E1E] hover:bg-[#072410] text-white font-sans font-semibold rounded-xl flex items-center justify-center gap-2.5 transition duration-300 shadow-sm cursor-pointer"
+                  className="w-full h-12 md:h-14 bg-[#0E3E1E] hover:bg-[#072410] text-white font-sans font-semibold rounded-xl flex items-center justify-center gap-2.5 transition duration-300 shadow-sm cursor-pointer"
                 >
                   <Send className="w-4 h-4 transform rotate-0" />
                   <span>Send Message</span>
@@ -243,7 +243,7 @@ const ContactHero = () => {
               </div>
 
               {/* Mobile Info Cards container */}
-              <div className="block lg:hiddenbg-[#F4ECE1] rounded-[24px] p-3 space-y-4">
+              <div className="block lg:hiddenbg-[#F4ECE1] rounded-[24px] p-3 space-y-3">
                 {/* Business Name */}
                 <div className="flex items-center justify-between py-2 border-b border-[#DDD7C8]/40 last:border-0 last:pb-0">
                   <div className="flex items-center gap-4">
@@ -340,8 +340,8 @@ const ContactHero = () => {
               </div>
 
               {/* Mobile Respond Banner */}
-              <div className="mt-4 bg-[#E2EADF] rounded-2xl p-5 flex items-start gap-4">
-                <HandsHoldingSprout className="w-10 h-10 text-[#3C6E37] shrink-0 mt-0.5" />
+              <div className="block lg:hidden mt-3 bg-[#E2EADF] rounded-2xl p-1 pb-1 pt-[22px] flex items-start gap-4 w-full h-[90px]">
+                <HandsHoldingSprout className="w-8 h-8 text-[#3C6E37] shrink-0 mt-0.5 ml-[1px]" />
                 <div>
                   <h4 className="font-sans font-bold text-sm text-[#0F4D1D] leading-snug">
                     We typically respond within{" "}
@@ -364,7 +364,7 @@ const ContactHero = () => {
               </h3>
               <LeafDivider />
 
-              <div className="mt-6 space-y-6">
+              <div className="mt-4 space-y-4">
                 {/* Business Name */}
                 <div className="flex items-start gap-5">
                   <div className="w-14 h-14 rounded-full bg-[#E5DFD3] flex items-center justify-center text-[#0E3E1E] shrink-0">
@@ -457,7 +457,7 @@ const ContactHero = () => {
             </div>
 
             {/* Desktop Respond Banner */}
-            <div className="bg-[#E2EADF] rounded-[24px] p-8 flex items-center gap-6">
+            <div className=" lg:bg-[#E2EADF] rounded-[24px] p-6 flex items-center gap-6">
               <HandsHoldingSprout className="w-14 h-14 text-[#3C6E37] shrink-0" />
               <div>
                 <h4 className="font-sans font-bold text-lg text-[#0F4D1D] leading-snug">

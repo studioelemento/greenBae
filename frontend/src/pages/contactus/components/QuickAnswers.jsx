@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Users,
   Soup,
@@ -88,8 +88,20 @@ const faqs = [
 ];
 
 const QuickAnswers = () => {
-  // Allow multiple accordions to be open at once (perfect for desktop view & custom state management)
+  // Allow multiple accordions to be open at once
   const [openIndexes, setOpenIndexes] = useState([]);
+
+  // Detect mobile view
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 1024);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1024);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const toggleFAQ = (index) => {
     if (openIndexes.includes(index)) {
@@ -100,7 +112,7 @@ const QuickAnswers = () => {
   };
 
   return (
-    <section className="bg-[#FCFBF7] py-0 md:py-16 lg:py-34 border-0 lg:border lg:border-[#E5DFD5] relative overflow-hidden">
+    <section className="bg-[#FCFBF7] py-0 md:py-16 lg:py-10 border-0  relative overflow-hidden">
       <div className="container mx-auto px-0 sm:px-6 lg:px-8 xl:px-12 max-w-[1440px]">
         {/* Main Card Container */}
         <div className="bg-[#FAF6F0] rounded-[12px] lg:rounded-[12px] border border-[#E5DFD5] overflow-hidden relative shadow-sm z-10">
@@ -115,7 +127,7 @@ const QuickAnswers = () => {
               </div>
 
               {/* Serif Title */}
-              <h2 className="font-serif text-[#0B3B24] text-3xl sm:text-4xl lg:text-[42px] leading-tight font-bold mt-[0.05rem] mb-0 sm:mb-6 lg:mb-[0.05rem]">
+              <h2 className="font-serif text-[#0B3B24] text-3xl sm:text-4xl lg:text-[48px] leading-tight font-bold mt-[0.05rem] mb-0 sm:mb-6 lg:mb-[0.05rem]">
                 Frequently Asked
                 <br /> Questions
               </h2>
@@ -161,7 +173,7 @@ const QuickAnswers = () => {
                 return (
                   <div
                     key={index}
-                    onClick={() => toggleFAQ(index)}
+                    onClick={() => isMobile && toggleFAQ(index)}
                     className={`bg-[#fdfaf5] border rounded-xl p-5 flex items-start gap-4 cursor-pointer transition-all duration-300 z-10 relative ${
                       isOpen
                         ? "border-[#0B3B24] shadow-sm"
@@ -179,22 +191,30 @@ const QuickAnswers = () => {
                         <h3 className="font-serif text-[#0B3B24] text-base sm:text-lg font-bold leading-snug">
                           {faq.question}
                         </h3>
-                        <div className="shrink-0 text-[#0B3B24] mt-0.5">
-                          {isOpen ? (
-                            <Minus size={18} className="stroke-[2.5]" />
-                          ) : (
-                            <Plus size={18} className="stroke-[2.5]" />
-                          )}
-                        </div>
+                        {isMobile && (
+                          <div className="shrink-0 text-[#0B3B24] mt-0.5">
+                            {isOpen ? (
+                              <Minus size={18} className="stroke-[2.5]" />
+                            ) : (
+                              <Plus size={18} className="stroke-[2.5]" />
+                            )}
+                          </div>
+                        )}
                       </div>
 
                       {/* Expandable Answer */}
                       <div
-                        className="transition-all duration-300 ease-in-out overflow-hidden"
-                        style={{
-                          maxHeight: isOpen ? "200px" : "0px",
-                          opacity: isOpen ? "1" : "0",
-                        }}
+                        className={`overflow-hidden transition-all duration-300 ${
+                          isMobile ? "" : "max-h-none opacity-100"
+                        }`}
+                        style={
+                          isMobile
+                            ? {
+                                maxHeight: isOpen ? "200px" : "0px",
+                                opacity: isOpen ? 1 : 0,
+                              }
+                            : {}
+                        }
                       >
                         <p className="text-[#5C5852] font-sans text-sm leading-relaxed mt-2.5">
                           {faq.answer}
@@ -222,16 +242,17 @@ const QuickAnswers = () => {
               <div className="z-10 relative">
                 <div className="flex flex-col md:flex-row items-center justify-center gap-5 lg:px-8 py-6 p-5 sm:p-6 md:p-0">
                   {/* Sprout Icon & Text Info */}
-                  <div className="flex flex-row items-start text-left gap-4 w-full md:w-auto pb-[0.05rem] ">
+                  <div className="flex flex-row items-start text-left gap-4 w-full md:w-auto pb-[0.05rem]">
                     <div className="w-12 h-12 rounded-full bg-[#FAF6F0] border border-[#E5DFD5] flex items-center justify-center text-[#0B3B24] shrink-0">
                       <SproutIcon />
                     </div>
                     <div>
                       <h3 className="font-serif text-[#0B3B24] text-lg sm:text-xl font-bold leading-snug">
-                        Can't find what you're looking for?
+                        Can't find what you're <br /> looking for?
                       </h3>
                       <p className="text-[#5C5852] font-sans text-sm mt-0.5">
-                        We're here to help you on your healthy living journey.
+                        We're here to help you on your healthy <br /> living
+                        journey.
                       </p>
                     </div>
                   </div>
