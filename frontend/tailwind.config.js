@@ -13,6 +13,7 @@ export default {
           700: '#3c6e37',
           600: '#4d8745', // Green main buttons
           500: '#61a355',
+          400: '#b7deb0',
         },
         background: {
           default: '#fcfcfc',

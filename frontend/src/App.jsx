@@ -6,7 +6,8 @@ import Products from './pages/Products';
 import WellnessJournal from './pages/WellnessJournal';
 import HealthyLiving from './pages/HealthyLiving';
 import ContactUs from './pages/contactus/ContactUs';
-
+import ProductsPage from './pages/products/ProductsPage';
+import './App.css'
 function App() {
   return (
     <Router>
@@ -14,7 +15,7 @@ function App() {
         <Route path="/" element={<MainLayout />}>
           <Route index element={<Home />} />
           <Route path="our-story" element={<OurStory />} />
-          <Route path="products" element={<Products />} />
+          <Route path="products" element={<ProductsPage />} />
           <Route path="wellness-journal" element={<WellnessJournal />} />
           <Route path="healthy-living" element={<HealthyLiving />} />
           <Route path="contact-us" element={<ContactUs />} />

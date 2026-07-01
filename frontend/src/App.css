@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&family=Manrope:wght@200..800&display=swap');
+
 .counter {
   font-size: 16px;
   padding: 5px 10px;
@@ -181,4 +183,28 @@
     right: 0;
     border-right-color: var(--border);
   }
+}
+
+.font-primary {
+    font-family: "Libre Baskerville", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+
+}
+
+.font-secondary {
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+h1,h2,h3{
+      font-family: "Libre Baskerville", serif;
+  font-optical-sizing: auto;
+  font-style: normal;  
+}
+p{
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
