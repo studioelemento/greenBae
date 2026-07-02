@@ -62,7 +62,7 @@ const ProductFamilies = () => {
       </div>
       <div className="grid my-4 grid-cols-4 place-items-center gap-4 w-full g py-[30px] rounded-xl bg-[#F5F4EA] ">
         {info.map((inf, i) =>{return (
-          <div className={`${i !== 0 && 'border-s-2 w-full flex justify-center'}`}>
+          <div className={`${i !== 0 && 'border-s-1 w-full flex justify-center'}`}>
           <Infocard info={inf} />
           </div>
         )})}
