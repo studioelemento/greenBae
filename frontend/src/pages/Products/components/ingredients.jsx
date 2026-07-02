@@ -5,40 +5,35 @@ const Ingredients = () => {
     {
       title: 'Beetroot Powder',
       desc: 'Rich in natural nitrates and antioxidants. Supports energy and overall wellness.',
-      img: 'https://images.unsplash.com/photo-1599839619722-39751411ea63?q=80&w=600&auto=format&fit=crop'
+      img: 'https://nutrigroveusa.com/cdn/shop/articles/XVcTApLgnQPj4z7OPrqe--5--hjoi7.webp?v=1698264357'
     },
     {
       title: 'Carrot Powder',
       desc: 'A natural source of beta-carotene. Supports eye health and immunity.',
-      img: 'https://images.unsplash.com/photo-1598514982205-f36b96d1e8d4?q=80&w=600&auto=format&fit=crop'
+      img: 'https://fruzoeats.com/wp-content/uploads/2025/01/Carrot-Powder.jpg'
     },
     {
       title: 'Moringa Powder',
       desc: 'Nutrient-dense superfood packed with vitamins, minerals and antioxidants.',
-      img: 'https://images.unsplash.com/photo-1626804475297-41609ea0ec4eb?q=80&w=600&auto=format&fit=crop'
+      img: 'https://hips.hearstapps.com/hmg-prod/images/nutritional-supplement-moringa-powder-on-rustic-royalty-free-image-1659133952.jpg?crop=0.668xw:1.00xh;0.327xw,0&resize=640:*'
     },
     {
       title: 'Amla Powder',
       desc: 'Rich in Vitamin C and antioxidants. Supports immunity and hair health.',
-      img: 'https://images.unsplash.com/photo-1603569283847-aa295f0d016a?q=80&w=600&auto=format&fit=crop'
+      img: 'https://herbtobody.com/wp-content/uploads/2026/01/fresh-amla-and-dried-amla-powder.webp'
     },
     {
       title: 'Raw Banana Powder',
       desc: 'A good source of resistant starch and dietary fiber. Supports digestive wellness.',
-      img: 'https://images.unsplash.com/photo-1603833665858-e61d17a86224?q=80&w=600&auto=format&fit=crop'
+      img: 'https://5.imimg.com/data5/ANDROID/Default/2025/12/565638593/KH/GU/PV/257439351/product-jpeg-1000x1000.jpg'
     }
   ];
 
   return (
-    <section className="relative w-full bg-[#FDFBF7] py-14 lg:py-20 font-sans text-gray-800 overflow-hidden">
+    <section id="ingredients" className="relative w-full bg-[#FDFBF7] py-14 lg:py-20 font-sans text-gray-800 overflow-hidden">
       
       {/* Decorative Background Elements */}
-      <img 
-        src="https://images.unsplash.com/photo-1599839619722-39751411ea63?q=80&w=600&auto=format&fit=crop" 
-        alt="" 
-        className="absolute top-0 left-0 w-[160px] md:w-[350px] opacity-30 mix-blend-multiply pointer-events-none -translate-x-6 -translate-y-6 lg:-translate-x-10 lg:-translate-y-10 blur-[2px]"
-        aria-hidden="true"
-      />
+      
       {/* Top right wooden board with powders - Moves down slightly on mobile */}
       <img 
         src="https://images.unsplash.com/photo-1615486171448-4ffd39891398?q=80&w=800&auto=format&fit=crop" 

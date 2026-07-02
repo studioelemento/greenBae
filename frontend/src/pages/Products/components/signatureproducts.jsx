@@ -1,22 +1,15 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import famimage from "../../../assets/img-contactus/faq.png";
+import veggieimage from "../../../assets/img-ourproducts/veggie.png";
+import nutriimage from "../../../assets/img-ourproducts/nutri.png";
 
 const SignatureProducts = () => {
+  const navigate = useNavigate();
   return (
-    <section className="relative w-full bg-[#F9F6F0] py-20 font-sans text-gray-800 overflow-hidden">
+    <section id="signature-products" className="relative w-full bg-[#F9F6F0] py-20 font-sans text-gray-800 overflow-hidden">
       
-      {/* Decorative Leaves Background */}
-      <img 
-        src="https://images.unsplash.com/photo-1599839619722-39751411ea63?q=80&w=600&auto=format&fit=crop" 
-        alt="" 
-        className="absolute top-0 left-0 w-[350px] md:w-[450px] opacity-20 mix-blend-multiply pointer-events-none -translate-x-10 -translate-y-10 blur-[3px]"
-        aria-hidden="true"
-      />
-      <img 
-        src="https://images.unsplash.com/photo-1599839619722-39751411ea63?q=80&w=600&auto=format&fit=crop" 
-        alt="" 
-        className="absolute bottom-0 right-0 w-[250px] md:w-[350px] opacity-20 mix-blend-multiply pointer-events-none translate-x-10 translate-y-10 blur-[3px] rotate-180"
-        aria-hidden="true"
-      />
+      {/* 2 decorative leaves Section - do ;later*/}
 
       <div className="relative max-w-[1440px] mx-auto px-4 md:px-8 lg:px-12 z-10">
         
@@ -59,7 +52,7 @@ const SignatureProducts = () => {
             {/* Image container */}
             <div className="w-full md:w-[46%] relative min-h-[350px]">
               <img 
-                src="https://images.unsplash.com/photo-1615486171448-4ffd39891398?q=80&w=800&auto=format&fit=crop" 
+                src={veggieimage}
                 alt="Veggie Vitals Pouch" 
                 className="absolute inset-0 w-full h-full object-cover"
               />
@@ -113,7 +106,7 @@ const SignatureProducts = () => {
                 </li>
               </ul>
               
-              <button className="bg-[#173A22] text-white px-5 py-2.5 rounded-lg text-sm font-medium flex items-center justify-center gap-2 hover:bg-[#112a19] transition-colors w-max">
+              <button onClick={() => navigate("/products/single")} className="bg-[#173A22] text-white px-5 py-2.5 rounded-lg text-sm font-medium flex items-center justify-center gap-2 hover:bg-[#112a19] transition-colors w-max">
                 Explore Veggie Vitals <span>&rarr;</span>
               </button>
             </div>
@@ -124,7 +117,7 @@ const SignatureProducts = () => {
             {/* Image container */}
             <div className="w-full md:w-[46%] relative min-h-[350px]">
               <img 
-                src="https://images.unsplash.com/photo-1581452960682-1c251d52a230?q=80&w=800&auto=format&fit=crop" 
+                src={nutriimage} 
                 alt="Nutri Mix Pouch" 
                 className="absolute inset-0 w-full h-full object-cover"
               />
@@ -175,7 +168,7 @@ const SignatureProducts = () => {
                 </li>
               </ul>
               
-              <button className="bg-[#624028] text-white px-5 py-2.5 rounded-lg text-sm font-medium flex items-center justify-center gap-2 hover:bg-[#4d321f] transition-colors w-max">
+              <button onClick={() => navigate("/products/single")} className="bg-[#624028] text-white px-5 py-2.5 rounded-lg text-sm font-medium flex items-center justify-center gap-2 hover:bg-[#4d321f] transition-colors w-max">
                 Explore Nutri Mix <span>&rarr;</span>
               </button>
             </div>
@@ -202,7 +195,7 @@ const SignatureProducts = () => {
 
           <div className="w-full lg:w-[40%] flex justify-center">
              <img 
-               src="https://images.unsplash.com/photo-1542838686-37ed7a956102?q=80&w=800&auto=format&fit=crop" 
+               src={famimage} 
                alt="Happy Family" 
                className="w-full max-w-[420px] h-[180px] object-cover rounded-2xl"
              />

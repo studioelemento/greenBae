@@ -1,8 +1,12 @@
 import React from "react";
 import { Leaf, ArrowRight, FlaskConical, Users, Heart } from "lucide-react";
 import hero from "../../../assets/img-ourproducts/prhero.png";
+import { useNavigate } from "react-router-dom";
+import SignatureProducts from "./signatureproducts";
 
 const ProductHero = () => {
+  const navigate = useNavigate();
+
   const MortarIcon = () => (
     <svg
       className="w-4 h-4 md:w-5 md:h-5 text-[#4d8745]"
@@ -20,10 +24,10 @@ const ProductHero = () => {
   );
 
   return (
-    <section className="relative w-full bg-[#FAF9F5] py-10 md:py-20 px-4 sm:px-6 lg:px-8 xl:px-16 overflow-hidden">
+    <section className="relative w-full bg-[#FAF9F5] pt-10 md:pt-20 pb-4 md:pb-8 px-4 sm:px-6 lg:px-8 xl:px-16 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         {/* 1. Main Hero Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 lg:gap-12 items-center mb-10 md:mb-16 text-center md:text-left">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 lg:gap-2 items-center mb-4 md:mb-8 text-center md:text-left">
           {/* Left Column: Heading & Text */}
           <div className="lg:col-span-5 flex flex-col items-center max-w-[480px] md:items-start z-10">
             {/* Label */}
@@ -54,18 +58,18 @@ const ProductHero = () => {
             </p>
 
             {/* Explore Button */}
-            <button className="bg-[#1c3e1e] hover:bg-[#2b5229] text-white px-6 md:px-7 py-3 md:py-3.5 rounded-[8px] text-[14px] md:text-[15px] font-bold transition-all duration-300 flex items-center gap-2 shadow-sm border border-[#1c3e1e]">
+            <button onClick={() => navigate("/products")} className="bg-[#1c3e1e] hover:bg-[#2b5229] text-white px-6 md:px-7 py-3 md:py-3.5 rounded-[8px] text-[14px] md:text-[15px] font-bold transition-all duration-300 flex items-center gap-2 shadow-sm border border-[#1c3e1e]">
               Explore All Products
               <ArrowRight className="w-4 h-4" />
             </button>
           </div>
 
           {/* Right Column: Hero Image */}
-          <div className="lg:col-span-7 relative h-[690px] -mr-49">
+          <div className="lg:col-span-7 relative h-[610px] -mr-50 my-[1px]">
             <img
               src={hero}
               alt="Our Products image"
-              className="absolute inset-0 w-full h-full object-cover object-[80%_center]"
+              className="absolute top-[-80px] inset-0 w-full h-full object-cover object-[80%_center]"
             />
             {/* Left fade */}
             <div className="absolute left-0 top-0 h-full w-8 bg-gradient-to-r from-[#FCF8F2] via-[#FCF8F2]/60 to-transparent"></div>
@@ -73,18 +77,25 @@ const ProductHero = () => {
         </div>
 
         {/* 2. Middle Section Divider */}
-        <div className="flex items-center justify-center gap-2 md:gap-3 my-10 md:my-16">
-          <Leaf className="w-3.5 h-3.5 md:w-4 md:h-4 text-[#61a355] rotate-[-45deg]" />
-          <h3 className="font-serif font-bold text-[#1c3e1e] tracking-[0.1em] md:tracking-[0.15em] text-[11px] sm:text-[13px] md:text-[15px] uppercase text-center">
+        <div className="flex items-center justify-center gap-2 md:gap-3 mt-4 md:mt-8 mb-10 md:mb-16">
+          <Leaf className="w-3.5 h-3.5 md:w-4 md:h-4 text-[#61a355]" />
+          <h3 className="font-serif font-bold text-[#1c3e1e] tracking-[0.1em] md:tracking-[0.15em] text-[18px] sm:text-[20px] md:text-[18px] uppercase text-center">
             EXPLORE OUR PRODUCT FAMILIES
           </h3>
-          <Leaf className="w-3.5 h-3.5 md:w-4 md:h-4 text-[#61a355] rotate-[45deg]" />
+          <Leaf className="w-3.5 h-3.5 md:w-4 md:h-4 text-[#61a355]" />
         </div>
 
         {/* 3. Three-Column Card Grid (Product Families) */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 lg:gap-8 mb-12 md:mb-16">
           {/* Card 1: Signature Wellness Solutions */}
-          <div className="group bg-[#f4f5ed] border border-[#e5e7df] rounded-[16px] md:rounded-[24px] p-5 md:p-6 lg:p-8 flex flex-row md:flex-col justify-between overflow-hidden relative min-h-[160px] md:min-h-[380px] hover:shadow-[0_16px_36px_rgba(28,62,30,0.05)] transition-all duration-300">
+          <div
+            onClick={() => {
+              navigate("/products");
+              setTimeout(() => {
+                document.getElementById("signature-products")?.scrollIntoView({ behavior: "smooth" });
+              }, 100);
+            }}
+            className="group bg-[#f4f5ed] border border-[#e5e7df] rounded-[16px] md:rounded-[24px] p-5 md:p-6 lg:p-8 flex flex-row md:flex-col justify-between overflow-hidden relative min-h-[160px] md:min-h-[380px] hover:shadow-[0_16px_36px_rgba(28,62,30,0.05)] transition-all duration-300 cursor-pointer">
             {/* Left/Top Content */}
             <div className="w-[55%] md:w-full z-10 relative">
               {/* Icon Container */}
@@ -118,29 +129,29 @@ const ProductHero = () => {
             </div>
 
             {/* Images (Absolute positioned to work on both mobile and desktop) */}
-            <div className="absolute right-12 md:right-0 bottom-[-10px] md:bottom-[-16px] w-[110px] md:w-[130px] h-[95px] md:h-[110px] pointer-events-none z-0">
-              {/* Veggie Vitals */}
+            <div className="absolute right-0 bottom-[-16px] w-[260px] h-[260px] pointer-events-none z-0">
               <img
-                src="/veggie_vitals.png"
-                alt="Veggie Vitals"
-                className="w-[65px] md:w-[85px] absolute bottom-0 left-[-15px] md:left-[-20px] drop-shadow-md transform group-hover:scale-[1.03] transition-transform duration-300"
-              />
-              {/* Nutri Mix */}
-              <img
-                src="/nutri_mix.png"
-                alt="Nutri Mix"
-                className="w-[60px] md:w-[78px] absolute bottom-0 right-0 drop-shadow-md transform group-hover:scale-[1.03] transition-transform duration-300"
+                src={hero}
+                alt="no"
+                className="absolute bottom-28 w-[170px] h-[180px] md:w-[260px] object-contain drop-shadow-md transition-transform duration-300 group-hover:scale-110"
               />
             </div>
 
-            {/* Mobile Arrow Circle */}
-            <div className="absolute bottom-4 right-4 md:hidden w-[26px] h-[26px] rounded-full bg-[#dce6d5] flex items-center justify-center text-[#1c3e1e] z-10">
+            {/* Mobile Arrow Circle - Card 1 */}
+            <div className="absolute bottom-4 right-4 md:hidden w-[26px] h-[26px] rounded-full bg-[#dce6d5] flex items-center justify-center text-[#1c3e1e] z-10 pointer-events-none">
               <ArrowRight className="w-3.5 h-3.5" />
             </div>
           </div>
 
           {/* Card 2: Natural Ingredient Collection */}
-          <div className="group bg-[#f4f5ed] border border-[#e5e7df] rounded-[16px] md:rounded-[24px] p-5 md:p-6 lg:p-8 flex flex-row md:flex-col justify-between overflow-hidden relative min-h-[160px] md:min-h-[380px] hover:shadow-[0_16px_36px_rgba(28,62,30,0.05)] transition-all duration-300">
+          <div
+            onClick={() => {
+              navigate("/products");
+              setTimeout(() => {
+                document.getElementById("ingredients")?.scrollIntoView({ behavior: "smooth" });
+              }, 100);
+            }}
+            className="group bg-[#f4f5ed] border border-[#e5e7df] rounded-[16px] md:rounded-[24px] p-5 md:p-6 lg:p-8 flex flex-row md:flex-col justify-between overflow-hidden relative min-h-[160px] md:min-h-[380px] hover:shadow-[0_16px_36px_rgba(28,62,30,0.05)] transition-all duration-300 cursor-pointer">
             <div className="w-[55%] md:w-full z-10 relative">
               <div className="w-8 h-8 md:w-12 md:h-12 rounded-full bg-transparent md:bg-white border-0 md:border border-[#e2ead9] flex items-center justify-start md:justify-center text-[#4d8745] md:shadow-sm mb-2 md:mb-6 -ml-1 md:ml-0">
                 <MortarIcon />
@@ -172,17 +183,24 @@ const ProductHero = () => {
               <img
                 src="/single_ingredient.png"
                 alt="Single ingredient powders"
-                className="w-full absolute bottom-0 right-0 drop-shadow-md transform group-hover:scale-[1.03] transition-transform duration-300"
+                className="w-full absolute bottom-40 right-0 drop-shadow-md transform group-hover:scale-[1.03] transition-transform duration-300"
               />
             </div>
 
-            <div className="absolute bottom-4 right-4 md:hidden w-[26px] h-[26px] rounded-full bg-[#dce6d5] flex items-center justify-center text-[#1c3e1e] z-10">
+            <div className="absolute bottom-4 right-4 md:hidden w-[26px] h-[26px] rounded-full bg-[#dce6d5] flex items-center justify-center text-[#1c3e1e] z-10 pointer-events-none">
               <ArrowRight className="w-3.5 h-3.5" />
             </div>
           </div>
 
           {/* Card 3: Future Wellness Innovations */}
-          <div className="group bg-[#f4f5ed] border border-[#e5e7df] rounded-[16px] md:rounded-[24px] p-5 md:p-6 lg:p-8 flex flex-row md:flex-col justify-between overflow-hidden relative min-h-[160px] md:min-h-[380px] hover:shadow-[0_16px_36px_rgba(28,62,30,0.05)] transition-all duration-300">
+          <div
+            onClick={() => {
+              navigate("/products");
+              setTimeout(() => {
+                document.getElementById("wellness-backed")?.scrollIntoView({ behavior: "smooth" });
+              }, 100);
+            }}
+            className="group bg-[#f4f5ed] border border-[#e5e7df] rounded-[16px] md:rounded-[24px] p-5 md:p-6 lg:p-8 flex flex-row md:flex-col justify-between overflow-hidden relative min-h-[160px] md:min-h-[380px] hover:shadow-[0_16px_36px_rgba(28,62,30,0.05)] transition-all duration-300 cursor-pointer">
             <div className="w-[55%] md:w-full z-10 relative">
               <div className="w-8 h-8 md:w-12 md:h-12 rounded-full bg-transparent md:bg-white border-0 md:border border-[#e2ead9] flex items-center justify-start md:justify-center text-[#4d8745] md:shadow-sm mb-2 md:mb-6 -ml-1 md:ml-0">
                 <Heart className="w-5 h-5 md:w-5 md:h-5" strokeWidth={1.5} />
@@ -259,7 +277,7 @@ const ProductHero = () => {
               </svg>
             </div>
 
-            <div className="absolute bottom-4 right-4 md:hidden w-[26px] h-[26px] rounded-full bg-[#dce6d5] flex items-center justify-center text-[#1c3e1e] z-10">
+            <div className="absolute bottom-4 right-4 md:hidden w-[26px] h-[26px] rounded-full bg-[#dce6d5] flex items-center justify-center text-[#1c3e1e] z-10 pointer-events-none">
               <ArrowRight className="w-3.5 h-3.5" />
             </div>
           </div>
