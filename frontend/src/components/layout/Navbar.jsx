@@ -1,9 +1,10 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Search, User, ShoppingBag, Menu, X, Handbag } from 'lucide-react';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   const navLinks = [
     { label: 'Home', path: '/' },
@@ -28,15 +29,25 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
-            <Link to="/" className="text-primary-600 font-semibold text-sm border-b-2 border-primary-500 pb-1">Home</Link>
-            <Link to="/our-story" className="text-gray-600 hover:text-primary-700 font-medium text-sm transition-colors">Our Story</Link>
-            <Link to="/products" className="text-gray-600 hover:text-primary-700 font-medium text-sm transition-colors flex items-center gap-1">
-              Products
-              <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
-            </Link>
-            <Link to="/wellness-journal" className="text-gray-600 hover:text-primary-700 font-medium text-sm transition-colors">Wellness Journal</Link>
-            <Link to="/healthy-living" className="text-gray-600 hover:text-primary-700 font-medium text-sm transition-colors">Healthy Living Movement</Link>
-            <Link to="/contact-us" className="text-gray-600 hover:text-primary-700 font-medium text-sm transition-colors">Contact Us</Link>
+            {navLinks.map((link, idx) => {
+              const isActive = location.pathname === link.path;
+              return (
+                <Link 
+                  key={idx} 
+                  to={link.path} 
+                  className={
+                    isActive 
+                      ? "text-primary-600 font-semibold text-sm border-b-2 border-primary-500 pb-1 flex items-center gap-1" 
+                      : "text-gray-600 hover:text-primary-700 font-medium text-sm transition-colors flex items-center gap-1"
+                  }
+                >
+                  {link.label}
+                  {link.label === 'Products' && (
+                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                  )}
+                </Link>
+              );
+            })}
           </nav>
 
           {/* Icons */}
@@ -60,16 +71,23 @@ const Navbar = () => {
         isMobileMenuOpen ? 'max-h-[500px] opacity-100 visible' : 'max-h-0 opacity-0 invisible'
       }`}>
         <nav className="flex flex-col py-4 px-6 space-y-4 shadow-[0_10px_20px_rgba(0,0,0,0.05)]">
-          {navLinks.map((link, idx) => (
-            <Link
-              key={idx}
-              to={link.path}
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="text-gray-700 hover:text-primary-700 font-medium text-sm py-2 border-b border-gray-50 last:border-0 transition-colors"
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinks.map((link, idx) => {
+            const isActive = location.pathname === link.path;
+            return (
+              <Link
+                key={idx}
+                to={link.path}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`text-sm py-2 border-b border-gray-50 last:border-0 transition-colors ${
+                  isActive 
+                    ? 'text-primary-600 font-semibold' 
+                    : 'text-gray-700 hover:text-primary-700 font-medium'
+                }`}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
           {/* Mobile Profile Action */}
           <Link
             to="/profile"

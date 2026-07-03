@@ -8,8 +8,8 @@ const Hero = () => {
       <div className="absolute inset-0 md:inset-0 top-auto bottom-0 md:top-0 h-[50%] md:h-full z-0 flex justify-center md:justify-end">
         <div className="relative w-full md:w-[70%] lg:w-[65%] h-full">
           <img 
-            src="https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" 
-            alt="Family gardening" 
+            src="/Home Page/Image Assets Home/Home Hero image.png" 
+            alt="Greenbae Home Hero" 
             className="w-full h-full object-cover object-center"
           />
           {/* Gradient from top to blend image on mobile */}
