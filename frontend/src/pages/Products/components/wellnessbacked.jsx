@@ -1,5 +1,7 @@
 import React from "react";
 import { ArrowRight, Leaf } from "lucide-react";
+import leftimage from "../../../assets/img-ourproducts/leftsideimg.png";
+import rightimage from "../../../assets/img-ourproducts/2products.png";
 
 /* ─── Inline SVG Icons ─────────────────────────────── */
 
@@ -120,84 +122,6 @@ const ChatIcon = () => (
   </svg>
 );
 
-/* ─── Decorative leaf divider (desktop only) ────────── */
-const LeafDivider = () => (
-  <div className="hidden md:flex items-center justify-center gap-2 my-3">
-    <span className="w-8 h-[1px] bg-[#c8dfc4]" />
-    <svg
-      viewBox="0 0 20 14"
-      fill="none"
-      className="w-5 h-3 text-[#4d8745]"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M1 7 C4 2, 10 1, 19 7 C10 13, 4 12, 1 7Z" />
-      <line x1="1" y1="7" x2="19" y2="7" />
-    </svg>
-    <span className="w-8 h-[1px] bg-[#c8dfc4]" />
-  </div>
-);
-
-/* ─── Left decorative plant SVG (desktop only) ──────── */
-const PlantLeft = () => (
-  <svg
-    viewBox="0 0 160 340"
-    fill="none"
-    className="w-full h-full"
-    stroke="#5a9450"
-    strokeWidth="1.2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <path d="M80 340 C78 300, 72 260, 68 210 C64 160, 70 120, 75 80" stroke="#4a7a40" strokeWidth="2" />
-    <path d="M75 80 C45 55, 20 65, 15 100 C30 115, 60 100, 75 80Z" fill="#6aaa5a" fillOpacity="0.55" stroke="#4a7a40" />
-    <path d="M15 100 L75 80" />
-    <path d="M75 80 C105 50, 135 60, 140 95 C120 108, 90 95, 75 80Z" fill="#7ac060" fillOpacity="0.5" stroke="#4a7a40" />
-    <path d="M140 95 L75 80" />
-    <path d="M68 140 C40 125, 18 138, 15 165 C32 175, 58 165, 68 140Z" fill="#6aaa5a" fillOpacity="0.5" stroke="#4a7a40" />
-    <path d="M15 165 L68 140" />
-    <path d="M70 155 C98 138, 118 150, 120 175 C103 183, 80 172, 70 155Z" fill="#7ac060" fillOpacity="0.45" stroke="#4a7a40" />
-    <path d="M120 175 L70 155" />
-    <path d="M65 210 C38 198, 18 212, 16 238 C34 246, 58 235, 65 210Z" fill="#6aaa5a" fillOpacity="0.48" stroke="#4a7a40" />
-    <path d="M16 238 L65 210" />
-    <path d="M68 225 C95 210, 115 224, 116 248 C100 256, 78 244, 68 225Z" fill="#7ac060" fillOpacity="0.43" stroke="#4a7a40" />
-    <path d="M116 248 L68 225" />
-    <path d="M72 110 C55 100, 48 110, 50 125 C62 128, 70 118, 72 110Z" fill="#8bc870" fillOpacity="0.4" />
-    <path d="M73 115 C90 105, 96 115, 95 130 C83 132, 76 122, 73 115Z" fill="#8bc870" fillOpacity="0.38" />
-  </svg>
-);
-
-/* ─── Right decorative plant SVG (desktop only) ─────── */
-const PlantRight = () => (
-  <svg
-    viewBox="0 0 160 340"
-    fill="none"
-    className="w-full h-full"
-    stroke="#5a9450"
-    strokeWidth="1.2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <path d="M80 340 C82 300, 88 260, 92 210 C96 160, 90 120, 85 80" stroke="#4a7a40" strokeWidth="2" />
-    <path d="M85 80 C115 55, 140 65, 145 100 C130 115, 100 100, 85 80Z" fill="#6aaa5a" fillOpacity="0.55" stroke="#4a7a40" />
-    <path d="M145 100 L85 80" />
-    <path d="M85 80 C55 50, 25 60, 20 95 C40 108, 70 95, 85 80Z" fill="#7ac060" fillOpacity="0.5" stroke="#4a7a40" />
-    <path d="M20 95 L85 80" />
-    <path d="M92 140 C120 125, 142 138, 145 165 C128 175, 102 165, 92 140Z" fill="#6aaa5a" fillOpacity="0.5" stroke="#4a7a40" />
-    <path d="M145 165 L92 140" />
-    <path d="M90 155 C62 138, 42 150, 40 175 C57 183, 80 172, 90 155Z" fill="#7ac060" fillOpacity="0.45" stroke="#4a7a40" />
-    <path d="M40 175 L90 155" />
-    <path d="M95 210 C122 198, 142 212, 144 238 C126 246, 102 235, 95 210Z" fill="#6aaa5a" fillOpacity="0.48" stroke="#4a7a40" />
-    <path d="M144 238 L95 210" />
-    <path d="M92 225 C65 210, 45 224, 44 248 C60 256, 82 244, 92 225Z" fill="#7ac060" fillOpacity="0.43" stroke="#4a7a40" />
-    <path d="M44 248 L92 225" />
-    <path d="M88 110 C105 100, 112 110, 110 125 C98 128, 90 118, 88 110Z" fill="#8bc870" fillOpacity="0.4" />
-    <path d="M87 115 C70 105, 64 115, 65 130 C77 132, 84 122, 87 115Z" fill="#8bc870" fillOpacity="0.38" />
-  </svg>
-);
-
 /* ─── Feature Cards Data ───────────────────────────── */
 const features = [
   {
@@ -235,34 +159,26 @@ const features = [
 /* ─── Main Component ───────────────────────────────── */
 const WellnessBacked = () => {
   return (
-    <section id="wellness-backed" className="relative w-full bg-[#F7F5EE] overflow-hidden py-10 md:py-20 px-5 sm:px-6 lg:px-0">
-
+    <section
+      id="wellness-backed"
+      className="relative w-full bg-[#F7F5EE] py-10 md:py-20 px-5 sm:px-6 lg:px-0"
+    >
       {/* ── Decorative Side Plants (desktop only) ── */}
-      <div className="hidden lg:block absolute left-0 top-0 w-[140px] xl:w-[170px] h-full pointer-events-none z-0 opacity-90">
-        <PlantLeft />
+      <div className="absolute left-0 top-70 z-0 pointer-events-none">
+        <img src={leftimage} className="w-[450px]" alt="" />
       </div>
-      <div className="hidden lg:block absolute right-0 top-0 w-[260px] xl:w-[320px] h-full pointer-events-none z-0 opacity-30">
-        <PlantRight />
+
+      <div className="absolute right-0 top-100 z-0 pointer-events-none">
+        <img src={rightimage} className="w-[400px]" alt="" />
       </div>
 
       {/* ── Content Wrapper ── */}
       <div className="relative z-10 max-w-[375px] mx-auto md:max-w-4xl lg:max-w-[860px] xl:max-w-[920px] text-center">
-
         {/* ── Header ── */}
         <div className="inline-flex items-center gap-2 text-[#4d8745] font-bold tracking-widest text-[10px] md:text-[11px] uppercase mb-3">
-          <svg
-            viewBox="0 0 20 14"
-            fill="none"
-            className="w-4 h-3"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M1 7 C4 2, 10 1, 19 7 C10 13, 4 12, 1 7Z" />
-          </svg>
+          <Leaf className="w-3 h-3 md:w-4 md:h-4" />
           <span>Why Greenbae</span>
-          <span className="w-1 h-1 rounded-full bg-[#4d8745] inline-block" />
+          <Leaf className="w-3 h-3 md:w-4 md:h-4" />
         </div>
 
         {/* ── Heading ── */}
@@ -271,29 +187,19 @@ const WellnessBacked = () => {
           <br className="md:hidden" /> By Nature
         </h2>
 
-        {/* ── Leaf ornament divider ── */}
-        <div className="flex items-center justify-center gap-3 mb-4 md:mb-5">
-          <span className="w-10 h-[1.5px] bg-[#c8dfc4]" />
-          <svg
-            viewBox="0 0 24 16"
-            fill="none"
-            className="w-6 h-4 text-[#4d8745]"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M2 8 C5 2, 12 1, 22 8 C12 15, 5 14, 2 8Z" />
-            <line x1="2" y1="8" x2="22" y2="8" />
-          </svg>
-          <span className="w-10 h-[1.5px] bg-[#c8dfc4]" />
+        <div className="flex items-center justify-center md:justify-center gap-3 my-4 md:my-5 w-full">
+          <span className="w-14 md:w-18 h-[2px] bg-[#d1e6d3]"></span>
+          <Leaf className="w-3 md:w-5 h-3 md:h-5 text-[#4d8745]" />
+          <span className="w-14 md:w-18 h-[2px] bg-[#d1e6d3]"></span>
         </div>
 
         {/* ── Subtitle ── */}
-        <p className="text-[#607060] text-[13px] md:text-[16px] leading-relaxed max-w-[300px] md:max-w-[560px] mx-auto mb-8 md:mb-14">
-          Every Greenbae product is thoughtfully crafted with natural ingredients,
-          scientific understanding and years of learning –{" "}
-          <span className="hidden md:inline">for the wellness of your family.</span>
+        <p className="text-[#607060] text-[13px] md:text-[16px] leading-relaxed max-w-[300px] md:max-w-[560px] mx-auto mb-8 md:mb-2">
+          Every Greenbae product is thoughtfully crafted with natural
+          ingredients, scientific understanding and years of learning –{" "}
+          <span className="hidden md:inline">
+            for the wellness of your family.
+          </span>
           <span className="md:hidden">for the wellness of your family.</span>
         </p>
 
@@ -326,17 +232,28 @@ const WellnessBacked = () => {
           ))}
         </div>
 
-        {/* DESKTOP GRID */}
-        <div className="hidden md:grid grid-cols-3 gap-x-6 gap-y-10 mb-16 text-center px-4">
+        {/* DESKTOP GRID — boxed cards */}
+        <div className="hidden md:grid grid-cols-3 gap-5 mb-16 text-center p-2">
           {features.map(({ Icon, title, desc }, i) => (
-            <div key={i} className="flex flex-col items-center">
+            <div
+              key={i}
+              className="flex flex-col items-center bg-[#F7F5EE] border border-[#e2ead9] rounded-2xl px-6 py-6 shadow-sm"
+            >
+              {/* Icon circle */}
               <div className="w-16 h-16 rounded-full bg-[#eef4eb] border border-[#d6e8d0] flex items-center justify-center mb-4 shadow-sm">
                 <Icon />
               </div>
+              {/* Title */}
               <h3 className="font-serif font-bold text-[#1c3e1e] text-[16px] leading-snug mb-1 max-w-[180px]">
                 {title}
               </h3>
-              <LeafDivider />
+              {/* Leaf ornament divider */}
+             <div className="flex items-center justify-center md:justify-center gap-3 my-4 md:my-5 w-full">
+          <span className="w-14 md:w-12 h-[1px] bg-[#d1e6d3]"></span>
+          <Leaf className="w-3 md:w-4 h-3 md:h-4 text-[#4d8745]" />
+          <span className="w-14 md:w-12 h-[1px] bg-[#d1e6d3]"></span>
+        </div>
+              {/* Description */}
               <p className="text-[#607060] text-[14px] leading-relaxed max-w-[200px] mx-auto">
                 {desc}
               </p>
@@ -352,7 +269,6 @@ const WellnessBacked = () => {
 
         {/* MOBILE CTA: 2 stacked cards */}
         <div className="flex flex-col gap-3 md:hidden">
-
           {/* Explore Healthy Living Hub — dark green */}
           <div className="bg-[#1c3e1e] rounded-2xl flex items-center gap-4 p-5 text-left cursor-pointer group hover:bg-[#2b5229] transition-colors duration-300">
             <div className="shrink-0 w-11 h-11 rounded-full border border-white/30 bg-white/10 flex items-center justify-center text-white">
@@ -388,22 +304,53 @@ const WellnessBacked = () => {
               <ArrowRight className="w-4 h-4" />
             </div>
           </div>
-
         </div>
 
         {/* DESKTOP CTA: 3-column card */}
-        <div className="hidden md:block bg-white border border-[#e2ead9] rounded-2xl overflow-hidden shadow-sm">
+        <div className="max-w-[1600px] mx-auto">
+        <div className="hidden md:block w-full bg-white border border-[#e2ead9] rounded-2xl shadow-sm">
           <div className="grid grid-cols-3 divide-x divide-[#e2ead9]">
-
             {/* Begin Wellness Journey */}
             <div className="flex flex-row items-center gap-4 p-8 text-left">
               <div className="shrink-0 w-20 h-20 opacity-70">
-                <svg viewBox="0 0 80 80" fill="none" className="w-full h-full" stroke="#5a9450" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M40 78 C38 62, 34 48, 30 32 C26 18, 30 10, 38 6" stroke="#4a7a40" strokeWidth="1.5" />
-                  <path d="M38 6 C18 -2, 8 10, 10 26 C22 32, 36 18, 38 6Z" fill="#6aaa5a" fillOpacity="0.5" stroke="#4a7a40" />
-                  <path d="M38 6 C56 -4, 68 8, 66 22 C54 28, 40 16, 38 6Z" fill="#7ac060" fillOpacity="0.45" stroke="#4a7a40" />
-                  <path d="M34 32 C16 28, 6 40, 8 54 C20 58, 32 46, 34 32Z" fill="#6aaa5a" fillOpacity="0.45" stroke="#4a7a40" />
-                  <path d="M35 42 C52 37, 62 48, 60 62 C48 65, 36 54, 35 42Z" fill="#7ac060" fillOpacity="0.4" stroke="#4a7a40" />
+                <svg
+                  viewBox="0 0 80 80"
+                  fill="none"
+                  className="w-full h-full"
+                  stroke="#5a9450"
+                  strokeWidth="1.2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path
+                    d="M40 78 C38 62, 34 48, 30 32 C26 18, 30 10, 38 6"
+                    stroke="#4a7a40"
+                    strokeWidth="1.5"
+                  />
+                  <path
+                    d="M38 6 C18 -2, 8 10, 10 26 C22 32, 36 18, 38 6Z"
+                    fill="#6aaa5a"
+                    fillOpacity="0.5"
+                    stroke="#4a7a40"
+                  />
+                  <path
+                    d="M38 6 C56 -4, 68 8, 66 22 C54 28, 40 16, 38 6Z"
+                    fill="#7ac060"
+                    fillOpacity="0.45"
+                    stroke="#4a7a40"
+                  />
+                  <path
+                    d="M34 32 C16 28, 6 40, 8 54 C20 58, 32 46, 34 32Z"
+                    fill="#6aaa5a"
+                    fillOpacity="0.45"
+                    stroke="#4a7a40"
+                  />
+                  <path
+                    d="M35 42 C52 37, 62 48, 60 62 C48 65, 36 54, 35 42Z"
+                    fill="#7ac060"
+                    fillOpacity="0.4"
+                    stroke="#4a7a40"
+                  />
                 </svg>
               </div>
               <div>
@@ -411,7 +358,8 @@ const WellnessBacked = () => {
                   Begin Your Wellness Journey Today
                 </h4>
                 <p className="text-[#607060] text-[14px] leading-relaxed">
-                  Explore our products and take a step towards a healthier, happier you and your family.
+                  Explore our products and take a step towards a healthier,
+                  happier you and your family.
                 </p>
               </div>
             </div>
@@ -451,10 +399,9 @@ const WellnessBacked = () => {
                 <ArrowRight className="w-4 h-4" />
               </div>
             </div>
-
           </div>
         </div>
-
+        </div>
       </div>
     </section>
   );
