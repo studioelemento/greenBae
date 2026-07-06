@@ -1,6 +1,6 @@
 import React from "react";
 import { Leaf } from "lucide-react";
-import rightimage from "../../../assets/img-ourproducts/rightsideimg.png"
+import rightimage from "../../../assets/img-ourproducts/rightsideimg.png";
 
 const LeafDivider = ({ lineWidth = "w-16 sm:w-24", showLines = true }) => (
   <div className="flex items-center justify-center gap-3 my-4">
@@ -91,7 +91,11 @@ const Ingredients = () => {
 
           <div className="flex justify-center mb-5 lg:mb-1">
             <div className="flex items-center">
-              <LeafDivider />
+              <div className="flex items-center justify-center md:justify-center gap-3 my-4 md:my-5 w-full">
+                <span className="w-14 md:w-18 h-[2px] bg-[#d1e6d3]"></span>
+                <Leaf className="w-3 md:w-5 h-3 md:h-5 text-[#4d8745]" />
+                <span className="w-14 md:w-18 h-[2px] bg-[#d1e6d3]"></span>
+              </div>
             </div>
           </div>
 
@@ -137,9 +141,11 @@ const Ingredients = () => {
                 </h3>
 
                 <div className="flex items-center mb-2.5 lg:mb-1 opacity-70">
-                  <div className="w-4 lg:w-6 h-[1px] bg-[#C2A976]" />
-                  <LeafDivider showLines={false} />
-                  <div className="w-4 lg:w-6 h-[1px] bg-[#C2A976]" />
+                  <div className="flex items-center justify-center md:justify-center gap-3 my-4 md:my-5 w-full">
+                    <span className="w-14 md:w-18 h-[1px] bg-[#d1e6d3]"></span>
+                    <Leaf className="w-3 md:w-4 h-3 md:h-4 text-[#4d8745]" />
+                    <span className="w-14 md:w-18 h-[1px] bg-[#d1e6d3]"></span>
+                  </div>
                 </div>
 
                 <p className="text-[11.5px] lg:text-[13.5px] text-[#4B5563] leading-[1.45] lg:leading-relaxed mb-3.5 lg:mb-6 flex-grow">
@@ -223,7 +229,8 @@ const Ingredients = () => {
                 More From Nature, Coming Soon
               </h3>
               <p className="text-[9.5px] lg:text-[15px] font-medium text-[#4B5563] leading-[1.3] lg:leading-relaxed max-w-xl pr-2 lg:pr-0">
-                We are constantly exploring the best of nature to bring you more <br className="block" />
+                We are constantly exploring the best of nature to bring you more{" "}
+                <br className="block" />
                 pure and effective ingredient powders.
               </p>
             </div>

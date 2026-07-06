@@ -5,24 +5,6 @@ import veggieimage from "../../../assets/img-ourproducts/veggie.png";
 import nutriimage from "../../../assets/img-ourproducts/nutri.png";
 import familyimage from "../../../assets/img-ourproducts/family.png";
 
-const LeafDivider = () => (
-  <div className="flex items-center justify-center gap-3 my-4">
-    <div className="w-16 sm:w-24 h-[1px] bg-[#C5B395] opacity-60"></div>
-    <svg
-      className="w-5 h-5 text-[#4D8745]"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 3.5 1 9.8a7 7 0 0 1-9 8.2Z" />
-      <path d="M9 22v-4" />
-    </svg>
-    <div className="w-16 sm:w-24 h-[1px] bg-[#C5B395] opacity-60"></div>
-  </div>
-);
 
 const SignatureProducts = () => {
   const navigate = useNavigate();
@@ -54,7 +36,11 @@ const SignatureProducts = () => {
           </h2>
 
           <div className="flex justify-center mb-1">
-            <LeafDivider />
+            <div className="flex items-center justify-center md:justify-center gap-3 my-4 md:my-5 w-full">
+                      <span className="w-14 md:w-18 h-[1px] bg-[#d1e6d3]"></span>
+                      <Leaf className="w-3 md:w-5 h-3 md:h-5 text-[#4d8745]" />
+                      <span className="w-14 md:w-18 h-[1px] bg-[#d1e6d3]"></span>
+                    </div>
           </div>
 
           <p className="text-[15px] text-gray-600 max-w-2xl mx-auto font-medium leading-relaxed mb-2">
@@ -401,7 +387,11 @@ const SignatureProducts = () => {
               Made with clean, natural ingredients and years of learning –
               because your family deserves the best.
             </p>
-            <LeafDivider />
+            <div className="flex items-center justify-center md:justify-center gap-3 my-4 md:my-5 w-full">
+                      <span className="w-14 md:w-18 h-[1px] bg-[#d1e6d3]"></span>
+                      <Leaf className="w-3 md:w-4 h-3 md:h-4 text-[#4d8745]" />
+                      <span className="w-14 md:w-18 h-[1px] bg-[#d1e6d3]"></span>
+                    </div>
           </div>
         </div>
       </div>

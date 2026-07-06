@@ -2,6 +2,7 @@ import React from "react";
 import { ArrowRight, Leaf } from "lucide-react";
 import leftimage from "../../../assets/img-ourproducts/leftsideimg.png";
 import rightimage from "../../../assets/img-ourproducts/2products.png";
+import decorleaf from "../../../assets/img-ourproducts/decorativeleaf.png";
 
 /* ─── Inline SVG Icons ─────────────────────────────── */
 
@@ -173,7 +174,7 @@ const WellnessBacked = () => {
       </div>
 
       {/* ── Content Wrapper ── */}
-      <div className="relative z-10 max-w-[375px] mx-auto md:max-w-4xl lg:max-w-[860px] xl:max-w-[920px] text-center">
+      <div className="relative z-10 max-w-[375px] mx-auto md:max-w-5xl lg:max-w-[1200px] xl:max-w-[1400px] text-center">
         {/* ── Header ── */}
         <div className="inline-flex items-center gap-2 text-[#4d8745] font-bold tracking-widest text-[10px] md:text-[11px] uppercase mb-3">
           <Leaf className="w-3 h-3 md:w-4 md:h-4" />
@@ -233,11 +234,11 @@ const WellnessBacked = () => {
         </div>
 
         {/* DESKTOP GRID — boxed cards */}
-        <div className="hidden md:grid grid-cols-3 gap-5 mb-16 text-center p-2">
+        <div className="hidden md:grid grid-cols-3 lg:max-w-[4600px] xl:max-w-[960px] gap-5 mb-6 px-4 text-center p-2 ml-55">
           {features.map(({ Icon, title, desc }, i) => (
             <div
               key={i}
-              className="flex flex-col items-center bg-[#F7F5EE] border border-[#e2ead9] rounded-2xl px-6 py-6 shadow-sm"
+              className="flex flex-col items-center bg-[#F7F5EE] border border-[#e2ead9] rounded-2xl px-6 py-4 shadow-sm"
             >
               {/* Icon circle */}
               <div className="w-16 h-16 rounded-full bg-[#eef4eb] border border-[#d6e8d0] flex items-center justify-center mb-4 shadow-sm">
@@ -248,11 +249,11 @@ const WellnessBacked = () => {
                 {title}
               </h3>
               {/* Leaf ornament divider */}
-             <div className="flex items-center justify-center md:justify-center gap-3 my-4 md:my-5 w-full">
-          <span className="w-14 md:w-12 h-[1px] bg-[#d1e6d3]"></span>
-          <Leaf className="w-3 md:w-4 h-3 md:h-4 text-[#4d8745]" />
-          <span className="w-14 md:w-12 h-[1px] bg-[#d1e6d3]"></span>
-        </div>
+              <div className="flex items-center justify-center md:justify-center gap-3 my-4 md:my-5 w-full">
+                <span className="w-14 md:w-12 h-[1px] bg-[#d1e6d3]"></span>
+                <Leaf className="w-3 md:w-4 h-3 md:h-4 text-[#4d8745]" />
+                <span className="w-14 md:w-12 h-[1px] bg-[#d1e6d3]"></span>
+              </div>
               {/* Description */}
               <p className="text-[#607060] text-[14px] leading-relaxed max-w-[200px] mx-auto">
                 {desc}
@@ -307,100 +308,98 @@ const WellnessBacked = () => {
         </div>
 
         {/* DESKTOP CTA: 3-column card */}
-        <div className="max-w-[1600px] mx-auto">
-        <div className="hidden md:block w-full bg-white border border-[#e2ead9] rounded-2xl shadow-sm">
-          <div className="grid grid-cols-3 divide-x divide-[#e2ead9]">
-            {/* Begin Wellness Journey */}
-            <div className="flex flex-row items-center gap-4 p-8 text-left">
-              <div className="shrink-0 w-20 h-20 opacity-70">
-                <svg
-                  viewBox="0 0 80 80"
-                  fill="none"
-                  className="w-full h-full"
-                  stroke="#5a9450"
-                  strokeWidth="1.2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path
-                    d="M40 78 C38 62, 34 48, 30 32 C26 18, 30 10, 38 6"
-                    stroke="#4a7a40"
-                    strokeWidth="1.5"
-                  />
-                  <path
-                    d="M38 6 C18 -2, 8 10, 10 26 C22 32, 36 18, 38 6Z"
-                    fill="#6aaa5a"
-                    fillOpacity="0.5"
-                    stroke="#4a7a40"
-                  />
-                  <path
-                    d="M38 6 C56 -4, 68 8, 66 22 C54 28, 40 16, 38 6Z"
-                    fill="#7ac060"
-                    fillOpacity="0.45"
-                    stroke="#4a7a40"
-                  />
-                  <path
-                    d="M34 32 C16 28, 6 40, 8 54 C20 58, 32 46, 34 32Z"
-                    fill="#6aaa5a"
-                    fillOpacity="0.45"
-                    stroke="#4a7a40"
-                  />
-                  <path
-                    d="M35 42 C52 37, 62 48, 60 62 C48 65, 36 54, 35 42Z"
-                    fill="#7ac060"
-                    fillOpacity="0.4"
-                    stroke="#4a7a40"
-                  />
-                </svg>
-              </div>
-              <div>
-                <h4 className="font-serif font-bold text-[#1c3e1e] text-[18px] leading-snug mb-2">
-                  Begin Your Wellness Journey Today
-                </h4>
-                <p className="text-[#607060] text-[14px] leading-relaxed">
-                  Explore our products and take a step towards a healthier,
-                  happier you and your family.
-                </p>
-              </div>
-            </div>
+        <div className="max-w-[1700px] mx-auto mt-16">
+          <div className="relative bg-[#FBF8F3] border border-[#ECE5D8] rounded-[28px] shadow-[0_8px_30px_rgba(0,0,0,0.04)] overflow-hidden p-6">
+            <div className="grid grid-cols-[1.7fr_0.75fr_0.75fr] items-center min-h-[200px]">
+              {/* LEFT */}
+              <div className="relative h-full px-8 py-6 flex items-center justify-center border-r border-[#E7E2D8]">
+                {/* Leaf */}
+                <img
+                  src={decorleaf}
+                  alt=""
+                  className="absolute left-0 bottom-0 w-[140px]"
+                />
 
-            {/* Explore Healthy Living Hub — dark green */}
-            <div className="bg-[#1c3e1e] flex flex-col items-center justify-center gap-3 p-8 text-center cursor-pointer group hover:bg-[#2b5229] transition-colors duration-300">
-              <div className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center text-white">
-                <Leaf className="w-5 h-5" strokeWidth={1.5} />
-              </div>
-              <div>
-                <h4 className="font-serif font-bold text-white text-[17px] leading-snug mb-1">
-                  Explore Healthy Living Hub
-                </h4>
-                <p className="text-white/70 text-[13px] leading-relaxed mb-3">
-                  Discover tips, insights and resources for everyday wellness.
-                </p>
-              </div>
-              <div className="w-8 h-8 rounded-full bg-white/15 border border-white/20 flex items-center justify-center text-white group-hover:translate-x-1 transition-transform duration-300">
-                <ArrowRight className="w-4 h-4" />
-              </div>
-            </div>
+                <div className="max-w-[520px] text-center">
+                  <h2 className="font-serif font-bold text-[#1C3E1E] text-[26px] leading-tight">
+                    Begin Your Wellness Journey Today
+                  </h2>
 
-            {/* Contact Us */}
-            <div className="flex flex-col items-center justify-center gap-3 p-8 text-center cursor-pointer group hover:bg-[#f4f7f0] transition-colors duration-300">
-              <div className="w-10 h-10 rounded-full border border-[#c8dfc4] bg-[#eef4eb] flex items-center justify-center text-[#4d8745]">
-                <ChatIcon />
+                  {/* divider */}
+                  <div className="flex items-center justify-center gap-3 my-5">
+                    <div className="w-14 h-px bg-[#C5B68E]" />
+                    <Leaf
+                      className="w-4 h-4 text-[#7E8F63]"
+                      strokeWidth={1.5}
+                    />
+                    <div className="w-14 h-px bg-[#C5B68E]" />
+                  </div>
+
+                  <p className="text-[#5F645D] text-[16px] leading-8">
+                    Explore our products and take a step towards <br />a
+                    healthier, happier you and your family.
+                  </p>
+                </div>
               </div>
-              <div>
-                <h4 className="font-serif font-bold text-[#1c3e1e] text-[17px] leading-snug mb-1">
-                  Contact Us
-                </h4>
-                <p className="text-[#607060] text-[13px] leading-relaxed mb-3">
-                  Have questions? We're here to help.
+
+              {/* MIDDLE */}
+              <div className="bg-[#1C4A25] rounded-[24px] h-[200px] w-full flex flex-col justify-center px-2">
+                {/* Icon + Heading */}
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-12 h-12 rounded-full border border-[#C6C18A] flex items-center justify-center shrink-0 ml-8">
+                    <Leaf className="w-5 h-5 text-[#D7E5C8]" />
+                  </div>
+
+                  <h3 className="font-serif text-white text-[20px] font-semibold leading-tight">
+                    Explore Healthy <br />
+                    Living Hub
+                  </h3>
+                </div>
+
+                {/* Description */}
+                <p className="text-white/80 text-[15px] leading-7">
+                  Discover tips, insights and resources
+                  <br />
+                  for everyday wellness.
                 </p>
+                <div className="flex justify-center mt-2">
+                  <ArrowRight className="w-6 h-6 text-[#D7E5C8]" />
+                </div>
               </div>
-              <div className="w-8 h-8 rounded-full bg-[#eef4eb] border border-[#c8dfc4] flex items-center justify-center text-[#1c3e1e] group-hover:translate-x-1 transition-transform duration-300">
-                <ArrowRight className="w-4 h-4" />
+
+              {/* RIGHT */}
+
+              <div className="px-6">
+                <div className="bg-[#FBF8F3] border border-[#CDB980] rounded-[24px] h-[200px] w-full flex flex-col justify-center px-2 group cursor-pointer">
+                  {/* Icon + Heading */}
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-12 h-12 rounded-full border border-[#CDB980] flex items-center justify-center shrink-0 ml-8">
+                      <ChatIcon />
+                    </div>
+
+                    <h3 className="font-serif text-[#1C3E1E] text-[20px] font-semibold leading-tight">
+                      Contact Us
+                    </h3>
+                  </div>
+
+                  {/* Description */}
+                  <p className="text-[#5E655C] text-[15px] leading-7">
+                    Have questions?
+                    <br />
+                    We're here to help.
+                  </p>
+
+                  {/* Arrow */}
+                  <div className="flex justify-center mt-2">
+                    <ArrowRight className="w-6 h-6 text-[#1C3E1E] group-hover:translate-x-2 transition-transform duration-300" />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+
+          {/* Bottom Green Strip */}
+          <div className="h-5 bg-[#0F441C] rounded-b-xl mt-1"></div>
         </div>
       </div>
     </section>
