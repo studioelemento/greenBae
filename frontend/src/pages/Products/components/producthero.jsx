@@ -1,8 +1,16 @@
 import React from "react";
 import { Leaf, ArrowRight, FlaskConical, Users, Heart } from "lucide-react";
 import hero from "../../../assets/img-ourproducts/prhero.png";
+import ingredient from "../../../assets/img-ourproducts/powders.png";
+import signaturepr from "../../../assets/img-ourproducts/2products.png";
+import leaf from "../../../assets/img-ourproducts/leaf.png";
+import { useNavigate } from "react-router-dom";
+import SignatureProducts from "./signatureproducts";
+
 
 const ProductHero = () => {
+  const navigate = useNavigate();
+
   const MortarIcon = () => (
     <svg
       className="w-4 h-4 md:w-5 md:h-5 text-[#4d8745]"
@@ -20,10 +28,10 @@ const ProductHero = () => {
   );
 
   return (
-    <section className="relative w-full bg-[#FAF9F5] py-10 md:py-20 px-4 sm:px-6 lg:px-8 xl:px-16 overflow-hidden">
+    <section className="relative w-full bg-[#FAF9F5] pt-10 md:pt-20 pb-4 md:pb-8 px-4 sm:px-6 lg:px-8 xl:px-16 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         {/* 1. Main Hero Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 lg:gap-12 items-center mb-10 md:mb-16 text-center md:text-left">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 lg:gap-2 items-center mb-4 md:mb-8 text-center md:text-left">
           {/* Left Column: Heading & Text */}
           <div className="lg:col-span-5 flex flex-col items-center max-w-[480px] md:items-start z-10">
             {/* Label */}
@@ -54,18 +62,21 @@ const ProductHero = () => {
             </p>
 
             {/* Explore Button */}
-            <button className="bg-[#1c3e1e] hover:bg-[#2b5229] text-white px-6 md:px-7 py-3 md:py-3.5 rounded-[8px] text-[14px] md:text-[15px] font-bold transition-all duration-300 flex items-center gap-2 shadow-sm border border-[#1c3e1e]">
+            <button
+              onClick={() => navigate("/products")}
+              className="bg-[#1c3e1e] hover:bg-[#2b5229] text-white px-6 md:px-7 py-3 md:py-3.5 rounded-[8px] text-[14px] md:text-[15px] font-bold transition-all duration-300 flex items-center gap-2 shadow-sm border border-[#1c3e1e]"
+            >
               Explore All Products
               <ArrowRight className="w-4 h-4" />
             </button>
           </div>
 
           {/* Right Column: Hero Image */}
-          <div className="lg:col-span-7 relative h-[690px] -mr-49">
+          <div className="lg:col-span-7 relative h-[610px] -mr-50 my-[1px]">
             <img
               src={hero}
               alt="Our Products image"
-              className="absolute inset-0 w-full h-full object-cover object-[80%_center]"
+              className="absolute top-[-80px] inset-0 w-full h-full object-cover object-[80%_center]"
             />
             {/* Left fade */}
             <div className="absolute left-0 top-0 h-full w-8 bg-gradient-to-r from-[#FCF8F2] via-[#FCF8F2]/60 to-transparent"></div>
@@ -73,193 +84,178 @@ const ProductHero = () => {
         </div>
 
         {/* 2. Middle Section Divider */}
-        <div className="flex items-center justify-center gap-2 md:gap-3 my-10 md:my-16">
-          <Leaf className="w-3.5 h-3.5 md:w-4 md:h-4 text-[#61a355] rotate-[-45deg]" />
-          <h3 className="font-serif font-bold text-[#1c3e1e] tracking-[0.1em] md:tracking-[0.15em] text-[11px] sm:text-[13px] md:text-[15px] uppercase text-center">
+        <div className="flex items-center justify-center gap-2 md:gap-3 mt-4 md:mt-8 mb-10 md:mb-16">
+          <Leaf className="w-3.5 h-3.5 md:w-4 md:h-4 text-[#61a355]" />
+          <h3 className="font-serif font-bold text-[#1c3e1e] tracking-[0.1em] md:tracking-[0.15em] text-[18px] sm:text-[20px] md:text-[18px] uppercase text-center">
             EXPLORE OUR PRODUCT FAMILIES
           </h3>
-          <Leaf className="w-3.5 h-3.5 md:w-4 md:h-4 text-[#61a355] rotate-[45deg]" />
+          <Leaf className="w-3.5 h-3.5 md:w-4 md:h-4 text-[#61a355]" />
         </div>
 
         {/* 3. Three-Column Card Grid (Product Families) */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 lg:gap-8 mb-12 md:mb-16">
-          {/* Card 1: Signature Wellness Solutions */}
-          <div className="group bg-[#f4f5ed] border border-[#e5e7df] rounded-[16px] md:rounded-[24px] p-5 md:p-6 lg:p-8 flex flex-row md:flex-col justify-between overflow-hidden relative min-h-[160px] md:min-h-[380px] hover:shadow-[0_16px_36px_rgba(28,62,30,0.05)] transition-all duration-300">
-            {/* Left/Top Content */}
-            <div className="w-[55%] md:w-full z-10 relative">
-              {/* Icon Container */}
-              <div className="w-8 h-8 md:w-12 md:h-12 rounded-full bg-transparent md:bg-white border-0 md:border border-[#e2ead9] flex items-center justify-start md:justify-center text-[#4d8745] md:shadow-sm mb-2 md:mb-6 -ml-1 md:ml-0">
-                <Leaf className="w-5 h-5 md:w-5 md:h-5" strokeWidth={1.5} />
+        <div className="max-w-screen-2xl mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 w-full px-0 mb-8">
+            {/* Card 1: Signature Wellness Solutions */}
+            <div
+              onClick={() => {
+                navigate("/products");
+                setTimeout(() => {
+                  document
+                    .getElementById("signature-products")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                }, 100);
+              }}
+              className="group w-full h-full bg-[#f4f5ed] border border-[#e5e7df] rounded-[16px] md:rounded-[24px] p-4 md:p-6 lg:p-8 flex flex-row md:flex-col justify-between overflow-hidden relative min-h-[160px] md:min-h-[380px] hover:shadow-[0_16px_36px_rgba(28,62,30,0.05)] transition-all duration-300 cursor-pointer "
+            >
+              {/* Left/Top Content */}
+              <div className="w-[55%] md:w-full z-10 relative">
+                {/* Icon Container */}
+                <div className="w-8 h-8 md:w-12 md:h-12 rounded-full bg-transparent md:bg-white border-0 md:border border-[#e2ead9] flex items-center justify-start md:justify-center text-[#4d8745] md:shadow-sm mb-2 md:mb-6 -ml-1 md:ml-0">
+                  <Leaf className="w-5 h-5 md:w-5 md:h-5" strokeWidth={1.5} />
+                </div>
+
+                {/* Title */}
+                <h4 className="font-serif font-bold text-[#1c3e1e] text-[15px] md:text-xl lg:text-[22px] leading-[1.2] mb-1.5 md:mb-3">
+                  Signature Wellness
+                  <br className="hidden md:block" /> Solutions
+                </h4>
+
+                {/* Description */}
+                <p className="text-[#556858] text-[11px] md:text-[14px] leading-[1.4] md:leading-relaxed max-w-[210px] mb-2 md:mb-6 pr-2 md:pr-0">
+                  Our thoughtfully crafted blends deigned to support your
+                  everyday nutrition and well-being.
+                </p>
               </div>
 
-              {/* Title */}
-              <h4 className="font-serif font-bold text-[#1c3e1e] text-[15px] md:text-xl lg:text-[22px] leading-[1.2] mb-1.5 md:mb-3">
-                Signature Wellness
-                <br className="hidden md:block" /> Solutions
-              </h4>
-
-              {/* Description */}
-              <p className="text-[#556858] text-[11px] md:text-[14px] leading-[1.4] md:leading-relaxed max-w-[210px] mb-2 md:mb-6 pr-2 md:pr-0">
-                Our thoughtfully crafted blends deigned to support your everyday
-                nutrition and well-being.
-              </p>
-            </div>
-
-            {/* Desktop Link (Hidden on Mobile) */}
-            <div className="hidden md:flex justify-between items-end mt-4 z-10">
-              <div className="flex items-center gap-2 group-hover:translate-x-1 transition-transform cursor-pointer pb-2">
-                <span className="text-[13px] font-bold text-[#1c3e1e]">
-                  View Products
-                </span>
-                <div className="w-7 h-7 rounded-full bg-[#dce6d5] flex items-center justify-center text-[#1c3e1e]">
-                  <ArrowRight className="w-3.5 h-3.5" />
+              {/* Desktop Link (Hidden on Mobile) */}
+              <div className="hidden md:flex justify-between items-end mt-4 z-10">
+                <div className="flex items-center gap-2 group-hover:translate-x-1 transition-transform cursor-pointer pb-2">
+                  <span className="text-[13px] font-bold text-[#1c3e1e]">
+                    View Products
+                  </span>
+                  <div className="w-7 h-7 rounded-full bg-[#dce6d5] flex items-center justify-center text-[#1c3e1e]">
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </div>
                 </div>
               </div>
-            </div>
 
-            {/* Images (Absolute positioned to work on both mobile and desktop) */}
-            <div className="absolute right-12 md:right-0 bottom-[-10px] md:bottom-[-16px] w-[110px] md:w-[130px] h-[95px] md:h-[110px] pointer-events-none z-0">
-              {/* Veggie Vitals */}
-              <img
-                src="/veggie_vitals.png"
-                alt="Veggie Vitals"
-                className="w-[65px] md:w-[85px] absolute bottom-0 left-[-15px] md:left-[-20px] drop-shadow-md transform group-hover:scale-[1.03] transition-transform duration-300"
-              />
-              {/* Nutri Mix */}
-              <img
-                src="/nutri_mix.png"
-                alt="Nutri Mix"
-                className="w-[60px] md:w-[78px] absolute bottom-0 right-0 drop-shadow-md transform group-hover:scale-[1.03] transition-transform duration-300"
-              />
-            </div>
-
-            {/* Mobile Arrow Circle */}
-            <div className="absolute bottom-4 right-4 md:hidden w-[26px] h-[26px] rounded-full bg-[#dce6d5] flex items-center justify-center text-[#1c3e1e] z-10">
-              <ArrowRight className="w-3.5 h-3.5" />
-            </div>
-          </div>
-
-          {/* Card 2: Natural Ingredient Collection */}
-          <div className="group bg-[#f4f5ed] border border-[#e5e7df] rounded-[16px] md:rounded-[24px] p-5 md:p-6 lg:p-8 flex flex-row md:flex-col justify-between overflow-hidden relative min-h-[160px] md:min-h-[380px] hover:shadow-[0_16px_36px_rgba(28,62,30,0.05)] transition-all duration-300">
-            <div className="w-[55%] md:w-full z-10 relative">
-              <div className="w-8 h-8 md:w-12 md:h-12 rounded-full bg-transparent md:bg-white border-0 md:border border-[#e2ead9] flex items-center justify-start md:justify-center text-[#4d8745] md:shadow-sm mb-2 md:mb-6 -ml-1 md:ml-0">
-                <MortarIcon />
+              {/* Images (Absolute positioned to work on both mobile and desktop) */}
+              <div className="absolute right-0 bottom-[-16px] w-[260px] h-[360px] pointer-events-none">
+                <img
+                  src={signaturepr}
+                  alt="no"
+                  className="absolute bottom-8 right-[-56px] w-[170px] h-[280px] md:w-[260px] object-contain drop-shadow-md transition-transform duration-300"
+                />
               </div>
 
-              <h4 className="font-serif font-bold text-[#1c3e1e] text-[15px] md:text-xl lg:text-[22px] leading-[1.2] mb-1.5 md:mb-3">
-                Natural Ingredient
-                <br className="hidden md:block" /> Collection
-              </h4>
-
-              <p className="text-[#556858] text-[11px] md:text-[14px] leading-[1.4] md:leading-relaxed max-w-[210px] mb-2 md:mb-6 pr-2 md:pr-0">
-                Pure, single ingredient powders sourced from nature. Nothing
-                added, nothing taken away.
-              </p>
+              {/* Mobile Arrow Circle - Card 1 */}
+              <div className="absolute bottom-4 right-4 md:hidden w-[26px] h-[26px] rounded-full bg-[#dce6d5] flex items-center justify-center text-[#1c3e1e] z-10 pointer-events-none">
+                <ArrowRight className="w-3.5 h-3.5" />
+              </div>
             </div>
 
-            <div className="hidden md:flex justify-between items-end mt-4 z-10">
-              <div className="flex items-center gap-2 group-hover:translate-x-1 transition-transform cursor-pointer pb-2">
-                <span className="text-[13px] font-bold text-[#1c3e1e]">
-                  Explore Ingredients
-                </span>
-                <div className="w-7 h-7 rounded-full bg-[#dce6d5] flex items-center justify-center text-[#1c3e1e]">
-                  <ArrowRight className="w-3.5 h-3.5" />
+            {/* Card 2: Natural Ingredient Collection */}
+            <div
+              onClick={() => {
+                navigate("/products");
+                setTimeout(() => {
+                  document
+                    .getElementById("ingredients")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                }, 100);
+              }}
+              className="w-full h-full group bg-[#f4f5ed] border border-[#e5e7df] rounded-[16px] md:rounded-[24px] p-5 md:p-6 lg:p-8 flex flex-row md:flex-col justify-between overflow-hidden relative min-h-[160px] md:min-h-[380px] hover:shadow-[0_16px_36px_rgba(28,62,30,0.05)] transition-all duration-300 cursor-pointer"
+            >
+              <div className="w-[55%] md:w-full z-10 relative">
+                <div className="w-8 h-8 md:w-12 md:h-12 rounded-full bg-transparent md:bg-white border-0 md:border border-[#e2ead9] flex items-center justify-start md:justify-center text-[#4d8745] md:shadow-sm mb-2 md:mb-6 -ml-1 md:ml-0">
+                  <MortarIcon />
+                </div>
+
+                <h4 className="font-serif font-bold text-[#1c3e1e] text-[15px] md:text-xl lg:text-[22px] leading-[1.2] mb-1.5 md:mb-3">
+                  Natural Ingredient
+                  <br className="hidden md:block" /> Collection
+                </h4>
+
+                <p className="text-[#556858] text-[11px] md:text-[14px] leading-[1.4] md:leading-relaxed max-w-[210px] mb-2 md:mb-6 pr-2 md:pr-0">
+                  Pure, single ingredient powders sourced from nature. Nothing
+                  added, nothing taken away.
+                </p>
+              </div>
+
+              <div className="hidden md:flex justify-between items-end mt-4 z-10">
+                <div className="flex items-center gap-2 group-hover:translate-x-1 transition-transform cursor-pointer pb-2">
+                  <span className="text-[13px] font-bold text-[#1c3e1e]">
+                    Explore Ingredients
+                  </span>
+                  <div className="w-7 h-7 rounded-full bg-[#dce6d5] flex items-center justify-center text-[#1c3e1e]">
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div className="absolute right-[44px] md:right-[-10px] bottom-[-10px] md:bottom-[-16px] w-[90px] md:w-[125px] h-[75px] md:h-[100px] pointer-events-none z-0">
-              <img
-                src="/single_ingredient.png"
-                alt="Single ingredient powders"
-                className="w-full absolute bottom-0 right-0 drop-shadow-md transform group-hover:scale-[1.03] transition-transform duration-300"
-              />
-            </div>
-
-            <div className="absolute bottom-4 right-4 md:hidden w-[26px] h-[26px] rounded-full bg-[#dce6d5] flex items-center justify-center text-[#1c3e1e] z-10">
-              <ArrowRight className="w-3.5 h-3.5" />
-            </div>
-          </div>
-
-          {/* Card 3: Future Wellness Innovations */}
-          <div className="group bg-[#f4f5ed] border border-[#e5e7df] rounded-[16px] md:rounded-[24px] p-5 md:p-6 lg:p-8 flex flex-row md:flex-col justify-between overflow-hidden relative min-h-[160px] md:min-h-[380px] hover:shadow-[0_16px_36px_rgba(28,62,30,0.05)] transition-all duration-300">
-            <div className="w-[55%] md:w-full z-10 relative">
-              <div className="w-8 h-8 md:w-12 md:h-12 rounded-full bg-transparent md:bg-white border-0 md:border border-[#e2ead9] flex items-center justify-start md:justify-center text-[#4d8745] md:shadow-sm mb-2 md:mb-6 -ml-1 md:ml-0">
-                <Heart className="w-5 h-5 md:w-5 md:h-5" strokeWidth={1.5} />
+              <div className="absolute right-[44px] md:right-[-10px] bottom-[-10px] md:bottom-[-16px] w-[90px] md:w-[160px] h-[75px] md:h-[100px] pointer-events-none z-0">
+                <img
+                  src={ingredient}
+                  alt="Signature products"
+                  className="w-full absolute bottom-20 right-0 drop-shadow-md transform group-hover:scale-[1.03] transition-transform duration-300"
+                />
               </div>
 
-              <h4 className="font-serif font-bold text-[#1c3e1e] text-[15px] md:text-xl lg:text-[22px] leading-[1.2] mb-1.5 md:mb-3">
-                Future Wellness
-                <br className="hidden md:block" /> Innovations
-              </h4>
-
-              <p className="text-[#556858] text-[11px] md:text-[14px] leading-[1.4] md:leading-relaxed max-w-[210px] mb-2 md:mb-6 pr-2 md:pr-0">
-                The next generation of Greenbae wellness solutions, coming soon.
-              </p>
+              <div className="absolute bottom-4 right-4 md:hidden w-[26px] h-[26px] rounded-full bg-[#dce6d5] flex items-center justify-center text-[#1c3e1e] z-10 pointer-events-none">
+                <ArrowRight className="w-3.5 h-3.5" />
+              </div>
             </div>
 
-            <div className="hidden md:flex justify-between items-end mt-4 z-10">
-              <div className="flex items-center gap-2 group-hover:translate-x-1 transition-transform cursor-pointer pb-2">
-                <span className="text-[13px] font-bold text-[#1c3e1e]">
-                  Discover What's Next
-                </span>
-                <div className="w-7 h-7 rounded-full bg-[#dce6d5] flex items-center justify-center text-[#1c3e1e]">
-                  <ArrowRight className="w-3.5 h-3.5" />
+            {/* Card 3: Future Wellness Innovations */}
+            <div
+              onClick={() => {
+                navigate("/products");
+                setTimeout(() => {
+                  document
+                    .getElementById("wellness-backed")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                }, 100);
+              }}
+              className="w-full h-full group bg-[#f4f5ed] border border-[#e5e7df] rounded-[16px] md:rounded-[24px] p-5 md:p-6 lg:p-8 flex flex-row md:flex-col justify-between overflow-hidden relative min-h-[160px] md:min-h-[380px] hover:shadow-[0_16px_36px_rgba(28,62,30,0.05)] transition-all duration-300 cursor-pointer"
+            >
+              <div className="w-[55%] md:w-full z-10 relative">
+                <div className="w-8 h-8 md:w-12 md:h-12 rounded-full bg-transparent md:bg-white border-0 md:border border-[#e2ead9] flex items-center justify-start md:justify-center text-[#4d8745] md:shadow-sm mb-2 md:mb-6 -ml-1 md:ml-0">
+                  <Heart className="w-5 h-5 md:w-5 md:h-5" strokeWidth={1.5} />
                 </div>
+
+                <h4 className="font-serif font-bold text-[#1c3e1e] text-[15px] md:text-xl lg:text-[22px] leading-[1.2] mb-1.5 md:mb-3">
+                  Future Wellness
+                  <br className="hidden md:block" /> Innovations
+                </h4>
+
+                <p className="text-[#556858] text-[11px] md:text-[14px] leading-[1.4] md:leading-relaxed max-w-[210px] mb-2 md:mb-6 pr-2 md:pr-0">
+                  The next generation of Greenbae wellness solutions, coming
+                  soon.
+                </p>
+              </div>
+
+              <div className="hidden md:flex justify-between items-end mt-4 z-10">
+                <div className="flex items-center gap-2 group-hover:translate-x-1 transition-transform cursor-pointer pb-2">
+                  <span className="text-[13px] font-bold text-[#1c3e1e]">
+                    Discover What's Next
+                  </span>
+                  <div className="w-7 h-7 rounded-full bg-[#dce6d5] flex items-center justify-center text-[#1c3e1e]">
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </div>
+                  
+                </div>
+                <div className="absolute right-[44px] md:right-[-30px] bottom-[-10px] md:bottom-[-40px] w-[90px] md:w-[190px] h-[75px] md:h-[100px] pointer-events-none z-0">
+                <img
+                  src={leaf}
+                  alt="Signature products"
+                  className="w-full absolute bottom-20 right-0 drop-shadow-md transform group-hover:scale-[1.03] transition-transform duration-300"
+                />
+              </div>
               </div>
             </div>
+            
 
-            <div className="absolute right-9 md:right-0 bottom-[-5px] md:bottom-[-10px] w-[80px] md:w-[140px] h-[100px] md:h-[170px] pointer-events-none z-0 transform group-hover:scale-[1.03] transition-transform duration-300">
-              <svg
-                className="w-full h-full text-[#4d8745]/30"
-                viewBox="0 0 100 120"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M30 110 C38 85, 48 45, 75 15" />
-                <path
-                  d="M36 85 C20 80, 15 65, 28 60 C35 63, 38 73, 38 78 Z"
-                  fill="#61a355"
-                  fillOpacity="0.04"
-                />
-                <path d="M28 60 L34 71" />
-                <path
-                  d="M44 58 C28 56, 22 41, 35 36 C42 38, 45 48, 46 53 Z"
-                  fill="#61a355"
-                  fillOpacity="0.04"
-                />
-                <path d="M35 36 L41 47" />
-                <path
-                  d="M56 31 C45 28, 40 16, 50 10 C57 13, 58 23, 58 26 Z"
-                  fill="#61a355"
-                  fillOpacity="0.04"
-                />
-                <path d="M50 10 L54 20" />
-                <path
-                  d="M42 77 C55 75, 65 63, 58 50 C50 50, 44 60, 44 66 Z"
-                  fill="#61a355"
-                  fillOpacity="0.04"
-                />
-                <path d="M58 50 L49 61" />
-                <path
-                  d="M52 48 C65 46, 72 33, 64 23 C56 24, 52 36, 52 42 Z"
-                  fill="#61a355"
-                  fillOpacity="0.04"
-                />
-                <path d="M64 23 L56 35" />
-                <path
-                  d="M63 20 C72 16, 74 6, 67 2 C60 4, 62 14, 62 16 Z"
-                  fill="#61a355"
-                  fillOpacity="0.04"
-                />
-                <path d="M67 2 L64 11" />
-              </svg>
-            </div>
-
-            <div className="absolute bottom-4 right-4 md:hidden w-[26px] h-[26px] rounded-full bg-[#dce6d5] flex items-center justify-center text-[#1c3e1e] z-10">
+            <div className="absolute bottom-4 right-4 md:hidden w-[26px] h-[26px] rounded-full bg-[#dce6d5] flex items-center justify-center text-[#1c3e1e] z-10 pointer-events-none">
               <ArrowRight className="w-3.5 h-3.5" />
             </div>
           </div>
@@ -267,12 +263,12 @@ const ProductHero = () => {
 
         {/* 4. Bottom Features Banner */}
         <div className="bg-[#f4f7f0] border border-[#e2ead9] rounded-[12px] md:rounded-[24px] py-4 px-2 md:p-8">
-          <div className="flex flex-row md:grid md:grid-cols-4 justify-between items-center md:gap-8 w-full">
+          <div className="flex flex-row ml-4 md:grid md:grid-cols-4 justify-between items-center md:gap-8 w-full">
             {/* Feature 1: Nature Inspired */}
             <div className="flex flex-col md:flex-row items-center md:items-start gap-1 md:gap-4 w-[24%] md:w-auto text-center md:text-left">
               <div className="shrink-0 w-auto h-auto md:w-10 md:h-10 md:rounded-full md:bg-white md:border md:border-[#e2ead9] flex items-center justify-center text-[#4d8745] md:shadow-sm">
                 <Leaf
-                  className="w-4 h-4 md:w-[18px] md:h-[18px] rotate-[-45deg]"
+                  className="w-4 h-4 md:w-[18px] md:h-[18px]"
                   strokeWidth={1.5}
                 />
               </div>
@@ -282,7 +278,7 @@ const ProductHero = () => {
                   <br className="md:hidden" /> Inspired
                 </h5>
                 <p className="hidden md:block text-[#556858] text-[13px] leading-relaxed">
-                  Rooted in nature, crafted with care.
+                  Rooted in nature,  <br /> crafted with care.
                 </p>
               </div>
             </div>
@@ -304,13 +300,14 @@ const ProductHero = () => {
                   <br className="md:hidden" /> Formulation
                 </h5>
                 <p className="hidden md:block text-[#556858] text-[13px] leading-relaxed">
-                  Years of research, learning and real-life testing.
+                  Years of research, learning <br /> and real-life testing.
                 </p>
               </div>
             </div>
 
             {/* Divider */}
             <div className="w-[1px] h-6 bg-[#d1e6d3] md:hidden"></div>
+            
 
             {/* Feature 3: For The Whole Family */}
             <div className="flex flex-col md:flex-row items-center md:items-start gap-1 md:gap-4 w-[24%] md:w-auto text-center md:text-left">
@@ -326,7 +323,7 @@ const ProductHero = () => {
                   <br className="md:hidden" /> Family
                 </h5>
                 <p className="hidden md:block text-[#556858] text-[13px] leading-relaxed">
-                  Solutions that fit every stage of your family's journey.
+                  Solutions that fit every stage <br /> of your family's journey.
                 </p>
               </div>
             </div>
@@ -348,7 +345,7 @@ const ProductHero = () => {
                   <br className="md:hidden" /> Real Life.
                 </h5>
                 <p className="hidden md:block text-[#556858] text-[13px] leading-relaxed">
-                  Simple choices for a healthier tomorrow.
+                  Simple choices for a <br /> healthier tomorrow.
                 </p>
               </div>
             </div>
