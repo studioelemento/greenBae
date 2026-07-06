@@ -202,7 +202,7 @@ const SignatureProducts = () => {
               </ul>
 
               <button
-                onClick={() => navigate("/products/single")}
+                onClick={() => navigate("/products/single", { state: { product: "veggie-vitals" } })}
                 className="bg-[#173A22] text-white px-5 py-2.5 rounded-lg text-sm font-medium flex items-center justify-center gap-2 hover:bg-[#112a19] transition-colors w-max"
               >
                 Explore Veggie Vitals <span>&rarr;</span>
@@ -345,7 +345,7 @@ const SignatureProducts = () => {
               </ul>
 
               <button
-                onClick={() => navigate("/products/single")}
+                onClick={() => navigate("/products/single", { state: { product: "nutri-mix" } })}
                 className="bg-[#624028] text-white px-5 py-2.5 rounded-lg text-sm font-medium flex items-center justify-center gap-2 hover:bg-[#4d321f] transition-colors w-max"
               >
                 Explore Nutri Mix <span>&rarr;</span>

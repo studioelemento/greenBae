@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useLocation } from "react-router-dom";
 import { 
   ChevronUp, 
   ChevronDown, 
@@ -68,12 +69,48 @@ const DecorativePlantRight = () => (
 );
 
 const SingleProduct = () => {
-  const images = [
-    "/veggie_vitals.png",
-    "/nutri_mix.png",
-    "/single_ingredient.png",
-    "/family_story.png"
-  ];
+  const location = useLocation();
+  const productId = location.state?.product || "veggie-vitals";
+
+  const productsData = {
+    "veggie-vitals": {
+      name: "Veggie Vitals",
+      shortDesc: "Daily Nutrition Blend",
+      desc: "A powerful blend of 16 vegetables, herbs and spices to help fill everyday nutritional gaps naturally.",
+      benefits: [
+        "100% Natural",
+        "No Added Preservatives",
+        "Supports Overall Wellness",
+        "Natural Energy Support",
+        "For the Whole Family"
+      ],
+      images: [
+        "/veggie_vitals.png",
+        "/single_ingredient.png",
+        "/family_story.png"
+      ]
+    },
+    "nutri-mix": {
+      name: "Nutri Mix",
+      shortDesc: "Fiber-Rich Nutrition",
+      desc: "A delicious blend of fiber-rich ingredients that support digestive wellness and everyday nourishment.",
+      benefits: [
+        "100% Natural",
+        "Rich In Dietary Fiber",
+        "Supports Digestive Wellness",
+        "Sustained Energy Naturally",
+        "Perfect for Everyday Use"
+      ],
+      images: [
+        "/nutri_mix.png",
+        "/single_ingredient.png",
+        "/family_story.png"
+      ]
+    }
+  };
+
+  const product = productsData[productId] || productsData["veggie-vitals"];
+  const images = product.images;
   
   const [activeImage, setActiveImage] = useState(0);
 
@@ -150,25 +187,19 @@ const SingleProduct = () => {
           {/* Right Column: Details & Actions (cols: 5) */}
           <div className="lg:col-span-5 flex flex-col pt-2">
             <h1 className="font-serif text-3xl sm:text-4xl lg:text-[42px] font-bold text-[#1c3e1e] leading-tight mb-2">
-              Product Name
+              {product.name}
             </h1>
             <p className="text-lg font-medium text-[#4d8745] tracking-wide mb-4">
-              Product Short Description
+              {product.shortDesc}
             </p>
             
             <p className="text-[#556858] text-[15px] leading-relaxed mb-6">
-              A carefully formulated blend crafted with quality ingredients to support your everyday wellness and healthy lifestyle.
+              {product.desc}
             </p>
 
             {/* Key Benefits List */}
             <div className="space-y-3.5 mb-8">
-              {[
-                "100% Natural",
-                "No Added Preservatives",
-                "High Quality Ingredients",
-                "Tested For Purity",
-                "Suitable For Daily Use"
-              ].map((benefit, i) => (
+              {product.benefits.map((benefit, i) => (
                 <div key={i} className="flex items-center gap-3">
                   <div className="w-5 h-5 rounded-full bg-[#f4f7f0] border border-[#c8dfc4] flex items-center justify-center text-[#4d8745]">
                     <Check className="w-3.5 h-3.5" strokeWidth={3} />
@@ -207,7 +238,7 @@ const SingleProduct = () => {
             {/* Trust Badges */}
             <div className="grid grid-cols-4 gap-2 pt-6 border-t border-gray-100 text-center">
               <div className="flex flex-col items-center">
-                <FSSAI />
+                <img src="https://tse4.mm.bing.net/th/id/OIP.E9Inhk7HKsIsU8pwfgkfMwAAAA?pid=Api&P=0&h=180" alt="FSSAI Logo" className="w-8 h-8" />
                 <span className="text-[10px] font-bold text-gray-500 mt-2 uppercase tracking-wider">FSSAI Approved</span>
               </div>
               <div className="flex flex-col items-center">
@@ -306,55 +337,40 @@ const SingleProduct = () => {
           
           {/* Step 1 */}
           <div className="flex flex-col items-center text-center relative group">
-            <div className="w-28 h-28 rounded-full bg-white border border-[#e2ead9] p-4 shadow-sm flex items-center justify-center relative mb-4">
+            <div className="w-28 h-28 rounded-[1px] shadow-sm flex items-center justify-center relative mb-4">
               <span className="absolute -top-1 -left-1 w-7 h-7 bg-[#1c3e1e] text-white rounded-full flex items-center justify-center text-xs font-bold shadow-sm">1</span>
               {/* Dynamic Spoon / Serve Icon */}
-              <svg className="w-14 h-14 text-[#4d8745]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <path d="M18 8a6 6 0 00-6-6v6h6z" />
-                <path d="M12 2a6 6 0 00-6 6h6V2z" />
-                <path d="M6 8a6 6 0 006 6V8H6z" />
-                <path d="M12 14v8" />
-              </svg>
+              <img src="https://tse1.mm.bing.net/th/id/OIF.jbVeRizeBqta0DF2Q4dsdw?pid=Api&P=0&h=180" alt="Spoon Icon" className="w-48 h-48 object-contain" />
             </div>
             <p className="text-xs font-medium text-[#2d482e] max-w-[180px]">Take the recommended serving.</p>
           </div>
 
           {/* Step 2 */}
           <div className="flex flex-col items-center text-center relative group">
-            <div className="w-28 h-28 rounded-full bg-white border border-[#e2ead9] p-4 shadow-sm flex items-center justify-center relative mb-4">
+            <div className="w-28 h-28 shadow-sm flex items-center justify-center relative mb-4">
               <span className="absolute -top-1 -left-1 w-7 h-7 bg-[#1c3e1e] text-white rounded-full flex items-center justify-center text-xs font-bold shadow-sm">2</span>
               {/* Glass of Water Icon */}
-              <svg className="w-14 h-14 text-[#4d8745]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <path d="M6 3h12l-2 18H8L6 3z" />
-                <path d="M7 9h10" strokeDasharray="3 2" />
-              </svg>
+              <img src="https://assets.goodhousekeeping.co.uk/main/embedded/25836/glass_water.jpg" alt="Glass of Water Icon" className="w-28 h-28 object-contain" />
             </div>
             <p className="text-xs font-medium text-[#2d482e] max-w-[180px]">Mix with water or your favorite beverage.</p>
           </div>
 
           {/* Step 3 */}
           <div className="flex flex-col items-center text-center relative group">
-            <div className="w-28 h-28 rounded-full bg-white border border-[#e2ead9] p-4 shadow-sm flex items-center justify-center relative mb-4">
+            <div className="w-28 h-28 shadow-sm flex items-center justify-center relative mb-4">
               <span className="absolute -top-1 -left-1 w-7 h-7 bg-[#1c3e1e] text-white rounded-full flex items-center justify-center text-xs font-bold shadow-sm">3</span>
               {/* Spoon Stirring Glass Icon */}
-              <svg className="w-14 h-14 text-[#4d8745]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <path d="M6 3h12l-2 18H8L6 3z" />
-                <path d="M12 2l2 10" />
-                <circle cx="14" cy="12" r="1" />
-              </svg>
+              <img src="https://thumbs.dreamstime.com/b/pouring-matcha-green-tea-golden-milk-latte-beverage-being-prepared-frothy-glass-jug-containing-397725806.jpg" alt="Stirring Icon" className="w-28 h-28 object-contain" />
             </div>
             <p className="text-xs font-medium text-[#2d482e] max-w-[180px]">Stir well until dissolved.</p>
           </div>
 
           {/* Step 4 */}
           <div className="flex flex-col items-center text-center relative group">
-            <div className="w-28 h-28 rounded-full bg-white border border-[#e2ead9] p-4 shadow-sm flex items-center justify-center relative mb-4">
+            <div className="w-28 h-28 shadow-sm flex items-center justify-center relative mb-4">
               <span className="absolute -top-1 -left-1 w-7 h-7 bg-[#1c3e1e] text-white rounded-full flex items-center justify-center text-xs font-bold shadow-sm">4</span>
               {/* Full/Drinking Glass Icon */}
-              <svg className="w-14 h-14 text-[#4d8745]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <path d="M6 3h12l-2 18H8L6 3z" />
-                <path d="M8 12h8v5H8v-5z" fill="currentColor" fillOpacity="0.2" />
-              </svg>
+              <img src="https://wallpapers.com/images/hd/energizing-spinach-juice-png-93-tiujwz8x42jph9lx.jpg" alt="Drinking Glass Icon" className="w-28 h-28 object-contain" />
             </div>
             <p className="text-xs font-medium text-[#2d482e] max-w-[180px]">Enjoy daily for better well-being.</p>
           </div>
