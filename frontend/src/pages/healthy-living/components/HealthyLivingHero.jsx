@@ -92,7 +92,7 @@ const HealthyLivingHero = () => {
                     </div>
                 </div>
                 <div className='bg-white rounded-xl px-10'>
-                    <div className="grid my-4 grid-cols-2 md:grid-cols-4 place-items-center rounded-xl gap-1 md:gap-4 w-full g p-[30px] md:py-[60px] bg-[#F5F4EA] ">
+                    <div className="grid my-4 grid-cols-2 md:grid-cols-4 place-items-center rounded-xl gap-1 md:gap-4 w-full g p-[30px] md:py-[60px] bg-[#eeeeee] ">
                         {info.map((inf, i) => {
                             const dividerClasses = [
                                 '',                                       // 0: top-left     -> no border
@@ -121,7 +121,7 @@ const Infocard = ({ info }) => {
     return (
         <div className="flex w-max px-2 items-center gap-4">
             {" "}
-            <div className="w-[50px] h-[50px]  e p-2 flex justify-center items-center rounded-full">
+            <div className="w-[80px] h-[80px] bg-[#F5F4EA]  e p-5 flex justify-center items-center rounded-full">
                 {info.icon}
             </div>
             <div>
