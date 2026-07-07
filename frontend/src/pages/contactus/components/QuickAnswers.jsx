@@ -121,7 +121,7 @@ const QuickAnswers = () => {
             {/* Left Column: Centered Text Content */}
             <div className="p-8 md:p-12 lg:p-16 flex flex-col justify-center items-center text-center">
               {/* Leaf + Header label */}
-              <div className="flex flex-col items-center gap-1.5 text-[#0B3B24] font-sans font-bold tracking-widest text-s uppercase mb-2">
+              <div className="flex flex-col items-center gap-1.5 text-[#0B3B24] font-bold tracking-widest text-s uppercase mb-2">
                 <Leaf className="w-6 h-5" />
                 <span>Quick Answers</span>
               </div>
@@ -144,7 +144,7 @@ const QuickAnswers = () => {
               </div>
 
               {/* Description Paragraph */}
-              <p className="text-[#5C5852] font-sans text-[14px] sm:text-base leading-relaxed max-w-md lg:px-8">
+              <p className="text-[#5C5852] text-[14px] sm:text-base leading-relaxed max-w-md lg:px-8">
                 Find quick answers to common questions
                 <br className="block sm:hidden" /> about our products,
                 ingredients, orders and more.
@@ -188,7 +188,7 @@ const QuickAnswers = () => {
                     {/* Question & Answer Content */}
                     <div className="flex-1 min-w-0 ">
                       <div className="flex items-center justify-between gap-3 ">
-                        <h3 className="font-serif text-[#0B3B24] text-base sm:text-lg font-bold leading-snug">
+                        <h3 className="text-[#0B3B24] text-base sm:text-lg font-bold leading-snug">
                           {faq.question}
                         </h3>
                         {isMobile && (
@@ -216,7 +216,7 @@ const QuickAnswers = () => {
                             : {}
                         }
                       >
-                        <p className="text-[#5C5852] font-sans text-sm leading-relaxed mt-2.5">
+                        <p className="text-[#5C5852] text-sm leading-relaxed mt-2.5">
                           {faq.answer}
                         </p>
                       </div>
@@ -247,10 +247,10 @@ const QuickAnswers = () => {
                       <SproutIcon />
                     </div>
                     <div>
-                      <h3 className="font-serif text-[#0B3B24] text-lg sm:text-xl font-bold leading-snug">
+                      <h3 className="text-[#0B3B24] text-lg sm:text-xl font-bold leading-snug">
                         Can't find what you're <br /> looking for?
                       </h3>
-                      <p className="text-[#5C5852] font-sans text-sm mt-0.5">
+                      <p className="text-[#5C5852] text-sm mt-0.5">
                         We're here to help you on your healthy <br /> living
                         journey.
                       </p>
@@ -260,7 +260,7 @@ const QuickAnswers = () => {
                   {/* Contact Us Button */}
                   <button className="w-full md:w-auto bg-[#0B3B24] hover:bg-[#072410] text-white px-7 py-3.5 rounded-xl flex items-center justify-center gap-2.5 transition-colors duration-200 cursor-pointer shrink-0">
                     <MessageIcon />
-                    <span className="font-sans text-sm">Contact Us</span>
+                    <span className="text-sm">Contact Us</span>
                   </button>
                 </div>
               </div>
@@ -276,10 +276,10 @@ const QuickAnswers = () => {
                     <SproutIcon />
                   </div>
                   <div>
-                    <h3 className="font-serif text-[#0B3B24] text-lg sm:text-xl font-bold leading-snug">
+                    <h3 className="text-[#0B3B24] text-lg sm:text-xl font-bold leading-snug">
                       Can't find what you're looking for?
                     </h3>
-                    <p className="text-[#5C5852] font-sans text-sm mt-0.5">
+                    <p className="text-[#5C5852] text-sm mt-0.5">
                       We're here to help you on your healthy living journey.
                     </p>
                   </div>
@@ -288,7 +288,7 @@ const QuickAnswers = () => {
                 {/* Contact Us Button */}
                 <button className="w-full md:w-auto bg-[#0B3B24] hover:bg-[#072410] text-white px-7 py-3.5 rounded-xl flex items-center justify-center gap-2.5 transition-colors duration-200 cursor-pointer shrink-0">
                   <MessageIcon />
-                  <span className="font-sans text-sm">Contact Us</span>
+                  <span className="text-sm">Contact Us</span>
                 </button>
               </div>
             </div>

@@ -123,7 +123,7 @@ const SingleProduct = () => {
   };
 
   return (
-    <div className="bg-[#FAF9F5] min-h-screen text-[#1c3e1e] font-sans antialiased pb-28">
+    <div className="bg-[#FAF9F5] min-h-screen text-[#1c3e1e] antialiased pb-28">
       
       {/* ──────────────────────────────────────────────────────── */}
       {/* SECTION 1: PRODUCT HERO & MAIN DETAILS                   */}
@@ -285,7 +285,7 @@ const SingleProduct = () => {
                   <path d="M12 3v18M3 12h18M12 3a9 9 0 019 9c0 4.97-4.03 9-9 9s-9-4.03-9-9a9 9 0 019-9z" />
                 </svg>
               </div>
-              <h3 className="font-serif font-bold text-base mb-2">Clean Ingredients</h3>
+              <h3 className="font-bold text-base mb-2">Clean Ingredients</h3>
               <p className="text-xs text-[#556858] leading-relaxed max-w-[180px]">Carefully selected natural ingredients.</p>
             </div>
 
@@ -296,7 +296,7 @@ const SingleProduct = () => {
                   <path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
                 </svg>
               </div>
-              <h3 className="font-serif font-bold text-base mb-2">Thoughtfully Formulated</h3>
+              <h3 className="font-bold text-base mb-2">Thoughtfully Formulated</h3>
               <p className="text-xs text-[#556858] leading-relaxed max-w-[180px]">Balanced blends for everyday wellness.</p>
             </div>
 
@@ -307,7 +307,7 @@ const SingleProduct = () => {
                   <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 </svg>
               </div>
-              <h3 className="font-serif font-bold text-base mb-2">Quality Assured</h3>
+              <h3 className="font-bold text-base mb-2">Quality Assured</h3>
               <p className="text-xs text-[#556858] leading-relaxed max-w-[180px]">Lab tested for purity and safety.</p>
             </div>
 
@@ -318,7 +318,7 @@ const SingleProduct = () => {
                   <path d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
                 </svg>
               </div>
-              <h3 className="font-serif font-bold text-base mb-2">Made For Everyone</h3>
+              <h3 className="font-bold text-base mb-2">Made For Everyone</h3>
               <p className="text-xs text-[#556858] leading-relaxed max-w-[180px]">Suitable for the whole family.</p>
             </div>
           </div>
@@ -486,7 +486,7 @@ const SingleProduct = () => {
                       <ShieldCheck className="w-4 h-4" />
                     </div>
                     <div>
-                      <h4 className="font-serif font-bold text-sm text-[#1c3e1e]">{item.title}</h4>
+                      <h4 className="font-bold text-sm text-[#1c3e1e]">{item.title}</h4>
                       <p className="text-xs text-[#556858] mt-0.5 leading-relaxed">{item.desc}</p>
                     </div>
                   </div>
@@ -549,7 +549,7 @@ const SingleProduct = () => {
       <div className="fixed bottom-0 inset-x-0 bg-white/95 backdrop-blur-md border-t border-gray-100 py-3 shadow-[0_-8px_30px_rgb(0,0,0,0.04)] z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="hidden sm:block text-left">
-            <h4 className="font-serif font-bold text-[#1c3e1e] text-sm">Choose your preferred purchase option</h4>
+            <h4 className="font-bold text-[#1c3e1e] text-sm">Choose your preferred purchase option</h4>
             <p className="text-[11px] text-gray-500 mt-0.5">Your wellness journey, your way.</p>
           </div>
 

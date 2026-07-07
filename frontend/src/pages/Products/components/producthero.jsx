@@ -28,10 +28,10 @@ const ProductHero = () => {
   );
 
   return (
-    <section className="relative w-full bg-[#FAF9F5] pt-10 md:pt-20 pb-4 md:pb-8 px-4 sm:px-6 lg:px-8 xl:px-16 overflow-hidden">
+    <section className="relative w-full bg-[#FAF9F5] pt-10 md:pt-20 pb-4 md:pb-8 px-4 sm:px-6 lg:px-8 xl:px-16 overflow-hidden ">
       <div className="max-w-7xl mx-auto">
         {/* 1. Main Hero Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 lg:gap-2 items-center mb-4 md:mb-8 text-center md:text-left">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 lg:gap-2 items-center text-center md:text-left">
           {/* Left Column: Heading & Text */}
           <div className="lg:col-span-5 flex flex-col items-center max-w-[480px] md:items-start z-10">
             {/* Label */}
@@ -72,7 +72,7 @@ const ProductHero = () => {
           </div>
 
           {/* Right Column: Hero Image */}
-          <div className="lg:col-span-7 relative h-[610px] -mr-50 my-[1px]">
+          <div className="lg:col-span-7 relative h-[580px] -mr-50 my-[1px]">
             <img
               src={hero}
               alt="Our Products image"
@@ -84,9 +84,9 @@ const ProductHero = () => {
         </div>
 
         {/* 2. Middle Section Divider */}
-        <div className="flex items-center justify-center gap-2 md:gap-3 mt-4 md:mt-8 mb-10 md:mb-16">
+        <div className="flex items-center justify-center gap-2 md:gap-3 mb-10 md:mb-6">
           <Leaf className="w-3.5 h-3.5 md:w-4 md:h-4 text-[#61a355]" />
-          <h3 className="font-serif font-bold text-[#1c3e1e] tracking-[0.1em] md:tracking-[0.15em] text-[18px] sm:text-[20px] md:text-[18px] uppercase text-center">
+          <h3 className="font-bold text-[#1c3e1e] tracking-[0.1em] md:tracking-[0.15em] text-[18px] sm:text-[20px] md:text-[18px] uppercase text-center">
             EXPLORE OUR PRODUCT FAMILIES
           </h3>
           <Leaf className="w-3.5 h-3.5 md:w-4 md:h-4 text-[#61a355]" />
@@ -105,23 +105,23 @@ const ProductHero = () => {
                     ?.scrollIntoView({ behavior: "smooth" });
                 }, 100);
               }}
-              className="group w-full h-full bg-[#f4f5ed] border border-[#e5e7df] rounded-[16px] md:rounded-[24px] p-4 md:p-6 lg:p-8 flex flex-row md:flex-col justify-between overflow-hidden relative min-h-[160px] md:min-h-[380px] hover:shadow-[0_16px_36px_rgba(28,62,30,0.05)] transition-all duration-300 cursor-pointer "
+              className="group w-full h-full bg-[#f4f5ed] border border-[#e5e7df] rounded-[16px] md:rounded-[24px] p-4 md:p-6 lg:p-8 flex flex-row md:flex-col justify-between overflow-hidden relative min-h-[160px] md:min-h-[320px] hover:shadow-[0_16px_36px_rgba(28,62,30,0.05)] transition-all duration-300 cursor-pointer "
             >
               {/* Left/Top Content */}
               <div className="w-[55%] md:w-full z-10 relative">
                 {/* Icon Container */}
-                <div className="w-8 h-8 md:w-12 md:h-12 rounded-full bg-transparent md:bg-white border-0 md:border border-[#e2ead9] flex items-center justify-start md:justify-center text-[#4d8745] md:shadow-sm mb-2 md:mb-6 -ml-1 md:ml-0">
+                <div className="w-8 h-8 md:w-12 md:h-12 rounded-full bg-transparent md:bg-white border-0 md:border border-[#e2ead9] flex items-center justify-start md:justify-center text-[#4d8745] md:shadow-sm mb-2 md:mb-3 -ml-1 md:ml-0">
                   <Leaf className="w-5 h-5 md:w-5 md:h-5" strokeWidth={1.5} />
                 </div>
 
                 {/* Title */}
-                <h4 className="font-serif font-bold text-[#1c3e1e] text-[15px] md:text-xl lg:text-[22px] leading-[1.2] mb-1.5 md:mb-3">
+                <h4 className="font-bold text-[#1c3e1e] text-[15px] md:text-xl lg:text-[22px] leading-[1.2] mb-1.5 md:mb-3">
                   Signature Wellness
                   <br className="hidden md:block" /> Solutions
                 </h4>
 
                 {/* Description */}
-                <p className="text-[#556858] text-[11px] md:text-[14px] leading-[1.4] md:leading-relaxed max-w-[210px] mb-2 md:mb-6 pr-2 md:pr-0">
+                <p className="text-[#556858] text-[11px] md:text-[14px] leading-[1.4] md:leading-relaxed max-w-[210px] mb-2 md:mb-2 pr-2 md:pr-0">
                   Our thoughtfully crafted blends deigned to support your
                   everyday nutrition and well-being.
                 </p>
@@ -164,19 +164,19 @@ const ProductHero = () => {
                     ?.scrollIntoView({ behavior: "smooth" });
                 }, 100);
               }}
-              className="w-full h-full group bg-[#f4f5ed] border border-[#e5e7df] rounded-[16px] md:rounded-[24px] p-5 md:p-6 lg:p-8 flex flex-row md:flex-col justify-between overflow-hidden relative min-h-[160px] md:min-h-[380px] hover:shadow-[0_16px_36px_rgba(28,62,30,0.05)] transition-all duration-300 cursor-pointer"
+              className="w-full h-full group bg-[#f4f5ed] border border-[#e5e7df] rounded-[16px] md:rounded-[24px] p-5 md:p-6 lg:p-8 flex flex-row md:flex-col justify-between overflow-hidden relative min-h-[160px] md:min-h-[320px] hover:shadow-[0_16px_36px_rgba(28,62,30,0.05)] transition-all duration-300 cursor-pointer"
             >
               <div className="w-[55%] md:w-full z-10 relative">
-                <div className="w-8 h-8 md:w-12 md:h-12 rounded-full bg-transparent md:bg-white border-0 md:border border-[#e2ead9] flex items-center justify-start md:justify-center text-[#4d8745] md:shadow-sm mb-2 md:mb-6 -ml-1 md:ml-0">
+                <div className="w-8 h-8 md:w-12 md:h-12 rounded-full bg-transparent md:bg-white border-0 md:border border-[#e2ead9] flex items-center justify-start md:justify-center text-[#4d8745] md:shadow-sm mb-2 md:mb-3 -ml-1 md:ml-0">
                   <MortarIcon />
                 </div>
 
-                <h4 className="font-serif font-bold text-[#1c3e1e] text-[15px] md:text-xl lg:text-[22px] leading-[1.2] mb-1.5 md:mb-3">
+                <h4 className="font-bold text-[#1c3e1e] text-[15px] md:text-xl lg:text-[22px] leading-[1.2] mb-1.5 md:mb-3">
                   Natural Ingredient
                   <br className="hidden md:block" /> Collection
                 </h4>
 
-                <p className="text-[#556858] text-[11px] md:text-[14px] leading-[1.4] md:leading-relaxed max-w-[210px] mb-2 md:mb-6 pr-2 md:pr-0">
+                <p className="text-[#556858] text-[11px] md:text-[14px] leading-[1.4] md:leading-relaxed max-w-[210px] mb-2 md:mb-2 pr-2 md:pr-0">
                   Pure, single ingredient powders sourced from nature. Nothing
                   added, nothing taken away.
                 </p>
@@ -216,19 +216,19 @@ const ProductHero = () => {
                     ?.scrollIntoView({ behavior: "smooth" });
                 }, 100);
               }}
-              className="w-full h-full group bg-[#f4f5ed] border border-[#e5e7df] rounded-[16px] md:rounded-[24px] p-5 md:p-6 lg:p-8 flex flex-row md:flex-col justify-between overflow-hidden relative min-h-[160px] md:min-h-[380px] hover:shadow-[0_16px_36px_rgba(28,62,30,0.05)] transition-all duration-300 cursor-pointer"
+              className="w-full h-full group bg-[#f4f5ed] border border-[#e5e7df] rounded-[16px] md:rounded-[24px] p-5 md:p-6 lg:p-8 flex flex-row md:flex-col justify-between overflow-hidden relative min-h-[160px] md:min-h-[320px] hover:shadow-[0_16px_36px_rgba(28,62,30,0.05)] transition-all duration-300 cursor-pointer"
             >
               <div className="w-[55%] md:w-full z-10 relative">
-                <div className="w-8 h-8 md:w-12 md:h-12 rounded-full bg-transparent md:bg-white border-0 md:border border-[#e2ead9] flex items-center justify-start md:justify-center text-[#4d8745] md:shadow-sm mb-2 md:mb-6 -ml-1 md:ml-0">
+                <div className="w-8 h-8 md:w-12 md:h-12 rounded-full bg-transparent md:bg-white border-0 md:border border-[#e2ead9] flex items-center justify-start md:justify-center text-[#4d8745] md:shadow-sm mb-2 md:mb-3 -ml-1 md:ml-0">
                   <Heart className="w-5 h-5 md:w-5 md:h-5" strokeWidth={1.5} />
                 </div>
 
-                <h4 className="font-serif font-bold text-[#1c3e1e] text-[15px] md:text-xl lg:text-[22px] leading-[1.2] mb-1.5 md:mb-3">
+                <h4 className="font-bold text-[#1c3e1e] text-[15px] md:text-xl lg:text-[22px] leading-[1.2] mb-1.5 md:mb-3">
                   Future Wellness
                   <br className="hidden md:block" /> Innovations
                 </h4>
 
-                <p className="text-[#556858] text-[11px] md:text-[14px] leading-[1.4] md:leading-relaxed max-w-[210px] mb-2 md:mb-6 pr-2 md:pr-0">
+                <p className="text-[#556858] text-[11px] md:text-[14px] leading-[1.4] md:leading-relaxed max-w-[210px] mb-2 md:mb-2 pr-2 md:pr-0">
                   The next generation of Greenbae wellness solutions, coming
                   soon.
                 </p>
@@ -273,7 +273,7 @@ const ProductHero = () => {
                 />
               </div>
               <div className="flex flex-col justify-center mt-1 md:mt-0">
-                <h5 className="font-serif font-bold text-[#1c3e1e] text-[9.5px] md:text-[15px] leading-[1.1] md:leading-tight md:mb-1 whitespace-nowrap">
+                <h5 className="font-bold text-[#1c3e1e] text-[9.5px] md:text-[15px] leading-[1.1] md:leading-tight md:mb-1 whitespace-nowrap">
                   Nature
                   <br className="md:hidden" /> Inspired
                 </h5>
@@ -295,7 +295,7 @@ const ProductHero = () => {
                 />
               </div>
               <div className="flex flex-col justify-center mt-1 md:mt-0">
-                <h5 className="font-serif font-bold text-[#1c3e1e] text-[9.5px] md:text-[15px] leading-[1.1] md:leading-tight md:mb-1 whitespace-nowrap">
+                <h5 className="font-bold text-[#1c3e1e] text-[9.5px] md:text-[15px] leading-[1.1] md:leading-tight md:mb-1 whitespace-nowrap">
                   Thoughtful
                   <br className="md:hidden" /> Formulation
                 </h5>
@@ -318,7 +318,7 @@ const ProductHero = () => {
                 />
               </div>
               <div className="flex flex-col justify-center mt-1 md:mt-0">
-                <h5 className="font-serif font-bold text-[#1c3e1e] text-[9.5px] md:text-[15px] leading-[1.1] md:leading-tight md:mb-1 whitespace-nowrap">
+                <h5 className="font-bold text-[#1c3e1e] text-[9.5px] md:text-[15px] leading-[1.1] md:leading-tight md:mb-1 whitespace-nowrap">
                   For The Whole
                   <br className="md:hidden" /> Family
                 </h5>
@@ -340,7 +340,7 @@ const ProductHero = () => {
                 />
               </div>
               <div className="flex flex-col justify-center mt-1 md:mt-0">
-                <h5 className="font-serif font-bold text-[#1c3e1e] text-[9.5px] md:text-[15px] leading-[1.1] md:leading-tight md:mb-1 whitespace-nowrap">
+                <h5 className="font-bold text-[#1c3e1e] text-[9.5px] md:text-[15px] leading-[1.1] md:leading-tight md:mb-1 whitespace-nowrap">
                   Real Nutrition.
                   <br className="md:hidden" /> Real Life.
                 </h5>

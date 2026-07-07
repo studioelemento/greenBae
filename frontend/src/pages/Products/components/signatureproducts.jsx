@@ -11,7 +11,7 @@ const SignatureProducts = () => {
   return (
     <section
       id="signature-products"
-      className="relative w-full bg-[#F9F6F0] py-20 font-sans text-gray-800 overflow-hidden p-4 md:p-8 lg:p-12"
+      className="relative w-full bg-[#F9F6F0] py-20 text-gray-800 overflow-hidden p-4 md:p-8 lg:p-12"
     >
       {/* 2 decorative leaves Section - do ;later*/}
 
@@ -37,10 +37,10 @@ const SignatureProducts = () => {
 
           <div className="flex justify-center mb-1">
             <div className="flex items-center justify-center md:justify-center gap-3 my-4 md:my-5 w-full">
-                      <span className="w-14 md:w-18 h-[1px] bg-[#d1e6d3]"></span>
-                      <Leaf className="w-3 md:w-5 h-3 md:h-5 text-[#4d8745]" />
-                      <span className="w-14 md:w-18 h-[1px] bg-[#d1e6d3]"></span>
-                    </div>
+              <span className="w-14 md:w-18 h-[1px] bg-[#d1e6d3]"></span>
+              <Leaf className="w-3 md:w-5 h-3 md:h-5 text-[#4d8745]" />
+              <span className="w-14 md:w-18 h-[1px] bg-[#d1e6d3]"></span>
+            </div>
           </div>
 
           <p className="text-[15px] text-gray-600 max-w-2xl mx-auto font-medium leading-relaxed mb-2">
@@ -51,21 +51,21 @@ const SignatureProducts = () => {
         </div>
 
         {/* Product Cards Grid */}
-        <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 mb-8">
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 mb-8 max-w-[1300px] mx-auto ">
           {/* Card 1: Veggie Vitals */}
           <div className="bg-[#F4EFE6] rounded-[28px] overflow-hidden flex flex-col md:flex-row items-stretch shadow-[0_4px_20px_rgba(0,0,0,0.03)]">
             {/* Image container */}
-            <div className="w-full md:w-[46%] relative min-h-[350px]">
+            <div className="w-full md:w-[46%] relative min-h-[220px]">
               <img
                 src={veggieimage}
                 alt="Veggie Vitals Pouch"
-                className="absolute inset-0 w-full h-full object-cover"
+                className="absolute inset-0 w-full h-full object-contain p-4 md:p-6"
               />
             </div>
 
             {/* Content container */}
-            <div className="w-full md:w-[54%] p-8 lg:p-10 flex flex-col justify-center">
-              <div className="mb-4">
+            <div className="w-full md:w-[54%] p-5 md:p-6 flex flex-col justify-center">
+              <div className="mb-2">
                 <svg
                   width="24"
                   height="24"
@@ -81,21 +81,21 @@ const SignatureProducts = () => {
                   />
                 </svg>
               </div>
-              <h3 className="text-[32px] font-serif text-[#173A22] mb-1">
+              <h3 className="text-[32px] text-[#173A22] mb-0">
                 Veggie Vitals
               </h3>
-              <p className="text-[11px] font-semibold tracking-[0.2em] text-gray-600 uppercase mb-3">
+              <p className="text-[11px] font-semibold tracking-[0.2em] text-gray-600 uppercase mb-2">
                 Daily Nutrition Blend
               </p>
 
-              <div className="w-12 h-[2px] bg-[#173A22] mb-4"></div>
+              <div className="w-12 h-[2px] bg-[#173A22] mb-3"></div>
 
-              <p className="text-[14px] text-gray-800 leading-relaxed mb-6 pr-4">
+              <p className="text-[14px] text-gray-800 leading-relaxed mb-4 pr-4">
                 A powerful blend of 16 vegetables, herbs and spices to help fill
                 everyday nutritional gaps naturally.
               </p>
 
-              <ul className="space-y-[14px] mb-8">
+              <ul className="space-y-[8px] mb-5">
                 <li className="flex items-center gap-3">
                   <svg
                     width="18"
@@ -213,17 +213,17 @@ const SignatureProducts = () => {
           {/* Card 2: Nutri Mix */}
           <div className="bg-[#F0E7D8] rounded-[28px] overflow-hidden flex flex-col md:flex-row items-stretch shadow-[0_4px_20px_rgba(0,0,0,0.03)]">
             {/* Image container */}
-            <div className="w-full md:w-[46%] relative min-h-[350px]">
+            <div className="w-full md:w-[46%] relative min-h-[220px]">
               <img
                 src={nutriimage}
                 alt="Nutri Mix Pouch"
-                className="absolute inset-0 w-full h-full object-cover"
+                className="absolute inset-0 w-full h-full object-contain p-4 md:p-6"
               />
             </div>
 
             {/* Content container */}
-            <div className="w-full md:w-[54%] p-8 lg:p-10 flex flex-col justify-center">
-              <div className="mb-4">
+            <div className="w-full md:w-[54%] p-5 md:p-6 flex flex-col justify-center">
+              <div className="mb-2">
                 <svg
                   width="24"
                   height="24"
@@ -239,21 +239,21 @@ const SignatureProducts = () => {
                   />
                 </svg>
               </div>
-              <h3 className="text-[32px] font-serif text-[#624028] mb-1">
+              <h3 className="text-[32px] text-[#624028] mb-0">
                 Nutri Mix
               </h3>
-              <p className="text-[11px] font-semibold tracking-[0.2em] text-gray-600 uppercase mb-3">
+              <p className="text-[11px] font-semibold tracking-[0.2em] text-gray-600 uppercase mb-2">
                 Fiber-Rich Nutrition
               </p>
 
-              <div className="w-12 h-[2px] bg-[#624028] mb-4"></div>
+              <div className="w-12 h-[2px] bg-[#624028] mb-3"></div>
 
-              <p className="text-[14px] text-gray-800 leading-relaxed mb-6 pr-4">
+              <p className="text-[14px] text-gray-800 leading-relaxed mb-4 pr-4">
                 A delicious blend of fiber-rich ingredients that support
                 digestive wellness and everyday nourishment.
               </p>
 
-              <ul className="space-y-[14px] mb-8">
+              <ul className="space-y-[8px] mb-5">
                 <li className="flex items-center gap-3">
                   <svg
                     width="18"
@@ -355,12 +355,12 @@ const SignatureProducts = () => {
         </div>
 
         {/* Bottom Banner Section */}
-        <div className="bg-[#F0EBE1] rounded-[28px] py-2 px-5 md:py-0 md:px-8 flex flex-col lg:flex-row items-center justify-between gap-2 shadow-[0_4px_20px_rgba(0,0,0,0.02)]">
+        <div className="bg-[#F0EBE1] rounded-[24px] py-2 px-5 md:py-0 md:px-8 flex flex-col lg:flex-row items-center justify-between gap-2 shadow-[0_4px_20px_rgba(0,0,0,0.02)]">
           <div className="w-full lg:w-1/3 flex items-center justify-center gap-5">
-            <div className="w-14 h-14 rounded-full border border-[#8C9C90] flex items-center justify-center shrink-0">
+            <div className="w-12 h-12 rounded-full border border-[#8C9C90] flex items-center justify-center shrink-0">
               <Leaf className="w-6 h-6 text-[#0F4D1D]" />
             </div>
-            <p className="text-[20px] font-serif text-[#173A22] leading-[1.35]">
+            <p className="text-[18px] font-serif text-[#173A22] leading-[1.35]">
               Simple nutrition.
               <br />
               Real ingredients.
@@ -373,7 +373,7 @@ const SignatureProducts = () => {
             <img
               src={familyimage}
               alt="Happy Family"
-              className="w-full max-w-full h-[180px] md:h-[220px] object-cover object-top"
+              className="w-full max-w-full h-[120px] md:h-[150px] object-cover object-top"
             />
             {/* Left Fade */}
             <div className="absolute inset-y-0 left-0 w-10 bg-gradient-to-r from-[#F0EBE1] via-[#F0EBE1]/40 to-transparent pointer-events-none"></div>
@@ -387,11 +387,11 @@ const SignatureProducts = () => {
               Made with clean, natural ingredients and years of learning –
               because your family deserves the best.
             </p>
-            <div className="flex items-center justify-center md:justify-center gap-3 my-4 md:my-5 w-full">
-                      <span className="w-14 md:w-18 h-[1px] bg-[#d1e6d3]"></span>
-                      <Leaf className="w-3 md:w-4 h-3 md:h-4 text-[#4d8745]" />
-                      <span className="w-14 md:w-18 h-[1px] bg-[#d1e6d3]"></span>
-                    </div>
+            <div className="flex items-center justify-center md:justify-center gap-3 my-2 md:my-3 w-full">
+              <span className="w-14 md:w-18 h-[1px] bg-[#d1e6d3]"></span>
+              <Leaf className="w-3 md:w-4 h-3 md:h-4 text-[#4d8745]" />
+              <span className="w-14 md:w-18 h-[1px] bg-[#d1e6d3]"></span>
+            </div>
           </div>
         </div>
       </div>

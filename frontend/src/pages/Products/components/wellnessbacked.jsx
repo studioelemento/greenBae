@@ -162,21 +162,21 @@ const WellnessBacked = () => {
   return (
     <section
       id="wellness-backed"
-      className="relative w-full bg-[#F7F5EE] py-10 md:py-20 px-5 sm:px-6 lg:px-0"
+      className="relative w-full bg-[#F7F5EE] pt-2 pb-10 md:pt-8 md:pb-20 px-5 sm:px-6 lg:px-0"
     >
       {/* ── Decorative Side Plants (desktop only) ── */}
-      <div className="absolute left-0 top-70 z-0 pointer-events-none">
+      <div className="absolute left-0 top-20 z-0 pointer-events-none">
         <img src={leftimage} className="w-[450px]" alt="" />
       </div>
 
-      <div className="absolute right-0 top-100 z-0 pointer-events-none">
+      <div className="absolute right-0 top-40 z-0 pointer-events-none">
         <img src={rightimage} className="w-[400px]" alt="" />
       </div>
 
       {/* ── Content Wrapper ── */}
       <div className="relative z-10 max-w-[375px] mx-auto md:max-w-5xl lg:max-w-[1200px] xl:max-w-[1400px] text-center">
         {/* ── Header ── */}
-        <div className="inline-flex items-center gap-2 text-[#4d8745] font-bold tracking-widest text-[10px] md:text-[11px] uppercase mb-3">
+        <div className="inline-flex items-center gap-2 text-[#4d8745] font-bold tracking-widest text-[10px] md:text-[11px] uppercase mb-2">
           <Leaf className="w-3 h-3 md:w-4 md:h-4" />
           <span>Why Greenbae</span>
           <Leaf className="w-3 h-3 md:w-4 md:h-4" />
@@ -222,7 +222,7 @@ const WellnessBacked = () => {
               </div>
               {/* Text: left-aligned */}
               <div className="text-left pt-1">
-                <h3 className="font-serif font-bold text-[#1c3e1e] text-[14px] leading-snug mb-1">
+                <h3 className="font-bold text-[#1c3e1e] text-[14px] leading-snug mb-1">
                   {title}
                 </h3>
                 <p className="text-[#607060] text-[12px] leading-relaxed">
@@ -245,7 +245,7 @@ const WellnessBacked = () => {
                 <Icon />
               </div>
               {/* Title */}
-              <h3 className="font-serif font-bold text-[#1c3e1e] text-[16px] leading-snug mb-1 max-w-[180px]">
+              <h3 className="font-bold text-[#1c3e1e] text-[16px] leading-snug mb-1 max-w-[180px]">
                 {title}
               </h3>
               {/* Leaf ornament divider */}
@@ -276,7 +276,7 @@ const WellnessBacked = () => {
               <Leaf className="w-5 h-5" strokeWidth={1.5} />
             </div>
             <div className="flex-1">
-              <h4 className="font-serif font-bold text-white text-[14px] leading-snug mb-0.5">
+              <h4 className="font-bold text-white text-[14px] leading-snug mb-0.5">
                 Explore Healthy Living Hub
               </h4>
               <p className="text-white/70 text-[12px] leading-relaxed">
@@ -294,7 +294,7 @@ const WellnessBacked = () => {
               <ChatIcon />
             </div>
             <div className="flex-1">
-              <h4 className="font-serif font-bold text-[#1c3e1e] text-[14px] leading-snug mb-0.5">
+              <h4 className="font-bold text-[#1c3e1e] text-[14px] leading-snug mb-0.5">
                 Contact Us
               </h4>
               <p className="text-[#607060] text-[12px] leading-relaxed">
@@ -308,7 +308,7 @@ const WellnessBacked = () => {
         </div>
 
         {/* DESKTOP CTA: 3-column card */}
-        <div className="max-w-[1700px] mx-auto mt-16">
+        <div className="max-w-[1700px] mx-auto mt-2">
           <div className="relative bg-[#FBF8F3] border border-[#ECE5D8] rounded-[28px] shadow-[0_8px_30px_rgba(0,0,0,0.04)] overflow-hidden p-6">
             <div className="grid grid-cols-[1.7fr_0.75fr_0.75fr] items-center min-h-[200px]">
               {/* LEFT */}
@@ -350,7 +350,7 @@ const WellnessBacked = () => {
                     <Leaf className="w-5 h-5 text-[#D7E5C8]" />
                   </div>
 
-                  <h3 className="font-serif text-white text-[20px] font-semibold leading-tight">
+                  <h3 className="text-white text-[20px] font-semibold leading-tight">
                     Explore Healthy <br />
                     Living Hub
                   </h3>
@@ -377,7 +377,7 @@ const WellnessBacked = () => {
                       <ChatIcon />
                     </div>
 
-                    <h3 className="font-serif text-[#1C3E1E] text-[20px] font-semibold leading-tight">
+                    <h3 className="text-[#1C3E1E] text-[20px] font-semibold leading-tight">
                       Contact Us
                     </h3>
                   </div>

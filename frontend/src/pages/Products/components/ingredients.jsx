@@ -59,7 +59,7 @@ const Ingredients = () => {
   return (
     <section
       id="ingredients"
-      className="relative w-full bg-[#FDFBF7] py-14 lg:py-20 font-sans text-gray-800 overflow-hidden"
+      className="relative w-full bg-[#FDFBF7] py-14 lg:py-8 text-gray-800 overflow-hidden"
     >
       {/* Decorative Background Elements */}
 
@@ -83,15 +83,15 @@ const Ingredients = () => {
             <Leaf className="w-4 h-4 text-[#173A22]" />
           </div>
 
-          <h2 className="text-[34px] lg:text-[52px] font-serif text-[#173A22] leading-[1.1] mb-4 lg:mb-1 max-w-[300px] lg:max-w-none">
+          <h2 className="text-[34px] lg:text-[52px] font-serif text-[#173A22] leading-[1.1] mb-2 lg:mb-0 max-w-[300px] lg:max-w-none">
             <span className="block lg:inline">Natural</span>{" "}
             <span className="block lg:inline">Ingredient</span>{" "}
             <span className="block lg:inline">Collection</span>
           </h2>
 
-          <div className="flex justify-center mb-5 lg:mb-1">
+          <div className="flex justify-center mb-3 lg:mb-0">
             <div className="flex items-center">
-              <div className="flex items-center justify-center md:justify-center gap-3 my-4 md:my-5 w-full">
+              <div className="flex items-center justify-center md:justify-center gap-3 my-2 md:my-3 w-full">
                 <span className="w-14 md:w-18 h-[2px] bg-[#d1e6d3]"></span>
                 <Leaf className="w-3 md:w-5 h-3 md:h-5 text-[#4d8745]" />
                 <span className="w-14 md:w-18 h-[2px] bg-[#d1e6d3]"></span>
@@ -116,7 +116,7 @@ const Ingredients = () => {
               className="bg-[#F8F5EE] lg:bg-[#F5F1E7] rounded-[16px] lg:rounded-[24px] overflow-hidden flex flex-row lg:flex-col group hover:shadow-md transition-shadow duration-300 relative border border-gray-100/50 lg:border-none"
             >
               {/* Image Section */}
-              <div className="w-[130px] lg:w-full shrink-0 relative lg:pt-[100%] h-auto">
+              <div className="w-[130px] lg:w-full shrink-0 relative lg:pt-[75%] h-auto">
                 <img
                   src={product.img}
                   alt={product.title}
@@ -136,19 +136,19 @@ const Ingredients = () => {
 
               {/* Content Section */}
               <div className="p-4 pl-6 lg:p-6 flex flex-col flex-grow justify-center bg-transparent relative z-0">
-                <h3 className="text-[17px] lg:text-[22px] font-serif text-[#173A22] mb-1.5 lg:mb-1 leading-tight pr-2 lg:pr-0">
+                <h3 className="text-[17px] lg:text-[22px] text-[#173A22] mb-1 lg:mb-0.5 leading-tight pr-2 lg:pr-0">
                   {product.title}
                 </h3>
 
-                <div className="flex items-center mb-2.5 lg:mb-1 opacity-70">
-                  <div className="flex items-center justify-center md:justify-center gap-3 my-4 md:my-5 w-full">
+                <div className="flex items-center mb-1.5 lg:mb-0.5 opacity-70">
+                  <div className="flex items-center justify-center md:justify-center gap-3 my-2 md:my-2 w-full">
                     <span className="w-14 md:w-18 h-[1px] bg-[#d1e6d3]"></span>
                     <Leaf className="w-3 md:w-4 h-3 md:h-4 text-[#4d8745]" />
                     <span className="w-14 md:w-18 h-[1px] bg-[#d1e6d3]"></span>
                   </div>
                 </div>
 
-                <p className="text-[11.5px] lg:text-[13.5px] text-[#4B5563] leading-[1.45] lg:leading-relaxed mb-3.5 lg:mb-6 flex-grow">
+                <p className="text-[11.5px] lg:text-[13.5px] text-[#4B5563] leading-[1.45] lg:leading-relaxed mb-3.5 lg:mb-4 flex-grow">
                   {product.desc}
                 </p>
 
@@ -225,7 +225,7 @@ const Ingredients = () => {
             </div>
 
             <div className="text-left">
-              <h3 className="text-[13.5px] lg:text-[28px] font-serif text-[#173A22] mb-0.5 lg:mb-2 leading-tight">
+              <h3 className="text-[13.5px] lg:text-[28px] text-[#173A22] mb-0.5 lg:mb-2 leading-tight">
                 More From Nature, Coming Soon
               </h3>
               <p className="text-[9.5px] lg:text-[15px] font-medium text-[#4B5563] leading-[1.3] lg:leading-relaxed max-w-xl pr-2 lg:pr-0">
