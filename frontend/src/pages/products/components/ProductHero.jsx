@@ -5,7 +5,7 @@ import ingredient from "../../../assets/img-ourproducts/powders.png";
 import signaturepr from "../../../assets/img-ourproducts/2products.png";
 import leaf from "../../../assets/img-ourproducts/leaf.png";
 import { useNavigate } from "react-router-dom";
-import SignatureProducts from "./signatureproducts";
+// import SignatureProducts from "./signatureproducts";
 
 
 const ProductHero = () => {

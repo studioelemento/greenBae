@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Book, BookOpen, ChevronRight } from "lucide-react";
+import { Book, BookOpen, ChevronRight, Sprout } from "lucide-react";
 import { GiOpenBook } from "react-icons/gi";
 
 const ARTICLES = [
@@ -102,7 +102,7 @@ export default function LatestInsights() {
         </svg>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-8 md:mb-12">
           <p className="text-sm md:text-base font-semibold text-[#1c3e1e] tracking-wide mb-2">
@@ -139,10 +139,10 @@ export default function LatestInsights() {
         </div>
 
         {/* Main Content Grid */}
-        <div className="flex flex-col lg:grid lg:grid-cols-3 gap-6 md:gap-8 lg:gap-6">
+        <div className="flex flex-col lg:grid lg:grid-cols-5 gap-6 md:gap-8 lg:gap-6">
           {/* Articles Grid */}
-          <div className="lg:col-span-2">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+          <div className="lg:col-span-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
               {filteredArticles.slice(0, 6).map((article) => (
                 <div
                   key={article.id}
@@ -198,53 +198,55 @@ export default function LatestInsights() {
                 </div>
               ))}
             </div>
+            {/* Footer Message */}
+            <div className="mt-12 md:mt-16 flex items-start gap-4 md:gap-6 bg-white bg-opacity-60 rounded-lg p-6 md:p-8 border border-gray-100">
+              <div className="flex-shrink-0">
+                <div className="flex items-center justify-center w-12 h-12 bg-[#1c3e1e] rounded-full">
+                 <Sprout className="text-white"/>
+                </div>
+              </div>
+              <div>
+                <h4 className="text-lg md:text-xl font-serif text-[#1c3e1e] mb-2">
+                  Wellness is a journey, not a destination.
+                </h4>
+                <p className="text-gray-600 text-sm md:text-base">
+                  One article at a time, small steps lead to lifelong
+                  well-being.
+                </p>
+              </div>
+            </div>
           </div>
 
           {/* Sidebar CTA */}
           <div className="lg:col-span-1">
-            <div className="lg:sticky h-screen lg:top-20 bg-white rounded-lg p-6 shadow-sm border border-gray-100">
+            <div className="lg:sticky h-screen relative lg:top-20 overflow-hidden bg-white rounded-lg p-6 shadow-sm border border-gray-100">
               <div className="text-center mb-6 ">
                 <div className="inline-flex items-center justify-center m-10 p-8 rounded-full  w-30 h-30 bg-[#fffcee]  ">
-                  <BookOpen className="text-white w-full h-full text-[#1c3e1e]" color="#1c3e1e"/>
+                  <BookOpen
+                    className="text-white w-full h-full text-[#1c3e1e]"
+                    color="#1c3e1e"
+                  />
                 </div>
                 <h3 className="text-lg md:text-4xl leading-15 font-serif text-[#1c3e1e] mb-2">
                   Keep Learning Every Day
                 </h3>
               </div>
-
-              <p className="text-gray-600 text-sm mb-6 text-center">
+              <p className="text-gray-600 text-lg px-10  mb-6 text-center">
                 New insights are added regularly. There&apos;s always something
                 new to explore.
               </p>
-
               <button className="w-full bg-[#1c3e1e] hover:bg-[#0f2813] text-white font-semibold py-3 rounded-lg transition-colors flex items-center justify-center gap-2 text-sm">
                 Explore All Articles
                 <ChevronRight className="w-4 h-4" />
               </button>
-            </div>
-          </div>
-        </div>
-
-        {/* Footer Message */}
-        <div className="mt-12 md:mt-16 flex items-start gap-4 md:gap-6 bg-white bg-opacity-60 rounded-lg p-6 md:p-8 border border-gray-100">
-          <div className="flex-shrink-0">
-            <div className="flex items-center justify-center w-12 h-12 bg-[#1c3e1e] rounded-full">
-              <svg
-                className="w-6 h-6 text-white"
-                fill="currentColor"
-                viewBox="0 0 20 20"
+              <div
+                className="absolute left-0 w-full h-120 bg-cover bg-center"
+                style={{ backgroundImage: "url('research_philosophy.png')" }}
               >
-                <path d="M10 3C6.13 3 3 6.13 3 10s3.13 7 7 7 7-3.13 7-7-3.13-7-7-7z" />
-              </svg>
+                <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-transparent to-transparent"></div>
+              </div>{" "}
+              {/* <img className="absolute bottom-0 left-0 w-max" src="public/research_philosophy.png" alt="" /> */}
             </div>
-          </div>
-          <div>
-            <h4 className="text-lg md:text-xl font-serif text-[#1c3e1e] mb-2">
-              Wellness is a journey, not a destination.
-            </h4>
-            <p className="text-gray-600 text-sm md:text-base">
-              One article at a time, small steps lead to lifelong well-being.
-            </p>
           </div>
         </div>
       </div>

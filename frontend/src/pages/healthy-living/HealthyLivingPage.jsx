@@ -3,6 +3,7 @@ import HealthyLivingHero from './components/HealthyLivingHero'
 import ExploreByTopic from './components/ExploreByTopic'
 import EditorsPicks from './components/EditorsPick'
 import LatestInsights from './components/LatestInsights'
+import JoinMovementCTA from './components/JoinMovementCTA'
 
 const HealthyLivingPage = () => {
   return(
@@ -11,6 +12,7 @@ const HealthyLivingPage = () => {
       <ExploreByTopic/>
       <EditorsPicks/>
       <LatestInsights/>
+      <JoinMovementCTA/>
     </div>
   )
 }
