@@ -11,7 +11,7 @@ const MovementCTA = () => {
             {/* Left Column: Centered Text Content */}
             <div className="relative z-20 lg:-mr-12 p-8 py-14 md:p-12 lg:p-16 flex flex-col justify-center items-center text-center">
               {/* Leaf + Header label */}
-              <div className="flex flex-col items-center gap-1.5 text-[#0B3B24] font-sans font-semibold tracking-widest text-[13px] uppercase mb-2">
+              <div className="flex flex-col items-center gap-1.5 text-[#0B3B24] font-semibold tracking-widest text-[13px] uppercase mb-2">
                 <Leaf className="w-6 h-5" />
                 <span>JOIN THE HEALTHY LIVING MOVEMENT</span>
               </div>
@@ -48,7 +48,7 @@ const MovementCTA = () => {
                       <Users size={34} className="text-[#345920]" />
                     </div>
 
-                    <h3 className="font-serif text-[#1c3e1e] text-[22px] font-semibold mb-3">
+                    <h3 className="text-[#1c3e1e] text-[22px] font-semibold mb-3">
                       A Community
                       <br />
                       That Cares
@@ -68,7 +68,7 @@ const MovementCTA = () => {
                       <Sprout size={34} className="text-[#345920]" />
                     </div>
 
-                    <h3 className="font-serif text-[#1c3e1e] text-[22px] font-semibold mb-3 -mr-12">
+                    <h3 className="text-[#1c3e1e] text-[22px] font-semibold mb-3 -mr-12">
                       Inspired by Nature.
                       <br />
                       Driven by Purpose.
@@ -96,7 +96,7 @@ const MovementCTA = () => {
                     </div>
 
                     <div>
-                      <h3 className="font-serif text-[#1C3E1E] text-[18px] font-semibold px-6">
+                      <h3 className="text-[#1C3E1E] text-[18px] font-semibold px-6">
                         A Community That Cares
                       </h3>
 
@@ -116,7 +116,7 @@ const MovementCTA = () => {
                     </div>
 
                     <div>
-                      <h3 className="font-serif text-[#1C3E1E] text-[18px] font-semibold px-7">
+                      <h3 className="text-[#1C3E1E] text-[18px] font-semibold px-7">
                         Inspired by Nature.
                         <br />
                         Driven by Purpose.

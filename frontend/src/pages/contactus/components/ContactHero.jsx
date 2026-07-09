@@ -115,7 +115,7 @@ const ContactHero = () => {
               <div className="text-center mb-4">
                 <div className="flex items-center justify-center gap-3 mb-1">
                   <Leaf className="w-6 h-6 text-[#0F4D1D]" />
-                  <span className="text-[#0F4D1D] font-sans font-bold  text-s uppercase">
+                  <span className="text-[#0F4D1D] font-bold  text-s uppercase">
                     Get In Touch
                   </span>
                 </div>
@@ -123,7 +123,7 @@ const ContactHero = () => {
                   We'd Love To Hear From You
                 </h2>
                 <LeafDivider />
-                <p className="text-[#5C645A] px-8 font-sans text-sm sm:text-base max-w-md mx-auto leading-relaxed mt-2">
+                <p className="text-[#5C645A] px-8 text-sm sm:text-base max-w-md mx-auto leading-relaxed mt-2">
                   Fill out the form below and our team will get back to you as
                   soon as possible.
                 </p>
@@ -207,7 +207,7 @@ const ContactHero = () => {
                     rows={4}
                     className="w-full rounded-xl border border-[#E5DFD3] bg-white pt-4 pb-8 pl-14 pr-5 text-gray-800 placeholder-[#8C8675] focus:outline-none focus:border-[#3C6E37] focus:ring-1 focus:ring-[#3C6E37] resize-none transition duration-200"
                   />
-                  <div className="absolute right-4 bottom-3 text-xs text-[#8C8675] font-sans">
+                  <div className="absolute right-4 bottom-3 text-xs text-[#8C8675]">
                     {formData.message.length} / 1000
                   </div>
                 </div>
@@ -215,7 +215,7 @@ const ContactHero = () => {
                 {/* Send Button */}
                 <button
                   type="submit"
-                  className="w-full h-12 md:h-14 bg-[#0E3E1E] hover:bg-[#072410] text-white font-sans font-semibold rounded-xl flex items-center justify-center gap-2.5 transition duration-300 shadow-sm cursor-pointer"
+                  className="w-full h-12 md:h-14 bg-[#0E3E1E] hover:bg-[#072410] text-white font-semibold rounded-xl flex items-center justify-center gap-2.5 transition duration-300 shadow-sm cursor-pointer"
                 >
                   <Send className="w-4 h-4 transform rotate-0" />
                   <span>Send Message</span>
@@ -236,7 +236,7 @@ const ContactHero = () => {
             {/* MOBILE ONLY: CONTACT INFORMATION (placed below form) */}
             <div className="block lg:hidden mt-8">
               <div className="text-center mb-4">
-                <span className="text-[#0F4D1D] font-sans font-bold text-[18px] uppercase block mb-1">
+                <span className="text-[#0F4D1D] font-bold text-[18px] uppercase block mb-1">
                   Contact Information
                 </span>
                 <LeafDivider />
@@ -251,7 +251,7 @@ const ContactHero = () => {
                       <Building className="w-5 h-5" />
                     </div>
                     <div>
-                      <h4 className="font-sans font-bold text-xs text-[#0F4D1D] uppercase tracking-wider">
+                      <h4 className="font-bold text-xs text-[#0F4D1D] uppercase tracking-wider">
                         Business Name
                       </h4>
                       <p className="text-sm text-[#2E352E] mt-0.5">
@@ -269,7 +269,7 @@ const ContactHero = () => {
                       <Phone className="w-5 h-5" />
                     </div>
                     <div>
-                      <h4 className="font-sans font-bold text-xs text-[#0F4D1D] uppercase tracking-wider">
+                      <h4 className="font-bold text-xs text-[#0F4D1D] uppercase tracking-wider">
                         Phone
                       </h4>
                       <p className="text-sm text-[#2E352E]  mt-0.5">
@@ -287,7 +287,7 @@ const ContactHero = () => {
                       <Mail className="w-5 h-5" />
                     </div>
                     <div>
-                      <h4 className="font-sans font-bold text-xs text-[#0F4D1D] uppercase tracking-wider">
+                      <h4 className="font-bold text-xs text-[#0F4D1D] uppercase tracking-wider">
                         Email
                       </h4>
                       <p className="text-sm text-[#2E352E]  mt-0.5">
@@ -305,7 +305,7 @@ const ContactHero = () => {
                       <Clock className="w-5 h-5" />
                     </div>
                     <div>
-                      <h4 className="font-sans font-bold text-xs text-[#0F4D1D] uppercase tracking-wider">
+                      <h4 className="font-bold text-xs text-[#0F4D1D] uppercase tracking-wider">
                         Business Hours
                       </h4>
                       <p className="text-sm text-[#2E352E] mt-0.5">
@@ -326,7 +326,7 @@ const ContactHero = () => {
                       <MapPin className="w-5 h-5" />
                     </div>
                     <div>
-                      <h4 className="font-sans font-bold text-xs text-[#0F4D1D] uppercase tracking-wider">
+                      <h4 className="font-bold text-xs text-[#0F4D1D] uppercase tracking-wider">
                         Location
                       </h4>
                       <p className="text-sm text-[#2E352E] mt-0.5">
@@ -343,7 +343,7 @@ const ContactHero = () => {
               <div className="block lg:hidden mt-3 bg-[#E2EADF] rounded-2xl p-1 pb-1 pt-[22px] flex items-start gap-4 w-full h-[90px]">
                 <HandsHoldingSprout className="w-8 h-8 text-[#3C6E37] shrink-0 mt-0.5 ml-[1px]" />
                 <div>
-                  <h4 className="font-sans font-bold text-sm text-[#0F4D1D] leading-snug">
+                  <h4 className="font-bold text-sm text-[#0F4D1D] leading-snug">
                     We typically respond within{" "}
                     <span className="font-extrabold">24–48 hours</span>.
                   </h4>
@@ -359,7 +359,7 @@ const ContactHero = () => {
           <div className="hidden lg:flex flex-col gap-6 p-3">
             {/* Contact Info Card */}
             <div className="bg-[#F4ECE1] rounded-[24px] p-8 flex flex-col">
-              <h3 className="text-center font-sans font-bold text-[#0F4D1D] text-lg tracking-[0.05em] uppercase mt-6 mb-[0.05em]">
+              <h3 className="text-center font-bold text-[#0F4D1D] text-lg tracking-[0.05em] uppercase mt-6 mb-[0.05em]">
                 Contact Information
               </h3>
               <LeafDivider />
@@ -371,7 +371,7 @@ const ContactHero = () => {
                     <Building className="w-6 h-6" />
                   </div>
                   <div className="pt-1">
-                    <h4 className="font-sans font-bold text-sm text-[#0F4D1D] tracking-wide uppercase">
+                    <h4 className="font-bold text-sm text-[#0F4D1D] tracking-wide uppercase">
                       Business Name
                     </h4>
                     <p className="text-base text-[#2E352E]  mt-1">
@@ -388,7 +388,7 @@ const ContactHero = () => {
                     <Phone className="w-6 h-6" />
                   </div>
                   <div className="pt-1">
-                    <h4 className="font-sans font-bold text-sm text-[#0F4D1D] tracking-wide uppercase">
+                    <h4 className="font-bold text-sm text-[#0F4D1D] tracking-wide uppercase">
                       Phone
                     </h4>
                     <p className="text-base text-[#2E352E] mt-1">
@@ -405,7 +405,7 @@ const ContactHero = () => {
                     <Mail className="w-6 h-6" />
                   </div>
                   <div className="pt-1">
-                    <h4 className="font-sans font-bold text-sm text-[#0F4D1D] tracking-wide uppercase">
+                    <h4 className="font-bold text-sm text-[#0F4D1D] tracking-wide uppercase">
                       Email
                     </h4>
                     <p className="text-base text-[#2E352E] mt-1">
@@ -422,7 +422,7 @@ const ContactHero = () => {
                     <Clock className="w-6 h-6" />
                   </div>
                   <div className="pt-1">
-                    <h4 className="font-sans font-bold text-sm text-[#0F4D1D] tracking-wide uppercase">
+                    <h4 className="font-bold text-sm text-[#0F4D1D] tracking-wide uppercase">
                       Business Hours
                     </h4>
                     <p className="text-base text-[#2E352E] mt-1">
@@ -442,7 +442,7 @@ const ContactHero = () => {
                     <MapPin className="w-6 h-6" />
                   </div>
                   <div className="pt-1">
-                    <h4 className="font-sans font-bold text-sm text-[#0F4D1D] tracking-wide uppercase">
+                    <h4 className="font-bold text-sm text-[#0F4D1D] tracking-wide uppercase">
                       Location
                     </h4>
                     <p className="text-base text-[#2E352E] mt-1">
@@ -460,7 +460,7 @@ const ContactHero = () => {
             <div className=" lg:bg-[#E2EADF] rounded-[24px] p-6 flex items-center gap-6">
               <HandsHoldingSprout className="w-14 h-14 text-[#3C6E37] shrink-0" />
               <div>
-                <h4 className="font-sans font-bold text-lg text-[#0F4D1D] leading-snug">
+                <h4 className="font-bold text-lg text-[#0F4D1D] leading-snug">
                   We typically respond <br /> within{" "}
                   <span className="font-extrabold">24–48 hours</span>.
                 </h4>

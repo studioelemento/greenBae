@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
-import { 
-  ChevronUp, 
-  ChevronDown, 
-  Search, 
-  ShoppingBag, 
-  Check, 
+import {
+  ChevronUp,
+  ChevronDown,
+  Search,
+  ShoppingBag,
+  Check,
   ArrowRight,
   ShieldCheck,
   Star,
@@ -14,13 +14,17 @@ import {
   GraduationCap,
   Home as HomeIcon,
   HeartPulse,
-  Heart
+  Heart,
+  Leaf,
+  Shield,
+  Droplet,
+  FlaskConical
 } from "lucide-react";
 
 // Inline Icons for badges and features to match the premium design exactly
 const FSSAI = () => (
   <svg className="w-8 h-8 text-[#4d8745]" viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="1.5">
-    <circle cx="20" cy="20" r="16" strokeDasharray="3 3"/>
+    <circle cx="20" cy="20" r="16" strokeDasharray="3 3" />
     <path d="M12 20h16M20 12v16" />
   </svg>
 );
@@ -50,21 +54,21 @@ const GMP = () => (
 // Watercolor Plant Decoration
 const DecorativePlantLeft = () => (
   <svg viewBox="0 0 120 280" fill="none" className="w-full h-full text-[#4d8745]/20" stroke="currentColor" strokeWidth="1.2">
-    <path d="M10 280 C20 220, 25 160, 45 100" strokeWidth="2"/>
-    <path d="M45 100 C20 80, 5 90, 2 120 C15 130, 35 115, 45 100Z" fill="currentColor" fillOpacity="0.1"/>
-    <path d="M45 100 C65 70, 85 80, 90 110 C75 120, 55 110, 45 100Z" fill="currentColor" fillOpacity="0.15"/>
-    <path d="M35 160 C15 145, 2 155, 0 180 C12 190, 30 180, 35 160Z" fill="currentColor" fillOpacity="0.1"/>
-    <path d="M38 175 C58 160, 72 170, 74 190 C60 200, 45 190, 38 175Z" fill="currentColor" fillOpacity="0.12"/>
+    <path d="M10 280 C20 220, 25 160, 45 100" strokeWidth="2" />
+    <path d="M45 100 C20 80, 5 90, 2 120 C15 130, 35 115, 45 100Z" fill="currentColor" fillOpacity="0.1" />
+    <path d="M45 100 C65 70, 85 80, 90 110 C75 120, 55 110, 45 100Z" fill="currentColor" fillOpacity="0.15" />
+    <path d="M35 160 C15 145, 2 155, 0 180 C12 190, 30 180, 35 160Z" fill="currentColor" fillOpacity="0.1" />
+    <path d="M38 175 C58 160, 72 170, 74 190 C60 200, 45 190, 38 175Z" fill="currentColor" fillOpacity="0.12" />
   </svg>
 );
 
 const DecorativePlantRight = () => (
   <svg viewBox="0 0 120 280" fill="none" className="w-full h-full text-[#4d8745]/20" stroke="currentColor" strokeWidth="1.2">
-    <path d="M110 280 C100 220, 95 160, 75 100" strokeWidth="2"/>
-    <path d="M75 100 C100 80, 115 90, 118 120 C105 130, 85 115, 75 100Z" fill="currentColor" fillOpacity="0.1"/>
-    <path d="M75 100 C55 70, 35 80, 30 110 C45 120, 65 110, 75 100Z" fill="currentColor" fillOpacity="0.15"/>
-    <path d="M85 160 C105 145, 118 155, 120 180 C108 190, 90 180, 85 160Z" fill="currentColor" fillOpacity="0.1"/>
-    <path d="M82 175 C62 160, 48 170, 46 190 C60 200, 75 190, 82 175Z" fill="currentColor" fillOpacity="0.12"/>
+    <path d="M110 280 C100 220, 95 160, 75 100" strokeWidth="2" />
+    <path d="M75 100 C100 80, 115 90, 118 120 C105 130, 85 115, 75 100Z" fill="currentColor" fillOpacity="0.1" />
+    <path d="M75 100 C55 70, 35 80, 30 110 C45 120, 65 110, 75 100Z" fill="currentColor" fillOpacity="0.15" />
+    <path d="M85 160 C105 145, 118 155, 120 180 C108 190, 90 180, 85 160Z" fill="currentColor" fillOpacity="0.1" />
+    <path d="M82 175 C62 160, 48 170, 46 190 C60 200, 75 190, 82 175Z" fill="currentColor" fillOpacity="0.12" />
   </svg>
 );
 
@@ -111,8 +115,15 @@ const SingleProduct = () => {
 
   const product = productsData[productId] || productsData["veggie-vitals"];
   const images = product.images;
-  
+
   const [activeImage, setActiveImage] = useState(0);
+  const [openSection, setOpenSection] = useState(null);
+
+  const toggleSection = (section) => {
+    if (window.innerWidth < 1024) {
+      setOpenSection(openSection === section ? null : section);
+    }
+  };
 
   const nextImage = () => {
     setActiveImage((prev) => (prev + 1) % images.length);
@@ -123,116 +134,131 @@ const SingleProduct = () => {
   };
 
   return (
-    <div className="bg-[#FAF9F5] min-h-screen text-[#1c3e1e] font-sans antialiased pb-28">
-      
+    <div className="bg-[#FAF9F5] min-h-screen text-[#1c3e1e] antialiased pb-0">
+
       {/* ──────────────────────────────────────────────────────── */}
       {/* SECTION 1: PRODUCT HERO & MAIN DETAILS                   */}
       {/* ──────────────────────────────────────────────────────── */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-16">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-          
-          {/* Left Column: Image Gallery (cols: 5) */}
-          <div className="lg:col-span-7 flex flex-col md:flex-row gap-4 items-stretch">
-            {/* Gallery Thumbnails */}
-            <div className="flex md:flex-col items-center justify-between gap-3 md:w-20 order-2 md:order-1">
-              <button 
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 md:pt-10 pb-8 md:pb-16">
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-12 items-start">
+
+          {/* Left Column: Image Gallery */}
+          <div className="lg:col-span-6 flex flex-col md:flex-row gap-4 items-stretch lg:max-w-[550px]">
+            {/* Gallery Thumbnails - Hidden on Mobile */}
+            <div className="hidden md:flex flex-col items-center justify-center gap-4 w-[104px] order-1">
+              <button
                 onClick={prevImage}
-                className="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center bg-white hover:bg-gray-50 transition-colors"
+                className="text-[#1c3e1e] hover:text-[#4d8745] transition-colors flex items-center justify-center"
               >
-                <ChevronUp className="w-4 h-4 text-gray-600 hidden md:block" />
-                <span className="md:hidden">&larr;</span>
+                <ChevronUp className="w-6 h-6 stroke-[2.5]" />
               </button>
-              
-              <div className="flex md:flex-col gap-2 overflow-x-auto py-1">
+
+              <div className="flex flex-col gap-4 overflow-y-auto py-1">
                 {images.map((img, idx) => (
                   <button
                     key={idx}
                     onClick={() => setActiveImage(idx)}
-                    className={`w-14 h-14 md:w-16 md:h-16 rounded-lg border-2 overflow-hidden bg-white p-1 transition-all ${
-                      activeImage === idx ? "border-[#4d8745]" : "border-gray-200"
-                    }`}
+                    className={`w-[104px] h-[104px] rounded-xl border-2 overflow-hidden bg-white p-1 transition-all ${activeImage === idx ? "border-[#4d8745]" : "border-gray-200 hover:border-gray-300"
+                      }`}
                   >
-                    <img src={img} alt={`Thumbnail ${idx}`} className="w-full h-full object-contain" />
+                    <img src={img} alt={`Thumbnail ${idx}`} className="w-full h-full object-cover rounded-lg" />
                   </button>
                 ))}
               </div>
 
-              <button 
+              <button
                 onClick={nextImage}
-                className="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center bg-white hover:bg-gray-50 transition-colors"
+                className="text-[#1c3e1e] hover:text-[#4d8745] transition-colors flex items-center justify-center"
               >
-                <ChevronDown className="w-4 h-4 text-gray-600 hidden md:block" />
-                <span className="md:hidden">&rarr;</span>
+                <ChevronDown className="w-6 h-6 stroke-[2.5]" />
               </button>
             </div>
 
             {/* Main Image View */}
-            <div className="flex-1 relative aspect-square rounded-2xl border border-gray-100 bg-[#f4f5f2] p-6 flex items-center justify-center overflow-hidden order-1 md:order-2">
-              <span className="absolute top-4 left-4 bg-[#1c3e1e] text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full z-10">
+            <div className="flex-1 w-full relative aspect-square md:aspect-[4/5] rounded-3xl border border-gray-100 bg-white md:bg-[#f4f5f2] flex flex-col items-center justify-center overflow-hidden order-1 md:order-2 shadow-sm">
+              <span className="absolute top-4 left-4 bg-[#1c3e1e] text-white text-[10px] font-bold uppercase tracking-wide px-3 py-1 rounded-md z-10">
                 Bestseller
               </span>
-              
-              <img 
-                src={images[activeImage]} 
-                alt="Product main view" 
-                className="max-h-[85%] max-w-[85%] object-contain drop-shadow-2xl transition-transform duration-300 hover:scale-105" 
+
+              <img
+                src={images[activeImage]}
+                alt="Product main view"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 hover:scale-105"
               />
 
-              <button className="absolute bottom-4 right-4 w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-gray-700 hover:bg-gray-50 transition-colors">
-                <Search className="w-5 h-5" />
+              <button className="absolute bottom-4 right-4 w-9 h-9 rounded-full bg-white shadow-md flex items-center justify-center text-gray-700 hover:bg-gray-50 transition-colors z-10 border border-gray-100">
+                <Search className="w-4 h-4" />
               </button>
+            </div>
+
+            {/* Mobile Dots */}
+            <div className="flex md:hidden justify-center items-center gap-2 order-2 mt-2 w-full">
+              {images.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setActiveImage(idx)}
+                  className={`rounded-full transition-all ${activeImage === idx ? "w-2 h-2 bg-[#1c3e1e]" : "w-1.5 h-1.5 bg-[#d1e6d3]"
+                    }`}
+                />
+              ))}
             </div>
           </div>
 
-          {/* Right Column: Details & Actions (cols: 5) */}
-          <div className="lg:col-span-5 flex flex-col pt-2">
-            <h1 className="font-serif text-3xl sm:text-4xl lg:text-[42px] font-bold text-[#1c3e1e] leading-tight mb-2">
+          {/* Right Column: Details & Actions */}
+          <div className="lg:col-span-6 flex flex-col pt-2 lg:pl-4">
+            <h1 className="font-serif text-[26px] md:text-3xl sm:text-4xl lg:text-[42px] font-bold text-[#1c3e1e] leading-tight mb-1">
               {product.name}
             </h1>
-            <p className="text-lg font-medium text-[#4d8745] tracking-wide mb-4">
+            <p className="text-[15px] md:text-lg font-bold text-[#1c3e1e] tracking-wide mb-3 md:mb-4">
               {product.shortDesc}
             </p>
-            
-            <p className="text-[#556858] text-[15px] leading-relaxed mb-6">
+
+            <p className="text-[#556858] text-[13px] md:text-[15px] leading-[1.6] mb-6">
               {product.desc}
             </p>
 
             {/* Key Benefits List */}
-            <div className="space-y-3.5 mb-8">
-              {product.benefits.map((benefit, i) => (
-                <div key={i} className="flex items-center gap-3">
-                  <div className="w-5 h-5 rounded-full bg-[#f4f7f0] border border-[#c8dfc4] flex items-center justify-center text-[#4d8745]">
-                    <Check className="w-3.5 h-3.5" strokeWidth={3} />
+            <div className="space-y-3 mb-8">
+              {product.benefits.map((benefit, i) => {
+                let IconToUse = Leaf;
+                if (i === 1) IconToUse = Droplet; // No added preservatives
+                if (i === 3) IconToUse = ShieldCheck; // Tested for purity
+                if (i === 4) IconToUse = FlaskConical; // Suitable for daily use
+
+                return (
+                  <div key={i} className="flex items-center gap-3">
+                    <IconToUse className="w-[18px] h-[18px] text-[#4d8745]" strokeWidth={2} />
+                    <span className="text-[13px] md:text-[14.5px] font-medium text-[#2d482e]">{benefit}</span>
                   </div>
-                  <span className="text-[14.5px] font-medium text-[#2d482e]">{benefit}</span>
-                </div>
-              ))}
+                );
+              })}
             </div>
 
             {/* Action Buttons */}
-            <div className="space-y-4 mb-8">
+            <div className="space-y-4 mb-10 md:mb-8">
               {/* Button: Buy from website */}
-              <button className="w-full bg-[#1c3e1e] hover:bg-[#2b5229] text-white py-3.5 px-6 rounded-xl transition-all duration-300 flex flex-col items-center justify-center group shadow-md">
-                <div className="flex items-center gap-2 font-bold text-[15px]">
-                  <ShoppingBag className="w-4 h-4 group-hover:scale-110 transition-transform" />
+              <div className="flex flex-col items-center w-full">
+                <button className="w-full bg-[#1c3e1e] hover:bg-[#2b5229] text-white py-3.5 px-6 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-sm font-bold text-[14px]">
+                  <ShoppingBag className="w-4 h-4" />
                   <span>Buy From Our Website</span>
-                </div>
-                <span className="text-[11px] opacity-75 mt-0.5 font-normal">Secure purchase through our official store.</span>
-              </button>
+                </button>
+                <span className="text-[11px] text-[#556858] mt-2 text-center">Secure purchase through our official store.</span>
+              </div>
 
               {/* Button: Buy from Amazon */}
-              <a 
-                href="https://amazon.in" 
-                target="_blank" 
-                rel="noreferrer" 
-                className="w-full border-2 border-[#ff9900]/20 bg-white hover:bg-orange-50/20 py-3 px-6 rounded-xl transition-all duration-300 flex flex-col items-center justify-center group shadow-sm hover:border-[#ff9900]/40"
-              >
-                <div className="flex items-center gap-2 font-bold text-[15px] text-[#ff9900]">
+              <div className="flex flex-col items-center w-full">
+                <a
+                  href="https://amazon.in"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-full border border-orange-200 bg-white hover:bg-orange-50/20 py-3.5 px-6 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-sm font-bold text-[14px]"
+                >
                   <span className="font-serif italic font-extrabold text-lg text-black pr-1">a</span>
-                  <span className="text-[#333]">Buy From Amazon</span>
-                </div>
-                <span className="text-[11px] text-gray-500 mt-0.5 font-normal">Shop on Amazon with customer reviews and fast delivery.</span>
-              </a>
+                  <span className="text-[#ff9900]">Buy From Amazon</span>
+                </a>
+                <span className="text-[11px] text-[#556858] mt-2 text-center">Shop on Amazon with customer reviews and fast delivery.</span>
+              </div>
             </div>
 
             {/* Trust Badges */}
@@ -263,12 +289,12 @@ const SingleProduct = () => {
       {/* ──────────────────────────────────────────────────────── */}
       {/* SECTION 2: WHY CHOOSE GREENBAE                          */}
       {/* ──────────────────────────────────────────────────────── */}
-      <section className="relative bg-[#f4f5ed] border-y border-[#e2ead9] py-16 overflow-hidden">
+      <section className="relative bg-[#f4f5ed] border-y border-[#e2ead9] py-8 md:py-16 overflow-hidden">
         {/* Side Decorative Leaf Sprigs */}
-        <div className="absolute left-0 top-1/2 -translate-y-1/2 w-28 md:w-36 pointer-events-none opacity-80">
+        <div className="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 w-28 md:w-36 pointer-events-none opacity-80">
           <DecorativePlantLeft />
         </div>
-        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-28 md:w-36 pointer-events-none opacity-80">
+        <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 w-28 md:w-36 pointer-events-none opacity-80">
           <DecorativePlantRight />
         </div>
 
@@ -277,49 +303,41 @@ const SingleProduct = () => {
             Why Choose Greenbae?
           </h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 max-w-5xl mx-auto">
             {/* Card 1 */}
-            <div className="flex flex-col items-center p-4 bg-white/40 backdrop-blur-sm rounded-2xl border border-white/50 shadow-sm">
-              <div className="w-12 h-12 rounded-full bg-[#f4f7f0] flex items-center justify-center text-[#4d8745] mb-4">
-                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M12 3v18M3 12h18M12 3a9 9 0 019 9c0 4.97-4.03 9-9 9s-9-4.03-9-9a9 9 0 019-9z" />
-                </svg>
+            <div className="flex flex-col items-center p-4 bg-[#f4f5ed] md:backdrop-blur-sm rounded-xl md:rounded-2xl border border-gray-100 md:border-white/50 shadow-sm md:shadow-none text-center">
+              <div className="w-10 h-10 md:w-12 md:h-12 rounded-full md:bg-[#f4f7f0] flex items-center justify-center text-[#4d8745] mb-2 md:mb-4">
+                <Leaf className="w-6 h-6 md:w-6 md:h-6" strokeWidth={1.5} />
               </div>
-              <h3 className="font-serif font-bold text-base mb-2">Clean Ingredients</h3>
-              <p className="text-xs text-[#556858] leading-relaxed max-w-[180px]">Carefully selected natural ingredients.</p>
+              <h3 className="font-bold text-[13px] md:text-base mb-1 md:mb-2 leading-tight">Clean<br />Ingredients</h3>
+              <p className="hidden md:block text-xs text-[#556858] leading-relaxed max-w-[180px]">Carefully selected natural ingredients.</p>
             </div>
 
             {/* Card 2 */}
-            <div className="flex flex-col items-center p-4 bg-white/40 backdrop-blur-sm rounded-2xl border border-white/50 shadow-sm">
-              <div className="w-12 h-12 rounded-full bg-[#f4f7f0] flex items-center justify-center text-[#4d8745] mb-4">
-                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-                </svg>
+            <div className="flex flex-col items-center p-4 bg-[#f4f5ed] md:backdrop-blur-sm rounded-xl md:rounded-2xl border border-gray-100 md:border-white/50 shadow-sm md:shadow-none text-center">
+              <div className="w-10 h-10 md:w-12 md:h-12 rounded-full md:bg-[#f4f7f0] flex items-center justify-center text-[#4d8745] mb-2 md:mb-4">
+                <ShieldCheck className="w-6 h-6 md:w-6 md:h-6" strokeWidth={1.5} />
               </div>
-              <h3 className="font-serif font-bold text-base mb-2">Thoughtfully Formulated</h3>
-              <p className="text-xs text-[#556858] leading-relaxed max-w-[180px]">Balanced blends for everyday wellness.</p>
+              <h3 className="font-bold text-[13px] md:text-base mb-1 md:mb-2 leading-tight">Thoughtfully<br />Formulated</h3>
+              <p className="hidden md:block text-xs text-[#556858] leading-relaxed max-w-[180px]">Balanced blends for everyday wellness.</p>
             </div>
 
             {/* Card 3 */}
-            <div className="flex flex-col items-center p-4 bg-white/40 backdrop-blur-sm rounded-2xl border border-white/50 shadow-sm">
-              <div className="w-12 h-12 rounded-full bg-[#f4f7f0] flex items-center justify-center text-[#4d8745] mb-4">
-                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                </svg>
+            <div className="flex flex-col items-center p-4 bg-[#f4f5ed] md:backdrop-blur-sm rounded-xl md:rounded-2xl border border-gray-100 md:border-white/50 shadow-sm md:shadow-none text-center">
+              <div className="w-10 h-10 md:w-12 md:h-12 rounded-full md:bg-[#f4f7f0] flex items-center justify-center text-[#4d8745] mb-2 md:mb-4">
+                <FlaskConical className="w-6 h-6 md:w-6 md:h-6" strokeWidth={1.5} />
               </div>
-              <h3 className="font-serif font-bold text-base mb-2">Quality Assured</h3>
-              <p className="text-xs text-[#556858] leading-relaxed max-w-[180px]">Lab tested for purity and safety.</p>
+              <h3 className="font-bold text-[13px] md:text-base mb-1 md:mb-2 leading-tight">Quality<br />Assured</h3>
+              <p className="hidden md:block text-xs text-[#556858] leading-relaxed max-w-[180px]">Lab tested for purity and safety.</p>
             </div>
 
             {/* Card 4 */}
-            <div className="flex flex-col items-center p-4 bg-white/40 backdrop-blur-sm rounded-2xl border border-white/50 shadow-sm">
-              <div className="w-12 h-12 rounded-full bg-[#f4f7f0] flex items-center justify-center text-[#4d8745] mb-4">
-                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-                </svg>
+            <div className="flex flex-col items-center p-4 bg-[#f4f5ed] md:backdrop-blur-sm rounded-xl md:rounded-2xl border border-gray-100 md:border-white/50 shadow-sm md:shadow-none text-center">
+              <div className="w-10 h-10 md:w-12 md:h-12 rounded-full md:bg-[#f4f7f0] flex items-center justify-center text-[#4d8745] mb-2 md:mb-4">
+                <Users className="w-6 h-6 md:w-6 md:h-6" strokeWidth={1.5} />
               </div>
-              <h3 className="font-serif font-bold text-base mb-2">Made For Everyone</h3>
-              <p className="text-xs text-[#556858] leading-relaxed max-w-[180px]">Suitable for the whole family.</p>
+              <h3 className="font-bold text-[13px] md:text-base mb-1 md:mb-2 leading-tight">Made For<br />Everyone</h3>
+              <p className="hidden md:block text-xs text-[#556858] leading-relaxed max-w-[180px]">Suitable for the whole family.</p>
             </div>
           </div>
         </div>
@@ -328,51 +346,59 @@ const SingleProduct = () => {
       {/* ──────────────────────────────────────────────────────── */}
       {/* SECTION 3: HOW TO USE                                    */}
       {/* ──────────────────────────────────────────────────────── */}
-      <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-8 md:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="font-serif text-2xl sm:text-3xl lg:text-[34px] font-bold text-center mb-12 text-[#1c3e1e]">
           How To Use
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto relative">
-          
+        <div className="flex flex-col md:grid md:grid-cols-4 gap-4 md:gap-8 max-w-5xl mx-auto relative px-2">
+
           {/* Step 1 */}
-          <div className="flex flex-col items-center text-center relative group">
-            <div className="w-28 h-28 rounded-[1px] shadow-sm flex items-center justify-center relative mb-4">
-              <span className="absolute -top-1 -left-1 w-7 h-7 bg-[#1c3e1e] text-white rounded-full flex items-center justify-center text-xs font-bold shadow-sm">1</span>
-              {/* Dynamic Spoon / Serve Icon */}
-              <img src="https://tse1.mm.bing.net/th/id/OIF.jbVeRizeBqta0DF2Q4dsdw?pid=Api&P=0&h=180" alt="Spoon Icon" className="w-48 h-48 object-contain" />
+          <div className="flex flex-row md:flex-col items-center text-left md:text-center relative group gap-4 md:gap-0 md:bg-transparent md:p-0">
+            <div className="relative flex items-center justify-center md:mb-4 shrink-0">
+              <span className="absolute -top-2 -left-2 w-5 h-5 md:w-7 md:h-7 bg-[#1c3e1e] text-white rounded-full flex items-center justify-center text-[10px] md:text-xs font-bold shadow-sm z-10">1</span>
+              <img src="https://tse1.mm.bing.net/th/id/OIF.jbVeRizeBqta0DF2Q4dsdw?pid=Api&P=0&h=180" alt="Spoon Icon" className="w-[60px] h-[60px] md:w-28 md:h-28 object-contain" />
             </div>
-            <p className="text-xs font-medium text-[#2d482e] max-w-[180px]">Take the recommended serving.</p>
+            <div className="md:hidden shrink-0 text-[#4d8745] mr-2">
+              <ArrowRight className="w-4 h-4 opacity-50" />
+            </div>
+            <p className="text-xs font-medium text-[#2d482e] md:max-w-[180px] flex-1">Take the recommended serving.</p>
           </div>
 
           {/* Step 2 */}
-          <div className="flex flex-col items-center text-center relative group">
-            <div className="w-28 h-28 shadow-sm flex items-center justify-center relative mb-4">
-              <span className="absolute -top-1 -left-1 w-7 h-7 bg-[#1c3e1e] text-white rounded-full flex items-center justify-center text-xs font-bold shadow-sm">2</span>
-              {/* Glass of Water Icon */}
-              <img src="https://assets.goodhousekeeping.co.uk/main/embedded/25836/glass_water.jpg" alt="Glass of Water Icon" className="w-28 h-28 object-contain" />
+          <div className="flex flex-row md:flex-col items-center text-left md:text-center relative group gap-4 md:gap-0 md:bg-transparent md:p-0">
+            <div className="relative flex items-center justify-center md:mb-4 shrink-0">
+              <span className="absolute -top-2 -left-2 w-5 h-5 md:w-7 md:h-7 bg-[#1c3e1e] text-white rounded-full flex items-center justify-center text-[10px] md:text-xs font-bold shadow-sm z-10">2</span>
+              <img src="https://assets.goodhousekeeping.co.uk/main/embedded/25836/glass_water.jpg" alt="Glass of Water Icon" className="w-[60px] h-[60px] md:w-28 md:h-28 object-contain" />
             </div>
-            <p className="text-xs font-medium text-[#2d482e] max-w-[180px]">Mix with water or your favorite beverage.</p>
+            <div className="md:hidden shrink-0 text-[#4d8745] mr-2">
+              <ArrowRight className="w-4 h-4 opacity-50" />
+            </div>
+            <p className="text-xs font-medium text-[#2d482e] md:max-w-[180px] flex-1">Mix with water or your favorite beverage.</p>
           </div>
 
           {/* Step 3 */}
-          <div className="flex flex-col items-center text-center relative group">
-            <div className="w-28 h-28 shadow-sm flex items-center justify-center relative mb-4">
-              <span className="absolute -top-1 -left-1 w-7 h-7 bg-[#1c3e1e] text-white rounded-full flex items-center justify-center text-xs font-bold shadow-sm">3</span>
-              {/* Spoon Stirring Glass Icon */}
-              <img src="https://thumbs.dreamstime.com/b/pouring-matcha-green-tea-golden-milk-latte-beverage-being-prepared-frothy-glass-jug-containing-397725806.jpg" alt="Stirring Icon" className="w-28 h-28 object-contain" />
+          <div className="flex flex-row md:flex-col items-center text-left md:text-center relative group gap-4 md:gap-0 md:bg-transparent md:p-0">
+            <div className="relative flex items-center justify-center md:mb-4 shrink-0">
+              <span className="absolute -top-2 -left-2 w-5 h-5 md:w-7 md:h-7 bg-[#1c3e1e] text-white rounded-full flex items-center justify-center text-[10px] md:text-xs font-bold shadow-sm z-10">3</span>
+              <img src="https://thumbs.dreamstime.com/b/pouring-matcha-green-tea-golden-milk-latte-beverage-being-prepared-frothy-glass-jug-containing-397725806.jpg" alt="Stirring Icon" className="w-[60px] h-[60px] md:w-28 md:h-28 object-contain" />
             </div>
-            <p className="text-xs font-medium text-[#2d482e] max-w-[180px]">Stir well until dissolved.</p>
+            <div className="md:hidden shrink-0 text-[#4d8745] mr-2">
+              <ArrowRight className="w-4 h-4 opacity-50" />
+            </div>
+            <p className="text-xs font-medium text-[#2d482e] md:max-w-[180px] flex-1">Stir well until dissolved.</p>
           </div>
 
           {/* Step 4 */}
-          <div className="flex flex-col items-center text-center relative group">
-            <div className="w-28 h-28 shadow-sm flex items-center justify-center relative mb-4">
-              <span className="absolute -top-1 -left-1 w-7 h-7 bg-[#1c3e1e] text-white rounded-full flex items-center justify-center text-xs font-bold shadow-sm">4</span>
-              {/* Full/Drinking Glass Icon */}
-              <img src="https://wallpapers.com/images/hd/energizing-spinach-juice-png-93-tiujwz8x42jph9lx.jpg" alt="Drinking Glass Icon" className="w-28 h-28 object-contain" />
+          <div className="flex flex-row md:flex-col items-center text-left md:text-center relative group gap-4 md:gap-0 md:bg-transparent md:p-0">
+            <div className="relative flex items-center justify-center md:mb-4 shrink-0">
+              <span className="absolute -top-2 -left-2 w-5 h-5 md:w-7 md:h-7 bg-[#1c3e1e] text-white rounded-full flex items-center justify-center text-[10px] md:text-xs font-bold shadow-sm z-10">4</span>
+              <img src="https://wallpapers.com/images/hd/energizing-spinach-juice-png-93-tiujwz8x42jph9lx.jpg" alt="Drinking Glass Icon" className="w-[60px] h-[60px] md:w-28 md:h-28 object-contain" />
             </div>
-            <p className="text-xs font-medium text-[#2d482e] max-w-[180px]">Enjoy daily for better well-being.</p>
+            <div className="md:hidden shrink-0 text-[#4d8745] mr-2">
+              <ArrowRight className="w-4 h-4 opacity-50" />
+            </div>
+            <p className="text-xs font-medium text-[#2d482e] md:max-w-[180px] flex-1">Enjoy daily for better well-being.</p>
           </div>
 
         </div>
@@ -381,59 +407,59 @@ const SingleProduct = () => {
       {/* ──────────────────────────────────────────────────────── */}
       {/* SECTION 4: WHO IS IT FOR?                                */}
       {/* ──────────────────────────────────────────────────────── */}
-      <section className="bg-[#f4f7f0] border-y border-[#e2ead9] py-16">
+      <section className="bg-[#f4f7f0] border-y border-[#e2ead9] py-8 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-serif text-2xl sm:text-3xl lg:text-[34px] font-bold mb-12 text-[#1c3e1e]">
+          <h2 className="font-serif text-2xl sm:text-3xl lg:text-[40px] font-bold mb-6 md:mb-14 text-[#1c3e1e]">
             Who Is It For?
           </h2>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-3 lg:grid-cols-6 gap-4 md:gap-8 max-w-6xl mx-auto">
             {/* Group 1 */}
-            <div className="flex flex-col items-center p-4 bg-white rounded-2xl border border-gray-100 shadow-sm hover:-translate-y-1 transition-transform duration-300">
-              <div className="w-12 h-12 rounded-full bg-[#f4f7f0] flex items-center justify-center text-[#4d8745] mb-3">
-                <Briefcase className="w-5 h-5" />
+            <div className="flex flex-col items-center p-4 md:p-6 bg-[#f4f7f0] rounded-2xl border border-gray-100 shadow-sm hover:-translate-y-1 transition-transform duration-300">
+              <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-[#f4f7f0] flex items-center justify-center text-[#4d8745] mb-3 md:mb-4">
+                <Briefcase className="w-6 h-6 md:w-7 md:h-7" />
               </div>
-              <span className="text-xs font-bold leading-tight">Working Professionals</span>
+              <span className="text-xs md:text-sm font-bold leading-tight">Working Professionals</span>
             </div>
 
             {/* Group 2 */}
-            <div className="flex flex-col items-center p-4 bg-white rounded-2xl border border-gray-100 shadow-sm hover:-translate-y-1 transition-transform duration-300">
-              <div className="w-12 h-12 rounded-full bg-[#f4f7f0] flex items-center justify-center text-[#4d8745] mb-3">
-                <HeartPulse className="w-5 h-5" />
+            <div className="flex flex-col items-center p-4 md:p-6 bg-[#f4f7f0] rounded-2xl border border-gray-100 shadow-sm hover:-translate-y-1 transition-transform duration-300">
+              <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-[#f4f7f0] flex items-center justify-center text-[#4d8745] mb-3 md:mb-4">
+                <HeartPulse className="w-6 h-6 md:w-7 md:h-7" />
               </div>
-              <span className="text-xs font-bold leading-tight">Health Conscious Adults</span>
+              <span className="text-xs md:text-sm font-bold leading-tight">Health Conscious Adults</span>
             </div>
 
             {/* Group 3 */}
-            <div className="flex flex-col items-center p-4 bg-white rounded-2xl border border-gray-100 shadow-sm hover:-translate-y-1 transition-transform duration-300">
-              <div className="w-12 h-12 rounded-full bg-[#f4f7f0] flex items-center justify-center text-[#4d8745] mb-3">
-                <Users className="w-5 h-5" />
+            <div className="flex flex-col items-center p-4 md:p-6 bg-[#f4f7f0] rounded-2xl border border-gray-100 shadow-sm hover:-translate-y-1 transition-transform duration-300">
+              <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-[#f4f7f0] flex items-center justify-center text-[#4d8745] mb-3 md:mb-4">
+                <Users className="w-6 h-6 md:w-7 md:h-7" />
               </div>
-              <span className="text-xs font-bold leading-tight">Seniors</span>
+              <span className="text-xs md:text-sm font-bold leading-tight">Seniors</span>
             </div>
 
             {/* Group 4 */}
-            <div className="flex flex-col items-center p-4 bg-white rounded-2xl border border-gray-100 shadow-sm hover:-translate-y-1 transition-transform duration-300">
-              <div className="w-12 h-12 rounded-full bg-[#f4f7f0] flex items-center justify-center text-[#4d8745] mb-3">
-                <GraduationCap className="w-5 h-5" />
+            <div className="flex flex-col items-center p-4 md:p-6 bg-[#f4f7f0] rounded-2xl border border-gray-100 shadow-sm hover:-translate-y-1 transition-transform duration-300">
+              <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-[#f4f7f0] flex items-center justify-center text-[#4d8745] mb-3 md:mb-4">
+                <GraduationCap className="w-6 h-6 md:w-7 md:h-7" />
               </div>
-              <span className="text-xs font-bold leading-tight">Students</span>
+              <span className="text-xs md:text-sm font-bold leading-tight">Students</span>
             </div>
 
             {/* Group 5 */}
-            <div className="flex flex-col items-center p-4 bg-white rounded-2xl border border-gray-100 shadow-sm hover:-translate-y-1 transition-transform duration-300">
-              <div className="w-12 h-12 rounded-full bg-[#f4f7f0] flex items-center justify-center text-[#4d8745] mb-3">
-                <HomeIcon className="w-5 h-5" />
+            <div className="flex flex-col items-center p-4 md:p-6 bg-[#f4f7f0] rounded-2xl border border-gray-100 shadow-sm hover:-translate-y-1 transition-transform duration-300">
+              <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-[#f4f7f0] flex items-center justify-center text-[#4d8745] mb-3 md:mb-4">
+                <HomeIcon className="w-6 h-6 md:w-7 md:h-7" />
               </div>
-              <span className="text-xs font-bold leading-tight">Homemakers</span>
+              <span className="text-xs md:text-sm font-bold leading-tight">Homemakers</span>
             </div>
 
             {/* Group 6 */}
-            <div className="flex flex-col items-center p-4 bg-white rounded-2xl border border-gray-100 shadow-sm hover:-translate-y-1 transition-transform duration-300">
-              <div className="w-12 h-12 rounded-full bg-[#f4f7f0] flex items-center justify-center text-[#4d8745] mb-3">
-                <Heart className="w-5 h-5" />
+            <div className="flex flex-col items-center p-4 md:p-6 bg-[#f4f7f0] rounded-2xl border border-gray-100 shadow-sm hover:-translate-y-1 transition-transform duration-300">
+              <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-[#f4f7f0] flex items-center justify-center text-[#4d8745] mb-3 md:mb-4">
+                <Heart className="w-6 h-6 md:w-7 md:h-7" />
               </div>
-              <span className="text-xs font-bold leading-tight">Fitness Enthusiasts</span>
+              <span className="text-xs md:text-sm font-bold leading-tight">Fitness Enthusiasts</span>
             </div>
           </div>
         </div>
@@ -442,66 +468,80 @@ const SingleProduct = () => {
       {/* ──────────────────────────────────────────────────────── */}
       {/* SECTION 5: WHY FAMILIES TRUST & CUSTOMERS SAY            */}
       {/* ──────────────────────────────────────────────────────── */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-          
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 md:gap-16">
+
           {/* Left Column: Why Families Trust */}
-          <div>
-            <h2 className="font-serif text-2xl sm:text-3xl font-bold mb-8 text-[#1c3e1e]">
-              Why Families Trust Greenbae
-            </h2>
+          <div className="border-b border-gray-200 md:border-none py-4 md:py-0">
+            <div
+              className="flex justify-between items-center cursor-pointer lg:cursor-default"
+              onClick={() => toggleSection('trust')}
+            >
+              <h2 className="font-serif text-[15px] sm:text-3xl font-bold text-[#1c3e1e] md:mb-8">
+                Why Families Trust Greenbae
+              </h2>
+              <ChevronDown className={`w-5 h-5 lg:hidden text-gray-500 transition-transform ${openSection === 'trust' ? 'rotate-180' : ''}`} />
+            </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-12 gap-6 items-stretch">
-              {/* Image side */}
-              <div className="sm:col-span-5 rounded-2xl overflow-hidden shadow-sm relative min-h-[220px]">
-                <img 
-                  src="/family_story.png" 
-                  alt="Happy family" 
-                  className="absolute inset-0 w-full h-full object-cover" 
-                />
-              </div>
+            <div className={`${openSection === 'trust' ? 'block' : 'hidden'} lg:block mt-6 md:mt-0`}>
+              <div className="grid grid-cols-1 sm:grid-cols-12 gap-6 items-stretch">
+                {/* Image side */}
+                <div className="sm:col-span-5 rounded-2xl overflow-hidden shadow-sm relative min-h-[220px]">
+                  <img
+                    src="/family_story.png"
+                    alt="Happy family"
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                </div>
 
-              {/* Trust Details side */}
-              <div className="sm:col-span-7 space-y-5">
-                {[
-                  {
-                    title: "Backed By Science",
-                    desc: "Our products are researched and scientifically formulated."
-                  },
-                  {
-                    title: "No Compromise On Quality",
-                    desc: "We use premium ingredients and follow strict quality checks."
-                  },
-                  {
-                    title: "Transparent & Honest",
-                    desc: "We believe in clean labeling and honest communication."
-                  },
-                  {
-                    title: "Trusted By Thousands",
-                    desc: "Loved by families across India for their wellness journey."
-                  }
-                ].map((item, idx) => (
-                  <div key={idx} className="flex gap-3">
-                    <div className="shrink-0 w-8 h-8 rounded-full bg-[#f4f7f0] border border-[#c8dfc4] flex items-center justify-center text-[#4d8745] mt-0.5">
-                      <ShieldCheck className="w-4 h-4" />
+                {/* Trust Details side */}
+                <div className="sm:col-span-7 space-y-5">
+                  {[
+                    {
+                      title: "Backed By Science",
+                      desc: "Our products are researched and scientifically formulated."
+                    },
+                    {
+                      title: "No Compromise On Quality",
+                      desc: "We use premium ingredients and follow strict quality checks."
+                    },
+                    {
+                      title: "Transparent & Honest",
+                      desc: "We believe in clean labeling and honest communication."
+                    },
+                    {
+                      title: "Trusted By Thousands",
+                      desc: "Loved by families across India for their wellness journey."
+                    }
+                  ].map((item, idx) => (
+                    <div key={idx} className="flex gap-3">
+                      <div className="shrink-0 w-8 h-8 rounded-full bg-[#f4f7f0] border border-[#c8dfc4] flex items-center justify-center text-[#4d8745] mt-0.5">
+                        <ShieldCheck className="w-4 h-4" />
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-sm text-[#1c3e1e]">{item.title}</h4>
+                        <p className="text-xs text-[#556858] mt-0.5 leading-relaxed">{item.desc}</p>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="font-serif font-bold text-sm text-[#1c3e1e]">{item.title}</h4>
-                      <p className="text-xs text-[#556858] mt-0.5 leading-relaxed">{item.desc}</p>
-                    </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
           </div>
 
           {/* Right Column: Customer Reviews */}
-          <div>
-            <h2 className="font-serif text-2xl sm:text-3xl font-bold mb-8 text-[#1c3e1e]">
-              What Our Customers Say
-            </h2>
+          <div className="border-b border-gray-200 md:border-none py-4 md:py-0">
+            <div
+              className="flex justify-between items-center cursor-pointer lg:cursor-default"
+              onClick={() => toggleSection('reviews')}
+            >
+              <h2 className="font-serif text-[15px] sm:text-3xl font-bold text-[#1c3e1e] md:mb-8">
+                What Our Customers Say
+              </h2>
+              <ChevronDown className={`w-5 h-5 lg:hidden text-gray-500 transition-transform ${openSection === 'reviews' ? 'rotate-180' : ''}`} />
+            </div>
 
-            <div className="space-y-6">
+            <div className={`${openSection === 'reviews' ? 'block' : 'hidden'} lg:block mt-6 md:mt-0 space-y-6`}>
               {[
                 {
                   quote: "Great product! I feel more energetic and it's become a part of my daily morning routine.",
@@ -520,7 +560,6 @@ const SingleProduct = () => {
                 }
               ].map((testimonial, idx) => (
                 <div key={idx} className="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm flex gap-4 items-start">
-                  {/* Avatar representation using initial/placeholder */}
                   <div className="shrink-0 w-11 h-11 rounded-full bg-[#f4f7f0] border border-[#e2ead9] flex items-center justify-center text-[#4d8745] font-bold text-sm">
                     {testimonial.author.charAt(0)}
                   </div>
@@ -544,32 +583,38 @@ const SingleProduct = () => {
       </section>
 
       {/* ──────────────────────────────────────────────────────── */}
-      {/* BOTTOM PURCHASE BANNER / BAR                             */}
+      {/* BOTTOM PURCHASE BANNER / SECTION                         */}
       {/* ──────────────────────────────────────────────────────── */}
-      <div className="fixed bottom-0 inset-x-0 bg-white/95 backdrop-blur-md border-t border-gray-100 py-3 shadow-[0_-8px_30px_rgb(0,0,0,0.04)] z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="hidden sm:block text-left">
-            <h4 className="font-serif font-bold text-[#1c3e1e] text-sm">Choose your preferred purchase option</h4>
-            <p className="text-[11px] text-gray-500 mt-0.5">Your wellness journey, your way.</p>
+      <div className="relative w-full bg-[#f4f7f0] py-8 md:py-10 shadow-[0_-8px_30px_rgb(0,0,0,0.04)] z-10 border-t border-[#e2ead9] mt-0 bg-[url('https://www.transparenttextures.com/patterns/cream-paper.png')]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-6">
+          <div className="text-center md:text-left w-full md:w-auto shrink-0">
+            <h4 className="font-serif font-bold text-[#1c3e1e] text-[18px] md:text-[20px] mb-1">Choose your preferred<br className="md:hidden" /> purchase option</h4>
+            <p className="text-[13px] md:text-sm text-[#556858]">Your wellness journey, your way.</p>
           </div>
 
-          <div className="flex items-center gap-3 w-full sm:w-auto">
-            {/* Website mini button */}
-            <button className="flex-1 sm:flex-initial bg-[#1c3e1e] hover:bg-[#2b5229] text-white py-2 px-5 rounded-lg text-xs font-bold flex items-center justify-center gap-1.5 transition-colors">
-              <ShoppingBag className="w-3.5 h-3.5" />
-              <span>Buy From Website</span>
-            </button>
+          <div className="flex flex-col md:flex-row items-center gap-4 md:gap-5 w-full md:w-auto">
+            {/* Website full button */}
+            <div className="flex flex-col items-center w-full md:w-auto">
+              <button className="w-full md:w-[300px] bg-[#1c3e1e] hover:bg-[#2b5229] text-white py-4 md:py-5 px-6 rounded-lg text-[14px] md:text-[15px] font-bold flex items-center justify-center gap-2.5 transition-colors">
+                <ShoppingBag className="w-4 h-4 md:w-4 md:h-4" />
+                <span>Buy From Our Website</span>
+              </button>
+              <span className="text-[10px] md:text-[11px] text-[#556858] mt-1.5 text-center">Secure purchase through our official store.</span>
+            </div>
 
-            {/* Amazon mini button */}
-            <a 
-              href="https://amazon.in" 
-              target="_blank" 
-              rel="noreferrer" 
-              className="flex-1 sm:flex-initial border border-gray-200 bg-white hover:bg-orange-50/20 py-2 px-5 rounded-lg text-xs font-bold text-gray-700 flex items-center justify-center gap-1.5 transition-colors"
-            >
-              <span className="font-serif italic font-extrabold text-[#ff9900]">a</span>
-              <span>Buy From Amazon</span>
-            </a>
+            {/* Amazon full button */}
+            <div className="flex flex-col items-center w-full md:w-auto">
+              <a
+                href="https://amazon.in"
+                target="_blank"
+                rel="noreferrer"
+                className="w-full md:w-[300px] border border-gray-200 bg-white hover:bg-orange-50/20 py-4 md:py-5 px-6 rounded-lg text-[14px] md:text-[15px] font-bold flex items-center justify-center gap-2.5 transition-colors"
+              >
+                <span className="font-serif italic font-extrabold text-[#ff9900] text-xl md:text-lg leading-none">a</span>
+                <span className="text-[#1c3e1e]">Buy From Amazon</span>
+              </a>
+              <span className="text-[10px] md:text-[11px] text-[#556858] mt-1.5 text-center">Shop on Amazon with customer reviews and fast delivery.</span>
+            </div>
           </div>
         </div>
       </div>
