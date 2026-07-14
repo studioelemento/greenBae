@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { ArrowRight, Leaf } from "lucide-react";
 import leftimage from "../../../assets/img-ourproducts/leftsideimg.png";
 import rightimage from "../../../assets/img-ourproducts/2products.png";
@@ -159,6 +160,7 @@ const features = [
 
 /* ─── Main Component ───────────────────────────────── */
 const WellnessBacked = () => {
+  const navigate = useNavigate();
   return (
     <section
       id="wellness-backed"
@@ -271,7 +273,11 @@ const WellnessBacked = () => {
         {/* MOBILE CTA: 2 stacked cards */}
         <div className="flex flex-col gap-2.5 md:hidden px-1">
           {/* Explore Healthy Living Hub — dark green */}
-          <div className="bg-[#244527] rounded-xl flex items-center gap-3.5 p-3.5 text-left cursor-pointer group">
+          <button
+            type="button"
+            onClick={() => navigate('/healthy-living')}
+            className="w-full bg-[#244527] rounded-xl flex items-center gap-3.5 p-3.5 text-left cursor-pointer group relative z-50"
+          >
             <div className="shrink-0 w-11 h-11 rounded-full border border-white/30 flex items-center justify-center text-white">
               <Leaf className="w-4.5 h-4.5" strokeWidth={1.5} />
             </div>
@@ -283,10 +289,14 @@ const WellnessBacked = () => {
                 Discover tips, insights and resources for everyday wellness.
               </p>
             </div>
-          </div>
+          </button>
 
           {/* Contact Us */}
-          <div className="border border-[#e2ead9] rounded-xl flex flex-col p-3.5 text-left cursor-pointer group bg-transparent">
+          <button
+            type="button"
+            onClick={() => navigate('/contact-us')}
+            className="w-full border border-[#e2ead9] rounded-xl flex flex-col p-3.5 text-left cursor-pointer group bg-transparent relative z-50"
+          >
             <div className="flex items-center gap-3.5 mb-1.5">
               <div className="shrink-0 w-11 h-11 rounded-full border border-[#c8dfc4] bg-[#eef4eb] flex items-center justify-center text-[#4d8745]">
                 <ChatIcon />
@@ -303,7 +313,7 @@ const WellnessBacked = () => {
             <div className="flex justify-center">
               <ArrowRight className="w-4.5 h-4.5 text-[#4d8745] group-hover:translate-x-1 transition-transform duration-300" />
             </div>
-          </div>
+          </button>
         </div>
 
         {/* DESKTOP CTA: 3-column card */}
@@ -342,7 +352,11 @@ const WellnessBacked = () => {
               </div>
 
               {/* MIDDLE */}
-              <div className="bg-[#1C4A25] rounded-[24px] h-[160px] w-full flex flex-col justify-center px-4">
+              <button
+                type="button"
+                onClick={() => navigate('/healthy-living')}
+                className="bg-[#1C4A25] rounded-[24px] h-[160px] w-full flex flex-col justify-center px-4 cursor-pointer group relative z-50 hover:opacity-95 transition-opacity"
+              >
                 {/* Icon + Heading */}
                 <div className="flex items-center gap-3 mb-2">
                   <div className="w-10 h-10 rounded-full border border-[#C6C18A] flex items-center justify-center shrink-0 ml-3">
@@ -364,11 +378,15 @@ const WellnessBacked = () => {
                 <div className="flex justify-center mt-1.5">
                   <ArrowRight className="w-5 h-5 text-[#D7E5C8]" />
                 </div>
-              </div>
+              </button>
 
               {/* RIGHT */}
               <div className="px-6">
-                <div className="bg-[#FBF8F3] border border-[#CDB980] rounded-[24px] h-[160px] w-full flex flex-col justify-center px-4 group cursor-pointer">
+                <button
+                  type="button"
+                  onClick={() => navigate('/contact-us')}
+                  className="bg-[#FBF8F3] border border-[#CDB980] rounded-[24px] h-[160px] w-full flex flex-col justify-center px-4 group cursor-pointer relative z-50 hover:bg-[#F2ECE0] transition-colors"
+                >
                   {/* Icon + Heading */}
                   <div className="flex items-center gap-3 mb-2">
                     <div className="w-10 h-10 rounded-full border border-[#CDB980] flex items-center justify-center shrink-0 ml-3">
@@ -391,7 +409,7 @@ const WellnessBacked = () => {
                   <div className="flex justify-center mt-1.5">
                     <ArrowRight className="w-5 h-5 text-[#1C3E1E] group-hover:translate-x-2 transition-transform duration-300" />
                   </div>
-                </div>
+                </button>
               </div>
             </div>
           </div>

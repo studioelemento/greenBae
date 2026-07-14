@@ -10,7 +10,6 @@ const Navbar = () => {
     { label: 'Home', path: '/' },
     { label: 'Our Story', path: '/our-story' },
     { label: 'Products', path: '/products' },
-    { label: 'Wellness Journal', path: '/wellness-journal' },
     { label: 'Healthy Living Movement', path: '/healthy-living' },
     { label: 'Contact Us', path: '/contact-us' }
   ];

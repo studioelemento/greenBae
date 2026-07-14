@@ -5,8 +5,6 @@ import Home from './pages/home/Home';
 import OurStory from './pages/ourstory/OurStory';
 import Products from './pages/products/Products';
 import SingleProduct from './pages/products/components/single product';
-import WellnessJournal from './pages/WellnessJournal';
-import HealthyLiving from './pages/HealthyLiving';
 import ContactUs from './pages/contactus/ContactUs';
 import ProductsPage from './pages/products/ProductsPage';
 import './App.css'
@@ -22,7 +20,6 @@ function App() {
           <Route path="products" element={<Products />} />
           <Route path="products/page" element={<ProductsPage />} />
           <Route path="products/single" element={<SingleProduct />} />
-          <Route path="wellness-journal" element={<WellnessJournal />} />
           <Route path="healthy-living" element={<HealthyLivingPage />} />
           <Route path="contact-us" element={<ContactUs />} />
         </Route>
