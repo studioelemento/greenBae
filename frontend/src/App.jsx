@@ -3,8 +3,8 @@ import ScrollToTop from './components/ScrollToTop';
 import MainLayout from './components/layout/MainLayout';
 import Home from './pages/home/Home';
 import OurStory from './pages/ourstory/OurStory';
-import Products from './pages/products/Products';
-import SingleProduct from './pages/products/components/single product';
+import Products from './pages/Products/Products';
+import SingleProduct from './pages/Products/components/single product';
 import ContactUs from './pages/contactus/ContactUs';
 import ProductsPage from './pages/products/ProductsPage';
 import './App.css'

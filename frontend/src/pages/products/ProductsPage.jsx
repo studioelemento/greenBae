@@ -1,5 +1,5 @@
 import React from 'react'
-import ProductHero from './components/producthero'
+import ProductHero from './components/ProductHero'
 import ProductFamilies from './components/ProductFamilies'
 
 const ProductsPage = () => {

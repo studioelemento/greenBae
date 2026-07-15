@@ -120,17 +120,17 @@ export default function HealthyLivingInsights() {
   });
 
   return (
-    <section className="w-full bg-gradient-to-b from-white to-[#f5f1ed] py-12 md:py-16 lg:py-20">
-      <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="w-full bg-gradient-to-b from-white to-[#f5f1ed] md:py-16 lg:py-20">
+      <div className="max-w-full mx-auto  sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-8 md:mb-12 lg:mb-16"></div>
 
         <div className="  ">
-          <div className="relative overflow-hidden  bg-[#faf8f4] shadow-xl">
+          <div className="relative px-4 overflow-hidden  bg-[#faf8f4] shadow-xl">
             {/* Right Background Image */}
             <div className="h-max relative">
               <div
-                className="hidden lg:block absolute top-0 right-0 w-[48%] h-[full] xl:h-full"
+                className="hidden lg:block absolute top-0 right-0 w-full md:w-[48%] h-[full] xl:h-full"
                 style={{
                   backgroundImage: "url('/images/cta-hero.png')",
                   backgroundSize: "cover",
@@ -151,7 +151,7 @@ export default function HealthyLivingInsights() {
               <div className="relative z-10 px-5 sm:px-8 lg:px-16 py-10 sm:py-14">
                 {" "}
                 {/* Heading */}
-                <div className="lg:col-span-1 w-1/3 mb-6 lg:mb-0">
+                <div className="lg:col-span-1 md:w-1/3 text-center md:text-left mb-6 lg:mb-0">
                   <p className="text-xs md:text-sm font-semibold tracking-widest text-[#4d8745] mb-3 md:mb-4">
                     ⚡ HEALTHY LIVING INSIGHTS
                   </p>
@@ -220,8 +220,8 @@ export default function HealthyLivingInsights() {
                       onClick={() => setSelectedCategory(cat.id)}
                       className={`flex flex-col items-center gap-1 px-4 md:px-5 py-3 md:py-4 rounded-xl transition-all ${
                         selectedCategory === cat.id
-                          ? "bg-[#1c3e1e] text-white"
-                          : "bg-white border-2 border-[#e0dbd4] text-[#1c3e1e] hover:border-[#4d8745]"
+                          ? "border"
+                          : "bg- border border-0 text-[#1c3e1e] text-[#1c3e1e] hover:border-[#4d8745]"
                       }`}
                     >
                       <span className="text-xl md:text-2xl">{cat.icon}</span>
@@ -247,11 +247,13 @@ export default function HealthyLivingInsights() {
                       onClick={() => setSelectedCategory(cat.id)}
                       className={`flex flex-col items-center gap-1 px-3 py-2 rounded-lg transition-all flex-shrink-0 ${
                         selectedCategory === cat.id
-                          ? "bg-[#1c3e1e] text-white"
-                          : "bg-white border border-gray-300 text-[#1c3e1e]"
+                          ? "  border"
+                          : "bg- border border-0 text-[#1c3e1e]"
                       }`}
                     >
-                      <span className="text-lg">{cat.icon}</span>
+                      <span className="text-lg bg-[#d9e7d8] p-2 rounded-full">
+                        {cat.icon}
+                      </span>
                       <span className="text-xs font-semibold text-center">
                         {cat.name.split(" ")[0]}
                       </span>
@@ -322,36 +324,40 @@ export default function HealthyLivingInsights() {
                 {filteredArticles.map((article) => (
                   <div
                     key={article.id}
-                    className="flex gap-4 bg-white rounded-lg overflow-hidden hover:shadow-md transition-shadow cursor-pointer"
+                    className="flex items-center gap-3 bg-white rounded-lg p-3 hover:shadow-md transition-shadow cursor-pointer"
                   >
                     {/* Image */}
-                    <div className="flex-shrink-0 w-24 h-24">
+                    <div className="w-20 h-20 sm:w-24 sm:h-24 flex-shrink-0">
                       <img
-                        src={article.image}
+                        src="/family_generation.png"
                         alt={article.title}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover rounded-md"
                       />
                     </div>
 
                     {/* Content */}
-                    <div className="flex-1 py-3 pr-3">
-                      <div className="text-xs font-semibold text-[#1c3e1e] bg-[#f0f0f0] inline-block px-2 py-1 rounded mb-2">
+                    <div className="flex-1 min-w-0">
+                      <div className="inline-block px-2 py-1 mb-2 text-[10px] sm:text-xs font-semibold text-[#1c3e1e] bg-[#f0f0f0] rounded">
                         {article.category}
                       </div>
-                      <h4 className="font-serif text-sm text-[#1c3e1e] mb-1 line-clamp-2">
+
+                      <h4 className="font-serif text-sm sm:text-base text-[#1c3e1e] line-clamp-2">
                         {article.title}
                       </h4>
-                      <div className="flex items-center gap-2 text-xs text-gray-600 mb-2">
+
+                      <div className="flex flex-wrap items-center gap-1 mt-2 text-[11px] sm:text-xs text-gray-600">
                         <span>⏱ {article.readTime} min read</span>
                         <span>•</span>
                         <span>{article.date}</span>
                       </div>
-                      <ChevronRight className="w-5 h-5 text-[#4d8745]" />
                     </div>
+
+                    {/* Chevron */}
+                    <ChevronRight className="w-5 h-5 text-[#4d8745] flex-shrink-0" />
                   </div>
                 ))}
               </div>
-              {/* Load More Button */}(
+              {/* Load More Button */}
               <div className="flex justify-center">
                 <button
                   onClick={() => setDisplayCount(displayCount + 4)}
@@ -361,21 +367,20 @@ export default function HealthyLivingInsights() {
                   <ChevronRight className="w-5 h-5" />
                 </button>
               </div>
-              )
+              
             </div>
           </div>
           <section className="relative overflow-hidden rounded-2xl bg-[#0F4A1D] px-4 py-4 md:px-6 md:py-5">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-5">
               {/* Left */}
-              <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 flex-1">
+              <div className="flex flex-row items-center sm:items-start gap-4 flex-1">
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white text-[#0F4A1D]">
                   <Users size={22} />
                 </div>
 
-                <div className="text-center sm:text-left">
-                  <h2 className="font-serif text-2xl md:text-3xl font-semibold leading-tight text-white">
-                    Learn Today.
-                    Live Better Tomorrow.
+                <div className="text-left sm:text-left">
+                  <h2 className="font-serif text-xl md:text-3xl font-semibold leading-tight text-white">
+                    Learn Today. Live Better Tomorrow.
                   </h2>
 
                   <p className="mt-2 max-w-xl text-sm leading-5 text-white/80">
@@ -387,7 +392,7 @@ export default function HealthyLivingInsights() {
               </div>
 
               {/* Buttons */}
-              <div className="flex flex-col lg:flex-row gap-3 w-full lg:w-auto">
+              <div className="flex text-nowrap flex-col lg:flex-row gap-3 w-full lg:w-auto">
                 <button className="flex h-10 items-center justify-center gap-2 rounded-lg bg-white px-5 text-sm font-semibold text-[#0F4A1D] hover:bg-gray-100 transition">
                   Join The Healthy Living Movement
                   <ArrowRight size={16} />

@@ -86,13 +86,13 @@ export default function JoinMovementCTA() {
                   <Leaf className="w-4 h-4" />
                   Join the Healthy Living Movement
                 </p>
-                <h2 className="text-3xl text-center sm:text-4xl lg:text-5xl font-serif text-[#1c3e1e] leading-tight mb-5">
+                <h2 className="text-2xl text-center sm:text-4xl lg:text-5xl font-serif text-[#1c3e1e] leading-tight mb-5">
                   {" "}
                   Learn Today.
                   <br />
                   Live Better Tomorrow.
                 </h2>
-                <p className="text-base text-center lg:text-lg text-gray-700 leading-7 lg:leading-8 max-w-2xl mx-auto lg:mx-0">
+                <p className="text-sm leading-none text-center lg:text-lg text-gray-700 md:leading-7 lg:leading-8 max-w-2xl mx-auto lg:mx-0">
                   {" "}
                   Greenbae believes healthier living begins with small daily
                   choices. Join our community to receive wellness insights,
@@ -132,12 +132,12 @@ export default function JoinMovementCTA() {
               {" "}
               <div className="flex flex-col lg:flex-row items-start lg:items-center gap-6 lg:gap-8">
                 {" "}
-                <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-4 flex-1">
+                <div className="flex flex-row items-center sm:items-start text-left sm:text-left gap-4 flex-1">
                   {" "}
                   <div className="w-16 h-16 rounded-full bg-[#1c3e1e] flex items-center justify-center">
                     <Mail className="w-8 h-8 text-white" />
                   </div>
-                  <div>
+                  <div className="w-full">
                     <h3 className="text-xl sm:text-2xl font-serif">
                       {" "}
                       Stay Inspired. Stay Healthy.
@@ -151,19 +151,19 @@ export default function JoinMovementCTA() {
                 </div>
                 <form
                   onSubmit={handleSubmit}
-                  className="flex flex-col sm:flex-row w-full lg:w-auto lg:min-w-[500px] gap-3 sm:gap-0"
+                  className="flex flex-row max-w-full lg:w-auto  lg:min-w-[500px] gap-0"
                 >
                   <input
                     type="email"
                     placeholder="Enter your email address"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="flex-1 border border-gray-300 rounded-xl sm:rounded-r-none px-5 py-4 outline-none focus:ring-2 focus:ring-[#4d8745]"
+                    className=" border border-gray-300 w-full rounded-xl rounded-r-none px-5 py-4 outline-none focus:ring-2 focus:ring-[#4d8745]"
                   />
 
                   <button
                     type="submit"
-                    className="bg-[#1c3e1e] hover:bg-[#153117] text-white px-10 rounded-xl sm:rounded-l-none py-4 font-semibold transition"
+                    className="bg-[#1c3e1e] hover:bg-[#153117] text-white px-5 md:px-10 rounded-xl rounded-l-none py-4 font-semibold transition"
                   >
                     Subscribe
                   </button>
