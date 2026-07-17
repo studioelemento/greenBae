@@ -8,25 +8,41 @@ const BENEFIT_CARDS = [
     id: "insights",
     icon: <Mail className="w-6 h-6" />,
     title: "Expert Insights",
-    description: "Wellness knowledge you can trust.",
+    description: (
+      <>
+        Wellness knowledge <br /> you can trust.
+      </>
+    ),
   },
   {
     id: "tips",
     icon: <Leaf className="w-6 h-6" />,
     title: "Practical Tips",
-    description: "Simple habits for everyday life.",
+    description: (
+      <>
+        Simple habits for <br /> everyday life.
+      </>
+    ),
   },
   {
     id: "community",
     icon: <Users className="w-6 h-6" />,
     title: "Community First",
-    description: "Be part of a movement that inspires better living.",
+    description: (
+      <>
+        Be part of a movement <br /> that inspires better living.
+      </>
+    ),
   },
   {
     id: "updated",
     icon: <Bell className="w-6 h-6" />,
     title: "Stay Updated",
-    description: "Early access to new wellness innovations.",
+    description: (
+      <>
+        Early access to new <br /> wellness innovations.
+      </>
+    ),
   },
 ];
 
@@ -79,21 +95,27 @@ export default function JoinMovementCTA() {
             {" "}
             {/* Heading */}
             <div className="max-w-5xl">
-              <div className="max-w-3xl mx-auto text-center lg:text-left">
+              <div className="max-w-3xl mx-auto lg:mx-0 text-center">
                 {" "}
-                <p className="flex items-center mx-auto justify-center  gap-2 text-xs sm:text-sm font-semibold tracking-widest text-[#1c3e1e] uppercase mb-4">
-                  {" "}
-                  <Leaf className="w-4 h-4" />
-                  Join the Healthy Living Movement
-                </p>
+                <div className="flex flex-col items-center gap-1.5 mb-4">
+                  <Leaf className="w-5 h-5 text-[#1c3e1e]" />
+                  <p className="text-xs sm:text-sm font-semibold tracking-widest text-[#1c3e1e] uppercase">
+                    Join the Healthy Living Movement
+                  </p>
+                </div>
                 <h2 className="text-2xl text-center sm:text-4xl lg:text-5xl font-serif text-[#1c3e1e] leading-tight mb-5">
                   {" "}
                   Learn Today.
                   <br />
                   Live Better Tomorrow.
                 </h2>
-                <p className="text-sm leading-none text-center lg:text-lg text-gray-700 md:leading-7 lg:leading-8 max-w-2xl mx-auto lg:mx-0">
-                  {" "}
+                {/* Leaf Divider */}
+                <div className="flex items-center justify-center gap-2 mb-5">
+                  <div className="h-px bg-[#4d8745] flex-1 max-w-[60px]" />
+                  <Leaf className="w-4 h-4 text-[#4d8745]" />
+                  <div className="h-px bg-[#4d8745] flex-1 max-w-[60px]" />
+                </div>
+                <p className="text-sm leading-relaxed text-center lg:text-base text-gray-700 md:leading-7 max-w-[38ch] mx-auto">
                   Greenbae believes healthier living begins with small daily
                   choices. Join our community to receive wellness insights,
                   healthy living tips, and updates on future Greenbae
@@ -101,21 +123,23 @@ export default function JoinMovementCTA() {
                 </p>
               </div>
               {/* Benefits */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-10 mt-10 lg:mt-14">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-x-2 gap-y-8 sm:gap-6 lg:gap-10 mt-10 lg:mt-14">
                 {" "}
                 {BENEFIT_CARDS.map((card) => (
                   <div
                     key={card.id}
-                    className="text-center bg-white/60 rounded-xl p-4"
+                    className="text-center px-1 sm:px-2 relative"
                   >
                     {" "}
-                    <div className="flex justify-center text-[#4d8745] mb-4">
+                    <div className="flex items-center justify-center w-12 h-12 rounded-full bg-[#e8f5e4] text-[#1c3e1e] mx-auto mb-3">
                       {card.icon}
                     </div>
-                    <h3 className="font-semibold text-[#1c3e1e] mb-2">
+                    <h3 className="font-semibold text-[#1c3e1e] text-[13px] sm:text-base mb-1.5 whitespace-nowrap">
                       {card.title}
                     </h3>
-                    <p className="text-sm text-gray-600">{card.description}</p>
+                    <p className="text-[11px] sm:text-sm text-gray-600 leading-snug px-1">
+                      {card.description}
+                    </p>
                   </div>
                 ))}
               </div>
@@ -128,7 +152,7 @@ export default function JoinMovementCTA() {
               </div>
             </div>
             {/* Newsletter */}
-            <div className="mt-10 lg:mt-16 bg-white rounded-2xl shadow-lg border border-gray-100 p-5 sm:p-8">
+            <div className="mt-10 lg:mt-16 bg-[#e8f5e4] rounded-2xl shadow-lg border border-[#c8e6c0] p-5 sm:p-8">
               {" "}
               <div className="flex flex-col lg:flex-row items-start lg:items-center gap-6 lg:gap-8">
                 {" "}
@@ -158,7 +182,7 @@ export default function JoinMovementCTA() {
                     placeholder="Enter your email address"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className=" border border-gray-300 w-full rounded-xl rounded-r-none px-5 py-4 outline-none focus:ring-2 focus:ring-[#4d8745]"
+                    className="bg-white border border-gray-300 w-full rounded-xl rounded-r-none px-5 py-4 outline-none focus:ring-2 focus:ring-[#4d8745]"
                   />
 
                   <button
