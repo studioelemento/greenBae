@@ -9,10 +9,10 @@ import HealthyLivingInsights from './components/HealthyLivingInsights'
 const HealthyLivingPage = () => {
   return(
     <div className='bg-[#fcf6ee]'>
-      <HealthyLivingHero/>
+      {/* <HealthyLivingHero/>
       <ExploreByTopic/>
       <EditorsPicks/>
-      <LatestInsights/>
+      <LatestInsights/> */}
       <HealthyLivingInsights/>
       <JoinMovementCTA/>
     </div>
