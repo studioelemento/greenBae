@@ -51,14 +51,14 @@ const Hero = () => {
           
           {/* Buttons */}
           <div className="flex flex-col md:flex-row gap-3 md:gap-4 w-full md:w-auto px-4 md:px-0">
-            <button className="w-full md:w-auto justify-center bg-[#345920] hover:bg-[#2b4c18] text-white px-7 py-3 md:py-3.5 rounded text-[13px] md:text-[15px] font-bold transition-colors flex items-center gap-2 group shadow-sm border border-[#345920]">
+            <a href="/products" className="w-full md:w-auto justify-center bg-[#345920] hover:bg-[#2b4c18] text-white px-7 py-3 md:py-3.5 rounded text-[13px] md:text-[15px] font-bold transition-colors flex items-center gap-2 group shadow-sm border border-[#345920]">
               Explore Products 
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </button>
-            <button className="w-full md:w-auto justify-center bg-white md:bg-transparent text-[#345920] border border-[#d1e6d3] md:border-gray-300 hover:border-[#345920] px-7 py-3 md:py-3.5 rounded text-[13px] md:text-[15px] font-bold transition-colors flex items-center gap-2 group">
+            </a>
+            <a href="#story" className="w-full md:w-auto justify-center bg-white md:bg-transparent text-[#345920] border border-[#d1e6d3] md:border-gray-300 hover:border-[#345920] px-7 py-3 md:py-3.5 rounded text-[13px] md:text-[15px] font-bold transition-colors flex items-center gap-2 group">
               Our Story
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </button>
+            </a>
           </div>
         </div>
       </div>

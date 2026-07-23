@@ -99,10 +99,10 @@ const OurProducts = () => {
             </p>
 
             {/* View All Button */}
-            <button className="mt-8 bg-[#345920] hover:bg-[#2b4c18] text-white px-8 py-3.5 rounded text-[14px] lg:text-[15px] font-bold transition-all duration-300 flex items-center gap-2 group shadow-sm border border-[#345920]">
+            <a href="/products" className="mt-8 bg-[#345920] hover:bg-[#2b4c18] text-white px-8 py-3.5 rounded text-[14px] lg:text-[15px] font-bold transition-all duration-300 flex items-center gap-2 group shadow-sm border border-[#345920] w-fit">
               View All Products
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </button>
+            </a>
           </div>
 
           {/* Right Column: Large Setup Image - Hidden on Mobile */}

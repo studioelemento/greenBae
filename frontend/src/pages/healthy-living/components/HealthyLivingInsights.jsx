@@ -192,7 +192,7 @@ export default function HealthyLivingInsights() {
   });
 
   return (
-    <section className="w-full bg-gradient-to-b from-white to-[#f5f1ed] md:pt-0 md:pb-16 lg:pb-20">
+    <section id="insights" className="w-full bg-gradient-to-b from-white to-[#f5f1ed] md:pt-0 md:pb-16 lg:pb-20">
       <div className="max-w-full mx-auto  sm:px-6 lg:px-8">
 
         <div className="  ">

@@ -36,7 +36,7 @@ const steps = [
 
 const YearsOfLearning = () => {
   return (
-    <section className="w-full bg-[#f8f9f0] overflow-hidden relative py-12 lg:py-24">
+    <section id="years-of-learning" className="w-full bg-[#f8f9f0] overflow-hidden relative py-12 lg:py-24">
       {/* Decorative landscape for Desktop left */}
       <div className="hidden lg:block absolute bottom-0 left-0 w-[45%] h-full opacity-30 pointer-events-none">
         <div className="absolute inset-0 bg-gradient-to-t from-[#f8f9f0] via-transparent to-[#f8f9f0] z-10" />

@@ -258,10 +258,10 @@ const QuickAnswers = () => {
                   </div>
 
                   {/* Contact Us Button */}
-                  <button className="w-full md:w-auto bg-[#0B3B24] hover:bg-[#072410] text-white px-7 py-3.5 rounded-xl flex items-center justify-center gap-2.5 transition-colors duration-200 cursor-pointer shrink-0">
+                  <a href="#contact-hero" className="w-full md:w-auto bg-[#0B3B24] hover:bg-[#072410] text-white px-7 py-3.5 rounded-xl flex items-center justify-center gap-2.5 transition-colors duration-200 cursor-pointer shrink-0 w-fit">
                     <MessageIcon />
                     <span className="text-sm">Contact Us</span>
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
@@ -286,10 +286,10 @@ const QuickAnswers = () => {
                 </div>
 
                 {/* Contact Us Button */}
-                <button className="w-full md:w-auto bg-[#0B3B24] hover:bg-[#072410] text-white px-7 py-3.5 rounded-xl flex items-center justify-center gap-2.5 transition-colors duration-200 cursor-pointer shrink-0">
+                <a href="#contact-hero" className="w-full md:w-auto bg-[#0B3B24] hover:bg-[#072410] text-white px-7 py-3.5 rounded-xl flex items-center justify-center gap-2.5 transition-colors duration-200 cursor-pointer shrink-0 w-fit">
                   <MessageIcon />
                   <span className="text-sm">Contact Us</span>
-                </button>
+                </a>
               </div>
             </div>
           </div>

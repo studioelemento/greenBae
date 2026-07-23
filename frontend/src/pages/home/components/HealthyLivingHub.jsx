@@ -178,13 +178,13 @@ const HealthyLivingHub = () => {
             <h3 className="font-serif font-bold text-2xl md:text-3xl text-[#1c3e1e] tracking-tight">Featured Reads</h3>
             <Leaf size={18} className="text-[#61a355] mt-1 rotate-[30deg] inline-block" />
           </div>
-          <Link 
-            to="/wellness-journal" 
+          <a 
+            href="/healthy-living" 
             className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#345920] hover:text-[#2b4c18] transition-colors group"
           >
             View All Articles
             <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
-          </Link>
+          </a>
         </div>
 
         {/* 4. Article Grid */}
@@ -269,13 +269,13 @@ const HealthyLivingHub = () => {
           </div>
 
           {/* Right Side Button */}
-          <Link 
-            to="/wellness-journal" 
-            className="bg-[#1c3e1e] hover:bg-[#2b4c18] text-white px-6 py-3.5 rounded-[8px] text-xs font-bold transition-all duration-300 flex items-center gap-1.5 shrink-0 z-10 shadow-sm border border-[#1c3e1e] group"
+          <a 
+            href="/healthy-living" 
+            className="bg-[#1c3e1e] hover:bg-[#2b4c18] text-white px-6 py-3.5 rounded-[8px] text-xs font-bold transition-all duration-300 flex items-center gap-1.5 shrink-0 z-10 shadow-sm border border-[#1c3e1e] group w-fit"
           >
             Explore All Articles
             <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
-          </Link>
+          </a>
 
         </div>
 

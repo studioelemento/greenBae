@@ -103,7 +103,7 @@ const ContactHero = () => {
   };
 
   return (
-    <section className="bg-white py-2 pb-0 md:py-10 lg:py-10 px-2 sm:px-4 lg:px-8 xl:px-12 max-w-[1440px] mx-auto">
+    <section id="contact-hero" className="bg-white py-2 pb-0 md:py-10 lg:py-10 px-2 sm:px-4 lg:px-8 xl:px-12 max-w-[1440px] mx-auto">
       {/* Outer Card Container */}
       <div className="bg-[#FCF8F2] rounded-[12px] p-5 pb-8 sm:p-6 md:p-8 lg:p-15 relative overflow-hidden ">
         {/* Main Grid Content */}
