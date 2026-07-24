@@ -1,36 +1,43 @@
 import React from 'react';
 import { Leaf } from 'lucide-react';
+import FamilyNutrition from '../../../assets/ourstory/Family-Nutrition-Practice-image.avif';
+import Learning from '../../../assets/ourstory/Learning-Refinement-image.avif';
+import Research from '../../../assets/ourstory/Research-Experimentation-Image.avif';
+import Formula from '../../../assets/ourstory/Formula-Development.avif';
+import Greenbae from '../../../assets/ourstory/Greenbae-Established.avif';
+import Healthy from '../../../assets/ourstory/Healthy-Living-Movement.avif';
+
 
 const steps = [
   {
     title: "Family Nutrition Practice",
     desc: "It began at home—simple meals, better choices and a deep desire to see our children healthier.",
-    img: "https://images.unsplash.com/photo-1542037104857-ffbb0b9155fb?auto=format&fit=crop&q=80&w=600",
+    img: FamilyNutrition
   },
   {
     title: "Learning & Refinement",
     desc: "We explored, read, consulted experts and learned everything we could about nutrition and ingredients.",
-    img: "https://images.unsplash.com/photo-1481349518771-20055b2a7b24?auto=format&fit=crop&q=80&w=600",
+    img: Learning
   },
   {
     title: "Research & Experimentation",
     desc: "Countless hours of research and kitchen experiments to find what truly works and is naturally better.",
-    img: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&q=80&w=600",
+    img: Research,
   },
   {
     title: "Formula Development",
     desc: "Carefully crafted, clean and effective formulas that deliver real nutrition in the most natural way.",
-    img: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&q=80&w=600",
+    img: Formula,
   },
   {
     title: "Greenbae Established",
     desc: "A promise to bring clean, plant-based nutrition to families—honestly, transparently and responsibly.",
-    img: "https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&q=80&w=600",
+    img: Greenbae,
   },
   {
     title: "Healthy Living Movement",
     desc: "Today, we continue our journey with one mission—to make healthy living simple, joyful and accessible for every family.",
-    img: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&q=80&w=600",
+    img: Healthy,
   },
 ];
 

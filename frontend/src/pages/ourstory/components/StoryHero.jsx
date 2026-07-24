@@ -1,5 +1,6 @@
 import React from 'react';
 import { Leaf, Heart, Users, Globe, ArrowRight } from 'lucide-react';
+import heroImage from '../../../assets/ourstory/Our-Story-hero-section.avif';
 
 const StoryHero = () => {
   const icons = [
@@ -34,7 +35,7 @@ const StoryHero = () => {
       <div className="relative w-full h-[350px] md:h-[calc(100vh-80px)] md:min-h-[600px] md:max-h-[850px] z-10 flex flex-col">
         {/* Background Image */}
         <img
-          src="https://images.unsplash.com/photo-1542037104857-ffbb0b9155fb?auto=format&fit=crop&q=80&w=2000"
+          src={heroImage}
           alt="Happy family outdoors"
           className="absolute inset-0 w-full h-full object-cover object-top"
         />

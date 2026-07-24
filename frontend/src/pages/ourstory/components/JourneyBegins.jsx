@@ -1,5 +1,6 @@
 import React from 'react';
 import { Leaf, Heart, Smile, BookOpen, Lightbulb, ArrowRight, ShieldCheck, Users, Sprout } from 'lucide-react';
+import image from '../../../assets/ourstory/Journey-has-begun.avif';
 
 const JourneyBegins = () => {
   const pillars = [
@@ -37,7 +38,7 @@ const JourneyBegins = () => {
           <div className="absolute top-0 right-0 w-[60%] h-full z-0">
             <div className="absolute inset-0 bg-gradient-to-r from-[#FAF9F5] via-[#FAF9F5]/90 to-transparent z-10" />
             <img 
-              src="https://images.unsplash.com/photo-1476610182048-b716b8518aae?auto=format&fit=crop&q=80&w=1200" 
+              src={image} 
               alt="Family watching sunset" 
               className="w-full h-full object-cover object-right"
             />
