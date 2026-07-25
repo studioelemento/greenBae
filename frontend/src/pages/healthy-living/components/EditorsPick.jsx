@@ -133,7 +133,7 @@ export default function EditorsPicks() {
             </div>
           </div>
           <a
-            href="#"
+            href="#insights"
             className="inline-flex items-center gap-2 bg-[#1c3e1e] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#2d5028] transition-colors whitespace-nowrap"
           >
             View All Articles

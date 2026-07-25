@@ -1,5 +1,6 @@
 import React from 'react';
 import { Leaf, Heart, Smile, BookOpen, Lightbulb, ArrowRight, ShieldCheck, Users, Sprout } from 'lucide-react';
+import image from '../../../assets/ourstory/Journey-has-begun.avif';
 
 const JourneyBegins = () => {
   const pillars = [
@@ -37,7 +38,7 @@ const JourneyBegins = () => {
           <div className="absolute top-0 right-0 w-[60%] h-full z-0">
             <div className="absolute inset-0 bg-gradient-to-r from-[#FAF9F5] via-[#FAF9F5]/90 to-transparent z-10" />
             <img 
-              src="https://images.unsplash.com/photo-1476610182048-b716b8518aae?auto=format&fit=crop&q=80&w=1200" 
+              src={image} 
               alt="Family watching sunset" 
               className="w-full h-full object-cover object-right"
             />
@@ -93,12 +94,12 @@ const JourneyBegins = () => {
             </div>
             
             <div className="relative z-10 flex flex-col gap-3 w-auto min-w-[260px]">
-              <button className="bg-[#FAF9F5] text-[#1a3622] hover:bg-white w-full px-5 py-3 rounded font-semibold text-sm flex items-center justify-center gap-2 transition-colors shadow-sm">
+              <a href="/products" className="bg-[#FAF9F5] text-[#1a3622] hover:bg-white w-full px-5 py-3 rounded font-semibold text-sm flex items-center justify-center gap-2 transition-colors shadow-sm">
                 Explore Our Products <ArrowRight className="w-4 h-4" />
-              </button>
-              <button className="border border-white/40 text-white hover:bg-white/10 w-full px-5 py-3 rounded font-medium text-sm flex items-center justify-center gap-2 transition-colors">
+              </a>
+              <a href="/healthy-living" className="border border-white/40 text-white hover:bg-white/10 w-full px-5 py-3 rounded font-medium text-sm flex items-center justify-center gap-2 transition-colors">
                 Join The Healthy Living Movement <Heart className="w-4 h-4" />
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -160,12 +161,12 @@ const JourneyBegins = () => {
             </h2>
             
             <div className="flex flex-col gap-2.5 w-full">
-              <button className="bg-[#FAF9F5] text-[#1a3622] hover:bg-white w-full py-2.5 rounded font-semibold text-[11px] flex items-center justify-center gap-1.5 shadow-sm">
+              <a href="/products" className="bg-[#FAF9F5] text-[#1a3622] hover:bg-white w-full py-2.5 rounded font-semibold text-[11px] flex items-center justify-center gap-1.5 shadow-sm">
                 Explore Our Products <ArrowRight className="w-3 h-3" />
-              </button>
-              <button className="border border-white/40 text-white hover:bg-white/10 w-full py-2.5 rounded font-medium text-[11px] flex items-center justify-center gap-1.5">
+              </a>
+              <a href="/healthy-living" className="border border-white/40 text-white hover:bg-white/10 w-full py-2.5 rounded font-medium text-[11px] flex items-center justify-center gap-1.5">
                 Join The Healthy Living Movement <Heart className="w-3 h-3" />
-              </button>
+              </a>
             </div>
           </div>
         </div>

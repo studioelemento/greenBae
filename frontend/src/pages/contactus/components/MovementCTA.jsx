@@ -160,7 +160,8 @@ const MovementCTA = () => {
                   <span className="whitespace-nowrap">Join The Movement</span>
                 </button>
 
-                <button
+                <a
+                  href="/healthy-living"
                   className="
                   bg-white
                     border
@@ -184,7 +185,7 @@ const MovementCTA = () => {
                 >
                   Explore Healthy Living Hub
                   <ArrowRight size={18} />
-                </button>
+                </a>
               </div>
               {/* Mobile BUTTONS */}
 
@@ -210,7 +211,8 @@ const MovementCTA = () => {
                   Join The Movement
                 </button>
 
-                <button
+                <a
+                  href="/healthy-living"
                   className="
       w-[300px]
       max-w-sm
@@ -232,7 +234,7 @@ const MovementCTA = () => {
                 >
                   Explore Healthy Living Hub
                   <ArrowRight size={18} />
-                </button>
+                </a>
               </div>
             </div>
 

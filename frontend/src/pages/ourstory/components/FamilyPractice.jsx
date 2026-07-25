@@ -1,5 +1,6 @@
 import React from 'react';
 import { Leaf, Users, MapPin, Smile, AlertCircle } from 'lucide-react';
+import familyPracticeImage from '../../../assets/ourstory/Our-Story-Family-Practice.avif';
 
 const FamilyPractice = () => {
   const points = [
@@ -28,7 +29,7 @@ const FamilyPractice = () => {
           style={{ background: 'linear-gradient(to right, #f8f9f0 0%, rgba(248,249,240,0.6) 30%, transparent 60%)' }}
         />
         <img
-          src="https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?auto=format&fit=crop&q=80&w=1200"
+          src={familyPracticeImage}
           alt="Mother feeding daughter healthy food"
           className="w-full h-full object-cover object-top"
         />

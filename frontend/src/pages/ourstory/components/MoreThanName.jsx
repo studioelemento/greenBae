@@ -1,5 +1,6 @@
 import React from 'react';
 import { Leaf, ShieldCheck, Heart, Users, Sprout, HeartHandshake, Quote } from 'lucide-react';
+import image from '../../../assets/ourstory/More-than-a-name-image.avif';
 
 const MoreThanName = () => {
   const desktopAttributes = [
@@ -110,7 +111,7 @@ const MoreThanName = () => {
         <div className="w-full lg:w-1/2 relative mt-8 lg:mt-0">
           <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
             <img 
-              src="https://images.unsplash.com/photo-1544885564-fa1222e9641d?auto=format&fit=crop&q=80&w=800" 
+              src={image}
               alt="Green mug representing natural friend" 
               className="w-full h-full object-cover"
             />

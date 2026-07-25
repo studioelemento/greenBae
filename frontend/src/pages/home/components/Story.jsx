@@ -41,7 +41,7 @@ const Story = () => {
   ];
 
   return (
-    <section className="relative w-full bg-white overflow-hidden">
+    <section id="story" className="relative w-full bg-white overflow-hidden">
       
       {/* Top Story Section (Desktop: absolute layout with full-bleed image on the right) */}
       <div className="relative w-full min-h-[500px] md:min-h-[480px] lg:min-h-[520px] flex items-center pt-12 pb-6 md:py-0">
@@ -210,10 +210,10 @@ const Story = () => {
 
         {/* Centered Read Full Story Button */}
         <div className="flex justify-center">
-          <button className="bg-[#345920] hover:bg-[#2b4c18] text-white px-8 py-3.5 rounded text-[14px] lg:text-[15px] font-bold transition-all duration-300 flex items-center gap-2 group shadow-sm border border-[#345920]">
+          <a href="/our-story" className="bg-[#345920] hover:bg-[#2b4c18] text-white px-8 py-3.5 rounded text-[14px] lg:text-[15px] font-bold transition-all duration-300 flex items-center gap-2 group shadow-sm border border-[#345920]">
             Read Our Full Story
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </button>
+          </a>
         </div>
 
       </div>

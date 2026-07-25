@@ -1,5 +1,6 @@
 import React from 'react';
 import { Leaf, Heart, Users, Globe, ArrowRight } from 'lucide-react';
+import heroImage from '../../../assets/ourstory/Our-Story-hero-section.avif';
 
 const StoryHero = () => {
   const icons = [
@@ -25,16 +26,16 @@ const StoryHero = () => {
         <p className="text-gray-700 leading-relaxed mb-6 max-w-xs">
           What began as a simple effort by loving parents to ensure better nutrition for their children eventually grew into Greenbae—a movement dedicated to healthier living.
         </p>
-        <button className="bg-primary-800 hover:bg-primary-900 text-white px-8 py-3 rounded flex items-center gap-3 text-sm font-medium transition-colors">
+        <a href="#years-of-learning" className="bg-primary-800 hover:bg-primary-900 text-white px-8 py-3 rounded flex items-center gap-3 text-sm font-medium transition-colors w-fit mx-auto">
           Our Journey <ArrowRight className="w-4 h-4" />
-        </button>
+        </a>
       </div>
 
       {/* Main Hero Container (Image + Desktop Text + Desktop Bottom Curve) */}
       <div className="relative w-full h-[350px] md:h-[calc(100vh-80px)] md:min-h-[600px] md:max-h-[850px] z-10 flex flex-col">
         {/* Background Image */}
         <img
-          src="https://images.unsplash.com/photo-1542037104857-ffbb0b9155fb?auto=format&fit=crop&q=80&w=2000"
+          src={heroImage}
           alt="Happy family outdoors"
           className="absolute inset-0 w-full h-full object-cover object-top"
         />
@@ -59,9 +60,9 @@ const StoryHero = () => {
             What began as a simple effort by loving parents to ensure better nutrition for their children eventually grew into Greenbae—a movement dedicated to healthier living.
           </p>
           <div>
-            <button className="bg-primary-800 hover:bg-primary-900 text-white px-8 py-3 rounded flex items-center gap-3 text-sm font-medium transition-colors">
+            <a href="#years-of-learning" className="bg-primary-800 hover:bg-primary-900 text-white px-8 py-3 rounded flex items-center gap-3 text-sm font-medium transition-colors w-fit">
               Our Journey <ArrowRight className="w-4 h-4" />
-            </button>
+            </a>
           </div>
         </div>
 
