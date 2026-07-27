@@ -17,10 +17,10 @@ const Home = () => {
       <div className="h-8 lg:h-12 bg-white"></div>
        */}
       <LifestyleChallenge />
+      <OurProducts />
       <Philosophy />
       <Story />
       <Generation/>
-      <OurProducts />
       <HealthyLivingHub />
     </div>
   );

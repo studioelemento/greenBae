@@ -1,12 +1,15 @@
 import React from 'react';
 import { Leaf, FlaskConical, CalendarCheck, CheckCircle2, Sprout } from 'lucide-react';
+import NatureImage from '../../../assets/img-Home/Nature Image.avif';
+import ResearchImage from '../../../assets/img-Home/Research Image.avif';
+import ConsistencyImage from '../../../assets/img-Home/Consistency image.avif';
 
 const Philosophy = () => {
   const philosophyData = [
     {
       title: "Nature",
       icon: Leaf,
-      image: "/nature_philosophy.png",
+      image: NatureImage,
       descriptionDesktop: "We draw inspiration from nature's goodness. From vegetables and herbs to traditional ingredients, nature provides the foundation for real nourishment.",
       descriptionMobile: "We draw inspiration from nature's goodness. Nature provides the foundation for real nourishment.",
       bannerText: "Goodness that nature has perfected over time.",
@@ -15,7 +18,7 @@ const Philosophy = () => {
     {
       title: "Research",
       icon: FlaskConical,
-      image: "/research_philosophy.png",
+      image: ResearchImage,
       descriptionDesktop: "Years of learning, studying and refining help us understand ingredients better and create formulations that are effective, safe and nutritionally meaningful.",
       descriptionMobile: "Years of learning and refining help us create formulations that are effective, safe and nutritionally meaningful.",
       bannerText: "Knowledge that turns ingredients into solutions.",
@@ -24,7 +27,7 @@ const Philosophy = () => {
     {
       title: "Consistency",
       icon: CalendarCheck,
-      image: "/consistency_philosophy.png",
+      image: ConsistencyImage,
       descriptionDesktop: "Wellness is built over time through small, daily choices. We make it easy to stay consistent with practical solutions that fit effortlessly into everyday life.",
       descriptionMobile: "Wellness is built over time through small, daily choices that fit effortlessly into everyday life.",
       bannerText: "Daily choices that create lasting wellness.",

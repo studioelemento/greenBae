@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight, Leaf } from 'lucide-react';
+import HeroImage from '../../../assets/img-Home/Home Page Hero section image.avif';
 
 const Hero = () => {
   return (
@@ -8,7 +9,7 @@ const Hero = () => {
       <div className="absolute inset-0 md:inset-0 top-auto bottom-0 md:top-0 h-[50%] md:h-full z-0 flex justify-center md:justify-end">
         <div className="relative w-full md:w-[70%] lg:w-[65%] h-full">
           <img 
-            src="/Home Page/Image Assets Home/Home Hero image.png" 
+            src={HeroImage} 
             alt="Greenbae Home Hero" 
             className="w-full h-full object-cover object-center"
           />
