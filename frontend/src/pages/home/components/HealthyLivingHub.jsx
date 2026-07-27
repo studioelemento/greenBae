@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Leaf, Heart, Smile, Soup, Sparkles, Activity, ArrowRight, BookOpen } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import articlesData from '../../../data/articles.js';
+
 
 const HealthyLivingHub = () => {
   const [activeCategory, setActiveCategory] = useState('All');
@@ -14,40 +16,7 @@ const HealthyLivingHub = () => {
     { name: 'Mind & Body', icon: Activity }
   ];
 
-  const articles = [
-    {
-      title: "5 Simple Habits For Better Nutrition Every Day",
-      desc: "Small, consistent changes that make a big difference.",
-      category: "Nutrition",
-      image: "/nutrition_smoothie.png",
-      readTime: "5 min read",
-      date: "May 12, 2024"
-    },
-    {
-      title: "How To Build Stronger Family Wellness Habits",
-      desc: "Tips to create a healthier, happier home environment.",
-      category: "Wellness",
-      image: "/wellness_family.png",
-      readTime: "6 min read",
-      date: "May 8, 2024"
-    },
-    {
-      title: "Nourishing Recipes The Whole Family Will Love",
-      desc: "Delicious and nutritious meals made easy.",
-      category: "Recipes",
-      image: "/recipe_salad.png",
-      readTime: "4 min read",
-      date: "May 5, 2024"
-    },
-    {
-      title: "Immunity Boosting Tips For Growing Kids",
-      desc: "Natural ways to support strong immunity.",
-      category: "Kids Health",
-      image: "/children_generation.png",
-      readTime: "5 min read",
-      date: "May 1, 2024"
-    }
-  ];
+  const articles = articlesData;
 
   const filteredArticles = activeCategory === 'All'
     ? articles
@@ -200,10 +169,11 @@ const HealthyLivingHub = () => {
               </p>
             </div>
           ) : (
-            filteredArticles.map((article, idx) => (
-              <div 
-                key={idx} 
-                className="flex flex-col bg-white border border-[#f3f0e7] rounded-[24px] overflow-hidden shadow-sm hover:shadow-[0_12px_30px_rgba(0,0,0,0.05)] hover:-translate-y-1 transition-all duration-300 group cursor-pointer"
+            filteredArticles.map((article) => (
+              <Link 
+                to={`/article/${article.id}`}
+                key={article.id} 
+                className="flex flex-col bg-white border border-[#f3f0e7] rounded-[24px] overflow-hidden shadow-sm hover:shadow-[0_12px_30px_rgba(0,0,0,0.05)] hover:-translate-y-1 transition-all duration-300 group cursor-pointer block"
               >
                 {/* Image Area */}
                 <div className="relative w-full h-[180px] overflow-hidden bg-gray-100 shrink-0">
@@ -225,18 +195,18 @@ const HealthyLivingHub = () => {
                       {article.title}
                     </h4>
                     <p className="text-gray-500 text-xs sm:text-[13px] leading-relaxed mb-4 line-clamp-2">
-                      {article.desc}
+                      {article.description}
                     </p>
                   </div>
                   {/* Card Meta Footer */}
                   <div className="text-[11px] text-gray-400 mt-auto pt-3 border-t border-gray-100 flex items-center justify-between font-medium">
-                    <span>{article.readTime}</span>
+                    <span>{article.readTime} min read</span>
                     <span className="w-1 h-1 rounded-full bg-gray-300"></span>
                     <span>{article.date}</span>
                   </div>
                 </div>
 
-              </div>
+              </Link>
             ))
           )}
         </div>

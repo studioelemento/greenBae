@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import ARTICLES from "../../../data/articles.js";
 import {
   Search,
   ChevronRight,
@@ -83,96 +85,19 @@ const ArticleCountIcon = () => (
   </svg>
 );
 
-const CATEGORIES = [
-  { id: "all", name: "All Articles", count: 72, IconComp: AllArticlesIcon },
-  { id: "nutrition", name: "Nutrition", count: 18, IconComp: NutritionIcon },
-  { id: "family", name: "Family Wellness", count: 12, IconComp: FamilyWellnessIcon },
-  { id: "kids", name: "Kids Wellness", count: 8, IconComp: KidsWellnessIcon },
-  { id: "aging", name: "Healthy Aging", count: 10, IconComp: HealthyAgingIcon },
-  { id: "natural", name: "Natural Living", count: 15, IconComp: NaturalLivingIcon },
-  { id: "recipes", name: "Recipes & Habits", count: 9, IconComp: RecipesIcon },
-];
+const getCount = (catName) => {
+  if (catName === "All Articles") return ARTICLES.length;
+  return ARTICLES.filter((a) => a.category.toLowerCase() === catName.toLowerCase()).length;
+};
 
-const ARTICLES = [
-  {
-    id: "1",
-    image: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&q=80",
-    category: "NUTRITION",
-    readTime: 5,
-    date: "May 20, 2024",
-    title: "Why Daily Nutrition Matters",
-    description:
-      "Discover how consistent, balanced nutrition every day can improve energy, immunity, and overall well-being.",
-  },
-  {
-    id: "2",
-    image: "https://media.istockphoto.com/id/1203932588/photo/happy-family-in-the-park-stock-photo.jpg?s=612x612&w=0&k=20&c=BUW3w82hhEX1PI5Sy3NR-zeYBXO4T4Yl7_idFimMYR8=",
-    category: "FAMILY WELLNESS",
-    readTime: 6,
-    date: "May 18, 2024",
-    title: "Building Healthy Family Routines",
-    description:
-      "Small changes at home that bring your family closer and support lifelong wellness.",
-  },
-  {
-    id: "3",
-    image: "https://static.vecteezy.com/system/resources/previews/059/513/829/non_2x/happy-children-playing-outdoors-in-sunlit-field-filled-with-flowers-free-photo.jpeg",
-    category: "KIDS WELLNESS",
-    readTime: 3,
-    date: "May 16, 2024",
-    title: "Helping Kids Develop Healthy Habits",
-    description:
-      "Practical tips to help children build better eating, activity, and sleep habits naturally.",
-  },
-  {
-    id: "4",
-    image: "https://www.summithealth.com/sites/default/files/2021-08/Healthy%20Aging%20(medium)%20iStock-1293388093.jpg",
-    category: "HEALTHY AGING",
-    readTime: 6,
-    date: "May 14, 2024",
-    title: "Stay Active, Stay Young At Every Age",
-    description:
-      "Simple lifestyle choices that support energy, mobility, and mental well-being as you age.",
-  },
-  {
-    id: "5",
-    image: "https://i.pinimg.com/originals/f5/50/f3/f550f33b0770d18889dbe6759a64c2fd.jpg",
-    category: "NATURAL LIVING",
-    readTime: 5,
-    date: "May 20, 2024",
-    title: "Herbal Teas & Their Everyday Benefits",
-    description:
-      "Nature's simple remedies for immunity, digestion, and relaxation.",
-  },
-  {
-    id: "6",
-    image: "https://www.newtraderu.com/wp-content/uploads/10-Morning-Habits-For-a-Healthy-Mind-and-Productive-Day-768x512.jpg",
-    category: "RECIPES & HABITS",
-    readTime: 4,
-    date: "May 10, 2024",
-    title: "5 Morning Habits That Transform Your Day",
-    description:
-      "Start your day right with these simple habits for better focus and wellness.",
-  },
-  {
-    id: "7",
-    image: "https://images.unsplash.com/photo-1448375240586-882707db888b?w=800&q=80",
-    category: "NATURAL LIVING",
-    readTime: 6,
-    date: "May 05, 2024",
-    title: "Living Closer To Nature For Better Well-being",
-    description:
-      "How spending time in nature can reduce stress and improve health.",
-  },
-  {
-    id: "8",
-    image: "https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?w=800&q=80",
-    category: "RECIPES & HABITS",
-    readTime: 5,
-    date: "May 08, 2024",
-    title: "Quick & Healthy Breakfast Ideas",
-    description: "Easy, nutritious breakfast ideas to fuel your body and mind.",
-  },
+const CATEGORIES = [
+  { id: "all", name: "All Articles", count: getCount("All Articles"), IconComp: AllArticlesIcon },
+  { id: "nutrition", name: "Nutrition", count: getCount("Nutrition"), IconComp: NutritionIcon },
+  { id: "family wellness", name: "Family Wellness", count: getCount("Family Wellness"), IconComp: FamilyWellnessIcon },
+  { id: "kids wellness", name: "Kids Wellness", count: getCount("Kids Wellness"), IconComp: KidsWellnessIcon },
+  { id: "healthy aging", name: "Healthy Aging", count: getCount("Healthy Aging"), IconComp: HealthyAgingIcon },
+  { id: "natural living", name: "Natural Living", count: getCount("Natural Living"), IconComp: NaturalLivingIcon },
+  { id: "recipes & habits", name: "Recipes & Habits", count: getCount("Recipes & Habits"), IconComp: RecipesIcon },
 ];
 
 export default function HealthyLivingInsights() {
@@ -181,7 +106,7 @@ export default function HealthyLivingInsights() {
   const [sortBy, setSortBy] = useState("latest");
   const [displayCount, setDisplayCount] = useState(8);
 
-  const filteredArticles = ARTICLES.slice(0, displayCount).filter((article) => {
+  const matchingArticles = ARTICLES.filter((article) => {
     const matchesSearch =
       article.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       article.description.toLowerCase().includes(searchQuery.toLowerCase());
@@ -189,7 +114,17 @@ export default function HealthyLivingInsights() {
       selectedCategory === "all" ||
       article.category.toLowerCase() === selectedCategory;
     return matchesSearch && matchesCategory;
+  }).sort((a, b) => {
+    const dateA = new Date(a.date).getTime();
+    const dateB = new Date(b.date).getTime();
+    if (sortBy === "latest") return dateB - dateA;
+    if (sortBy === "oldest") return dateA - dateB;
+    if (sortBy === "popular") return b.readTime - a.readTime; // Longer read time = more popular
+    return 0;
   });
+
+  const filteredArticles = matchingArticles.slice(0, displayCount);
+  const hasMoreArticles = displayCount < matchingArticles.length;
 
   return (
     <section id="insights" className="w-full bg-gradient-to-b from-white to-[#f5f1ed] md:pt-0 md:pb-16 lg:pb-20">
@@ -262,7 +197,11 @@ export default function HealthyLivingInsights() {
                   {/* Articles Count */}
                   <div className="flex items-center gap-2 text-sm md:text-base text-[#1c3e1e] font-semibold">
                     <ArticleCountIcon />
-                    <span>{ARTICLES.length} Articles and growing</span>
+                    <span>
+                      {searchQuery 
+                        ? `${matchingArticles.length} Matching Articles found` 
+                        : `${ARTICLES.length} Articles and growing`}
+                    </span>
                   </div>
                 </div>
                 {/* Newsletter */}
@@ -360,7 +299,7 @@ export default function HealthyLivingInsights() {
               {/* Articles Grid - Desktop */}
               <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8 md:mb-12">
                 {filteredArticles.map((article) => (
-                  <div key={article.id} className="group cursor-pointer">
+                  <Link to={`/article/${article.id}`} key={article.id} className="group cursor-pointer block">
                     {/* Image */}
                     <div className="relative  rounded-lg mb-4 h-40 md:h-48">
                       <div className="overflow-hidden h-full rounded-lg">
@@ -391,13 +330,14 @@ export default function HealthyLivingInsights() {
                       Read More
                       <ChevronRight className="w-4 h-4" />
                     </button> */}
-                  </div>
+                  </Link>
                 ))}
               </div>
               {/* Articles List - Mobile */}
               <div className="md:hidden space-y-4 mb-8">
                 {filteredArticles.map((article) => (
-                  <div
+                  <Link
+                    to={`/article/${article.id}`}
                     key={article.id}
                     className="flex items-center gap-3 bg-white rounded-lg p-3 hover:shadow-md transition-shadow cursor-pointer"
                   >
@@ -429,19 +369,21 @@ export default function HealthyLivingInsights() {
 
                     {/* Chevron */}
                     <ChevronRight className="w-5 h-5 text-[#4d8745] flex-shrink-0" />
-                  </div>
+                  </Link>
                 ))}
               </div>
               {/* Load More Button */}
-              <div className="flex justify-center mb-10 md:mb-14">
-                <button
-                  onClick={() => setDisplayCount(displayCount + 4)}
-                  className="inline-flex items-center gap-2 px-10 py-2 border-2 border-[#1c3e1e] text-[#1c3e1e] font-semibold rounded-full hover:bg-[#1c3e1e] hover:text-white transition-colors text-sm"
-                >
-                  Load More Articles
-                  <ChevronRight className="w-5 h-5" />
-                </button>
-              </div>
+              {hasMoreArticles && (
+                <div className="flex justify-center mb-10 md:mb-14">
+                  <button
+                    onClick={() => setDisplayCount(displayCount + 4)}
+                    className="inline-flex items-center gap-2 px-10 py-2 border-2 border-[#1c3e1e] text-[#1c3e1e] font-semibold rounded-full hover:bg-[#1c3e1e] hover:text-white transition-colors text-sm"
+                  >
+                    Load More Articles
+                    <ChevronRight className="w-5 h-5" />
+                  </button>
+                </div>
+              )}
               
             </div>
           </div>

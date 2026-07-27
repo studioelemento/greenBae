@@ -9,6 +9,8 @@ import ContactUs from './pages/contactus/ContactUs';
 import ProductsPage from './pages/products/ProductsPage';
 import './App.css'
 import HealthyLivingPage from './pages/healthy-living/HealthyLivingPage';
+import SingleArticle from './pages/article/SingleArticle';
+
 function App() {
   return (
     <Router>
@@ -21,6 +23,7 @@ function App() {
           <Route path="products/page" element={<ProductsPage />} />
           <Route path="products/single" element={<SingleProduct />} />
           <Route path="healthy-living" element={<HealthyLivingPage />} />
+          <Route path="article/:id" element={<SingleArticle />} />
           <Route path="contact-us" element={<ContactUs />} />
         </Route>
       </Routes>
