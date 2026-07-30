@@ -1,8 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Leaf } from "lucide-react";
-import veggieimage from "../../../assets/img-ourproducts/veggie.png";
-import nutriimage from "../../../assets/img-ourproducts/nutri.png";
+import veggieimage from "../../../assets/img-ourproducts/Greenbae Veggie Vitals.png";
+import nutriimage from "../../../assets/img-ourproducts/GreenBae Diabe Nutri Mix.png";
 import familyimage from "../../../assets/img-ourproducts/family.png";
 
 
@@ -55,11 +55,11 @@ const SignatureProducts = () => {
           {/* Card 1: Veggie Vitals */}
           <div className="bg-[#F4EFE6] rounded-[16px] md:rounded-[28px] overflow-hidden flex flex-row items-stretch shadow-[0_4px_20px_rgba(0,0,0,0.03)] h-[250px] md:h-auto">
             {/* Image container */}
-            <div className="w-[45%] md:w-[46%] relative bg-[#EAE3D4]/40 md:bg-transparent">
+            <div className="w-[45%] md:w-[46%] relative bg-[#EAE3D4]/40 md:bg-transparent overflow-hidden flex items-center justify-center">
               <img
                 src={veggieimage}
                 alt="Veggie Vitals Pouch"
-                className="absolute inset-0 w-full h-full object-contain object-center md:object-center p-4 md:p-6"
+                className="w-full aspect-[9/16] object-cover object-center md:object-center"
               />
             </div>
 
@@ -208,11 +208,11 @@ const SignatureProducts = () => {
           {/* Card 2: Nutri Mix */}
           <div className="bg-[#F0E7D8] rounded-[16px] md:rounded-[28px] overflow-hidden flex flex-row items-stretch shadow-[0_4px_20px_rgba(0,0,0,0.03)] h-[250px] md:h-auto">
             {/* Image container */}
-            <div className="w-[45%] md:w-[46%] relative bg-[#E4D7C2]/40 md:bg-transparent">
+            <div className="w-[45%] md:w-[46%] relative bg-[#E4D7C2]/40 md:bg-transparent overflow-hidden flex items-center justify-center">
               <img
                 src={nutriimage}
                 alt="Nutri Mix Pouch"
-                className="absolute inset-0 w-full h-full object-contain object-center md:object-center p-4 md:p-6"
+                className="w-full aspect-[9/16] object-cover object-center md:object-center"
               />
             </div>
 

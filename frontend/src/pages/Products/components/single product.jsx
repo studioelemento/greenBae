@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import {
+  ArrowLeft,
   ChevronUp,
   ChevronDown,
   Search,
@@ -20,6 +21,13 @@ import {
   Droplet,
   FlaskConical
 } from "lucide-react";
+
+import veggieVitalsImg from "../../../assets/img-ourproducts/Greenbae Veggie Vitals.png";
+import veggieVitalsPrepImg from "../../../assets/img-ourproducts/Greenbae Veggie Vitals Preperation.png";
+import veggieVitalsDetailsImg from "../../../assets/img-ourproducts/Greenbae Veggie Vitals Details.png";
+import nutriMixImg from "../../../assets/img-ourproducts/Greenbae Diabe Nutri Mix.png";
+import nutriMixPrepImg from "../../../assets/img-ourproducts/Greenbae Diabe Nutri Mix Preperation.png";
+import nutriMixDetailsImg from "../../../assets/img-ourproducts/Greenbae Diabe Nutri Mix Details.png";
 
 // Inline Icons for badges and features to match the premium design exactly
 const FSSAI = () => (
@@ -74,6 +82,7 @@ const DecorativePlantRight = () => (
 
 const SingleProduct = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const productId = location.state?.product || "veggie-vitals";
 
   const productsData = {
@@ -89,9 +98,9 @@ const SingleProduct = () => {
         "For the Whole Family"
       ],
       images: [
-        "/veggie_vitals.png",
-        "/single_ingredient.png",
-        "/family_story.png"
+        veggieVitalsImg,
+        veggieVitalsPrepImg,
+        veggieVitalsDetailsImg
       ]
     },
     "nutri-mix": {
@@ -106,9 +115,9 @@ const SingleProduct = () => {
         "Perfect for Everyday Use"
       ],
       images: [
-        "/nutri_mix.png",
-        "/single_ingredient.png",
-        "/family_story.png"
+        nutriMixImg,
+        nutriMixPrepImg,
+        nutriMixDetailsImg
       ]
     }
   };
@@ -135,18 +144,28 @@ const SingleProduct = () => {
 
   return (
     <div className="bg-[#FAF9F5] min-h-screen text-[#1c3e1e] antialiased pb-0">
+      {/* Back Button */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 md:pt-8 pb-0">
+        <button
+          onClick={() => navigate('/products')}
+          className="flex items-center gap-2 text-[#387a55] hover:text-[#1c3e1e] font-medium text-[17px] transition-colors"
+        >
+          <ArrowLeft className="w-5 h-5" />
+          <span>Back to Products</span>
+        </button>
+      </div>
 
       {/* ──────────────────────────────────────────────────────── */}
       {/* SECTION 1: PRODUCT HERO & MAIN DETAILS                   */}
       {/* ──────────────────────────────────────────────────────── */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 md:pt-10 pb-8 md:pb-16">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 md:pt-4 pb-8 md:pb-16">
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 items-start">
 
           {/* Left Column: Image Gallery */}
-          <div className="lg:col-span-6 flex flex-col md:flex-row gap-4 items-stretch lg:max-w-[550px]">
+          <div className="lg:col-span-7 flex flex-col md:flex-row gap-4 lg:gap-6 items-stretch w-full">
             {/* Gallery Thumbnails - Hidden on Mobile */}
-            <div className="hidden md:flex flex-col items-center justify-center gap-4 w-[104px] order-1">
+            <div className="hidden md:flex flex-col items-center justify-start pt-2 gap-4 w-[104px] order-1">
               <button
                 onClick={prevImage}
                 className="text-[#1c3e1e] hover:text-[#4d8745] transition-colors flex items-center justify-center"
@@ -176,7 +195,7 @@ const SingleProduct = () => {
             </div>
 
             {/* Main Image View */}
-            <div className="flex-1 w-full relative aspect-square md:aspect-[4/5] rounded-3xl border border-gray-100 bg-white md:bg-[#f4f5f2] flex flex-col items-center justify-center overflow-hidden order-1 md:order-2 shadow-sm">
+            <div className="flex-1 w-full h-full relative rounded-3xl border border-gray-100 bg-white md:bg-[#f4f5f2] flex flex-col items-center justify-center overflow-hidden order-1 md:order-2 shadow-sm">
               <span className="absolute top-4 left-4 bg-[#1c3e1e] text-white text-[10px] font-bold uppercase tracking-wide px-3 py-1 rounded-md z-10">
                 Bestseller
               </span>
@@ -184,7 +203,7 @@ const SingleProduct = () => {
               <img
                 src={images[activeImage]}
                 alt="Product main view"
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
               />
 
               <button className="absolute bottom-4 right-4 w-9 h-9 rounded-full bg-white shadow-md flex items-center justify-center text-gray-700 hover:bg-gray-50 transition-colors z-10 border border-gray-100">
@@ -206,7 +225,7 @@ const SingleProduct = () => {
           </div>
 
           {/* Right Column: Details & Actions */}
-          <div className="lg:col-span-6 flex flex-col pt-2 lg:pl-4">
+          <div className="lg:col-span-5 flex flex-col pt-2 lg:pl-2">
             <h1 className="font-serif text-[26px] md:text-3xl sm:text-4xl lg:text-[42px] font-bold text-[#1c3e1e] leading-tight mb-1">
               {product.name}
             </h1>
