@@ -636,6 +636,7 @@ const SingleProduct = () => {
             </div>
 
             {/* Amazon full button */}
+            {/* 
             <div className="flex flex-col items-center w-full md:w-auto">
               <a
                 href="https://amazon.in"
@@ -648,6 +649,7 @@ const SingleProduct = () => {
               </a>
               <span className="text-[10px] md:text-[11px] text-[#556858] mt-1.5 text-center">Shop on Amazon with customer reviews and fast delivery.</span>
             </div>
+            */}
           </div>
         </div>
       </div>
