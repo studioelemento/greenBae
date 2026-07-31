@@ -62,7 +62,14 @@ const ProductHero = () => {
 
             {/* Explore Button */}
             <button
-              onClick={() => navigate("/products")}
+              onClick={() => {
+                const el = document.getElementById("all-products-section");
+                if (el) {
+                  el.scrollIntoView({ behavior: "smooth" });
+                } else {
+                  navigate("/products");
+                }
+              }}
               className="bg-[#1c3e1e] hover:bg-[#2b5229] text-white px-6 md:px-7 py-3 md:py-3.5 rounded-[8px] text-[14px] md:text-[15px] font-bold transition-all duration-300 flex items-center gap-2 shadow-sm border border-[#1c3e1e]"
             >
               Explore All Products
