@@ -50,7 +50,7 @@ const SignatureProducts = () => {
         </div>
 
         {/* Product Cards Grid */}
-        <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 md:gap-6 mb-8 max-w-[1300px] mx-auto">
+        <div id="all-products-section" className="grid grid-cols-1 xl:grid-cols-2 gap-4 md:gap-6 mb-8 max-w-[1300px] mx-auto">
           {/* Card 1: Veggie Vitals */}
           <div className="bg-[#F4EFE6] rounded-[16px] md:rounded-[28px] overflow-hidden flex flex-row items-stretch shadow-[0_4px_20px_rgba(0,0,0,0.03)] h-[250px] md:h-auto">
             {/* Image container */}
