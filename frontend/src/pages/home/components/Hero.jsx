@@ -1,4 +1,3 @@
-import React from 'react';
 import { ArrowRight, Leaf } from 'lucide-react';
 import HeroImage from '../../../assets/img-Home/Home Page Hero section image.avif';
 

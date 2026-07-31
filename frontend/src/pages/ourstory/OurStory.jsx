@@ -1,4 +1,3 @@
-import React from 'react';
 import StoryHero from './components/StoryHero';
 import BridgingGap from './components/BridgingGap';
 import FamilyPractice from './components/FamilyPractice';

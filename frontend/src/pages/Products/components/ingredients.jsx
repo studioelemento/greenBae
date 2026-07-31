@@ -1,31 +1,6 @@
-import React from "react";
-import { Leaf } from "lucide-react";
+  import { Leaf } from "lucide-react";
 import rightimage from "../../../assets/img-ourproducts/rightsideimg.png";
 
-const LeafDivider = ({ lineWidth = "w-16 sm:w-24", showLines = true }) => (
-  <div className="flex items-center justify-center gap-3 my-4">
-    {showLines && (
-      <div className={`${lineWidth} h-[1px] bg-[#C5B395] opacity-60`} />
-    )}
-
-    <svg
-      className="w-5 h-5 text-[#4D8745]"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 3.5 1 9.8a7 7 0 0 1-9 8.2Z" />
-      <path d="M9 22v-4" />
-    </svg>
-
-    {showLines && (
-      <div className={`${lineWidth} h-[1px] bg-[#C5B395] opacity-60`} />
-    )}
-  </div>
-);
 
 const Ingredients = () => {
   const products = [

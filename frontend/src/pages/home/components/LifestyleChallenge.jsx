@@ -1,4 +1,3 @@
-import React from 'react';
 import { Leaf, Clock, Utensils, Laptop, Smartphone, Zap, ShieldAlert, Brain, HeartPulse } from 'lucide-react';
 
 const LifestyleChallenge = () => {

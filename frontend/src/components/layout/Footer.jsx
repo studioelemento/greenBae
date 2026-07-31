@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { 
   Leaf, FlaskConical, ShieldCheck, Sprout, Award, Users, 
   Globe, BadgeCheck, Truck, Headset, ChevronDown, ChevronUp, ArrowRight

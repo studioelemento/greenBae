@@ -1,4 +1,3 @@
-import React from 'react';
 import { Leaf, Users, MapPin, Smile, AlertCircle } from 'lucide-react';
 import familyPracticeImage from '../../../assets/ourstory/Our-Story-Family-Practice.avif';
 

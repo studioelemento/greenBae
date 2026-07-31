@@ -1,4 +1,3 @@
-import React from 'react'
 import { ArrowRight, Leaf, Sprout } from 'lucide-react';
 
 const HealthyLivingHero = () => {

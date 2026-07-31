@@ -1,4 +1,3 @@
-import React from "react";
 import { Leaf, ArrowRight, FlaskConical, Users, Heart } from "lucide-react";
 import hero from "../../../assets/img-ourproducts/prhero.png";
 import ingredient from "../../../assets/img-ourproducts/powders.png";
@@ -7,25 +6,25 @@ import leaf from "../../../assets/img-ourproducts/leaf.png";
 import { useNavigate } from "react-router-dom";
 // import SignatureProducts from "./signatureproducts";
 
+const MortarIcon = () => (
+  <svg
+    className="w-4 h-4 md:w-5 md:h-5 text-[#4d8745]"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.5"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M3 11c0 4.4 3.6 8 8 8h2c4.4 0 8-3.6 8-8H3z" />
+    <path d="M12 11V3m0 0a3 3 0 0 1 3 3m-3-3a3 3 0 0 0-3 3" />
+    <path d="M7 19h10" />
+  </svg>
+);
 
 const ProductHero = () => {
   const navigate = useNavigate();
 
-  const MortarIcon = () => (
-    <svg
-      className="w-4 h-4 md:w-5 md:h-5 text-[#4d8745]"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M3 11c0 4.4 3.6 8 8 8h2c4.4 0 8-3.6 8-8H3z" />
-      <path d="M12 11V3m0 0a3 3 0 0 1 3 3m-3-3a3 3 0 0 0-3 3" />
-      <path d="M7 19h10" />
-    </svg>
-  );
 
   return (
     <section className="relative w-full bg-[#FAF9F5] pt-10 md:pt-20 pb-4 md:pb-8 px-4 sm:px-6 lg:px-8 xl:px-16 overflow-hidden ">

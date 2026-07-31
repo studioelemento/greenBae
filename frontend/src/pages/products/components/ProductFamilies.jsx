@@ -1,5 +1,4 @@
-import { ArrowRight, ChevronRight, Sprout } from "lucide-react";
-import React from "react";
+import { ArrowRight, Sprout } from "lucide-react";
 
 const ProductFamilies = () => {
   const cards = [

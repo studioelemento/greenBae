@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import {
   ArrowLeft,
@@ -6,7 +6,6 @@ import {
   ChevronDown,
   Search,
   ShoppingBag,
-  Check,
   ArrowRight,
   ShieldCheck,
   Star,
@@ -17,7 +16,6 @@ import {
   HeartPulse,
   Heart,
   Leaf,
-  Shield,
   Droplet,
   FlaskConical
 } from "lucide-react";
@@ -30,13 +28,6 @@ import nutriMixPrepImg from "../../../assets/img-ourproducts/Greenbae Diabe Nutr
 import nutriMixDetailsImg from "../../../assets/img-ourproducts/Greenbae Diabe Nutri Mix Details.png";
 
 // Inline Icons for badges and features to match the premium design exactly
-const FSSAI = () => (
-  <svg className="w-8 h-8 text-[#4d8745]" viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="1.5">
-    <circle cx="20" cy="20" r="16" strokeDasharray="3 3" />
-    <path d="M12 20h16M20 12v16" />
-  </svg>
-);
-
 const LabTested = () => (
   <svg className="w-8 h-8 text-[#4d8745]" viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="1.5">
     <path d="M14 8h12M16 8v6l-6 12v6h20v-6l-6-12V8" />

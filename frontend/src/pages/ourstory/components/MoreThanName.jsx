@@ -1,5 +1,4 @@
-import React from 'react';
-import { Leaf, ShieldCheck, Heart, Users, Sprout, HeartHandshake, Quote } from 'lucide-react';
+import { Leaf, Heart, Users, Sprout, HeartHandshake } from 'lucide-react';
 import image from '../../../assets/ourstory/More-than-a-name-image.avif';
 
 const MoreThanName = () => {

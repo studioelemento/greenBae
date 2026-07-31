@@ -1,5 +1,4 @@
-import React from 'react';
-import { Leaf, Clock, Check, ShoppingBag, Droplets, Users, FlaskConical, Heart, CalendarDays, Users2, Beaker, Sprout } from 'lucide-react';
+import { Leaf, Clock, Check, ShoppingBag, Users, FlaskConical, Heart, CalendarDays, Users2, Beaker, Sprout } from 'lucide-react';
 
 const BridgingGap = () => {
   const challenges = [

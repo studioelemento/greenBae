@@ -1,4 +1,3 @@
-import React from 'react';
 import { Leaf, User, Users } from 'lucide-react';
 
 const Generation = () => {

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Leaf, FlaskConical, CalendarCheck, CheckCircle2, Sprout } from 'lucide-react';
 import NatureImage from '../../../assets/img-Home/Nature Image.avif';
 import ResearchImage from '../../../assets/img-Home/Research Image.avif';

@@ -1,8 +1,7 @@
-import React from 'react'
-import HealthyLivingHero from './components/HealthyLivingHero'
-import ExploreByTopic from './components/ExploreByTopic'
-import EditorsPicks from './components/EditorsPick'
-import LatestInsights from './components/LatestInsights'
+
+
+
+
 import JoinMovementCTA from './components/JoinMovementCTA'
 import HealthyLivingInsights from './components/HealthyLivingInsights'
   

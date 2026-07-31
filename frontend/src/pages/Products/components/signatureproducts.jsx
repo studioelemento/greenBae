@@ -1,4 +1,3 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Leaf } from "lucide-react";
 import veggieimage from "../../../assets/img-ourproducts/Greenbae Veggie Vitals.png";

@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { Book, BookOpen, ChevronRight, Sprout } from "lucide-react";
-import { GiOpenBook } from "react-icons/gi";
+import { BookOpen, ChevronRight, Sprout } from "lucide-react";
+
 
 const ARTICLES = [
   {
@@ -68,17 +68,6 @@ const CATEGORIES = [
   "Recipes & Habits",
   "Natural Living",
 ];
-
-const CATEGORY_ICONS = {
-  All: "⊞",
-  Nutrition: "🌿",
-  "Family Wellness": "👥",
-  "Kids Wellness": "👤",
-  "Healthy Living": "🌿",
-  "Natural Living": "🌿",
-  "Recipes & Habits": "🥗",
-  "Healthy Aging": "👥",
-};
 
 export default function LatestInsights() {
   const [selectedCategory, setSelectedCategory] = useState("All");

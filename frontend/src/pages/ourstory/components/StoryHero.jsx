@@ -1,4 +1,3 @@
-import React from 'react';
 import { Leaf, Heart, Users, Globe, ArrowRight } from 'lucide-react';
 import heroImage from '../../../assets/ourstory/Our-Story-hero-section.avif';
 

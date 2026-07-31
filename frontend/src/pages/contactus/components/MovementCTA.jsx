@@ -1,4 +1,3 @@
-import React from "react";
 import { Leaf, ArrowRight, Send, Users, Sprout } from "lucide-react";
 import movementImage from "../../../assets/img-contactus/movement.png";
 

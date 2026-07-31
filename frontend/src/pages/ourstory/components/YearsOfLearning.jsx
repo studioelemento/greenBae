@@ -1,4 +1,3 @@
-import React from 'react';
 import { Leaf } from 'lucide-react';
 import FamilyNutrition from '../../../assets/ourstory/Family-Nutrition-Practice-image.avif';
 import Learning from '../../../assets/ourstory/Learning-Refinement-image.avif';

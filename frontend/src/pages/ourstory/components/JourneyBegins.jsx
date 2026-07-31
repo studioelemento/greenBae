@@ -1,4 +1,3 @@
-import React from 'react';
 import { Leaf, Heart, Smile, BookOpen, Lightbulb, ArrowRight, ShieldCheck, Users, Sprout } from 'lucide-react';
 import image from '../../../assets/ourstory/Journey-has-begun.avif';
 

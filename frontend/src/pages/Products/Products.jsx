@@ -1,4 +1,3 @@
-import React from 'react';
 import ProductHero from './components/producthero';
 import SignatureProducts from './components/signatureproducts';
 import Ingredients from './components/ingredients';

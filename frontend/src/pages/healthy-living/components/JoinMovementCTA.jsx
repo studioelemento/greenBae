@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ChevronRight, Mail, Users, Leaf, Bell } from "lucide-react";
+import { Mail, Users, Leaf, Bell } from "lucide-react";
 
 const BENEFIT_CARDS = [
   {

@@ -1,4 +1,3 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 import { ArrowRight, Leaf } from "lucide-react";
 import leftimage from "../../../assets/img-ourproducts/leftsideimg.png";

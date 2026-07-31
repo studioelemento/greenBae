@@ -1,4 +1,3 @@
-import React from 'react';
 import { Leaf, FlaskConical, ShieldCheck, Users, ArrowRight } from 'lucide-react';
 
 const OurProducts = () => {

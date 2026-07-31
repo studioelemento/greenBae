@@ -1,6 +1,5 @@
 'use client';
 
-import React from 'react';
 import { ArrowRight, BookOpen } from 'lucide-react';
 
 const ARTICLE_CARDS = [
