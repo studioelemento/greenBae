@@ -135,6 +135,32 @@ const SingleProduct = () => {
     setActiveImage((prev) => (prev - 1 + images.length) % images.length);
   };
 
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
+
+  // Minimum distance (in px) to be considered a swipe
+  const minSwipeDistance = 50;
+
+  const onTouchStart = (e) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e) => setTouchEnd(e.targetTouches[0].clientX);
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+    if (isLeftSwipe) {
+      nextImage();
+    }
+    if (isRightSwipe) {
+      prevImage();
+    }
+  };
+
   return (
     <div className="bg-[#FAF9F5] min-h-screen text-[#1c3e1e] antialiased pb-0">
       {/* Back Button */}
@@ -188,7 +214,12 @@ const SingleProduct = () => {
             </div>
 
             {/* Main Image View */}
-            <div className="flex-1 w-full h-full relative rounded-3xl border border-gray-100 bg-white md:bg-[#f4f5f2] flex flex-col items-center justify-center overflow-hidden order-1 md:order-2 shadow-sm">
+            <div 
+              className="flex-1 w-full h-full relative rounded-3xl border border-gray-100 bg-white md:bg-[#f4f5f2] flex flex-col items-center justify-center overflow-hidden order-1 md:order-2 shadow-sm"
+              onTouchStart={onTouchStart}
+              onTouchMove={onTouchMove}
+              onTouchEnd={onTouchEnd}
+            >
               <span className="absolute top-4 left-4 bg-[#1c3e1e] text-white text-[10px] font-bold uppercase tracking-wide px-3 py-1 rounded-md z-10">
                 Bestseller
               </span>
