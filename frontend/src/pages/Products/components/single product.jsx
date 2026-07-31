@@ -101,7 +101,8 @@ const SingleProduct = () => {
         veggieVitalsImg,
         veggieVitalsPrepImg,
         veggieVitalsDetailsImg
-      ]
+      ],
+      websiteLink: "https://rvbrothers.in/greenbae-antioxidant-rich-herbal-drink/"
     },
     "nutri-mix": {
       name: "Nutri Mix",
@@ -118,7 +119,8 @@ const SingleProduct = () => {
         nutriMixImg,
         nutriMixPrepImg,
         nutriMixDetailsImg
-      ]
+      ],
+      websiteLink: "https://rvbrothers.in/greenbae-ayurvedic-health-mix/"
     }
   };
 
@@ -258,14 +260,20 @@ const SingleProduct = () => {
             <div className="space-y-4 mb-10 md:mb-8">
               {/* Button: Buy from website */}
               <div className="flex flex-col items-center w-full">
-                <button className="w-full bg-[#1c3e1e] hover:bg-[#2b5229] text-white py-3.5 px-6 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-sm font-bold text-[14px]">
+                <a
+                  href={product.websiteLink}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-full bg-[#1c3e1e] hover:bg-[#2b5229] text-white py-3.5 px-6 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-sm font-bold text-[14px]"
+                >
                   <ShoppingBag className="w-4 h-4" />
                   <span>Buy From Our Website</span>
-                </button>
+                </a>
                 <span className="text-[11px] text-[#556858] mt-2 text-center">Secure purchase through our official store.</span>
               </div>
 
               {/* Button: Buy from Amazon */}
+              {/* 
               <div className="flex flex-col items-center w-full">
                 <a
                   href="https://amazon.in"
@@ -278,6 +286,7 @@ const SingleProduct = () => {
                 </a>
                 <span className="text-[11px] text-[#556858] mt-2 text-center">Shop on Amazon with customer reviews and fast delivery.</span>
               </div>
+              */}
             </div>
 
             {/* Trust Badges */}
@@ -614,10 +623,15 @@ const SingleProduct = () => {
           <div className="flex flex-col md:flex-row items-center gap-4 md:gap-5 w-full md:w-auto">
             {/* Website full button */}
             <div className="flex flex-col items-center w-full md:w-auto">
-              <button className="w-full md:w-[300px] bg-[#1c3e1e] hover:bg-[#2b5229] text-white py-4 md:py-5 px-6 rounded-lg text-[14px] md:text-[15px] font-bold flex items-center justify-center gap-2.5 transition-colors">
+              <a
+                href={product.websiteLink}
+                target="_blank"
+                rel="noreferrer"
+                className="w-full md:w-[300px] bg-[#1c3e1e] hover:bg-[#2b5229] text-white py-4 md:py-5 px-6 rounded-lg text-[14px] md:text-[15px] font-bold flex items-center justify-center gap-2.5 transition-colors"
+              >
                 <ShoppingBag className="w-4 h-4 md:w-4 md:h-4" />
                 <span>Buy From Our Website</span>
-              </button>
+              </a>
               <span className="text-[10px] md:text-[11px] text-[#556858] mt-1.5 text-center">Secure purchase through our official store.</span>
             </div>
 
