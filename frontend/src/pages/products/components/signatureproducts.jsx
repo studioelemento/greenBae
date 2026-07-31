@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { Leaf } from "lucide-react";
 import veggieimage from "../../../assets/img-ourproducts/Greenbae Veggie Vitals.png";
-import nutriimage from "../../../assets/img-ourproducts/GreenBae Diabe Nutri Mix.png";
+import nutriimage from "../../../assets/img-ourproducts/Greenbae Diabe Nutri Mix.png";
 import familyimage from "../../../assets/img-ourproducts/family.png";
 
 

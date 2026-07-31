@@ -1,4 +1,4 @@
-import ProductHero from './components/producthero';
+import ProductHero from './components/ProductHero';
 import SignatureProducts from './components/signatureproducts';
 import Ingredients from './components/ingredients';
 import WellnessBacked from './components/wellnessbacked';
