@@ -15,14 +15,14 @@ const Navbar = () => {
   ];
 
   return (
-    <header className="bg-white sticky top-0 z-50 border-b border-gray-100/80">
+    <header className="bg-[#345920] sticky top-0 z-50 border-b border-gray-100/80">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
             <Link to="/" className="flex flex-col items-center" onClick={() => setIsMobileMenuOpen(false)}>
-              <span className="font-serif text-3xl font-bold text-primary-800 tracking-tight">Greenbae</span>
-              <span className="text-[0.6rem] uppercase tracking-[0.2em] text-primary-600 font-semibold mt-0.5">Natural & Friend</span>
+              <span className="text-white font-serif text-3xl font-bold text-primary-800 tracking-tight">Greenbae</span>
+              <span className="text-white text-[0.6rem] uppercase tracking-[0.2em] text-primary-600 font-semibold mt-0.5">Natural & Friend</span>
             </Link>
           </div>
 
@@ -36,8 +36,8 @@ const Navbar = () => {
                   to={link.path} 
                   className={
                     isActive 
-                      ? "text-primary-600 font-semibold text-sm border-b-2 border-primary-500 pb-1 flex items-center gap-1" 
-                      : "text-gray-600 hover:text-primary-700 font-medium text-sm transition-colors flex items-center gap-1"
+                      ? "text-white font-semibold text-sm border-b-2 border-white pb-1 flex items-center gap-1" 
+                      : "text-white/90 hover:text-white font-medium text-sm transition-colors flex items-center gap-1"
                   }
                 >
                   {link.label}
@@ -50,7 +50,7 @@ const Navbar = () => {
           </nav>
 
           {/* Icons */}
-          <div className="flex items-center space-x-5 text-gray-700">
+          <div className="text-white flex items-center space-x-5 text-gray-700">
             <Search/>
             <Handbag/>
             {/* Hamburger Button */}
@@ -65,8 +65,17 @@ const Navbar = () => {
         </div>
       </div>
 
+      {/* Mobile Menu Overlay Backdrop */}
+      <div 
+        className={`md:hidden fixed inset-0 top-20 bg-black transition-opacity duration-300 ${
+          isMobileMenuOpen ? 'opacity-30 visible' : 'opacity-0 invisible pointer-events-none'
+        }`}
+        onClick={() => setIsMobileMenuOpen(false)}
+        aria-hidden="true"
+      />
+
       {/* Mobile Dropdown Navigation Menu */}
-      <div className={`md:hidden absolute w-full left-0 top-[100%] bg-white border-t border-gray-100 transition-all duration-300 ease-in-out origin-top shadow-lg overflow-hidden ${
+      <div className={`md:hidden absolute w-full left-0 top-[100%] bg-white border-t border-green-900 transition-all duration-300 ease-in-out origin-top shadow-lg overflow-hidden z-50 ${
         isMobileMenuOpen ? 'max-h-[500px] opacity-100 visible' : 'max-h-0 opacity-0 invisible'
       }`}>
         <nav className="flex flex-col py-4 px-6 space-y-4 shadow-[0_10px_20px_rgba(0,0,0,0.05)]">
