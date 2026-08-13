@@ -4,6 +4,7 @@ import {
   Globe, BadgeCheck, Truck, Headset, ChevronDown, ChevronUp, ArrowRight
 } from 'lucide-react';
 
+
 const InstagramIcon = ({ size }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
@@ -84,10 +85,10 @@ const Footer = () => {
     { icon: Users, title: "Real Customer", subtitle: "Experiences" },
   ];
 
-  const aboutLinks = ["Our Story", "Our Mission", "Healthy Living Movement", "Neture & Research", "Careers", "Sustainability", "Media & Press"];
+  const aboutLinks = ["Our Story", "Healthy Living Movement", "Our Journey" , "Why GreenBae"];
   const wellnessLinks = ["Wellness Journal", "Healthy Living Tips", "Nutrition Basics", "Ingredients Knowledge", "Lifestyle & Habits", "Wellness Resources"];
-  const productLinks = ["Veggie Vitals", "Nutri Mix", "Single Ingredient Powders", "Beetroot Powder", "Raw Banana Powder", "Product Catalog", "All Products"];
-  const supportLinks = ["Contact Us", "FAQs", "Shipping & Delivery", "Returns & Refunds", "Track Your Order", "Privacy Policy", "Terms & Conditions"];
+  const productLinks = ["Veggie Vitals", "Nutri Mix"];
+  const supportLinks = ["Contact Us", "FAQs", "Privacy Policy", "Terms & Conditions"];
 
   return (
     <footer className="bg-[#fcfcf7] border-t border-gray-200 pt-10 font-sans relative overflow-hidden">
@@ -167,7 +168,7 @@ const Footer = () => {
           {/* Center Columns - Links */}
           <div className="md:col-span-5 lg:col-span-6 flex flex-col md:flex-row justify-between gap-x-2 lg:gap-x-6">
             <AccordionLinkList title="About Greenbae" links={aboutLinks} />
-            <AccordionLinkList title="Wellness" links={wellnessLinks} />
+            {/* <AccordionLinkList title="Wellness" links={wellnessLinks} /> */}
             <AccordionLinkList title="Products" links={productLinks} />
             <AccordionLinkList title="Support" links={supportLinks} />
           </div>
@@ -201,7 +202,7 @@ const Footer = () => {
             </div>
 
             {/* Movement Card */}
-            <div className="bg-[#f0f4ea] p-6 rounded-xl border border-[#e6eedd]">
+            {/* <div className="bg-[#f0f4ea] p-6 rounded-xl border border-[#e6eedd]">
               <div className="flex gap-3 mb-2 items-start">
                 <div className="w-9 h-9 mt-1 rounded-full bg-transparent border border-[#345920] text-[#345920] flex items-center justify-center shrink-0">
                   <Users size={16} />
@@ -214,13 +215,13 @@ const Footer = () => {
               <button className="bg-[#345920] text-white text-xs font-bold py-2.5 px-5 rounded hover:bg-[#2b4c18] transition-colors flex items-center gap-2 w-max">
                 Join Our Community <ArrowRight size={14} />
               </button>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
 
       {/* Trust Bar & Payments */}
-      <div className="bg-white border-t border-gray-200 relative z-10">
+      <div className="bg-white border-t border-gray-200 relative z-10 hidden md:block">
         <div className="container mx-auto px-4 md:px-8 max-w-[1440px] py-6 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex flex-col md:flex-row gap-8 md:gap-12 w-full md:w-auto">
             <div className="flex items-center gap-3">
@@ -267,15 +268,14 @@ const Footer = () => {
         <div className="container mx-auto px-4 md:px-8 max-w-[1440px] flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-[#d1e6d3]">
           <div className="flex flex-col md:flex-row items-center gap-4 w-full md:w-auto">
             <p className="font-medium whitespace-nowrap">© 2025 Greenbae. All rights reserved.</p>
+                 <p className="font-medium whitespace-nowrap">Designed & Developed by StudioElemento</p>
             <div className="hidden md:block w-px h-3 bg-[#4d8745]"></div>
             
             <div className="flex flex-wrap justify-center items-center font-medium">
               <a href="#" className="hover:text-white transition-colors px-3 border-r border-[#4d8745]">Privacy Policy</a>
               <a href="#" className="hover:text-white transition-colors px-3 border-r border-[#4d8745]">Terms & Conditions</a>
-              <a href="#" className="hover:text-white transition-colors px-3 border-r border-[#4d8745]">Refund Policy</a>
-              <a href="#" className="hover:text-white transition-colors px-3 border-r md:border-none border-[#4d8745]">Shipping Policy</a>
-              <a href="#" className="hover:text-white transition-colors px-3 hidden md:block border-l border-[#4d8745]">Disclaimer</a>
-              <a href="#" className="hover:text-white transition-colors px-3 md:hidden">Disclaimer</a>
+             
+             
             </div>
           </div>
           

@@ -96,9 +96,7 @@ const JourneyBegins = () => {
               <a href="/products" className="bg-[#FAF9F5] text-[#1a3622] hover:bg-white w-full px-5 py-3 rounded font-semibold text-sm flex items-center justify-center gap-2 transition-colors shadow-sm">
                 Explore Our Products <ArrowRight className="w-4 h-4" />
               </a>
-              <a href="/healthy-living" className="border border-white/40 text-white hover:bg-white/10 w-full px-5 py-3 rounded font-medium text-sm flex items-center justify-center gap-2 transition-colors">
-                Join The Healthy Living Movement <Heart className="w-4 h-4" />
-              </a>
+              
             </div>
           </div>
         </div>

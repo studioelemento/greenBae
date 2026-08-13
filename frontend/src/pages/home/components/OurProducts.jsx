@@ -1,6 +1,9 @@
 import { Leaf, FlaskConical, ShieldCheck, Users, ArrowRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const OurProducts = () => {
+  const navigate = useNavigate();
+
   const rangeData = [
     {
       title: "Veggie Vitals",
@@ -13,12 +16,6 @@ const OurProducts = () => {
       desc: "A fiber-rich nutritional blend for everyday wellness and better living.",
       image: "/nutri_mix.png",
       link: "/products/nutri-mix"
-    },
-    {
-      title: "Single Ingredient Products",
-      desc: "Pure. Natural. Versatile. Made from handpicked ingredients.",
-      image: "/single_ingredient.png",
-      link: "/products/single-ingredient"
     }
   ];
 
@@ -127,14 +124,17 @@ const OurProducts = () => {
             <div className="w-12 h-[1px] bg-[#d1e6d3]"></div>
           </div>
 
-          {/* 3-Column Card Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
+          {/* 2-Column Card Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
             {rangeData.map((item, idx) => (
               <div 
                 key={idx} 
-                className={`flex flex-row items-center bg-[#fcfbf7] border border-[#f3f0e7] rounded-[24px] p-5 gap-5 hover:shadow-[0_12px_30px_rgba(0,0,0,0.04)] transition-all duration-300 ${
-                  idx === 2 ? 'lg:flex-row-reverse' : ''
-                }`}
+                onClick={() => {
+                  if (window.innerWidth < 768) {
+                    navigate("/products/single", { state: { product: item.link.split('/').pop() } });
+                  }
+                }}
+                className="flex flex-row items-center bg-[#fcfbf7] border border-[#f3f0e7] rounded-[24px] p-5 gap-5 hover:shadow-[0_12px_30px_rgba(0,0,0,0.04)] transition-all duration-300 cursor-pointer md:cursor-auto"
               >
                 {/* Left/Right Product Image */}
                 <div className="w-[100px] h-[100px] sm:w-[110px] sm:h-[110px] md:w-[125px] md:h-[125px] shrink-0 overflow-hidden rounded-xl bg-white border border-gray-100 flex items-center justify-center">
@@ -145,7 +145,13 @@ const OurProducts = () => {
                 <div className="flex-1 text-left flex flex-col items-start justify-between h-full">
                   <h4 className="font-serif font-bold text-base md:text-lg text-[#1c3e1e] mb-1 leading-tight">{item.title}</h4>
                   <p className="text-gray-600 text-xs md:text-[13px] leading-relaxed mb-3">{item.desc}</p>
-                  <button className="inline-flex items-center gap-1.5 text-[11px] md:text-xs font-bold text-[#345920] hover:text-[#2b4c18] bg-[#f4f7f0] hover:bg-[#e2ead9] rounded-md px-3.5 py-1.5 transition-colors duration-200 group">
+                  <button 
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      navigate("/products/single", { state: { product: item.link.split('/').pop() } });
+                    }}
+                    className="inline-flex items-center gap-1.5 text-[11px] md:text-xs font-bold text-[#345920] hover:text-[#2b4c18] bg-[#f4f7f0] hover:bg-[#e2ead9] rounded-md px-3.5 py-1.5 transition-colors duration-200 group"
+                  >
                     Learn More
                     <ArrowRight size={12} className="group-hover:translate-x-0.5 transition-transform" />
                   </button>

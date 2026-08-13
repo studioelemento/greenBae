@@ -127,15 +127,12 @@ const Ingredients = () => {
                   {product.desc}
                 </p>
 
-                <a
-                  href="#"
-                  className="inline-flex items-center text-[10.5px] lg:text-[13px] font-bold text-[#173A22] group-hover:text-[#2a663d] transition-colors mt-auto w-fit"
-                >
-                  View Product{" "}
-                  <span className="ml-1.5 lg:ml-2 transform group-hover:translate-x-1 transition-transform">
+                <span className="inline-flex items-center text-[10.5px] lg:text-[13px] font-bold text-[#173A22] group-hover:text-[#2a663d] transition-colors mt-auto w-fit">
+                  Coming Soon ...
+                  {/* <span className="ml-1.5 lg:ml-2 transform group-hover:translate-x-1 transition-transform">
                     &rarr;
-                  </span>
-                </a>
+                  </span> */}
+                </span>
               </div>
             </div>
           ))}

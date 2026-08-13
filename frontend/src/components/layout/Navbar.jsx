@@ -51,8 +51,8 @@ const Navbar = () => {
 
           {/* Icons */}
           <div className="text-white flex items-center space-x-5 text-gray-700">
-            <Search/>
-            <Handbag/>
+            {/* <Search/>
+             */}
             {/* Hamburger Button */}
             <button 
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}

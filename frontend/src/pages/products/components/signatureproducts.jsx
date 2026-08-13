@@ -52,7 +52,14 @@ const SignatureProducts = () => {
         {/* Product Cards Grid */}
         <div id="all-products-section" className="grid grid-cols-1 xl:grid-cols-2 gap-4 md:gap-6 mb-8 max-w-[1300px] mx-auto">
           {/* Card 1: Veggie Vitals */}
-          <div className="bg-[#F4EFE6] rounded-[16px] md:rounded-[28px] overflow-hidden flex flex-row items-stretch shadow-[0_4px_20px_rgba(0,0,0,0.03)] h-[250px] md:h-auto">
+          <div 
+            onClick={() => {
+              if (window.innerWidth < 768) {
+                navigate("/products/single", { state: { product: "veggie-vitals" } });
+              }
+            }}
+            className="bg-[#F4EFE6] rounded-[16px] md:rounded-[28px] overflow-hidden flex flex-row items-stretch shadow-[0_4px_20px_rgba(0,0,0,0.03)] h-[250px] md:h-auto cursor-pointer md:cursor-auto"
+          >
             {/* Image container */}
             <div className="w-[45%] md:w-[46%] relative bg-[#EAE3D4]/40 md:bg-transparent overflow-hidden flex items-center justify-center">
               <img
@@ -205,7 +212,14 @@ const SignatureProducts = () => {
           </div>
 
           {/* Card 2: Nutri Mix */}
-          <div className="bg-[#F0E7D8] rounded-[16px] md:rounded-[28px] overflow-hidden flex flex-row items-stretch shadow-[0_4px_20px_rgba(0,0,0,0.03)] h-[250px] md:h-auto">
+          <div 
+            onClick={() => {
+              if (window.innerWidth < 768) {
+                navigate("/products/single", { state: { product: "nutri-mix" } });
+              }
+            }}
+            className="bg-[#F0E7D8] rounded-[16px] md:rounded-[28px] overflow-hidden flex flex-row items-stretch shadow-[0_4px_20px_rgba(0,0,0,0.03)] h-[250px] md:h-auto cursor-pointer md:cursor-auto"
+          >
             {/* Image container */}
             <div className="w-[45%] md:w-[46%] relative bg-[#E4D7C2]/40 md:bg-transparent overflow-hidden flex items-center justify-center">
               <img

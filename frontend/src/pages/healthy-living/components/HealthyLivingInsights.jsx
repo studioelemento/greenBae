@@ -410,10 +410,10 @@ export default function HealthyLivingInsights() {
 
               {/* Buttons */}
               <div className="flex text-nowrap flex-col lg:flex-row gap-3 w-full lg:w-auto">
-                <button className="flex h-10 items-center justify-center gap-2 rounded-lg bg-white px-5 text-sm font-semibold text-[#0F4A1D] hover:bg-gray-100 transition">
+                {/* <button className="flex h-10 items-center justify-center gap-2 rounded-lg bg-white px-5 text-sm font-semibold text-[#0F4A1D] hover:bg-gray-100 transition">
                   Join The Healthy Living Movement
                   <ArrowRight size={16} />
-                </button>
+                </button> */}
 
                 <button className="flex h-10 items-center justify-center gap-2 rounded-lg border border-white/40 px-5 text-sm font-semibold text-white hover:bg-white/10 transition">
                   <Mail size={16} />

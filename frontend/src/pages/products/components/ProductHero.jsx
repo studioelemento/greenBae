@@ -90,15 +90,18 @@ const ProductHero = () => {
         </div>
 
         {/* 2. Middle Section Divider */}
-        <div className="flex items-center justify-center gap-2 md:gap-3 mb-6 md:mb-6 mt-8 md:mt-0">
-          <Leaf className="w-3.5 h-3.5 md:w-4 md:h-4 text-[#61a355]" />
-          <h3 className="font-bold text-[#1c3e1e] tracking-[0.05em] md:tracking-[0.15em] text-[12px] sm:text-[14px] md:text-[18px] uppercase text-center">
-            EXPLORE OUR PRODUCT FAMILIES
-          </h3>
-          <Leaf className="w-3.5 h-3.5 md:w-4 md:h-4 text-[#61a355]" />
-        </div>
+        {false && (
+          <div className="flex items-center justify-center gap-2 md:gap-3 mb-6 md:mb-6 mt-8 md:mt-0">
+            <Leaf className="w-3.5 h-3.5 md:w-4 md:h-4 text-[#61a355]" />
+            <h3 className="font-bold text-[#1c3e1e] tracking-[0.05em] md:tracking-[0.15em] text-[12px] sm:text-[14px] md:text-[18px] uppercase text-center">
+              EXPLORE OUR PRODUCT FAMILIES
+            </h3>
+            <Leaf className="w-3.5 h-3.5 md:w-4 md:h-4 text-[#61a355]" />
+          </div>
+        )}
 
         {/* 3. Three-Column Card Grid (Product Families) */}
+        {false && (
         <div className="max-w-screen-2xl mx-auto px-3 md:px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-6 lg:gap-8 w-full px-0 mb-8">
             {/* Card 1: Signature Wellness Solutions */}
@@ -277,6 +280,7 @@ const ProductHero = () => {
             </div>
           </div>
         </div>
+        )}
 
         {/* 4. Bottom Features Banner */}
         <div className="bg-[#f4f7f0] border border-[#e2ead9] rounded-[12px] md:rounded-[24px] py-4 px-2 md:p-8">
