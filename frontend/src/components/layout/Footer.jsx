@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { 
-  Leaf, FlaskConical, ShieldCheck, Sprout, Award, Users, 
+import {
+  Leaf, FlaskConical, ShieldCheck, Sprout, Award, Users,
   Globe, BadgeCheck, Truck, Headset, ChevronDown, ChevronUp, ArrowRight
 } from 'lucide-react';
 
@@ -42,12 +42,12 @@ const WhatsappIcon = ({ size }) => (
 );
 
 const FeatureItem = ({ icon: Icon, title, subtitle, isLast }) => (
-  <div className={`flex flex-col items-center text-center px-4 md:px-8 ${!isLast ? 'border-r border-gray-200' : ''} flex-1 min-w-[120px] mb-4 md:mb-0`}>
+  <div className={`flex flex-col items-center text-center px-4 lg:px-8 ${!isLast ? 'lg:border-r border-gray-200' : ''} flex-1 min-w-[120px] mb-6 lg:mb-0 w-1/2 lg:w-auto`}>
     <div className="w-12 h-12 rounded-full border border-primary-700 text-primary-700 flex items-center justify-center mb-3 bg-[#fdfdf9]">
       <Icon size={24} strokeWidth={1.5} />
     </div>
-    <h4 className="font-semibold text-gray-800 text-xs md:text-sm">{title}</h4>
-    <p className="text-[10px] md:text-xs text-gray-600">{subtitle}</p>
+    <h4 className="font-semibold text-gray-800 text-xs lg:text-sm">{title}</h4>
+    <p className="text-[10px] lg:text-xs text-gray-600">{subtitle}</p>
   </div>
 );
 
@@ -55,18 +55,17 @@ const AccordionLinkList = ({ title, links }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="border-b border-gray-200 md:border-none py-3 md:py-0">
-      <button 
-        className="flex justify-between items-center w-full md:cursor-auto"
+    <div className="border-b border-gray-200 lg:border-none py-3 lg:py-0">
+      <button
+        className="flex justify-between items-center w-full lg:cursor-auto"
         onClick={() => setIsOpen(!isOpen)}
-        disabled={window.innerWidth >= 768}
       >
-        <h4 className="font-bold text-gray-900 uppercase text-xs md:text-sm tracking-wider whitespace-nowrap">{title}</h4>
-        <div className="md:hidden text-gray-500">
+        <h4 className="font-bold text-gray-900 uppercase text-xs lg:text-sm tracking-wider whitespace-nowrap">{title}</h4>
+        <div className="lg:hidden text-gray-500">
           {isOpen ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
         </div>
       </button>
-      <ul className={`mt-4 space-y-3 md:space-y-4 text-xs md:text-sm text-gray-700 ${isOpen ? 'block' : 'hidden md:block'}`}>
+      <ul className={`mt-4 space-y-3 lg:space-y-4 text-xs lg:text-sm text-gray-700 ${isOpen ? 'block' : 'hidden lg:block'}`}>
         {links.map((link, idx) => (
           <li key={idx} className="whitespace-nowrap"><a href="#" className="hover:text-primary-600 transition-colors font-medium">{link}</a></li>
         ))}
@@ -85,39 +84,30 @@ const Footer = () => {
     { icon: Users, title: "Real Customer", subtitle: "Experiences" },
   ];
 
-  const aboutLinks = ["Our Story", "Healthy Living Movement", "Our Journey" , "Why GreenBae"];
+  const aboutLinks = ["Our Story", "Healthy Living Movement", "Our Journey", "Why GreenBae"];
   const wellnessLinks = ["Wellness Journal", "Healthy Living Tips", "Nutrition Basics", "Ingredients Knowledge", "Lifestyle & Habits", "Wellness Resources"];
   const productLinks = ["Veggie Vitals", "Nutri Mix"];
   const supportLinks = ["Contact Us", "FAQs", "Privacy Policy", "Terms & Conditions"];
 
   return (
     <footer className="bg-[#fcfcf7] border-t border-gray-200 pt-10 font-sans relative overflow-hidden">
-      
-      {/* Mountain Illustration Background Placeholder */}
-      <div className="absolute bottom-[100px] left-0 w-full h-48 opacity-[0.15] pointer-events-none" style={{
-        background: 'radial-gradient(ellipse at bottom left, #4d8745 0%, transparent 60%), radial-gradient(ellipse at bottom, #2b5229 0%, transparent 50%)',
-        clipPath: 'polygon(0 40%, 15% 20%, 35% 50%, 60% 10%, 80% 40%, 100% 30%, 100% 100%, 0 100%)'
-      }}></div>
-      
-      {/* Foreground Leaves Decoration */}
-      <div className="absolute bottom-[90px] left-10 md:left-24 lg:left-32 w-64 h-32 opacity-80 pointer-events-none" style={{
-        backgroundImage: 'radial-gradient(circle at 100% 100%, transparent 40%, #61a355 41%, #61a355 45%, transparent 46%)'
-      }}></div>
+
+
 
       <div className="container mx-auto px-4 md:px-8 max-w-[1440px] relative z-10">
-        
+
         {/* Top Features Row */}
-        <div className="flex flex-wrap md:flex-nowrap justify-center md:justify-between pb-10 border-b border-gray-200">
+        <div className="flex flex-wrap lg:flex-nowrap justify-center lg:justify-between pb-10 border-b border-gray-200">
           {topFeatures.map((feature, idx) => (
             <FeatureItem key={idx} {...feature} isLast={idx === topFeatures.length - 1} />
           ))}
         </div>
 
         {/* Main Footer Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 py-12 pb-16">
-          
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-x-8 gap-y-8 lg:gap-y-4 pt-10 pb-8">
+
           {/* Left Column - Brand & Mission */}
-          <div className="md:col-span-4 lg:col-span-3 flex flex-col relative pr-4 lg:pr-6">
+          <div className="lg:col-span-3 flex flex-col relative pr-4 lg:pr-6">
             <div className="mb-6 flex items-center gap-2">
               <Leaf className="text-[#345920]" size={36} fill="#4d8745" />
               <div className="flex flex-col">
@@ -125,48 +115,16 @@ const Footer = () => {
                 <span className="text-[10px] uppercase tracking-[0.25em] text-[#345920] font-bold mt-1.5">Natural & Friend</span>
               </div>
             </div>
-            
+
             <p className="text-sm text-gray-800 mb-6 leading-relaxed font-medium pr-2">
               We believe healthy living begins with small daily choices. Our nature-inspired wellness solutions are crafted to support every family, every day.
             </p>
-            
-            <div className="w-8 h-[2px] bg-gray-300 mb-8"></div>
+        
 
-            <div className="space-y-7 relative z-10">
-              <div className="flex gap-4">
-                <div className="w-10 h-10 shrink-0 rounded-full bg-[#f3f6ec] border border-[#e2ebd7] text-[#345920] flex items-center justify-center">
-                  <Sprout size={20} />
-                </div>
-                <div>
-                  <h5 className="font-bold text-gray-900 text-sm">Our Mission</h5>
-                  <p className="text-xs text-gray-700 mt-1 font-medium leading-snug">To help families embrace better wellness through nature-inspired nutrition.</p>
-                </div>
-              </div>
-
-              <div className="flex gap-4">
-                <div className="w-10 h-10 shrink-0 rounded-full bg-[#f3f6ec] border border-[#e2ebd7] text-[#345920] flex items-center justify-center">
-                  <BadgeCheck size={20} />
-                </div>
-                <div>
-                  <h5 className="font-bold text-gray-900 text-sm">Our Promise</h5>
-                  <p className="text-xs text-gray-700 mt-1 font-medium leading-snug">Clean ingredients. Honest formulas.<br/>Real results.</p>
-                </div>
-              </div>
-
-              <div className="flex gap-4">
-                <div className="w-10 h-10 shrink-0 rounded-full bg-[#f3f6ec] border border-[#e2ebd7] text-[#345920] flex items-center justify-center">
-                  <Globe size={20} />
-                </div>
-                <div>
-                  <h5 className="font-bold text-gray-900 text-sm">Our Purpose</h5>
-                  <p className="text-xs text-gray-700 mt-1 font-medium leading-snug">Building a healthier tomorrow,<br/>together with families like yours.</p>
-                </div>
-              </div>
-            </div>
           </div>
 
           {/* Center Columns - Links */}
-          <div className="md:col-span-5 lg:col-span-6 flex flex-col md:flex-row justify-between gap-x-2 lg:gap-x-6">
+          <div className="lg:col-span-6 flex flex-col lg:flex-row justify-between gap-x-2 lg:gap-x-6">
             <AccordionLinkList title="About Greenbae" links={aboutLinks} />
             {/* <AccordionLinkList title="Wellness" links={wellnessLinks} /> */}
             <AccordionLinkList title="Products" links={productLinks} />
@@ -174,32 +132,24 @@ const Footer = () => {
           </div>
 
           {/* Right Column - Connect & Card */}
-          <div className="md:col-span-3 lg:col-span-3 flex flex-col pl-0 lg:pl-4">
-            <h4 className="font-bold text-gray-900 uppercase text-xs md:text-sm tracking-wider mb-4">Stay Connected</h4>
+          <div className="lg:col-span-3 flex flex-col pl-0 lg:pl-4 mt-8 lg:mt-0">
+            <h4 className="font-bold text-gray-900 uppercase text-xs lg:text-sm tracking-wider mb-4">Stay Connected</h4>
             <p className="text-xs text-gray-700 mb-5 font-medium leading-relaxed">Join our community and get wellness tips, exclusive offers and updates.</p>
-            
+
             <form className="mb-8 flex flex-col gap-3">
-              <input 
-                type="email" 
-                placeholder="Enter your email address" 
-                className="w-full px-4 py-2.5 text-xs border border-gray-300 rounded focus:outline-none focus:border-[#345920] bg-white font-medium text-gray-600" 
+              <input
+                type="email"
+                placeholder="Enter your email address"
+                className="w-full px-4 py-2.5 text-xs border border-gray-300 rounded focus:outline-none focus:border-[#345920] bg-white font-medium text-gray-600"
               />
-              <button 
-                type="submit" 
+              <button
+                type="submit"
                 className="w-full bg-[#345920] text-white font-bold py-2.5 rounded hover:bg-[#2b4c18] transition-colors text-xs tracking-wide"
               >
                 Subscribe
               </button>
             </form>
 
-            <h4 className="font-bold text-gray-900 uppercase text-xs md:text-sm tracking-wider mb-5">Follow Us</h4>
-            <div className="flex gap-3 mb-10">
-              {[InstagramIcon, FacebookIcon, YoutubeIcon, PinterestIcon, WhatsappIcon].map((Icon, idx) => (
-                <a key={idx} href="#" className="w-[34px] h-[34px] rounded-full border border-gray-300 bg-transparent flex items-center justify-center text-gray-800 hover:text-[#345920] hover:border-[#345920] transition-colors">
-                  <Icon size={16} strokeWidth={1.5} />
-                </a>
-              ))}
-            </div>
 
             {/* Movement Card */}
             {/* <div className="bg-[#f0f4ea] p-6 rounded-xl border border-[#e6eedd]">
@@ -216,6 +166,50 @@ const Footer = () => {
                 Join Our Community <ArrowRight size={14} />
               </button>
             </div> */}
+          </div>
+
+          {/* Bottom Row - Mission, Promise, Purpose & Follow Us */}
+          <div className="lg:col-span-9 flex flex-col lg:flex-row justify-between gap-6 lg:row-start-2 relative z-10 lg:border-t border-gray-200 lg:pt-5 mt-2 lg:mt-0 pt-4">
+            <div className="flex gap-4 flex-1">
+              <div className="w-10 h-10 shrink-0 rounded-full bg-[#f3f6ec] border border-[#e2ebd7] text-[#345920] flex items-center justify-center">
+                <Sprout size={20} />
+              </div>
+              <div>
+                <h5 className="font-bold text-gray-900 text-sm">Our Mission</h5>
+                <p className="text-xs text-gray-700 mt-1 font-medium leading-snug">To help families embrace better wellness through nature-inspired nutrition.</p>
+              </div>
+            </div>
+
+            <div className="flex gap-4 flex-1">
+              <div className="w-10 h-10 shrink-0 rounded-full bg-[#f3f6ec] border border-[#e2ebd7] text-[#345920] flex items-center justify-center">
+                <BadgeCheck size={20} />
+              </div>
+              <div>
+                <h5 className="font-bold text-gray-900 text-sm">Our Promise</h5>
+                <p className="text-xs text-gray-700 mt-1 font-medium leading-snug">Clean ingredients. Honest formulas.<br />Real results.</p>
+              </div>
+            </div>
+
+            <div className="flex gap-4 flex-1 pr-4 lg:pr-6">
+              <div className="w-10 h-10 shrink-0 rounded-full bg-[#f3f6ec] border border-[#e2ebd7] text-[#345920] flex items-center justify-center">
+                <Globe size={20} />
+              </div>
+              <div>
+                <h5 className="font-bold text-gray-900 text-sm">Our Purpose</h5>
+                <p className="text-xs text-gray-700 mt-1 font-medium leading-snug">Building a healthier tomorrow,<br />together with families like yours.</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="lg:col-span-3 flex flex-col lg:row-start-2 relative z-10 pl-0 lg:pl-4 lg:border-t border-gray-200 lg:pt-5 mt-8 lg:mt-0 pt-4">
+            <h4 className="font-bold text-gray-900 uppercase text-xs lg:text-sm tracking-wider mb-5">Follow Us</h4>
+            <div className="flex gap-3 mb-0 lg:mb-2">
+              {[InstagramIcon, FacebookIcon, YoutubeIcon, PinterestIcon, WhatsappIcon].map((Icon, idx) => (
+                <a key={idx} href="#" className="w-[34px] h-[34px] rounded-full border border-gray-300 bg-transparent flex items-center justify-center text-gray-800 hover:text-[#345920] hover:border-[#345920] transition-colors">
+                  <Icon size={16} strokeWidth={1.5} />
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </div>
@@ -257,7 +251,7 @@ const Footer = () => {
               </div>
               <div className="w-14 h-9 bg-white border border-gray-200 rounded flex items-center justify-center text-[10px] font-extrabold text-blue-800 italic shadow-sm">RuPay</div>
               <div className="w-14 h-9 bg-white border border-gray-200 rounded flex items-center justify-center text-[11px] font-extrabold text-gray-600 italic shadow-sm">UPI</div>
-              <div className="w-14 h-9 bg-white border border-gray-200 rounded flex items-center justify-center text-[9px] font-bold text-center leading-[1.1] text-gray-800 shadow-sm">NET<br/>BANKING</div>
+              <div className="w-14 h-9 bg-white border border-gray-200 rounded flex items-center justify-center text-[9px] font-bold text-center leading-[1.1] text-gray-800 shadow-sm">NET<br />BANKING</div>
             </div>
           </div>
         </div>
@@ -268,17 +262,17 @@ const Footer = () => {
         <div className="container mx-auto px-4 md:px-8 max-w-[1440px] flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-[#d1e6d3]">
           <div className="flex flex-col md:flex-row items-center gap-4 w-full md:w-auto">
             <p className="font-medium whitespace-nowrap">© 2025 Greenbae. All rights reserved.</p>
-                 <p className="font-medium whitespace-nowrap">Designed & Developed by StudioElemento</p>
+            <p className="font-medium whitespace-nowrap">Designed & Developed by StudioElemento</p>
             <div className="hidden md:block w-px h-3 bg-[#4d8745]"></div>
-            
+
             <div className="flex flex-wrap justify-center items-center font-medium">
               <a href="#" className="hover:text-white transition-colors px-3 border-r border-[#4d8745]">Privacy Policy</a>
               <a href="#" className="hover:text-white transition-colors px-3 border-r border-[#4d8745]">Terms & Conditions</a>
-             
-             
+
+
             </div>
           </div>
-          
+
           <div className="flex items-center gap-2 font-medium text-[#d1e6d3] mt-2 md:mt-0">
             <Leaf size={14} /> Made with love for healthier living.
           </div>

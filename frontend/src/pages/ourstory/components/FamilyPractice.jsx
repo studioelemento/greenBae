@@ -74,14 +74,6 @@ const FamilyPractice = () => {
           ))}
         </div>
 
-        {/* Mobile Image */}
-        <div className="md:hidden w-full max-w-[360px] rounded-xl overflow-hidden aspect-[4/3] mb-6 shadow-sm">
-          <img
-            src="https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?auto=format&fit=crop&q=80&w=1200"
-            alt="Mother feeding daughter healthy food"
-            className="w-full h-full object-cover"
-          />
-        </div>
 
         {/* Quote bar */}
         <div className="bg-[#e4ecd4] rounded-xl px-5 py-4 md:py-3.5 flex flex-row items-center md:items-start text-left gap-3 md:gap-4 w-full max-w-[360px] md:max-w-[420px]">

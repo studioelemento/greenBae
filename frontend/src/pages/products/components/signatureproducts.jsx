@@ -54,18 +54,18 @@ const SignatureProducts = () => {
           {/* Card 1: Veggie Vitals */}
           <div 
             onClick={() => {
-              if (window.innerWidth < 768) {
+              if (window.innerWidth < 1024) {
                 navigate("/products/single", { state: { product: "veggie-vitals" } });
               }
             }}
-            className="bg-[#F4EFE6] rounded-[16px] md:rounded-[28px] overflow-hidden flex flex-row items-stretch shadow-[0_4px_20px_rgba(0,0,0,0.03)] h-[250px] md:h-auto cursor-pointer md:cursor-auto"
+            className="bg-[#F4EFE6] rounded-[16px] md:rounded-[28px] overflow-hidden flex flex-row items-stretch shadow-[0_4px_20px_rgba(0,0,0,0.03)] h-[250px] md:h-auto cursor-pointer lg:cursor-auto"
           >
             {/* Image container */}
             <div className="w-[45%] md:w-[46%] relative bg-[#EAE3D4]/40 md:bg-transparent overflow-hidden flex items-center justify-center">
               <img
                 src={veggieimage}
                 alt="Veggie Vitals Pouch"
-                className="w-full aspect-[9/16] object-cover object-center md:object-center"
+                className="w-full h-full object-cover object-center md:object-center"
               />
             </div>
 
@@ -203,10 +203,10 @@ const SignatureProducts = () => {
               </ul>
 
               <button
-                onClick={() => navigate("/products/single", { state: { product: "veggie-vitals" } })}
-                className="text-[#173A22] md:bg-[#173A22] md:text-white md:px-6 md:py-2.5 md:rounded-lg font-semibold md:font-medium text-[11px] md:text-[14px] flex items-center justify-center gap-1 md:gap-2 hover:opacity-80 transition-opacity w-max"
+                onClick={(e) => { e.stopPropagation(); navigate("/products/single", { state: { product: "veggie-vitals" } }); }}
+                className="text-[#173A22] font-semibold md:font-semibold text-[11px] md:text-[14px] flex items-center justify-center gap-1 md:gap-2 hover:opacity-80 transition-opacity w-max"
               >
-                Explore Veggie Vitals <span className="md:text-white">&rarr;</span>
+                Explore Veggie Vitals <span>&rarr;</span>
               </button>
             </div>
           </div>
@@ -214,18 +214,18 @@ const SignatureProducts = () => {
           {/* Card 2: Nutri Mix */}
           <div 
             onClick={() => {
-              if (window.innerWidth < 768) {
+              if (window.innerWidth < 1024) {
                 navigate("/products/single", { state: { product: "nutri-mix" } });
               }
             }}
-            className="bg-[#F0E7D8] rounded-[16px] md:rounded-[28px] overflow-hidden flex flex-row items-stretch shadow-[0_4px_20px_rgba(0,0,0,0.03)] h-[250px] md:h-auto cursor-pointer md:cursor-auto"
+            className="bg-[#F0E7D8] rounded-[16px] md:rounded-[28px] overflow-hidden flex flex-row items-stretch shadow-[0_4px_20px_rgba(0,0,0,0.03)] h-[250px] md:h-auto cursor-pointer lg:cursor-auto"
           >
             {/* Image container */}
             <div className="w-[45%] md:w-[46%] relative bg-[#E4D7C2]/40 md:bg-transparent overflow-hidden flex items-center justify-center">
               <img
                 src={nutriimage}
                 alt="Nutri Mix Pouch"
-                className="w-full aspect-[9/16] object-cover object-center md:object-center"
+                className="w-full h-full object-cover object-center md:object-center"
               />
             </div>
 
@@ -348,10 +348,10 @@ const SignatureProducts = () => {
               </ul>
 
               <button
-                onClick={() => navigate("/products/single", { state: { product: "nutri-mix" } })}
-                className="text-[#624028] md:bg-[#624028] md:text-white md:px-6 md:py-2.5 md:rounded-lg font-semibold md:font-medium text-[11px] md:text-[14px] flex items-center justify-center gap-1 md:gap-2 hover:opacity-80 transition-opacity w-max"
+                onClick={(e) => { e.stopPropagation(); navigate("/products/single", { state: { product: "nutri-mix" } }); }}
+                className="text-[#624028] font-semibold md:font-semibold text-[11px] md:text-[14px] flex items-center justify-center gap-1 md:gap-2 hover:opacity-80 transition-opacity w-max"
               >
-                Explore Nutri Mix <span className="md:text-white">&rarr;</span>
+                Explore Nutri Mix <span>&rarr;</span>
               </button>
             </div>
           </div>

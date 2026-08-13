@@ -1,5 +1,7 @@
 import { Leaf, FlaskConical, ShieldCheck, Users, ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import veggieimage from "../../../assets/img-ourproducts/Greenbae Veggie Vitals.png";
+import nutriimage from "../../../assets/img-ourproducts/Greenbae Diabe Nutri Mix.png";
 
 const OurProducts = () => {
   const navigate = useNavigate();
@@ -8,13 +10,13 @@ const OurProducts = () => {
     {
       title: "Veggie Vitals",
       desc: "Daily nutrition through a carefully formulated blend of vegetables, herbs, and spices.",
-      image: "/veggie_vitals.png",
+      image: veggieimage,
       link: "/products/veggie-vitals"
     },
     {
       title: "Nutri Mix",
       desc: "A fiber-rich nutritional blend for everyday wellness and better living.",
-      image: "/nutri_mix.png",
+      image: nutriimage,
       link: "/products/nutri-mix"
     }
   ];
@@ -125,7 +127,7 @@ const OurProducts = () => {
           </div>
 
           {/* 2-Column Card Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 w-full mx-auto">
             {rangeData.map((item, idx) => (
               <div 
                 key={idx} 
@@ -152,7 +154,7 @@ const OurProducts = () => {
                     }}
                     className="inline-flex items-center gap-1.5 text-[11px] md:text-xs font-bold text-[#345920] hover:text-[#2b4c18] bg-[#f4f7f0] hover:bg-[#e2ead9] rounded-md px-3.5 py-1.5 transition-colors duration-200 group"
                   >
-                    Learn More
+                    View product
                     <ArrowRight size={12} className="group-hover:translate-x-0.5 transition-transform" />
                   </button>
                 </div>
