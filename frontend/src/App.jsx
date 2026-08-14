@@ -10,6 +10,7 @@ import ProductsPage from './pages/products/ProductsPage';
 import './App.css'
 import HealthyLivingPage from './pages/healthy-living/HealthyLivingPage';
 import SingleArticle from './pages/article/SingleArticle';
+import OurMission from './pages/ourMission/OurMission';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="products/single" element={<SingleProduct />} />
           <Route path="healthy-living" element={<HealthyLivingPage />} />
           <Route path="article/:id" element={<SingleArticle />} />
+          <Route path="our-mission" element={<OurMission />} />
           <Route path="contact-us" element={<ContactUs />} />
         </Route>
       </Routes>

@@ -1,11 +1,9 @@
 import Hero from './components/Hero';
 import Features from './components/Features';
-import Philosophy from './components/Philosophy';
 import Story from './components/Story';
-import Generation from './components/Generation';
 import OurProducts from './components/OurProducts';
-import LifestyleChallenge from './components/LifestyleChallenge';
 import HealthyLivingHub from './components/HealthyLivingHub';
+import WellnessBacked from './components/WellnessBacked';
 
 const Home = () => {
   return (
@@ -15,11 +13,10 @@ const Home = () => {
       {/* Spacer for content below since features bar overlaps
       <div className="h-8 lg:h-12 bg-white"></div>
        */}
-      <LifestyleChallenge />
+   
       <OurProducts />
-      <Philosophy />
+      <WellnessBacked/>
       <Story />
-      <Generation/>
       <HealthyLivingHub />
     </div>
   );

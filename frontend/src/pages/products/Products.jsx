@@ -1,7 +1,7 @@
 import ProductHero from './components/ProductHero';
 import SignatureProducts from './components/signatureproducts';
 import Ingredients from './components/ingredients';
-import WellnessBacked from './components/wellnessbacked';
+
 
 const Products = () => {
   return (
@@ -9,7 +9,7 @@ const Products = () => {
       <ProductHero />
       <SignatureProducts />
       <Ingredients />
-      <WellnessBacked />
+    
     </div>
   );
 };
