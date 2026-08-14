@@ -114,11 +114,15 @@ const HealthyLivingHub = () => {
               </p>
             </div>
           ) : (
-            articles.map((article) => (
+            articles.map((article, index) => (
               <Link 
                 to={`/article/${article.id}`}
                 key={article.id} 
-                className="flex flex-col bg-white border border-[#f3f0e7] rounded-[24px] overflow-hidden shadow-sm hover:shadow-[0_12px_30px_rgba(0,0,0,0.05)] hover:-translate-y-1 transition-all duration-300 group cursor-pointer block"
+                className={`flex-col bg-white border border-[#f3f0e7] rounded-[24px] overflow-hidden shadow-sm hover:shadow-[0_12px_30px_rgba(0,0,0,0.05)] hover:-translate-y-1 transition-all duration-300 group cursor-pointer ${
+                  index >= 8 ? 'hidden' :
+                  index >= 4 ? 'hidden lg:flex' :
+                  index >= 3 ? 'hidden sm:flex' : 'flex'
+                }`}
               >
                 {/* Image Area */}
                 <div className="relative w-full h-[180px] overflow-hidden bg-gray-100 shrink-0">

@@ -11,6 +11,7 @@ import './App.css'
 import HealthyLivingPage from './pages/healthy-living/HealthyLivingPage';
 import SingleArticle from './pages/article/SingleArticle';
 import OurMission from './pages/ourMission/OurMission';
+import { FaWhatsapp } from 'react-icons/fa';
 
 function App() {
   return (
@@ -29,6 +30,17 @@ function App() {
           <Route path="contact-us" element={<ContactUs />} />
         </Route>
       </Routes>
+
+      {/* Floating WhatsApp Icon */}
+      <a
+        href="https://wa.me/918921767274"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-6 left-6 z-50 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:scale-110 hover:shadow-xl transition-all duration-300"
+        aria-label="Chat on WhatsApp"
+      >
+        <FaWhatsapp size={32} />
+      </a>
     </Router>
   );
 }

@@ -11,7 +11,7 @@ const StoryHero = () => {
 
   return (
     <section className="relative w-full bg-[#FAF9F5] flex flex-col md:block overflow-hidden">
-      
+
       {/* Mobile Text Section: Stacked above image on mobile */}
       <div className="md:hidden flex flex-col items-center justify-center px-6 pt-12 pb-6 text-center z-20">
         <div className="flex items-center gap-3 mb-4">
@@ -40,9 +40,9 @@ const StoryHero = () => {
         />
 
         {/* Gradient for Desktop ONLY */}
-        <div 
-          className="hidden md:block absolute inset-0 z-10" 
-          style={{backgroundImage: 'linear-gradient(to right, #FAF9F5 0%, #FAF9F5 30%, rgba(250,249,245,0.85) 48%, rgba(250,249,245,0.1) 68%, transparent 100%)'}} 
+        <div
+          className="hidden md:block absolute inset-0 z-10"
+          style={{ backgroundImage: 'linear-gradient(to right, #FAF9F5 0%, #FAF9F5 30%, rgba(250,249,245,0.85) 48%, rgba(250,249,245,0.1) 68%, transparent 100%)' }}
         />
 
         {/* Desktop Text Overlay */}
@@ -52,14 +52,14 @@ const StoryHero = () => {
             <span className="uppercase tracking-widest text-xs font-semibold text-primary-900">Our Story</span>
             <Leaf className="w-4 h-4 text-primary-800" />
           </div>
-          <h1 className="text-5xl lg:text-7xl font-serif font-bold text-primary-900 leading-[1.08] mb-6">
+          <h1 className="text-5xl lg:text-7xl font-serif font-bold text-primary-900 leading-[1.08] mb-1">
             Born From<br /> A Family's Love
           </h1>
-          <p className="text-gray-700 leading-relaxed mb-8 max-w-sm text-lg">
+          <p className="text-gray-700 leading-relaxed mb-3 max-w-sm text-lg">
             What began as a simple effort by loving parents to ensure better nutrition for their children eventually grew into Greenbae—a movement dedicated to healthier living.
           </p>
           <div>
-            <a href="#years-of-learning" className="bg-primary-800 hover:bg-primary-900 text-white px-8 py-3 rounded flex items-center gap-3 text-sm font-medium transition-colors w-fit">
+            <a href="#years-of-learning" className="bg-primary-800 hover:bg-primary-900 text-white mb-8 px-8 py-3 rounded flex items-center gap-3 text-sm font-medium transition-colors w-fit">
               Our Journey <ArrowRight className="w-4 h-4" />
             </a>
           </div>
@@ -97,7 +97,7 @@ const StoryHero = () => {
       {/* Mobile Bottom Icons - Stacked below Image */}
       <div className="md:hidden relative w-full z-20 -mt-8">
         <svg viewBox="0 0 1440 60" className="w-full h-[40px] block" preserveAspectRatio="none">
-           <path d="M0,40 C400,60 1000,0 1440,20 L1440,60 L0,60 Z" fill="white" />
+          <path d="M0,40 C400,60 1000,0 1440,20 L1440,60 L0,60 Z" fill="white" />
         </svg>
         <div className="bg-white px-4 pb-10 pt-2 relative">
           <div className="grid grid-cols-2 gap-y-8 gap-x-4">

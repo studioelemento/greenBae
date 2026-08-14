@@ -127,39 +127,312 @@ const OurProducts = () => {
           </div>
 
           {/* 2-Column Card Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 w-full mx-auto">
-            {rangeData.map((item, idx) => (
-              <div 
-                key={idx} 
-                onClick={() => {
-                  if (window.innerWidth < 768) {
-                    navigate("/products/single", { state: { product: item.link.split('/').pop() } });
-                  }
-                }}
-                className="flex flex-row items-center bg-[#fcfbf7] border border-[#f3f0e7] rounded-[24px] p-5 gap-5 hover:shadow-[0_12px_30px_rgba(0,0,0,0.04)] transition-all duration-300 cursor-pointer md:cursor-auto"
-              >
-                {/* Left/Right Product Image */}
-                <div className="w-[100px] h-[100px] sm:w-[110px] sm:h-[110px] md:w-[125px] md:h-[125px] shrink-0 overflow-hidden rounded-xl bg-white border border-gray-100 flex items-center justify-center">
-                  <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
-                </div>
-
-                {/* Content */}
-                <div className="flex-1 text-left flex flex-col items-start justify-between h-full">
-                  <h4 className="font-serif font-bold text-base md:text-lg text-[#1c3e1e] mb-1 leading-tight">{item.title}</h4>
-                  <p className="text-gray-600 text-xs md:text-[13px] leading-relaxed mb-3">{item.desc}</p>
-                  <button 
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      navigate("/products/single", { state: { product: item.link.split('/').pop() } });
-                    }}
-                    className="inline-flex items-center gap-1.5 text-[11px] md:text-xs font-bold text-[#345920] hover:text-[#2b4c18] bg-[#f4f7f0] hover:bg-[#e2ead9] rounded-md px-3.5 py-1.5 transition-colors duration-200 group"
-                  >
-                    View product
-                    <ArrowRight size={12} className="group-hover:translate-x-0.5 transition-transform" />
-                  </button>
-                </div>
+          {/* Product Cards Grid - Copied from Products Page */}
+          <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 md:gap-6 w-full mx-auto">
+            {/* Card 1: Veggie Vitals */}
+            <div 
+              onClick={() => {
+                if (window.innerWidth < 1024) {
+                  navigate("/products/single", { state: { product: "veggie-vitals" } });
+                }
+              }}
+              className="bg-[#F4EFE6] rounded-[16px] md:rounded-[28px] overflow-hidden flex flex-row items-stretch shadow-[0_4px_20px_rgba(0,0,0,0.03)] h-[250px] md:h-auto cursor-pointer lg:cursor-auto"
+            >
+              {/* Image container */}
+              <div className="w-[45%] md:w-[46%] relative bg-[#EAE3D4]/40 md:bg-transparent overflow-hidden flex items-center justify-center">
+                <img
+                  src={veggieimage}
+                  alt="Veggie Vitals Pouch"
+                  className="w-full h-full object-cover object-center md:object-center"
+                />
               </div>
-            ))}
+
+              {/* Content container */}
+              <div className="w-[55%] md:w-[54%] p-3 py-4 md:p-6 flex flex-col justify-center">
+                <div className="mb-1 md:mb-2">
+                  <svg
+                    className="w-5 h-5 md:w-6 md:h-6"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#173A22"
+                    strokeWidth="1.5"
+                  >
+                    <path
+                      d="M12 2L3 7l1.5 8.5C5.5 19 9 22 12 22s6.5-3 7.5-6.5L21 7l-9-5z"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-[18px] md:text-[32px] font-serif text-[#173A22] mb-0 md:mb-1">
+                  Veggie Vitals
+                </h3>
+                <p className="text-[8px] md:text-[11px] font-bold tracking-[0.1em] md:tracking-[0.2em] text-gray-600 uppercase mb-1 md:mb-2">
+                  Daily Nutrition Blend
+                </p>
+
+                <div className="w-8 md:w-12 h-[1px] md:h-[2px] bg-[#173A22] mb-2 md:mb-3"></div>
+
+                <p className="text-[10px] md:text-[14px] text-gray-800 leading-snug md:leading-relaxed mb-2 md:mb-4 pr-2 md:pr-4">
+                  A powerful blend of 16 vegetables, herbs and spices to help fill
+                  everyday nutritional gaps naturally.
+                </p>
+
+                <ul className="space-y-[4px] md:space-y-[8px] mb-3 md:mb-5">
+                  <li className="flex items-center gap-1.5 md:gap-3">
+                    <svg
+                      className="w-3 h-3 md:w-[18px] md:h-[18px] shrink-0"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="#173A22"
+                      strokeWidth="1.5"
+                    >
+                      <path
+                        d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <path
+                        d="M12 16a3 3 0 01-3-3c0-2 3-4 3-4s3 2 3 4a3 3 0 01-3 3z"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                    <span className="text-[9px] md:text-[14px] font-medium text-gray-800 leading-tight">
+                      Supports Overall Wellness
+                    </span>
+                  </li>
+                  <li className="flex items-center gap-1.5 md:gap-3">
+                    <svg
+                      className="w-3 h-3 md:w-[18px] md:h-[18px] shrink-0"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="#173A22"
+                      strokeWidth="1.5"
+                    >
+                      <path
+                        d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <path
+                        d="M13 8v-4l-5 8h4v4l5-8h-4z"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                    <span className="text-[9px] md:text-[14px] font-medium text-gray-800 leading-tight">
+                      Natural Energy Support
+                    </span>
+                  </li>
+                  <li className="flex items-center gap-1.5 md:gap-3">
+                    <svg
+                      className="w-3 h-3 md:w-[18px] md:h-[18px] shrink-0"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="#173A22"
+                      strokeWidth="1.5"
+                    >
+                      <path
+                        d="M4 10v2a8 8 0 0016 0v-2H4z"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <path
+                        d="M12 2v4M8 3v3M16 3v3"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                    <span className="text-[9px] md:text-[14px] font-medium text-gray-800 leading-tight">
+                      Easy to Use, Great Taste
+                    </span>
+                  </li>
+                  <li className="flex items-center gap-1.5 md:gap-3">
+                    <svg
+                      className="w-3 h-3 md:w-[18px] md:h-[18px] shrink-0"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="#173A22"
+                      strokeWidth="1.5"
+                    >
+                      <path
+                        d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <circle
+                        cx="9"
+                        cy="7"
+                        r="4"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <path
+                        d="M22 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                    <span className="text-[9px] md:text-[14px] font-medium text-gray-800 leading-tight">
+                      For the Whole Family
+                    </span>
+                  </li>
+                </ul>
+
+                <button
+                  onClick={(e) => { e.stopPropagation(); navigate("/products/single", { state: { product: "veggie-vitals" } }); }}
+                  className="text-[#173A22] font-semibold md:font-semibold text-[11px] md:text-[14px] flex items-center justify-center gap-1 md:gap-2 hover:opacity-80 transition-opacity w-max"
+                >
+                  Explore Veggie Vitals <span>&rarr;</span>
+                </button>
+              </div>
+            </div>
+
+            {/* Card 2: Nutri Mix */}
+            <div 
+              onClick={() => {
+                if (window.innerWidth < 1024) {
+                  navigate("/products/single", { state: { product: "nutri-mix" } });
+                }
+              }}
+              className="bg-[#F0E7D8] rounded-[16px] md:rounded-[28px] overflow-hidden flex flex-row items-stretch shadow-[0_4px_20px_rgba(0,0,0,0.03)] h-[250px] md:h-auto cursor-pointer lg:cursor-auto"
+            >
+              {/* Image container */}
+              <div className="w-[45%] md:w-[46%] relative bg-[#E4D7C2]/40 md:bg-transparent overflow-hidden flex items-center justify-center">
+                <img
+                  src={nutriimage}
+                  alt="Nutri Mix Pouch"
+                  className="w-full h-full object-cover object-center md:object-center"
+                />
+              </div>
+
+              {/* Content container */}
+              <div className="w-[55%] md:w-[54%] p-3 py-4 md:p-6 flex flex-col justify-center">
+                <div className="mb-1 md:mb-2">
+                  <svg
+                    className="w-5 h-5 md:w-6 md:h-6"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#624028"
+                    strokeWidth="1.5"
+                  >
+                    <path
+                      d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-[18px] md:text-[32px] font-serif text-[#624028] mb-0 md:mb-1">
+                  Nutri Mix
+                </h3>
+                <p className="text-[8px] md:text-[11px] font-bold tracking-[0.1em] md:tracking-[0.2em] text-gray-600 uppercase mb-1 md:mb-2">
+                  Fiber-Rich Nutrition
+                </p>
+
+                <div className="w-8 md:w-12 h-[1px] md:h-[2px] bg-[#624028] mb-2 md:mb-3"></div>
+
+                <p className="text-[10px] md:text-[14px] text-gray-800 leading-snug md:leading-relaxed mb-2 md:mb-4 pr-2 md:pr-4">
+                  A delicious blend of fiber-rich ingredients that support
+                  digestive wellness and everyday nourishment.
+                </p>
+
+                <ul className="space-y-[4px] md:space-y-[8px] mb-3 md:mb-5">
+                  <li className="flex items-center gap-1.5 md:gap-3">
+                    <svg
+                      className="w-3 h-3 md:w-[18px] md:h-[18px] shrink-0"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="#624028"
+                      strokeWidth="1.5"
+                    >
+                      <path
+                        d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <path
+                        d="M9 12c0-2 3-3 3-3s3 1 3 3-3 5-3 5-3-3-3-5z"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                    <span className="text-[9px] md:text-[14px] font-medium text-gray-800 leading-tight">
+                      Supports Digestive Wellness
+                    </span>
+                  </li>
+                  <li className="flex items-center gap-1.5 md:gap-3">
+                    <svg
+                      className="w-3 h-3 md:w-[18px] md:h-[18px] shrink-0"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="#624028"
+                      strokeWidth="1.5"
+                    >
+                      <path
+                        d="M12 22C12 22 4 16 4 10C4 6.5 6.5 4 10 4C11.5 4 12 5 12 5C12 5 12.5 4 14 4C17.5 4 20 6.5 20 10C20 16 12 22 12 22Z"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                    <span className="text-[9px] md:text-[14px] font-medium text-gray-800 leading-tight">
+                      Rich In Dietary Fiber
+                    </span>
+                  </li>
+                  <li className="flex items-center gap-1.5 md:gap-3">
+                    <svg
+                      className="w-3 h-3 md:w-[18px] md:h-[18px] shrink-0"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="#624028"
+                      strokeWidth="1.5"
+                    >
+                      <path
+                        d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                    <span className="text-[9px] md:text-[14px] font-medium text-gray-800 leading-tight">
+                      Sustained Energy Naturally
+                    </span>
+                  </li>
+                  <li className="flex items-center gap-1.5 md:gap-3">
+                    <svg
+                      className="w-3 h-3 md:w-[18px] md:h-[18px] shrink-0"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="#624028"
+                      strokeWidth="1.5"
+                    >
+                      <circle
+                        cx="12"
+                        cy="12"
+                        r="5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <path
+                        d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                    <span className="text-[9px] md:text-[14px] font-medium text-gray-800 leading-tight">
+                      Perfect for Everyday Use
+                    </span>
+                  </li>
+                </ul>
+
+                <button
+                  onClick={(e) => { e.stopPropagation(); navigate("/products/single", { state: { product: "nutri-mix" } }); }}
+                  className="text-[#624028] font-semibold md:font-semibold text-[11px] md:text-[14px] flex items-center justify-center gap-1 md:gap-2 hover:opacity-80 transition-opacity w-max"
+                >
+                  Explore Nutri Mix <span>&rarr;</span>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -183,11 +456,11 @@ const OurProducts = () => {
           </div>
 
           {/* Right: Family photo sticking up from bottom edge (Desktop only) */}
-          <div className="absolute bottom-0 right-10 xl:right-16 w-[180px] h-[130px] z-10 hidden lg:block pointer-events-none">
+          <div className="absolute bottom-0 right-10 xl:right-16 w-[200px] xl:w-[240px] h-[150px] xl:h-[180px] z-10 hidden lg:block pointer-events-none">
             <img 
               src="/banner_family.png" 
               alt="Smiling family" 
-              className="w-full h-full object-cover object-bottom"
+              className="w-full h-full object-cover object-top pt-9 rounded-t-[16px]"
             />
           </div>
 
