@@ -154,7 +154,7 @@ const MoreThanName = () => {
         {/* Mobile Image */}
         <div className="w-full relative aspect-[4/3] mb-8">
           <img 
-            src="https://images.unsplash.com/photo-1618897538865-c752df46714d?auto=format&fit=crop&q=80&w=800" 
+            src={image} 
             alt="Healthy green smoothie" 
             className="w-full h-full object-cover"
           />

@@ -1,34 +1,9 @@
-import { useState } from 'react';
-import { Leaf, Heart, Smile, Soup, Sparkles, Activity, ArrowRight, BookOpen } from 'lucide-react';
+import { Leaf, ArrowRight, BookOpen } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import articlesData from '../../../data/articles.js';
 
-
 const HealthyLivingHub = () => {
-  const [activeCategory, setActiveCategory] = useState('All');
-
-  const categories = [
-    { name: 'Nutrition', icon: Leaf },
-    { name: 'Wellness', icon: Sparkles },
-    { name: 'Lifestyle', icon: Heart },
-    { name: 'Kids Health', icon: Smile },
-    { name: 'Recipes', icon: Soup },
-    { name: 'Mind & Body', icon: Activity }
-  ];
-
   const articles = articlesData;
-
-  const filteredArticles = activeCategory === 'All'
-    ? articles
-    : articles.filter(article => article.category === activeCategory);
-
-  const handleCategoryClick = (categoryName) => {
-    if (activeCategory === categoryName) {
-      setActiveCategory('All'); // Toggle off, showing all
-    } else {
-      setActiveCategory(categoryName);
-    }
-  };
 
   return (
     <section className="relative w-full py-16 md:py-24 bg-[#fdfcf7] overflow-hidden">
@@ -107,37 +82,7 @@ const HealthyLivingHub = () => {
             </div>
           </div>
 
-          {/* 2. Interactive Category Tabs Card (Capsule overlapping the bottom inside the card) */}
-          <div className="absolute -bottom-10 left-0 right-0 px-4 z-20">
-            <div className="max-w-4xl mx-auto bg-white border border-[#e2ead9] rounded-[24px] md:rounded-full p-4 shadow-[0_8px_30px_rgba(0,0,0,0.03)] flex flex-row items-center justify-start md:justify-around gap-6 overflow-x-auto no-scrollbar scroll-smooth">
-              {categories.map((cat, idx) => {
-                const Icon = cat.icon;
-                const isActive = activeCategory === cat.name;
-                return (
-                  <button
-                    key={idx}
-                    onClick={() => handleCategoryClick(cat.name)}
-                    className="flex flex-col items-center justify-center min-w-[76px] cursor-pointer group focus:outline-none shrink-0"
-                  >
-                    {/* Icon Container */}
-                    <div className={`w-11 h-11 rounded-full flex items-center justify-center transition-all duration-300 border ${
-                      isActive 
-                        ? 'bg-[#345920] border-[#345920] text-white shadow-md' 
-                        : 'bg-[#f4f7f0]/60 border-[#e2ead9] text-[#4d8745] hover:bg-[#eef2e6] hover:text-[#345920]'
-                    }`}>
-                      <Icon size={18} strokeWidth={1.5} />
-                    </div>
-                    {/* Label */}
-                    <span className={`mt-2 text-[11px] sm:text-xs font-semibold tracking-wide transition-colors duration-200 ${
-                      isActive ? 'text-[#345920] font-bold' : 'text-gray-500 group-hover:text-[#345920]'
-                    }`}>
-                      {cat.name}
-                    </span>
-                  </button>
-                );
-              })}
-            </div>
-          </div>
+
 
         </div>
 
@@ -158,7 +103,7 @@ const HealthyLivingHub = () => {
 
         {/* 4. Article Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {filteredArticles.length === 0 ? (
+          {articles.length === 0 ? (
             <div className="col-span-full py-16 text-center bg-white border border-[#f3f0e7] rounded-[24px] p-6 shadow-sm flex flex-col items-center justify-center">
               <div className="w-12 h-12 rounded-full bg-[#f4f7f0] flex items-center justify-center text-[#4d8745] mb-3">
                 <BookOpen size={20} />
@@ -169,7 +114,7 @@ const HealthyLivingHub = () => {
               </p>
             </div>
           ) : (
-            filteredArticles.map((article) => (
+            articles.map((article) => (
               <Link 
                 to={`/article/${article.id}`}
                 key={article.id} 

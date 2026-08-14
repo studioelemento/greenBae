@@ -19,7 +19,7 @@ const JourneyBegins = () => {
 
   return (
     <section className="bg-[#FAF9F5] relative overflow-hidden flex flex-col pt-8 md:pt-12 lg:pt-16">
-      
+
       {/* Load Caveat font for the handwritten text */}
       <style>
         {`
@@ -36,9 +36,9 @@ const JourneyBegins = () => {
         <div className="relative w-full mb-6">
           <div className="absolute top-0 right-0 w-[60%] h-full z-0">
             <div className="absolute inset-0 bg-gradient-to-r from-[#FAF9F5] via-[#FAF9F5]/90 to-transparent z-10" />
-            <img 
-              src={image} 
-              alt="Family watching sunset" 
+            <img
+              src={image}
+              alt="Family watching sunset"
               className="w-full h-full object-cover object-right"
             />
           </div>
@@ -51,11 +51,11 @@ const JourneyBegins = () => {
                 <span className="uppercase tracking-widest text-xs font-bold text-[#1a3622]">Our Story</span>
                 <Leaf className="w-3 h-3 text-[#2c4c3b]" />
               </div>
-              
+
               <h2 className="text-5xl font-serif font-bold text-[#1a3622] leading-[1.1] mb-5">
                 The Journey<br />Has Just Begun
               </h2>
-              
+
               <div className="w-10 h-[2px] bg-[#1a3622] mb-5"></div>
 
               <p className="text-gray-800 text-lg font-medium leading-relaxed max-w-md">
@@ -87,16 +87,16 @@ const JourneyBegins = () => {
           <div className="bg-[#183420] rounded-2xl p-10 relative overflow-hidden flex flex-row items-center justify-between gap-8 shadow-md border border-[#1a3622]/20">
             <div className="relative z-10 w-3/5 text-left">
               <h2 className="text-[2rem] font-serif text-white leading-[1.3]">
-                Together, let's build a<br/>
-                healthier tomorrow for <span className="font-handwritten text-5xl text-[#d4e488] ml-1 relative">every family.<svg className="absolute w-full h-3 -bottom-1 left-0 text-[#d4e488]" viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0,8 Q50,0 100,8" fill="none" stroke="currentColor" strokeWidth="1.5"/></svg></span>
+                Together, let's build a<br />
+                healthier tomorrow for <span className="font-handwritten text-5xl text-[#d4e488] ml-1 relative">every family.<svg className="absolute w-full h-3 -bottom-1 left-0 text-[#d4e488]" viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0,8 Q50,0 100,8" fill="none" stroke="currentColor" strokeWidth="1.5" /></svg></span>
               </h2>
             </div>
-            
+
             <div className="relative z-10 flex flex-col gap-3 w-auto min-w-[260px]">
               <a href="/products" className="bg-[#FAF9F5] text-[#1a3622] hover:bg-white w-full px-5 py-3 rounded font-semibold text-sm flex items-center justify-center gap-2 transition-colors shadow-sm">
                 Explore Our Products <ArrowRight className="w-4 h-4" />
               </a>
-              
+
             </div>
           </div>
         </div>
@@ -111,24 +111,24 @@ const JourneyBegins = () => {
             <span className="uppercase tracking-widest text-[9px] font-bold text-[#1a3622]">Our Story</span>
             <Leaf className="w-3 h-3 text-[#2c4c3b]" />
           </div>
-          
+
           <h2 className="text-3xl font-serif font-bold text-[#1a3622] leading-tight mb-3">
             The Journey<br />Has Just Begun
           </h2>
-          
+
           <div className="w-8 h-[1px] bg-[#1a3622] mb-4"></div>
 
           <p className="text-gray-800 text-[13px] font-medium leading-relaxed px-2 mb-6">
-            From families to communities, from today<br/>to tomorrow— we're building a healthier,<br/>happier world together.
+            From families to communities, from today<br />to tomorrow— we're building a healthier,<br />happier world together.
           </p>
         </div>
 
         {/* Mobile Image */}
         <div className="px-4 mb-6">
           <div className="w-full aspect-[16/9] rounded-2xl overflow-hidden shadow-md">
-            <img 
-              src="https://images.unsplash.com/photo-1476610182048-b716b8518aae?auto=format&fit=crop&q=80&w=800" 
-              alt="Family watching sunset" 
+            <img
+              src={image}
+              alt="Family watching sunset"
               className="w-full h-full object-cover"
             />
           </div>
@@ -153,16 +153,13 @@ const JourneyBegins = () => {
         <div className="px-4 mb-6">
           <div className="bg-[#183420] rounded-xl p-5 relative overflow-hidden flex flex-col items-center text-center shadow-md border border-[#1a3622]/20">
             <h2 className="text-[17px] font-serif text-white leading-tight mb-4">
-              Together, let's build a<br/>
-              healthier tomorrow for <span className="font-handwritten text-[28px] text-[#d4e488] relative">every family.<svg className="absolute w-full h-2 -bottom-0.5 left-0 text-[#d4e488]" viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0,8 Q50,0 100,8" fill="none" stroke="currentColor" strokeWidth="1.5"/></svg></span>
+              Together, let's build a<br />
+              healthier tomorrow for <span className="font-handwritten text-[28px] text-[#d4e488] relative">every family.<svg className="absolute w-full h-2 -bottom-0.5 left-0 text-[#d4e488]" viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0,8 Q50,0 100,8" fill="none" stroke="currentColor" strokeWidth="1.5" /></svg></span>
             </h2>
-            
+
             <div className="flex flex-col gap-2.5 w-full">
               <a href="/products" className="bg-[#FAF9F5] text-[#1a3622] hover:bg-white w-full py-2.5 rounded font-semibold text-[11px] flex items-center justify-center gap-1.5 shadow-sm">
                 Explore Our Products <ArrowRight className="w-3 h-3" />
-              </a>
-              <a href="/healthy-living" className="border border-white/40 text-white hover:bg-white/10 w-full py-2.5 rounded font-medium text-[11px] flex items-center justify-center gap-1.5">
-                Join The Healthy Living Movement <Heart className="w-3 h-3" />
               </a>
             </div>
           </div>

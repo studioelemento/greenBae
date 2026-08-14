@@ -3,7 +3,7 @@ import {
   Leaf, FlaskConical, ShieldCheck, Sprout, Award, Users,
   Globe, BadgeCheck, Truck, Headset, ChevronDown, ChevronUp, ArrowRight
 } from 'lucide-react';
-
+import { useNavigate } from 'react-router-dom';
 
 const InstagramIcon = ({ size }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -53,6 +53,21 @@ const FeatureItem = ({ icon: Icon, title, subtitle, isLast }) => (
 
 const AccordionLinkList = ({ title, links }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const handleNavigation = (e, link) => {
+    e.preventDefault();
+    if (typeof link === 'object' && link.path) {
+      navigate(link.path);
+      if (link.hashId) {
+        setTimeout(() => {
+          document.getElementById(link.hashId)?.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      } else {
+        window.scrollTo(0, 0);
+      }
+    }
+  };
 
   return (
     <div className="border-b border-gray-200 lg:border-none py-3 lg:py-0">
@@ -66,9 +81,23 @@ const AccordionLinkList = ({ title, links }) => {
         </div>
       </button>
       <ul className={`mt-4 space-y-3 lg:space-y-4 text-xs lg:text-sm text-gray-700 ${isOpen ? 'block' : 'hidden lg:block'}`}>
-        {links.map((link, idx) => (
-          <li key={idx} className="whitespace-nowrap"><a href="#" className="hover:text-primary-600 transition-colors font-medium">{link}</a></li>
-        ))}
+        {links.map((link, idx) => {
+          const isObject = typeof link === 'object';
+          const label = isObject ? link.label : link;
+          const href = isObject ? (link.path || "#") : "#";
+
+          return (
+            <li key={idx} className="whitespace-nowrap">
+              <a
+                href={href}
+                onClick={(e) => handleNavigation(e, link)}
+                className="hover:text-primary-600 transition-colors font-medium"
+              >
+                {label}
+              </a>
+            </li>
+          );
+        })}
       </ul>
     </div>
   );
@@ -84,10 +113,23 @@ const Footer = () => {
     { icon: Users, title: "Real Customer", subtitle: "Experiences" },
   ];
 
-  const aboutLinks = ["Our Story", "Healthy Living Movement", "Our Journey", "Why GreenBae"];
+  const aboutLinks = [
+    { label: "Our Story", path: "/our-story" },
+    { label: "Healthy Living Hub", path: "/healthy-living" },
+    { label: "Our Journey", path: "/our-story" },
+    { label: "Why GreenBae", path: "/products", hashId: "wellness-backed" }
+  ];
   const wellnessLinks = ["Wellness Journal", "Healthy Living Tips", "Nutrition Basics", "Ingredients Knowledge", "Lifestyle & Habits", "Wellness Resources"];
-  const productLinks = ["Veggie Vitals", "Nutri Mix"];
-  const supportLinks = ["Contact Us", "FAQs", "Privacy Policy", "Terms & Conditions"];
+  const productLinks = [
+    { label: "Veggie Vitals", path: "/products" },
+    { label: "Nutri Mix", path: "/products" }
+  ];
+  const supportLinks = [
+    { label: "Contact Us", path: "/contact-us" },
+    { label: "FAQs", path: "/contact-us" },
+    { label: "Privacy Policy", path: "#" },
+    { label: "Terms & Conditions", path: "#" }
+  ];
 
   return (
     <footer className="bg-[#fcfcf7] border-t border-gray-200 pt-10 font-sans relative overflow-hidden">
@@ -119,7 +161,7 @@ const Footer = () => {
             <p className="text-sm text-gray-800 mb-6 leading-relaxed font-medium pr-2">
               We believe healthy living begins with small daily choices. Our nature-inspired wellness solutions are crafted to support every family, every day.
             </p>
-        
+
 
           </div>
 
@@ -260,14 +302,14 @@ const Footer = () => {
       {/* Bottom Bar */}
       <div className="bg-[#1c3e1e] py-5 relative z-10">
         <div className="container mx-auto px-4 md:px-8 max-w-[1440px] flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-[#d1e6d3]">
-          <div className="flex flex-col md:flex-row items-center gap-4 w-full md:w-auto">
+          <div className="flex flex-col md:flex-row items-center gap-y-2 md:gap-y-0 md:gap-x-5 w-full md:w-auto">
             <p className="font-medium whitespace-nowrap">© 2025 Greenbae. All rights reserved.</p>
             <p className="font-medium whitespace-nowrap">Designed & Developed by StudioElemento</p>
             <div className="hidden md:block w-px h-3 bg-[#4d8745]"></div>
 
-            <div className="flex flex-wrap justify-center items-center font-medium">
-              <a href="#" className="hover:text-white transition-colors px-3 border-r border-[#4d8745]">Privacy Policy</a>
-              <a href="#" className="hover:text-white transition-colors px-3 border-r border-[#4d8745]">Terms & Conditions</a>
+            <div className="flex flex-wrap justify-center items-center font-medium ">
+              <a href="#" className="hover:text-white transition-colors px-3 border-r border-[#4d8745] hidden md:block">Privacy Policy</a>
+              <a href="#" className="hover:text-white transition-colors px-3 border-r border-[#4d8745] hidden md:block ">Terms & Conditions</a>
 
 
             </div>

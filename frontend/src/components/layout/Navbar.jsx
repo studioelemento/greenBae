@@ -8,9 +8,10 @@ const Navbar = () => {
 
   const navLinks = [
     { label: 'Home', path: '/' },
-    { label: 'Our Story', path: '/our-story' },
     { label: 'Products', path: '/products' },
-    { label: 'Healthy Living Movement', path: '/healthy-living' },
+    { label: 'Our Story', path: '/our-story' },
+    { label: 'Our Mission', path: '/our-mission' },
+    { label: 'Healthy Living Hub', path: '/healthy-living' },
     { label: 'Contact Us', path: '/contact-us' }
   ];
 
@@ -31,19 +32,16 @@ const Navbar = () => {
             {navLinks.map((link, idx) => {
               const isActive = location.pathname === link.path;
               return (
-                <Link 
-                  key={idx} 
-                  to={link.path} 
+                <Link
+                  key={idx}
+                  to={link.path}
                   className={
-                    isActive 
-                      ? "text-white font-semibold text-sm border-b-2 border-white pb-1 flex items-center gap-1" 
+                    isActive
+                      ? "text-white font-semibold text-sm border-b-2 border-white pb-1 flex items-center gap-1"
                       : "text-white/90 hover:text-white font-medium text-sm transition-colors flex items-center gap-1"
                   }
                 >
                   {link.label}
-                  {link.label === 'Products' && (
-                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
-                  )}
                 </Link>
               );
             })}
@@ -54,7 +52,7 @@ const Navbar = () => {
             {/* <Search/>
              */}
             {/* Hamburger Button */}
-            <button 
+            <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="md:hidden hover:text-primary-700 transition-colors ml-2 focus:outline-none relative z-50"
               aria-label="Toggle mobile menu"
@@ -66,18 +64,16 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu Overlay Backdrop */}
-      <div 
-        className={`md:hidden fixed inset-0 top-20 bg-black transition-opacity duration-300 ${
-          isMobileMenuOpen ? 'opacity-30 visible' : 'opacity-0 invisible pointer-events-none'
-        }`}
+      <div
+        className={`md:hidden fixed inset-0 top-20 bg-black transition-opacity duration-300 ${isMobileMenuOpen ? 'opacity-30 visible' : 'opacity-0 invisible pointer-events-none'
+          }`}
         onClick={() => setIsMobileMenuOpen(false)}
         aria-hidden="true"
       />
 
       {/* Mobile Dropdown Navigation Menu */}
-      <div className={`md:hidden absolute w-full left-0 top-[100%] bg-white border-t border-green-900 transition-all duration-300 ease-in-out origin-top shadow-lg overflow-hidden z-50 ${
-        isMobileMenuOpen ? 'max-h-[500px] opacity-100 visible' : 'max-h-0 opacity-0 invisible'
-      }`}>
+      <div className={`md:hidden absolute w-full left-0 top-[100%] bg-white border-t border-green-900 transition-all duration-300 ease-in-out origin-top shadow-lg overflow-hidden z-50 ${isMobileMenuOpen ? 'max-h-[500px] opacity-100 visible' : 'max-h-0 opacity-0 invisible'
+        }`}>
         <nav className="flex flex-col py-4 px-6 space-y-4 shadow-[0_10px_20px_rgba(0,0,0,0.05)]">
           {navLinks.map((link, idx) => {
             const isActive = location.pathname === link.path;
@@ -86,25 +82,24 @@ const Navbar = () => {
                 key={idx}
                 to={link.path}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className={`text-sm py-2 border-b border-gray-50 last:border-0 transition-colors ${
-                  isActive 
-                    ? 'text-primary-600 font-semibold' 
-                    : 'text-gray-700 hover:text-primary-700 font-medium'
-                }`}
+                className={`text-sm py-2 border-b border-gray-50 last:border-0 transition-colors ${isActive
+                  ? 'text-primary-600 font-semibold'
+                  : 'text-gray-700 hover:text-primary-700 font-medium'
+                  }`}
               >
                 {link.label}
               </Link>
             );
           })}
           {/* Mobile Profile Action */}
-          <Link
+          {/* <Link
             to="/profile"
             onClick={() => setIsMobileMenuOpen(false)}
             className="sm:hidden text-gray-700 hover:text-primary-700 font-medium text-sm py-2 flex items-center gap-2 transition-colors border-t border-gray-50 pt-3"
           >
             <User className="w-4 h-4" />
             My Account
-          </Link>
+          </Link> */}
         </nav>
       </div>
     </header>
