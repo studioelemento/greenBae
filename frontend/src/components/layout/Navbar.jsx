@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Search, User, Menu, X, Handbag } from 'lucide-react';
+import logo from '../../assets/logo-greenBae/logoWhite.png';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -21,9 +22,8 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
-            <Link to="/" className="flex flex-col items-center" onClick={() => setIsMobileMenuOpen(false)}>
-              <span className="text-white font-serif text-3xl font-bold text-primary-800 tracking-tight">Greenbae</span>
-              <span className="text-white text-[0.6rem] uppercase tracking-[0.2em] text-primary-600 font-semibold mt-0.5">Natural & Friend</span>
+            <Link to="/" className="flex items-center" onClick={() => setIsMobileMenuOpen(false)}>
+              <img src={logo} alt="Greenbae Logo" className="h-16 md:h-20 w-auto object-contain py-2" />
             </Link>
           </div>
 

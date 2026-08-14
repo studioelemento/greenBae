@@ -4,6 +4,7 @@ import {
   Globe, BadgeCheck, Truck, Headset, ChevronDown, ChevronUp, ArrowRight
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import logo from '../../assets/logo-greenBae/Greenbae_Logo_Green_with writing.png';
 
 const InstagramIcon = ({ size }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -151,11 +152,7 @@ const Footer = () => {
           {/* Left Column - Brand & Mission */}
           <div className="lg:col-span-3 flex flex-col relative pr-4 lg:pr-6">
             <div className="mb-6 flex items-center gap-2">
-              <Leaf className="text-[#345920]" size={36} fill="#4d8745" />
-              <div className="flex flex-col">
-                <span className="font-serif text-[32px] font-bold text-[#1c3e1e] tracking-tight leading-none">Greenbae<sup className="text-xs">®</sup></span>
-                <span className="text-[10px] uppercase tracking-[0.25em] text-[#345920] font-bold mt-1.5">Natural & Friend</span>
-              </div>
+              <img src={logo} alt="Greenbae Logo" className="h-16 md:h-20 w-auto object-contain" />
             </div>
 
             <p className="text-sm text-gray-800 mb-6 leading-relaxed font-medium pr-2">

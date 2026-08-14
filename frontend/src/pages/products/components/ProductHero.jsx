@@ -1,5 +1,5 @@
 import { Leaf, ArrowRight, FlaskConical, Users, Heart } from "lucide-react";
-import hero from "../../../assets/img-ourproducts/prhero.png";
+import hero from "../../../assets/img-ourproducts/Greenbae products veggie vitals and NutrimixHeroImage.png";
 import ingredient from "../../../assets/img-ourproducts/powders.png";
 import signaturepr from "../../../assets/img-ourproducts/2products.png";
 import leaf from "../../../assets/img-ourproducts/leaf.png";
@@ -84,8 +84,9 @@ const ProductHero = () => {
               alt="Our Products image"
               className="absolute lg:top-[-80px] inset-0 w-full h-full object-cover lg:object-[80%_center] object-center"
             />
-            {/* Left fade */}
-            <div className="hidden lg:block absolute left-0 top-0 h-full w-8 bg-gradient-to-r from-[#FCF8F2] via-[#FCF8F2]/60 to-transparent"></div>
+            {/* Fade overlays to smoothly blend the image edges into the background */}
+            <div className="hidden lg:block absolute left-0 top-[-80px] h-[calc(100%+80px)] w-15 bg-gradient-to-r from-[#FAF9F5] via-[#FAF9F5]/80 to-transparent z-10"></div>
+            <div className="hidden lg:block absolute left-0 top-[-80px] w-full h-24 bg-gradient-to-b from-[#FAF9F5] via-[#FAF9F5]/80 to-transparent z-10"></div>
           </div>
         </div>
 
