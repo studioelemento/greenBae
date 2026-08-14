@@ -3,7 +3,7 @@ import Features from './components/Features';
 import Story from './components/Story';
 import OurProducts from './components/OurProducts';
 import HealthyLivingHub from './components/HealthyLivingHub';
-import WellnessBacked from './components/WellnessBacked';
+import WellnessBacked from './components/wellnessbacked';
 
 const Home = () => {
   return (
