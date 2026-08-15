@@ -36,7 +36,7 @@ function App() {
         href="https://wa.me/918921767274"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-6 left-6 z-50 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:scale-110 hover:shadow-xl transition-all duration-300"
+        className="fixed bottom-6 left-6 z-50 bg-[#345920] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:scale-110 hover:shadow-xl transition-all duration-300"
         aria-label="Chat on WhatsApp"
       >
         <FaWhatsapp size={32} />
