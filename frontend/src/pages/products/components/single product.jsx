@@ -93,7 +93,13 @@ const SingleProduct = () => {
         veggieVitalsPrepImg,
         veggieVitalsDetailsImg
       ],
-      websiteLink: "https://rvbrothers.in/greenbae-antioxidant-rich-herbal-drink/"
+      websiteLink: "https://rvbrothers.in/greenbae-antioxidant-rich-herbal-drink/",
+      howToPrepare: [
+        { text: "Take 1/4 tablespoon of veggie vitals per glass of water", image: "https://tse1.mm.bing.net/th/id/OIF.jbVeRizeBqta0DF2Q4dsdw?pid=Api&P=0&h=180", alt: "Spoon Icon" },
+        { text: "Boil it well like black-tea", image: "https://assets.goodhousekeeping.co.uk/main/embedded/25836/glass_water.jpg", alt: "Glass of Water Icon" },
+        { text: "Stir well until the color turns beetroot red.", image: "https://thumbs.dreamstime.com/b/pouring-matcha-green-tea-golden-milk-latte-beverage-being-prepared-frothy-glass-jug-containing-397725806.jpg", alt: "Stirring Icon" },
+        { text: "Consume it plain or lightly sweeten it using sugar or jaggery if required.", image: "https://wallpapers.com/images/hd/energizing-spinach-juice-png-93-tiujwz8x42jph9lx.jpg", alt: "Drinking Glass Icon" }
+      ]
     },
     "nutri-mix": {
       name: "Nutri Mix",
@@ -111,7 +117,13 @@ const SingleProduct = () => {
         nutriMixPrepImg,
         nutriMixDetailsImg
       ],
-      websiteLink: "https://rvbrothers.in/greenbae-ayurvedic-health-mix/"
+      websiteLink: "https://rvbrothers.in/greenbae-ayurvedic-health-mix/",
+      howToPrepare: [
+        { text: "Take 1 to 2 teaspoon of powder", image: "https://tse1.mm.bing.net/th/id/OIF.jbVeRizeBqta0DF2Q4dsdw?pid=Api&P=0&h=180", alt: "Spoon Icon" },
+        { text: "Add it to 1.5 glass of water and boil it", image: "https://assets.goodhousekeeping.co.uk/main/embedded/25836/glass_water.jpg", alt: "Glass of Water Icon" },
+        { text: "Stir well until it thickens into a warm, porridge-like consistency", image: "https://thumbs.dreamstime.com/b/pouring-matcha-green-tea-golden-milk-latte-beverage-being-prepared-frothy-glass-jug-containing-397725806.jpg", alt: "Stirring Icon" },
+        { text: "Consume it plain or lightly sweeten it as preferred.", image: "https://wallpapers.com/images/hd/energizing-spinach-juice-png-93-tiujwz8x42jph9lx.jpg", alt: "Drinking Glass Icon" }
+      ]
     }
   };
 
@@ -398,59 +410,21 @@ const SingleProduct = () => {
       {/* ──────────────────────────────────────────────────────── */}
       <section className="py-8 md:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="font-serif text-2xl sm:text-3xl lg:text-[34px] font-bold text-center mb-12 text-[#1c3e1e]">
-          How To Use
+          How To Prepare 
         </h2>
 
         <div className="flex flex-col md:grid md:grid-cols-4 gap-4 md:gap-8 max-w-5xl mx-auto relative px-2">
-
-          {/* Step 1 */}
-          <div className="flex flex-row md:flex-col items-center text-left md:text-center relative group gap-4 md:gap-0 md:bg-transparent md:p-0">
-            <div className="relative flex items-center justify-center md:mb-4 shrink-0">
-              <span className="absolute -top-2 -left-2 w-5 h-5 md:w-7 md:h-7 bg-[#1c3e1e] text-white rounded-full flex items-center justify-center text-[10px] md:text-xs font-bold shadow-sm z-10">1</span>
-              <img src="https://tse1.mm.bing.net/th/id/OIF.jbVeRizeBqta0DF2Q4dsdw?pid=Api&P=0&h=180" alt="Spoon Icon" className="w-[60px] h-[60px] md:w-28 md:h-28 object-contain" />
+          {product.howToPrepare.map((step, index) => (
+            <div key={index} className="flex flex-row md:flex-col items-center text-left md:text-center relative group gap-4 md:gap-6 md:bg-transparent md:p-0">
+              <div className="relative flex items-center justify-center shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-full bg-[#1c3e1e] text-white shadow-sm transition-transform duration-300 hover:scale-105">
+                <span className="text-2xl md:text-3xl font-bold">{index + 1}</span>
+              </div>
+              <div className="md:hidden shrink-0 text-[#4d8745] mr-2">
+                <ArrowRight className="w-4 h-4 opacity-50" />
+              </div>
+              <p className="text-sm md:text-base font-medium text-[#2d482e] md:max-w-[200px] flex-1 leading-relaxed">{step.text}</p>
             </div>
-            <div className="md:hidden shrink-0 text-[#4d8745] mr-2">
-              <ArrowRight className="w-4 h-4 opacity-50" />
-            </div>
-            <p className="text-xs font-medium text-[#2d482e] md:max-w-[180px] flex-1">Take the recommended serving.</p>
-          </div>
-
-          {/* Step 2 */}
-          <div className="flex flex-row md:flex-col items-center text-left md:text-center relative group gap-4 md:gap-0 md:bg-transparent md:p-0">
-            <div className="relative flex items-center justify-center md:mb-4 shrink-0">
-              <span className="absolute -top-2 -left-2 w-5 h-5 md:w-7 md:h-7 bg-[#1c3e1e] text-white rounded-full flex items-center justify-center text-[10px] md:text-xs font-bold shadow-sm z-10">2</span>
-              <img src="https://assets.goodhousekeeping.co.uk/main/embedded/25836/glass_water.jpg" alt="Glass of Water Icon" className="w-[60px] h-[60px] md:w-28 md:h-28 object-contain" />
-            </div>
-            <div className="md:hidden shrink-0 text-[#4d8745] mr-2">
-              <ArrowRight className="w-4 h-4 opacity-50" />
-            </div>
-            <p className="text-xs font-medium text-[#2d482e] md:max-w-[180px] flex-1">Mix with water or your favorite beverage.</p>
-          </div>
-
-          {/* Step 3 */}
-          <div className="flex flex-row md:flex-col items-center text-left md:text-center relative group gap-4 md:gap-0 md:bg-transparent md:p-0">
-            <div className="relative flex items-center justify-center md:mb-4 shrink-0">
-              <span className="absolute -top-2 -left-2 w-5 h-5 md:w-7 md:h-7 bg-[#1c3e1e] text-white rounded-full flex items-center justify-center text-[10px] md:text-xs font-bold shadow-sm z-10">3</span>
-              <img src="https://thumbs.dreamstime.com/b/pouring-matcha-green-tea-golden-milk-latte-beverage-being-prepared-frothy-glass-jug-containing-397725806.jpg" alt="Stirring Icon" className="w-[60px] h-[60px] md:w-28 md:h-28 object-contain" />
-            </div>
-            <div className="md:hidden shrink-0 text-[#4d8745] mr-2">
-              <ArrowRight className="w-4 h-4 opacity-50" />
-            </div>
-            <p className="text-xs font-medium text-[#2d482e] md:max-w-[180px] flex-1">Stir well until dissolved.</p>
-          </div>
-
-          {/* Step 4 */}
-          <div className="flex flex-row md:flex-col items-center text-left md:text-center relative group gap-4 md:gap-0 md:bg-transparent md:p-0">
-            <div className="relative flex items-center justify-center md:mb-4 shrink-0">
-              <span className="absolute -top-2 -left-2 w-5 h-5 md:w-7 md:h-7 bg-[#1c3e1e] text-white rounded-full flex items-center justify-center text-[10px] md:text-xs font-bold shadow-sm z-10">4</span>
-              <img src="https://wallpapers.com/images/hd/energizing-spinach-juice-png-93-tiujwz8x42jph9lx.jpg" alt="Drinking Glass Icon" className="w-[60px] h-[60px] md:w-28 md:h-28 object-contain" />
-            </div>
-            <div className="md:hidden shrink-0 text-[#4d8745] mr-2">
-              <ArrowRight className="w-4 h-4 opacity-50" />
-            </div>
-            <p className="text-xs font-medium text-[#2d482e] md:max-w-[180px] flex-1">Enjoy daily for better well-being.</p>
-          </div>
-
+          ))}
         </div>
       </section>
 
