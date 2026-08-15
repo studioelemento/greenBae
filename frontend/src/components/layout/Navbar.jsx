@@ -23,7 +23,7 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
             <Link to="/" className="flex items-center" onClick={() => setIsMobileMenuOpen(false)}>
-              <img src={logo} alt="Greenbae Logo" className="h-16 md:h-20 w-auto object-contain py-2" />
+              <img src={logo} alt="Greenbae Logo" className="h-10 md:h-10 w-auto object-contain" />
             </Link>
           </div>
 

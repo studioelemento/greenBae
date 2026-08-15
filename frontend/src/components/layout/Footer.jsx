@@ -152,7 +152,7 @@ const Footer = () => {
           {/* Left Column - Brand & Mission */}
           <div className="lg:col-span-3 flex flex-col relative pr-4 lg:pr-6">
             <div className="mb-6 flex items-center gap-2">
-              <img src={logo} alt="Greenbae Logo" className="h-16 md:h-20 w-auto object-contain" />
+              <img src={logo} alt="Greenbae Logo" className="h-10 md:h-12 w-auto object-contain" />
             </div>
 
             <p className="text-sm text-gray-800 mb-6 leading-relaxed font-medium pr-2">

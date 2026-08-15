@@ -2,6 +2,7 @@ import { Leaf, FlaskConical, ShieldCheck, Users, ArrowRight } from 'lucide-react
 import { useNavigate } from 'react-router-dom';
 import veggieimage from "../../../assets/img-ourproducts/Greenbae Veggie Vitals.png";
 import nutriimage from "../../../assets/img-ourproducts/Greenbae Diabe Nutri Mix.png";
+import heroimage from "../../../assets/img-ourproducts/Greenbae products veggie vitals and NutrimixHeroImage.png";
 
 const OurProducts = () => {
   const navigate = useNavigate();
@@ -106,7 +107,7 @@ const OurProducts = () => {
           {/* Right Column: Large Setup Image - Hidden on Mobile */}
           <div className="hidden md:block w-full h-[280px] sm:h-[350px] md:h-[420px] rounded-[24px] overflow-hidden shadow-sm">
             <img 
-              src="/products_hero.png" 
+              src={heroimage} 
               alt="Greenbae Veggie Vitals and Nutri Mix supplement pouches setup" 
               className="w-full h-full object-cover"
             />
