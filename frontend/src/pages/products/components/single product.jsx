@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import {
   ArrowLeft,
   ChevronUp,
@@ -72,12 +72,12 @@ const DecorativePlantRight = () => (
 );
 
 const SingleProduct = () => {
-  const location = useLocation();
+  const { productId: urlProductId } = useParams();
   const navigate = useNavigate();
-  const productId = location.state?.product || "veggie-vitals";
+  const productId = urlProductId || "veggie-vitals";
 
   const productsData = {
-    "veggie-vitals": {
+    "veggie-vitals-daily-nutrition-blend": {
       name: "Veggie Vitals",
       shortDesc: "Daily Nutrition Blend",
       desc: "A powerful blend of 16 vegetables, herbs and spices to help fill everyday nutritional gaps naturally.",
@@ -101,7 +101,7 @@ const SingleProduct = () => {
         { text: "Consume it plain or lightly sweeten it using sugar or jaggery if required.", image: "https://wallpapers.com/images/hd/energizing-spinach-juice-png-93-tiujwz8x42jph9lx.jpg", alt: "Drinking Glass Icon" }
       ]
     },
-    "nutri-mix": {
+    "nutri-mix-fiber-rich-nutrition": {
       name: "Nutri Mix",
       shortDesc: "Fiber-Rich Nutrition",
       desc: "A delicious blend of fiber-rich ingredients that support digestive wellness and everyday nourishment.",
@@ -127,7 +127,7 @@ const SingleProduct = () => {
     }
   };
 
-  const product = productsData[productId] || productsData["veggie-vitals"];
+  const product = productsData[productId] || productsData["veggie-vitals-daily-nutrition-blend"];
   const images = product.images;
 
   const [activeImage, setActiveImage] = useState(0);

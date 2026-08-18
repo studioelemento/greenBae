@@ -23,11 +23,14 @@ function App() {
           <Route path="our-story" element={<OurStory />} />
           <Route path="products" element={<Products />} />
           <Route path="products/page" element={<ProductsPage />} />
-          <Route path="products/single" element={<SingleProduct />} />
+
           <Route path="healthy-living" element={<HealthyLivingPage />} />
           <Route path="article/:id" element={<SingleArticle />} />
           <Route path="our-mission" element={<OurMission />} />
           <Route path="contact-us" element={<ContactUs />} />
+          
+          {/* Catch-all for Product Slugs at the root */}
+          <Route path="/:productId" element={<SingleProduct />} />
         </Route>
       </Routes>
 

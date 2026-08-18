@@ -55,7 +55,7 @@ const SignatureProducts = () => {
           <div 
             onClick={() => {
               if (window.innerWidth < 1024) {
-                navigate("/products/single", { state: { product: "veggie-vitals" } });
+                navigate("/veggie-vitals-daily-nutrition-blend");
               }
             }}
             className="bg-[#F4EFE6] rounded-[16px] md:rounded-[28px] overflow-hidden flex flex-row items-stretch shadow-[0_4px_20px_rgba(0,0,0,0.03)] h-[250px] md:h-auto cursor-pointer lg:cursor-auto"
@@ -203,7 +203,7 @@ const SignatureProducts = () => {
               </ul>
 
               <button
-                onClick={(e) => { e.stopPropagation(); navigate("/products/single", { state: { product: "veggie-vitals" } }); }}
+                onClick={(e) => { e.stopPropagation(); navigate("/veggie-vitals-daily-nutrition-blend"); }}
                 className="text-[#173A22] font-semibold md:font-semibold text-[11px] md:text-[14px] flex items-center justify-center gap-1 md:gap-2 hover:opacity-80 transition-opacity w-max"
               >
                 Explore Veggie Vitals <span>&rarr;</span>
@@ -215,7 +215,7 @@ const SignatureProducts = () => {
           <div 
             onClick={() => {
               if (window.innerWidth < 1024) {
-                navigate("/products/single", { state: { product: "nutri-mix" } });
+                navigate("/nutri-mix-fiber-rich-nutrition");
               }
             }}
             className="bg-[#F0E7D8] rounded-[16px] md:rounded-[28px] overflow-hidden flex flex-row items-stretch shadow-[0_4px_20px_rgba(0,0,0,0.03)] h-[250px] md:h-auto cursor-pointer lg:cursor-auto"
@@ -348,7 +348,7 @@ const SignatureProducts = () => {
               </ul>
 
               <button
-                onClick={(e) => { e.stopPropagation(); navigate("/products/single", { state: { product: "nutri-mix" } }); }}
+                onClick={(e) => { e.stopPropagation(); navigate("/nutri-mix-fiber-rich-nutrition"); }}
                 className="text-[#624028] font-semibold md:font-semibold text-[11px] md:text-[14px] flex items-center justify-center gap-1 md:gap-2 hover:opacity-80 transition-opacity w-max"
               >
                 Explore Nutri Mix <span>&rarr;</span>
