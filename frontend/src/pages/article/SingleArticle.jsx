@@ -1,5 +1,6 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Clock, Calendar } from 'lucide-react';
+import SEO from '../../components/SEO';
 import articlesData from '../../data/articles.js';
 
 const SingleArticle = () => {
@@ -28,6 +29,13 @@ const SingleArticle = () => {
 
   return (
     <div className="bg-[#fcf6ee] min-h-screen pt-24 pb-16">
+      <SEO 
+        title={`${article.title} | Greenbae`} 
+        description={article.description} 
+        url={`https://www.greenbae.in/article/${article.id}`} 
+        image={article.image.startsWith('http') ? article.image : `https://www.greenbae.in${article.image}`}
+        type="article"
+      />
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Back Button */}

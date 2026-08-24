@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import SEO from "../../../components/SEO";
 import {
   ArrowLeft,
   ChevronUp,
@@ -79,6 +80,8 @@ const SingleProduct = () => {
   const productsData = {
     "veggie-vitals-daily-nutrition-blend": {
       name: "Veggie Vitals",
+      seoTitle: "Greenbae Veggie Vitals | Our Natural Vegetable Drink Mix",
+      seoDescription: "Greenbae Veggie Vitals is our thoughtfully crafted blend of vegetables, fruits, herbs and spices, made for a simple and nourishing everyday drink.",
       shortDesc: "Daily Nutrition Blend",
       desc: "A powerful blend of 16 vegetables, herbs and spices to help fill everyday nutritional gaps naturally.",
       benefits: [
@@ -103,6 +106,8 @@ const SingleProduct = () => {
     },
     "nutri-mix-fiber-rich-nutrition": {
       name: "Nutri Mix",
+      seoTitle: "Greenbae Nutrimix | Natural Banana, Ragi & Moringa Mix",
+      seoDescription: "At Greenbae, we bring together raw banana, ragi, moringa and cardamom in Nutrimix—a thoughtfully crafted blend for nourishing everyday meals.",
       shortDesc: "Fiber-Rich Nutrition",
       desc: "A delicious blend of fiber-rich ingredients that support digestive wellness and everyday nourishment.",
       benefits: [
@@ -173,8 +178,19 @@ const SingleProduct = () => {
     }
   };
 
+  const ogImageUrl = product.images[0].startsWith('http') 
+    ? product.images[0] 
+    : `https://greenbae.in${product.images[0].startsWith('/') ? '' : '/'}${product.images[0]}`;
+
   return (
     <div className="bg-[#FAF9F5] min-h-screen text-[#1c3e1e] antialiased pb-0">
+      <SEO 
+        title={product.seoTitle || `${product.name} | Greenbae`} 
+        description={product.seoDescription || product.desc} 
+        url={`https://greenbae.in/${productId}`} 
+        image={ogImageUrl}
+        type="product"
+      />
       {/* Back Button */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 md:pt-8 pb-0">
         <button
