@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet-async';
 const SEO = ({ title, description, ogTitle, ogDescription, url, image, type = 'website' }) => {
   const defaultTitle = "Greenbae - Natural Health & Wellness";
   const defaultDescription = "Discover our natural health products, Veggie Vitals and Nutri Mix, for your daily wellness.";
-  const defaultImage = "https://greenbae.in/images/greenbae-social-share.jpg";
+  const defaultImage = "https://greenbae.in/images/greenbae-social-share.png";
   const defaultUrl = "https://greenbae.in/";
 
   const seoTitle = title || defaultTitle;
