@@ -7,55 +7,71 @@ const PRODUCTS_SEO = {
     title: "Greenbae Veggie Vitals | Our Natural Vegetable Drink Mix",
     description:
       "Greenbae Veggie Vitals is our thoughtfully crafted blend of vegetables, fruits, herbs and spices, made for a simple and nourishing everyday drink.",
-    image: "https://greenbae.in/images/veggie-vitals-social.png",
-    url: "https://greenbae.in/veggie-vitals-daily-nutrition-blend",
+    image: "https://www.greenbae.in/images/veggie-vitals-social.png",
+    url: "https://www.greenbae.in/veggie-vitals-daily-nutrition-blend",
     type: "product",
   },
   "nutri-mix-fiber-rich-nutrition": {
     title: "Greenbae Nutrimix | Natural Banana, Ragi & Moringa Mix",
     description:
       "At Greenbae, we bring together raw banana, ragi, moringa and cardamom in Nutrimix — a thoughtfully crafted blend for nourishing everyday meals.",
-    image: "https://greenbae.in/images/nutri-mix-social.png",
-    url: "https://greenbae.in/nutri-mix-fiber-rich-nutrition",
+    image: "https://www.greenbae.in/images/nutri-mix-social.png",
+    url: "https://www.greenbae.in/nutri-mix-fiber-rich-nutrition",
     type: "product",
   },
 };
+
+const LOGO_SHARE_IMAGE = "https://www.greenbae.in/images/greenbae-logo-share.png";
 
 const PAGES_SEO = {
   products: {
     title: "Our Products | Greenbae",
     description:
       "Explore Greenbae's natural product line including Veggie Vitals and Nutri Mix. Wholesome nutrition for the whole family.",
-    image: "https://greenbae.in/images/greenbae-social-share.png",
-    url: "https://greenbae.in/products",
+    image: LOGO_SHARE_IMAGE,
+    url: "https://www.greenbae.in/products",
   },
   "our-story": {
     title: "Our Story | Greenbae",
     description:
       "Learn about Greenbae's journey — a family wellness brand rooted in nature and everyday nutrition.",
-    image: "https://greenbae.in/images/greenbae-social-share.png",
-    url: "https://greenbae.in/our-story",
+    image: LOGO_SHARE_IMAGE,
+    url: "https://www.greenbae.in/our-story",
   },
   "our-mission": {
     title: "Our Mission | Greenbae",
     description:
       "Greenbae's mission is to make natural, wholesome nutrition accessible to every family.",
-    image: "https://greenbae.in/images/greenbae-social-share.png",
-    url: "https://greenbae.in/our-mission",
+    image: LOGO_SHARE_IMAGE,
+    url: "https://www.greenbae.in/our-mission",
+  },
+  "healthy-living": {
+    title: "Healthy Living Hub | Greenbae",
+    description:
+      "Explore tips, insights and articles on healthy living, nutrition and wellness from Greenbae.",
+    image: LOGO_SHARE_IMAGE,
+    url: "https://www.greenbae.in/healthy-living",
   },
   "healthy-living-hub": {
     title: "Healthy Living Hub | Greenbae",
     description:
       "Explore tips, insights and articles on healthy living, nutrition and wellness from Greenbae.",
-    image: "https://greenbae.in/images/greenbae-social-share.png",
-    url: "https://greenbae.in/healthy-living-hub",
+    image: LOGO_SHARE_IMAGE,
+    url: "https://www.greenbae.in/healthy-living",
+  },
+  "contact-us": {
+    title: "Contact Us | Greenbae",
+    description:
+      "Get in touch with Greenbae. We'd love to hear from you about our products and wellness journey.",
+    image: LOGO_SHARE_IMAGE,
+    url: "https://www.greenbae.in/contact-us",
   },
   contact: {
     title: "Contact Us | Greenbae",
     description:
       "Get in touch with Greenbae. We'd love to hear from you about our products and wellness journey.",
-    image: "https://greenbae.in/images/greenbae-social-share.png",
-    url: "https://greenbae.in/contact",
+    image: LOGO_SHARE_IMAGE,
+    url: "https://www.greenbae.in/contact-us",
   },
 };
 
@@ -63,8 +79,8 @@ const DEFAULT_SEO = {
   title: "Greenbae | Natural Wellness & Everyday Nutrition",
   description:
     "Discover Greenbae, a family wellness brand offering thoughtfully made natural food products for everyday nutrition, healthy living and mindful choices.",
-  image: "https://greenbae.in/images/greenbae-social-share.png",
-  url: "https://greenbae.in/",
+  image: LOGO_SHARE_IMAGE,
+  url: "https://www.greenbae.in/",
 };
 
 // Social media crawler User-Agent patterns
@@ -97,14 +113,17 @@ function buildHtml(seo) {
   <meta name="description" content="${seo.description}" />
   <link rel="canonical" href="${seo.url}" />
 
-  <!-- Open Graph / Facebook / WhatsApp -->
+  <!-- Open Graph / Facebook / WhatsApp / Telegram -->
   <meta property="og:type" content="${seo.type || "website"}" />
   <meta property="og:url" content="${seo.url}" />
   <meta property="og:title" content="${seo.title}" />
   <meta property="og:description" content="${seo.description}" />
   <meta property="og:image" content="${seo.image}" />
+  <meta property="og:image:secure_url" content="${seo.image}" />
+  <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="${seo.title}" />
   <meta property="og:site_name" content="Greenbae" />
 
   <!-- Twitter Card -->

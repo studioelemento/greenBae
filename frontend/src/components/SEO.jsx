@@ -4,8 +4,8 @@ import { Helmet } from 'react-helmet-async';
 const SEO = ({ title, description, ogTitle, ogDescription, url, image, type = 'website' }) => {
   const defaultTitle = "Greenbae - Natural Health & Wellness";
   const defaultDescription = "Discover our natural health products, Veggie Vitals and Nutri Mix, for your daily wellness.";
-  const defaultImage = "https://greenbae.in/images/greenbae-social-share.png";
-  const defaultUrl = "https://greenbae.in/";
+  const defaultImage = "https://www.greenbae.in/images/greenbae-logo-share.png";
+  const defaultUrl = "https://www.greenbae.in/";
 
   const seoTitle = title || defaultTitle;
   const seoDescription = description || defaultDescription;
@@ -30,6 +30,10 @@ const SEO = ({ title, description, ogTitle, ogDescription, url, image, type = 'w
       <meta property="og:title" content={socialTitle} />
       <meta property="og:description" content={socialDescription} />
       <meta property="og:image" content={seoImage} />
+      <meta property="og:image:secure_url" content={seoImage} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:image:alt" content={socialTitle} />
       <meta property="og:site_name" content="Greenbae" />
 
       {/* Twitter tags */}

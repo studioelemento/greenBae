@@ -1,6 +1,17 @@
 {
   "rewrites": [
     {
+      "source": "/",
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(facebookexternalhit|Facebot|Twitterbot|WhatsApp|LinkedInBot|Slackbot|TelegramBot|Discordbot|Pinterest).*"
+        }
+      ],
+      "destination": "/api/og"
+    },
+    {
       "source": "/veggie-vitals-daily-nutrition-blend",
       "has": [
         {
@@ -56,6 +67,17 @@
       "destination": "/api/og?slug=our-mission"
     },
     {
+      "source": "/healthy-living",
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(facebookexternalhit|Facebot|Twitterbot|WhatsApp|LinkedInBot|Slackbot|TelegramBot|Discordbot|Pinterest).*"
+        }
+      ],
+      "destination": "/api/og?slug=healthy-living"
+    },
+    {
       "source": "/healthy-living-hub",
       "has": [
         {
@@ -64,7 +86,18 @@
           "value": ".*(facebookexternalhit|Facebot|Twitterbot|WhatsApp|LinkedInBot|Slackbot|TelegramBot|Discordbot|Pinterest).*"
         }
       ],
-      "destination": "/api/og?slug=healthy-living-hub"
+      "destination": "/api/og?slug=healthy-living"
+    },
+    {
+      "source": "/contact-us",
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(facebookexternalhit|Facebot|Twitterbot|WhatsApp|LinkedInBot|Slackbot|TelegramBot|Discordbot|Pinterest).*"
+        }
+      ],
+      "destination": "/api/og?slug=contact-us"
     },
     {
       "source": "/contact",
@@ -75,7 +108,7 @@
           "value": ".*(facebookexternalhit|Facebot|Twitterbot|WhatsApp|LinkedInBot|Slackbot|TelegramBot|Discordbot|Pinterest).*"
         }
       ],
-      "destination": "/api/og?slug=contact"
+      "destination": "/api/og?slug=contact-us"
     },
     {
       "source": "/(.*)",

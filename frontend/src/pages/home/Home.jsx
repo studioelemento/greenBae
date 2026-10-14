@@ -14,7 +14,7 @@ const Home = () => {
         description="Discover Greenbae, a family wellness brand offering thoughtfully made natural food products for everyday nutrition, healthy living and mindful choices." 
         ogTitle="Greenbae | Natural Wellness & Everyday Nutrition"
         ogDescription="Natural food products thoughtfully made for everyday nutrition, mindful choices and healthy living."
-        url="https://greenbae.in/" 
+        url="https://www.greenbae.in/" 
       />
       <Hero />
       <Features />
