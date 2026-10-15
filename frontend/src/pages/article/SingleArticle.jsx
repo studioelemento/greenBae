@@ -4,10 +4,11 @@ import SEO from '../../components/SEO';
 import articlesData from '../../data/articles.js';
 
 const SingleArticle = () => {
-  const { id } = useParams();
+  const { id, slug } = useParams();
   const navigate = useNavigate();
 
-  const article = articlesData.find((a) => a.id === id);
+  const identifier = slug || id;
+  const article = articlesData.find((a) => a.slug === identifier || a.id === identifier);
 
   if (!article) {
     return (
@@ -15,10 +16,10 @@ const SingleArticle = () => {
         <h1 className="text-4xl font-serif font-bold mb-4">Article Not Found</h1>
         <p className="mb-6">The article you are looking for does not exist.</p>
         <button 
-          onClick={() => navigate(-1)}
+          onClick={() => navigate('/healthy-living')}
           className="bg-[#1c3e1e] text-white px-6 py-2 rounded-lg font-semibold hover:bg-[#2b4c18] transition-colors"
         >
-          Go Back
+          Back to Articles
         </button>
       </div>
     );
@@ -27,12 +28,20 @@ const SingleArticle = () => {
   // Split content by double newlines into paragraphs
   const paragraphs = article.content.split('\n\n').filter(p => p.trim() !== '');
 
+  const handleBack = () => {
+    if (window.history.length > 2) {
+      navigate(-1);
+    } else {
+      navigate('/healthy-living');
+    }
+  };
+
   return (
-    <div className="bg-[#fcf6ee] min-h-screen pt-24 pb-16">
+    <div className="bg-[#fcf6ee] min-h-screen pt-4 sm:pt-6 md:pt-10 pb-16">
       <SEO 
         title={`${article.title} | Greenbae`} 
         description={article.description} 
-        url={`https://www.greenbae.in/article/${article.id}`} 
+        url={`https://www.greenbae.in/${article.slug || article.id}`} 
         image={article.image.startsWith('http') ? article.image : `https://www.greenbae.in${article.image}`}
         type="article"
       />
@@ -40,8 +49,8 @@ const SingleArticle = () => {
         
         {/* Back Button */}
         <button 
-          onClick={() => navigate(-1)}
-          className="flex items-center text-sm text-[#4d8745] hover:text-[#1c3e1e] font-semibold mb-8 transition-colors group"
+          onClick={handleBack}
+          className="flex items-center text-sm text-[#4d8745] hover:text-[#1c3e1e] font-semibold mb-4 md:mb-6 transition-colors group"
         >
           <ArrowLeft size={16} className="mr-2 group-hover:-translate-x-1 transition-transform" />
           Back to Articles

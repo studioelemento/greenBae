@@ -23,7 +23,16 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
             <Link to="/" className="flex items-center" onClick={() => setIsMobileMenuOpen(false)}>
-              <img src={logo} alt="Greenbae Logo" className="h-10 md:h-10 w-auto object-contain" />
+              <img 
+                src={logo} 
+                alt="Greenbae Logo" 
+                width="140" 
+                height="40" 
+                fetchPriority="high" 
+                loading="eager" 
+                decoding="async" 
+                className="h-10 md:h-10 w-auto object-contain" 
+              />
             </Link>
           </div>
 

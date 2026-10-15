@@ -111,6 +111,28 @@
       "destination": "/api/og?slug=contact-us"
     },
     {
+      "source": "/article/:slug",
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(facebookexternalhit|Facebot|Twitterbot|WhatsApp|LinkedInBot|Slackbot|TelegramBot|Discordbot|Pinterest).*"
+        }
+      ],
+      "destination": "/api/og?slug=:slug"
+    },
+    {
+      "source": "/:slug",
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(facebookexternalhit|Facebot|Twitterbot|WhatsApp|LinkedInBot|Slackbot|TelegramBot|Discordbot|Pinterest).*"
+        }
+      ],
+      "destination": "/api/og?slug=:slug"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }

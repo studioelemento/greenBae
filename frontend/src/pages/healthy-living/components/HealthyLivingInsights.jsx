@@ -299,7 +299,7 @@ export default function HealthyLivingInsights() {
               {/* Articles Grid - Desktop */}
               <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8 md:mb-12">
                 {filteredArticles.map((article) => (
-                  <Link to={`/article/${article.id}`} key={article.id} className="group cursor-pointer block">
+                  <Link to={`/${article.slug || article.id}`} key={article.id} className="group cursor-pointer block">
                     {/* Image */}
                     <div className="relative  rounded-lg mb-4 h-40 md:h-48">
                       <div className="overflow-hidden h-full rounded-lg">
@@ -337,7 +337,7 @@ export default function HealthyLivingInsights() {
               <div className="md:hidden space-y-4 mb-8">
                 {filteredArticles.map((article) => (
                   <Link
-                    to={`/article/${article.id}`}
+                    to={`/${article.slug || article.id}`}
                     key={article.id}
                     className="flex items-center gap-3 bg-white rounded-lg p-3 hover:shadow-md transition-shadow cursor-pointer"
                   >

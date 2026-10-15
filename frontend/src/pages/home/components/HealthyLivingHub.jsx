@@ -116,7 +116,7 @@ const HealthyLivingHub = () => {
           ) : (
             articles.map((article, index) => (
               <Link 
-                to={`/article/${article.id}`}
+                to={`/${article.slug || article.id}`}
                 key={article.id} 
                 className={`flex-col bg-white border border-[#f3f0e7] rounded-[24px] overflow-hidden shadow-sm hover:shadow-[0_12px_30px_rgba(0,0,0,0.05)] hover:-translate-y-1 transition-all duration-300 group cursor-pointer ${
                   index >= 8 ? 'hidden' :

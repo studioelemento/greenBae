@@ -73,9 +73,9 @@ const DecorativePlantRight = () => (
 );
 
 const SingleProduct = () => {
-  const { productId: urlProductId } = useParams();
+  const { productId: urlProductId, slug } = useParams();
   const navigate = useNavigate();
-  const productId = urlProductId || "veggie-vitals";
+  const productId = urlProductId || slug || "veggie-vitals-daily-nutrition-blend";
 
   const productsData = {
     "veggie-vitals-daily-nutrition-blend": {

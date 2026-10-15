@@ -1,6 +1,4 @@
-// This serverless function serves the correct OG meta tags for social media crawlers.
-// It returns a minimal HTML page with product-specific meta tags that WhatsApp,
-// Facebook, Twitter etc. can read without executing JavaScript.
+import articles from "../src/data/articles.js";
 
 const PRODUCTS_SEO = {
   "veggie-vitals-daily-nutrition-blend": {
@@ -149,8 +147,29 @@ export default function handler(req, res) {
 
   const slug = req.query.slug || "";
 
-  // Find matching SEO data
-  const seo = PRODUCTS_SEO[slug] || PAGES_SEO[slug] || DEFAULT_SEO;
+  // 1. Check products or static pages
+  let seo = PRODUCTS_SEO[slug] || PAGES_SEO[slug];
+
+  // 2. Check articles if not a static page/product
+  if (!seo) {
+    const article = articles.find((a) => a.slug === slug || a.id === slug);
+    if (article) {
+      seo = {
+        title: `${article.title} | Greenbae`,
+        description: article.description,
+        image: article.image.startsWith("http")
+          ? article.image
+          : `https://www.greenbae.in${article.image}`,
+        url: `https://www.greenbae.in/${article.slug || article.id}`,
+        type: "article",
+      };
+    }
+  }
+
+  // 3. Fallback to default
+  if (!seo) {
+    seo = DEFAULT_SEO;
+  }
 
   res.setHeader("Content-Type", "text/html; charset=utf-8");
   res.setHeader("Cache-Control", "public, max-age=3600");

@@ -4,13 +4,13 @@ import MainLayout from './components/layout/MainLayout';
 import Home from './pages/home/Home';
 import OurStory from './pages/ourstory/OurStory';
 import Products from './pages/products/Products';
-import SingleProduct from './pages/products/components/single product';
 import ContactUs from './pages/contactus/ContactUs';
 import ProductsPage from './pages/products/ProductsPage';
 import './App.css'
 import HealthyLivingPage from './pages/healthy-living/HealthyLivingPage';
 import SingleArticle from './pages/article/SingleArticle';
 import OurMission from './pages/ourMission/OurMission';
+import DynamicSlugRoute from './components/DynamicSlugRoute';
 import { FaWhatsapp } from 'react-icons/fa';
 
 function App() {
@@ -29,8 +29,8 @@ function App() {
           <Route path="our-mission" element={<OurMission />} />
           <Route path="contact-us" element={<ContactUs />} />
           
-          {/* Catch-all for Product Slugs at the root */}
-          <Route path="/:productId" element={<SingleProduct />} />
+          {/* Dynamic root route for products & articles (e.g. /why-daily-nutrition-matters or /veggie-vitals-daily-nutrition-blend) */}
+          <Route path="/:slug" element={<DynamicSlugRoute />} />
         </Route>
       </Routes>
 

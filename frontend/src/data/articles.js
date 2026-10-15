@@ -1,15 +1,26 @@
 // HOW TO ADD A NEW ARTICLE:
 // 1. Scroll to the bottom of this file.
 // 2. Add a comma to the last article, and paste a new block below it.
-// 3. Make sure to give it a unique "id" number.
+// 3. Make sure to give it a unique "id" number and SEO-friendly "slug".
 // 4. Use \n\n to create paragraph breaks in the "content" field.
 // 
 // IMPORTANT: Make sure the "category" matches one of: 
 // Nutrition, Family Wellness, Kids Wellness, Healthy Aging, Natural Living, Recipes & Habits
 
-export default [
+export const slugify = (text) => {
+  return text
+    .toString()
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, '-')
+    .replace(/[^\w-]+/g, '')
+    .replace(/--+/g, '-');
+};
+
+const articles = [
   {
     "id": "1",
+    "slug": "5-simple-habits-for-better-nutrition-every-day",
     "title": "5 Simple Habits For Better Nutrition Every Day",
     "description": "Small, consistent changes that make a big difference.",
     "category": "Nutrition",
@@ -20,6 +31,7 @@ export default [
   },
   {
     "id": "2",
+    "slug": "how-to-build-stronger-family-wellness-habits",
     "title": "How To Build Stronger Family Wellness Habits",
     "description": "Tips to create a healthier, happier home environment.",
     "category": "Family Wellness",
@@ -30,6 +42,7 @@ export default [
   },
   {
     "id": "3",
+    "slug": "nourishing-recipes-the-whole-family-will-love",
     "title": "Nourishing Recipes The Whole Family Will Love",
     "description": "Delicious and nutritious meals made easy.",
     "category": "Recipes & Habits",
@@ -40,6 +53,7 @@ export default [
   },
   {
     "id": "4",
+    "slug": "immunity-boosting-tips-for-growing-kids",
     "title": "Immunity Boosting Tips For Growing Kids",
     "description": "Natural ways to support strong immunity.",
     "category": "Kids Wellness",
@@ -50,6 +64,7 @@ export default [
   },
   {
     "id": "5",
+    "slug": "why-daily-nutrition-matters",
     "image": "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&q=80",
     "category": "Nutrition",
     "readTime": 5,
@@ -60,6 +75,7 @@ export default [
   },
   {
     "id": "6",
+    "slug": "building-healthy-family-routines",
     "image": "https://media.istockphoto.com/id/1203932588/photo/happy-family-in-the-park-stock-photo.jpg?s=612x612&w=0&k=20&c=BUW3w82hhEX1PI5Sy3NR-zeYBXO4T4Yl7_idFimMYR8=",
     "category": "Family Wellness",
     "readTime": 6,
@@ -70,6 +86,7 @@ export default [
   },
   {
     "id": "7",
+    "slug": "helping-kids-develop-healthy-habits",
     "image": "https://static.vecteezy.com/system/resources/previews/059/513/829/non_2x/happy-children-playing-outdoors-in-sunlit-field-filled-with-flowers-free-photo.jpeg",
     "category": "Kids Wellness",
     "readTime": 3,
@@ -80,6 +97,7 @@ export default [
   },
   {
     "id": "8",
+    "slug": "stay-active-stay-young-at-every-age",
     "image": "https://www.summithealth.com/sites/default/files/2021-08/Healthy%20Aging%20(medium)%20iStock-1293388093.jpg",
     "category": "Healthy Aging",
     "readTime": 6,
@@ -90,6 +108,7 @@ export default [
   },
   {
     "id": "9",
+    "slug": "herbal-teas-and-their-everyday-benefits",
     "image": "https://i.pinimg.com/originals/f5/50/f3/f550f33b0770d18889dbe6759a64c2fd.jpg",
     "category": "Natural Living",
     "readTime": 5,
@@ -100,6 +119,7 @@ export default [
   },
   {
     "id": "10",
+    "slug": "5-morning-habits-that-transform-your-day",
     "image": "https://www.newtraderu.com/wp-content/uploads/10-Morning-Habits-For-a-Healthy-Mind-and-Productive-Day-768x512.jpg",
     "category": "Recipes & Habits",
     "readTime": 4,
@@ -110,6 +130,7 @@ export default [
   },
   {
     "id": "11",
+    "slug": "living-closer-to-nature-for-better-well-being",
     "image": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=800&q=80",
     "category": "Natural Living",
     "readTime": 6,
@@ -120,6 +141,7 @@ export default [
   },
   {
     "id": "12",
+    "slug": "quick-and-healthy-breakfast-ideas",
     "image": "https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?w=800&q=80",
     "category": "Recipes & Habits",
     "readTime": 5,
@@ -128,4 +150,6 @@ export default [
     "description": "Easy, nutritious breakfast ideas to fuel your body and mind.",
     "content": "Breakfast is often called the most important meal of the day, yet it's frequently skipped in the morning rush. The key is finding quick, healthy options that require minimal prep.\n\nOvernight oats, smoothies, and avocado toast are all fantastic choices that can be made in minutes (or the night before). They provide a balance of complex carbohydrates, healthy fats, and protein.\n\nBy prioritizing a healthy breakfast, you'll avoid the mid-morning energy crash and set yourself up for sustained focus and vitality."
   }
-]
+];
+
+export default articles;

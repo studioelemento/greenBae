@@ -1,4 +1,3 @@
-import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
 const SEO = ({ title, description, ogTitle, ogDescription, url, image, type = 'website' }) => {
