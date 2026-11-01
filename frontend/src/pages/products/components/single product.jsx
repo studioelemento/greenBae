@@ -341,7 +341,7 @@ const SingleProduct = () => {
             </div>
 
             {/* Trust Badges */}
-            <div className="grid grid-cols-4 gap-2 pt-6 border-t border-gray-100 text-center">
+            <div className="grid grid-cols-3 gap-1 pt-6 border-t border-gray-100 text-center">
               <div className="flex flex-col items-center">
                 <img src="https://tse4.mm.bing.net/th/id/OIP.E9Inhk7HKsIsU8pwfgkfMwAAAA?pid=Api&P=0&h=180" alt="FSSAI Logo" className="w-8 h-8" />
                 <span className="text-[10px] font-bold text-gray-500 mt-2 uppercase tracking-wider">FSSAI Approved</span>
@@ -354,10 +354,7 @@ const SingleProduct = () => {
                 <MadeInIndia />
                 <span className="text-[10px] font-bold text-gray-500 mt-2 uppercase tracking-wider">Made In India</span>
               </div>
-              <div className="flex flex-col items-center">
-                <GMP />
-                <span className="text-[10px] font-bold text-gray-500 mt-2 uppercase tracking-wider">GMP Certified</span>
-              </div>
+             
             </div>
 
           </div>
